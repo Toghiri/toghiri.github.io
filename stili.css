@@ -1,9 +1,21 @@
 body{
     background-color: gray;
+    /*background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(82,82,82,1) 100%);
+    */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-items: center;
 }
 
-rosso{
+p2{
+    color:black;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a1{
     color: red;
 }
