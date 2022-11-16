@@ -1,0 +1,33 @@
+body{
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-color:darkred;
+    background-blend-mode:lighten;
+    /*background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);*/
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+
+h1{
+    color: black;
+}
+
+a{
+    color: darkred;
+    background-color: black;
+}
+
+div{
+    color:black;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+}
+
+sim{
+    color: darkred;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: black;
+    font-size: larger;
+}

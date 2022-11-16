@@ -7,6 +7,12 @@ body{
     align-items: center;
 }
 
+h4{
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+}
+
 p2{
     color:black;
     position: absolute;
@@ -19,3 +25,12 @@ p2{
 r{
     color: red;
 }
+
+p3 {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+  }
