@@ -9,7 +9,7 @@ body{
     font-size: large;
     width: 100%;
     height: auto;
-    overflow-x: hidden ;
+    overflow-x: hidden;
 }
 
 .center {
@@ -50,4 +50,8 @@ red{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: black;
     font-size: larger;
+}
+
+a{
+    text-decoration: none;
 }
