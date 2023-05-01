@@ -1,0 +1,874 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI TIPSIT (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8d8b5713-c84d-4e8d-af4c-2961ca81ede3" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📝</span></div><h1 class="page-title">APPUNTI TIPSIT (PIETRO VACCARI)</h1></header><div class="page-body"><p id="d9709780-9827-4215-ab81-3cede6496338" class="">
+</p><nav id="6fef2cc2-5666-4844-9d89-664c759cf099" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5939ff61-a56f-4a8a-a510-578f4e69b047"><mark class="highlight-red">Crittografia </mark>(Teoria)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#dc83b402-0efb-469e-905b-3cfcb7eac49b"><mark class="highlight-red">Definizioni</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cc990f49-32c5-499c-938a-b7153bcd760b"><mark class="highlight-red">Utilizzi moderni della crittografia</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9411c30a-2b91-4136-8f2e-6853a4e51407"><mark class="highlight-red">Sostituzione monoalfabetica</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#72651dfe-6a9d-4031-be6e-fe9d7b8f914f"><mark class="highlight-red">Sostituzione polialfabetica</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#33af5df0-5655-44d7-9b80-3bc65d6d6217"><mark class="highlight-red">Le cifrature per trasposizione</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#cca835b4-97ea-4287-95b0-a797be2abe80"><mark class="highlight-red">Le griglie quadrate</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9eb4bf44-e890-4b2d-bd97-e168ba3c5da6"><mark class="highlight-red">Le griglie quadrate di rotazione</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#42482aa5-b3cc-41eb-be5e-264959c1a10c"><mark class="highlight-red">Il cifrario di Vigenère</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7ed93def-1ac6-4f24-9eb2-aa9f791e6a82"><mark class="highlight-red">Classe dei resti</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e201e3f8-31c9-4252-a521-3ab2a8a0cd92"><mark class="highlight-red">Numeri primi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8aae8c3c-f1b4-4eef-b872-9937a7b81667"><mark class="highlight-red">Teoremi di Euclide sui numeri primi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d352398a-df82-418e-8d37-cb03b2dfac3a"><mark class="highlight-red">Aritmetica modulare</mark> (calcolo del mod m)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bd0b71ca-322e-4613-b15c-218048f11f03"><mark class="highlight-red">Tipi di Crittografia</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#67eae66e-4abd-4736-a77e-ce6ae7d4cfbc"><mark class="highlight-red">Crittoanalisi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#94867d73-274e-4141-bf5a-d7a3538fdd4f"><mark class="highlight-red">Principio di KERCKHOFFS</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01efcac2-ed01-4c42-b7a1-9d8005d7a775"><mark class="highlight-red">La crittografia simmetrica, cifrari a sostituzione e a trasposizione</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#48fcb67f-1cb0-4439-9752-f572452319c1"><mark class="highlight-red">DES</mark> (data Encyption Standard)</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#0bc5b87b-83a2-480c-a8f4-85795fc07d49"><mark class="highlight-red">Storia</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#93566b7d-fbf0-4fc6-a2bc-193aecca0ef1">Le <mark class="highlight-red">basi </mark>del <mark class="highlight-red">DES</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e2234e6b-d429-4cfc-a641-7670f71f91cf">La <mark class="highlight-red">struttura </mark>del <mark class="highlight-red">DES</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#63084a1a-d3c0-45bd-b7a1-0643d5e2f8d7"><mark class="highlight-red">3DES</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#050aa1aa-9ac1-49a9-8c43-d20cdc10d5ad"><mark class="highlight-red">La crittografia asimmetrica (RSA), sicurezza nell’utilizzo delle chiavi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#881c3f0b-9a30-4151-9065-fc0998f3fb4a"><mark class="highlight-red">Calcolo delle chiavi RSA</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6921d94d-638f-421f-b1fc-0b3cfbe351e2"><mark class="highlight-red">Certificati e firma digitale</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e3eb93df-9efb-4e15-8083-82cc004178d0"><mark class="highlight-red">HTTP Request e HTTP Response</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6568b5bc-154a-4434-adeb-c0ef15c77cb7"><mark class="highlight-red">Header, Metodi e Codici di Stato HTTP</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#38a5c3da-d094-46f4-8ef0-cfebddf98d3b"><mark class="highlight-red_background">Header</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#49253afa-e7ef-42c3-b6b4-b458403b30d8"><mark class="highlight-red_background">Metodi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9767bb19-5e62-4d8e-ae2e-f98cc0a4cbbf"><mark class="highlight-red_background">Codici di Stato</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1ec27d0f-bee2-4e90-8623-0698b3450155"><mark class="highlight-red">Il modello client-server</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b097779-aac6-4379-98fd-64ed398d8acc"><mark class="highlight-red_background">Funzionamento</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2552759a-ab6e-4fb4-9382-f55d9d38b66a"><mark class="highlight-red_background">Esempi di servizi client - server</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#af751c4d-9632-48a4-9a3b-f10123b8bcb6"><mark class="highlight-red">Caratteristiche delle applicazioni client e delle applicazioni server</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d2397d73-338b-4228-a27c-a440a0da3e38"><mark class="highlight-red_background">Applicazioni client</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#83cd0ce2-a0b8-42cc-b5af-e1873f1d1535"><mark class="highlight-red_background">Applicazioni server</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9052a3be-58f1-42c7-b03a-b7a40b9da60b"><mark class="highlight-red">Livelli e Strati (Applicazioni Two-Tier, Three-Tier, Multi-Tier)</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#818615ed-a3ee-4366-b238-9916ac38541e"><mark class="highlight-red_background">Architettura One-Tier</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6120e109-1fc1-478d-b95a-d5b62051b79f"><mark class="highlight-red_background">Applicazioni Two-Tier</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2290ade7-2e1d-43d0-928a-a12daff78f2f"><mark class="highlight-red_background">Applicazioni Three-Tier</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bf041334-5d18-4ac0-af47-a888f0d26288"><mark class="highlight-red_background">Applicazioni Multi-Tier</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f25e12dc-9620-411e-80e7-7527dfad1e72"><mark class="highlight-red">HTML e CSS - Javascript</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d8981d1e-7cf0-42ed-b259-f9884cadeead"><mark class="highlight-red_background">Esempio HTML / CSS</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f07d4c72-cb5e-4443-92b7-b4f6163e9f64"><mark class="highlight-red_background">Esempio JavaScript</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a958e11d-e0d1-4064-9071-1fc99f23111b"><mark class="highlight-red">Protocolli SOAP, REST</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fee8aca2-3fcc-420c-9d46-3b315280861f"><mark class="highlight-red">XML e JSON; AJAX</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0417b295-8f45-4a16-b642-daa5c4f68fdb"><mark class="highlight-red_background">JSON</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#509e0422-6429-44ec-a2d3-3dac9441d7fa"><mark class="highlight-red_background">Esempio JSON</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#39605ce5-ec59-4b1d-aacf-868c9fd0f15d"><mark class="highlight-red_background">XML</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bd40424d-b6ea-432e-bfad-d40d8608b1d4"><mark class="highlight-red_background">AJAX</mark></a></div></nav><p id="4636dcfb-b5e2-46a4-a9dd-2bc2a6e9385a" class="">
+</p><p id="f4c5afb1-49d7-4f30-b052-dcffede4f96d" class="">
+</p><p id="69f94984-5cbf-4d1f-8308-f9ab18fd6d3e" class="">
+</p><h1 id="5939ff61-a56f-4a8a-a510-578f4e69b047" class=""><mark class="highlight-red">Crittografia </mark>(Teoria)</h1><p id="8ce01da0-c252-4a9f-b0fb-01107b5a43bb" class="">E’ la <mark class="highlight-red_background">scienza che studia come rendere segreta e sicura la comunicazione</mark> tra due persone o entità nascondendo il significato del messaggi.</p><p id="13143c01-82a1-4d21-a6c1-fcfc82bf64e3" class="">Con questo termine si intende oggi un insieme di tecniche che consentono di trasmettere messaggi mantenendoli segreti a tutti, tranne ad alcune persone che possiedano la chiave per comprenderli.</p><h2 id="dc83b402-0efb-469e-905b-3cfcb7eac49b" class=""><mark class="highlight-red">Definizioni</mark></h2><p id="fc547e1e-ed0b-4319-ac40-d195308dd4a1" class=""><mark class="highlight-red_background">Segretezza</mark>: il messaggio non deve essere leggibile a terzi.</p><p id="8113c12f-8803-4cec-b50f-df11184baac2" class=""><mark class="highlight-red_background">Autenticazione</mark>: il destinatario deve poter essere sicuro del mittente.</p><p id="f0e8b4e7-54a2-4684-8029-db3e1355c97e" class=""><mark class="highlight-red_background">Affidabilità dei documenti</mark>: si intende di avere la garanzia e la certezza che un documento sia originale, cioè che il suo mittente sia certo (ad esempio mediante l’apposizione su di esso di una firma digitale) e che non sia stato letto e/o alterato e modificato da altre persone non autorizzate.</p><p id="5cebd3cb-f2e6-4057-ae8f-a4fb0407ba89" class=""><mark class="highlight-red_background">Integrità</mark>: il destinatario deve poter essere sicuro che il messaggio non sia stato modificato.</p><p id="1e011ed7-6ffb-4e06-9d71-2361a421ff47" class=""><mark class="highlight-red_background">Attendibilità</mark>: il mittente non deve poter negare di aver inviato il messaggio.</p><p id="3efeaf9b-5b0d-4cba-9106-c2310e8fb496" class="">
+</p><p id="f1af3cbc-e500-4389-8d2a-fe575c659050" class=""><mark class="highlight-red_background">Cifratura</mark>: è l’operazione con la quale si nascondono le informazioni; essa viene effettuata tramite un procedimento chiamato cifrario.</p><p id="41ee49b1-8646-4c9f-a8a7-776c77df0c91" class=""><mark class="highlight-red_background">Testo in chiaro</mark>: è il messaggio da cifrare.</p><p id="b2cd2489-ddb8-4169-b3c4-845ef3580522" class=""><mark class="highlight-red_background">Testo cifrato</mark>: è il messaggio trasformato in modo da non essere più leggibile tramite una semplice lettura.</p><p id="eee13584-2685-41c0-a3ee-588ee1fe1514" class=""><mark class="highlight-red_background">Decifrazione</mark>: è la riconversione di un testo cifrato nella sua forma originaria, cioè nel testo in chiaro.</p><p id="a2ee59ca-31eb-468f-af22-c58576780cd6" class=""><mark class="highlight-red_background">Cifrario</mark>: è il procedimento (algoritmo) che consente di crittare e decrittare i testi.</p><p id="0407e48c-4803-4fc0-b022-1bc1abb68bb3" class="">Il processo di trasformazione dal messaggio in chiaro al messaggio cifrato e viceversa è spesso noto, ma si basa su una informazione specifica (detta “chiave”), senza la quale non si è in grado di operare.</p><h2 id="cc990f49-32c5-499c-938a-b7153bcd760b" class=""><mark class="highlight-red">Utilizzi moderni della crittografia</mark></h2><ul id="0ff0f363-6f66-4959-871d-1543e23540a3" class="bulleted-list"><li style="list-style-type:disc">L’uso più importante della crittografia in ambito “civile” è quella della sicurezza delle comunicazioni in rete.</li></ul><ul id="97071dab-847b-4776-bace-45ba014a86bf" class="bulleted-list"><li style="list-style-type:disc">Più in particolare le applicazioni di commercio elettronico sono quelle in cui maggiormente è sentita la necessità della sicurezza e della segretezza (scambio di dati sensibili, quali il numero di carta di credito, numero di conti bancari, ecc.)</li></ul><ul id="afc64a3c-93fe-4d69-91aa-ab37bce171af" class="bulleted-list"><li style="list-style-type:disc">Un altro utilizzo importante è quello della firma digitale e dell’autenticazione dei documenti, che ha applicazioni nella pubblica amministrazione (e-government) e in generale negli aspetti burocratici (contratti, domande, moduli, vari documenti ufficiali, ecc.)</li></ul><p id="9bd2d805-89a9-41d1-986e-574d4f1c9a0a" class="">
+</p><figure id="6fbc6aa4-0410-4785-b4a3-4368478bd378" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_165.png"><img style="width:528px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_165.png"/></a></figure><p id="f8a814d8-8401-41b3-be12-d495cba4d7d1" class="">
+</p><h2 id="9411c30a-2b91-4136-8f2e-6853a4e51407" class=""><mark class="highlight-red">Sostituzione monoalfabetica</mark></h2><ul id="e8022560-601b-4bfb-be65-1ca0fd1f439e" class="bulleted-list"><li style="list-style-type:disc">Il caso più generale è quello in cui <mark class="highlight-orange_background">l’alfabeto cifrato è una permutazione di quello in chiaro</mark>.</li></ul><ul id="123196a1-bbd0-4fb7-9c47-4d6b0ae723a3" class="bulleted-list"><li style="list-style-type:disc">La chiave della cifra è la lista delle cifre in ordine alfabetico; se si cifra con lettere dello stesso alfabeto sarà un alfabeto disordinato impossibile da ricordare a memoria.</li></ul><ul id="4effb45f-aade-473c-b655-8d043a8c2312" class="bulleted-list"><li style="list-style-type:disc">Un modo semplice per ricordare la permutazione è quello di usare una frase (chiave) le cui lettere fanno da inizio della lista (escludendo quelle ripetute), lasciando poi le altre lettere a seguire.</li></ul><p id="6e36d68d-e2fc-4e3b-948c-5f912fcdcd35" class=""><mark class="highlight-red_background">Sicurezza</mark>: </p><p id="891a7da9-6e85-4a47-bb18-7f1eadbd95a6" class="">Esistono 21!=51090942171709440000 permutazioni possibili, cioè circa 51 · 1018, ossia più di cinquanta miliardi di miliardi.</p><p id="327ef2e9-48bf-4b0b-8391-f91db2f3b208" class="">Una ricerca esaustiva per trovare la permutazione giusta è praticamente impossibile , eppure questo codice è tutt’altro che sicuro...</p><p id="bf88235f-9311-4fcb-9e82-89b514d951ec" class="">Usare simboli diversi al posto delle lettere non aumenta la difficoltà di decifratura.</p><p id="ac742ab9-b57a-426c-bb77-80176c98b438" class="">Nella crittoanalisi, <mark class="highlight-red_background">l&#x27;analisi delle frequenze</mark> è lo studio della frequenza di utilizzo delle lettere o gruppi di lettere in un testo cifrato. Questo metodo è utilizzato per violare i cifrari classici.</p><p id="9d9ac358-e8b9-430e-b457-dcbb44dbe0f3" class="">In particolare un primo metodo che si adotta in attività di crittanalisi si basa sul fatto che in ogni lingua la frequenza di uso di ogni lettera è piuttosto determinata; questo è vero in modo rigoroso solo per testi lunghi, ma spesso testi anche corti hanno frequenze non molto diverse da quelle previste.</p><h2 id="72651dfe-6a9d-4031-be6e-fe9d7b8f914f" class=""><mark class="highlight-red">Sostituzione polialfabetica</mark></h2><ul id="fbc901a7-0dfa-4da8-be95-a633e9aeb539" class="bulleted-list"><li style="list-style-type:disc">Un crittosistema per sostituzione polialfabetica non usa sempre lo stesso simbolo per la stessa lettera.</li></ul><ul id="ba7235c5-e472-478e-b549-5de8959450e9" class="bulleted-list"><li style="list-style-type:disc">Per <mark class="highlight-orange_background">ogni posizione</mark> del messaggio in chiaro viene <mark class="highlight-orange_background">usato un alfabeto diverso</mark>.</li></ul><ul id="783a6adb-be21-4bf7-a25f-1f64851156bc" class="bulleted-list"><li style="list-style-type:disc">Così si supera (parzialmente...) il problema della debolezza visto per i crittosistemi monoalfabetici.</li></ul><ul id="23bf78cb-fc5f-49d8-99a7-786c69b5a1ed" class="bulleted-list"><li style="list-style-type:disc">Infatti ha “meno” senso contare le frequenze di simboli, non essendoci piùcorrispondenza tra lettere in chiaro e simboli cifrati.</li></ul><h2 id="33af5df0-5655-44d7-9b80-3bc65d6d6217" class=""><mark class="highlight-red">Le cifrature per trasposizione</mark></h2><ul id="08cbe06f-effc-40be-8cbb-0139b7646466" class="bulleted-list"><li style="list-style-type:disc">I sistemi di trasposizione letterale consistono nel <mark class="highlight-orange_background">rimescolare i caratteri del testo chiaro secondo una qualche regola reversibile</mark>.</li></ul><ul id="ea6bcd89-01c1-47df-a4d3-99a3ce88b175" class="bulleted-list"><li style="list-style-type:disc">Le trasposizioni più semplici consistono nell&#x27;invertire il testo intero o le singole parole, soluzioni ovviamente debolissime dal punto di vista della segretezza.</li></ul><ul id="51385973-1ada-49cb-b21d-b0af7be97aff" class="bulleted-list"><li style="list-style-type:disc">Sistemi più impegnativi richiedono di disporre il testo su una matrice rettangolare, righe e colonne; la trasposizione più semplice consiste allora nel disporre il testo su n righe e quindi scambiare righe con colonne.</li></ul><ul id="58991de6-b5a0-4b12-9e35-3ae9037cb87d" class="bulleted-list"><li style="list-style-type:disc">Un po&#x27; più sofisticata l&#x27;idea di rimescolare le colonne in base a una parola chiave segreta trasposizione con chiave) o usando un qualche dispositivo come le griglie.</li></ul><ul id="f15f45be-0c9a-468b-8d9b-057a6bd94a46" class="bulleted-list"><li style="list-style-type:disc">L&#x27;uso dei sistemi a trasposizione declinò bruscamente con la nascita delle prime macchine cifranti, quasi tutte basate su sistemi di sostituzione letterale. Alla fine del XX secolo con l&#x27;avvento dei computer la trasposizione ha conosciuto una seconda giovinezza, a livello informatico è infatti facile realizzare sistemi di trasposizione anche molto complessi; oggi la trasposizione è usata soprattutto in combinazione (sovracifratura) con la sostituzione come nei cifrari DES e AES, dove però la trasposizione è a livello di blocchi di bit non più di lettere alfabetiche.<p id="c7bb9bdc-cbfb-49f1-ae51-12de78ede105" class="">Nei sistemi di trasposizione letterale il testo cifrato è un anagramma del testo originale; matematicamente si parla di una permutazione, e il numero di permutazioni possibili è dato dal fattoriale: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>n</mi><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mo>=</mo><mi>n</mi><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mtext>−</mtext><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mtext>−</mtext><mn>2</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">Pn=n!=n×(n−1)×(n−2)...1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">−1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">−2</span><span class="mclose">)</span><span class="mord">...1</span></span></span></span></span><span>﻿</span></span>
+In realtà questa è una stima per eccesso, valida solo se le n lettere sono tutte distinte, mentre è più probabile, quanto più lungo è il testo, che vi siano lettere ripetute; in tal caso le permutazioni possibili sono molte di meno; in generale vale la formula, per un testo di n lettere, con m lettere ripetute, la prima n1 volte, la seconda n2 volte, ecc.: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>n</mi><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>n</mi><mn>1</mn><mo stretchy="false">!</mo><mo>×</mo><mi>n</mi><mn>2</mn><mo stretchy="false">!</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Pn=n!/(n1!×n2!...)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">1</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">2</span><span class="mclose">!</span><span class="mord">...</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></p></li></ul><h3 id="cca835b4-97ea-4287-95b0-a797be2abe80" class=""><mark class="highlight-red">Le griglie quadrate</mark></h3><p id="0c76c583-3932-4edd-ae6e-beec667b78cc" class="">Le griglie sono uno dei sistemi per trasposizione più antichi e semplici; consistono di un cartoncino o lamina metallica o di legno, con una serie di fori. Il messaggio chiaro viene scritto nei fori secondo una qualche regola e il cifrato si ottiene leggendo i caratteri secondo una diversa regola, oppure muovendo la griglia secondo un ordine stabilito. Per decifrare si segue il procedimento inverso.</p><h3 id="9eb4bf44-e890-4b2d-bd97-e168ba3c5da6" class=""><mark class="highlight-red">Le griglie quadrate di rotazione</mark></h3><ul id="d34d5dfd-b812-498e-a0be-22288c15b51f" class="bulleted-list"><li style="list-style-type:disc">I fori devono essere la metà (griglia a due rotazioni) oppure un quarto (griglia a quattro rotazioni) del numero totale di caselle disponibili e devono essere disposti in modo da coprire tutte le caselle del quadrato una e una sola volta in quattro successive rotazioni.</li></ul><ul id="ad48423c-c387-4fb7-b87b-2c53439bbd57" class="bulleted-list"><li style="list-style-type:disc">Per cifrare si dispone la griglia nella posizione iniziale sopra un foglio di carta, e si scrive il messaggio nei fori disponibili fino ad esaurimento, quindi si ruota la griglia di 180° (due rotazioni) o 90° (quattro rotazioni) e si continua fino ad esaurimento del messaggio; se il messaggio è più breve del numero totale di caselle si possono riempire le caselle avanzate con nulle; se è più lungo si può ricominciare dalla posizione iniziale, oppure rovesciare la griglia...</li></ul><ul id="1bf2dc8e-ef9c-44e1-bd4f-3e1d7c3cf741" class="bulleted-list"><li style="list-style-type:disc">Più sicure e più usate sono le griglie a quattro rotazioni</li></ul><ul id="815a140f-36a5-4247-a89d-d86870cfeb17" class="bulleted-list"><li style="list-style-type:disc">La griglia deve essere vista come formata da quattro sottogriglie di ordine dimezzato, destinate a sovrapporsi l&#x27;un l&#x27;altra secondo 4 rotazioni di un angolo retto; queste sottogriglie devono essere formate da un numero divisibile per 4, se si vogliono distribuire uniformemente i fori; altrimenti qualsiasi quadrato di ordine pari è accettabile.</li></ul><h3 id="42482aa5-b3cc-41eb-be5e-264959c1a10c" class=""><mark class="highlight-red">Il cifrario di Vigenère</mark></h3><p id="50aed8b3-a34c-44be-8a5a-cd2286f86bce" class="">Come si è detto questo cifrario ha goduto per tre secoli la fama di essere un cifrario inattaccabile; nel 1863 il colonnello prussiano Friedrich Kasiski pubblicò un primo metodo di decrittazione. In realtà Anche se questa cifratura è molto più sicura di quella di Cesare, è anch&#x27;essa facilmente
+crackabile.</p><p id="1474c951-e60d-4bf7-8548-f9eef303927e" class="">La debolezza del Vigenère sta nell&#x27;essere, di fatto, un insieme di n cifrari di Cesare, dove n è la lunghezza della chiave; se il crittoanalista riesce a determinare la lunghezza della chiave (nel nostro caso, n) la decrittazione diventa molto semplice.</p><p id="4c2588dd-da9b-4a0c-970e-21970aaff981" class="">Per far ciò si possono utilizzare metodi statistici per trovare n, e successivamente applicare l&#x27;analisi delle frequenze a ciascun alfabeto cifrante. La parte più complicata sta dunque nello scoprire la lunghezza della chiave cifrante anche se la cosa non è impossibile. Nel testo cifrato infatti, se la chiave utilizzata è breve, vi saranno probabilmente delle serie di lettere ripetute.</p><p id="92b65f0e-31fa-400b-b687-e3d9a8b0aa9f" class="">Queste serie di lettere, se abbastanza lunghe (5-6 caratteri), saranno generate probabilmente dalla stessa parola in chiaro.</p><p id="1b2ca465-8656-46da-9f52-970af9afd4a9" class="">Basterà allora calcolare la distanza tra una parola e l&#x27;altra e la lunghezza della ripetizione per risalire alla lunghezza n della chiave. Così facendo si può capire quali lettere usano il primo alfabeto ifrante, quali il secondo, e così via procedendo poi con l&#x27;analisi delle frequenze per ciascun alfabeto.</p><p id="2d9e90ed-02e5-4597-90b2-30dbefb532cc" class="">Per evitare questo problema, una soluzione consiste nell&#x27;usare una chiave di dimensioni simili a quella del testo per rendere impossibile uno studio statistico del testo criptato. Questo tipo di sistema di cifratura è detto Sistema a chiave usa e butta. Il problema di questo metodo è la lunghezza della chiave di cifratura (più il testo da criptare è lungo, più la chiave deve essere voluminosa), che impedisce la sua memorizzazione e include una probabilità d&#x27;errore nella chiave maggiore (un solo errore rende il testo indecifrabile, ecc.).</p><ul id="f2e89869-4c4c-4ece-8748-6a4ddb54dfa8" class="bulleted-list"><li style="list-style-type:disc">I cifrari tradizionali sono oggi detti a chiave segreta in quanto richiedono che i due comunicanti debbano preventivamente concordare una chiave segreta.</li></ul><ul id="0b9cac02-c179-40b2-9089-4164115757aa" class="bulleted-list"><li style="list-style-type:disc">A differenza dei cifrari tradizionali, basati su una chiave segreta, questi cifrari usano anche una chiave pubblica, garantita da una qualche autorità.</li></ul><p id="8785a2af-6bff-49e3-8cdb-93b39a007c92" class="">
+</p><p id="d6f60a47-9b89-4e12-b023-d90c3cb4cac4" class="">Le misure da intraprendere per ottenere la segretezza possono essere anche affrontate in diversi livelli della pila protocollare: a livello fisico si può cercare di impedire che avvengano intercettazioni di dati, a livello di data link si possono introdurre codifiche dei dati trasmessi per renderli incomprensibili agli hacker.</p><p id="81c46774-7e04-417a-9ec5-029eb5a9e446" class="">È comunque il livello di applicazione che può gestire gli altri due problemi ed è su quello che noi concentreremo la nostra attenzione.</p><h3 id="7ed93def-1ac6-4f24-9eb2-aa9f791e6a82" class=""><mark class="highlight-red">Classe dei resti</mark></h3><p id="c268b0a0-aae1-400a-98ac-f3b53fc06524" class="">Dato un numero intero positivo X, i numeri interi si distribuiscono in X classi di resto modulo m, a seconda del resto che danno quando vengono divisi per m.</p><p id="c7efd2f2-3b4d-43ea-92ed-523c226a2ea9" class="">Valgono inoltre le seguenti due equivalenze:</p><p id="0035963f-ebbf-4b1b-9672-e20cb496f35a" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mi>X</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>+</mo><mi>Y</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X + Y)(mod m) = X(mod m) + Y(mod m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span>, e cioè: il resto di una somma è pari alla somma dei resti</p><p id="86a043e5-9f32-4aed-aaeb-78df01c918ca" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>X</mi><mi>Y</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mi>X</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mi>Y</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X Y)(mod m) = X(mod m) Y(mod m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span>, e cioè: il resto di un prodotto è pari al prodotto dei resti.</p><p id="e30349ec-f8ef-4b51-abbe-4ca8b8f65139" class="">L’equivalenza sul prodotto conduce alla importante equivalenza sul quadrato: il resto di un quadrato è pari al quadrato del resto</p><figure id="1dd4e5e8-c111-44fb-b819-7e29fca16c8f" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>X</mi><mn>2</mn><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>X</mi><mo separator="true">⋅</mo><mi>X</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mi>x</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo separator="true">⋅</mo><mi>x</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mi>R</mi><mo separator="true">⋅</mo><mi>R</mi><mo>=</mo><mi>R</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">X2 (mod m) = (X · X)(mod m) = x(mod m) · x(mod m) = R · R = R2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord">2</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord">2</span></span></span></span></span></div></figure><p id="c7e37b4e-697d-4c71-b213-d72687478f71" class="">Grazie a questa equivalenza sarà possibile determinare resti di divisioni fra numeri con un incalcolabile numero di cifre, base della crittografia a chiave pubblica che utilizza i numeri primi.</p><p id="ab8ddf4c-766f-4639-900a-bad27860f5b4" class="">
+</p><figure id="705d229b-c316-4951-9cf8-fa084885987b" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_170.png"><img style="width:491px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_170.png"/></a></figure><p id="a062ceae-dce3-4e19-8b70-7c42ca0084fa" class="">
+</p><h3 id="e201e3f8-31c9-4252-a521-3ab2a8a0cd92" class=""><mark class="highlight-red">Numeri primi</mark></h3><p id="6a315d2e-ece8-4203-b1ea-2caee8f383a6" class="">I numeri primi sono stati oggetto di studio dai matematici di ogni periodo storico: tutti sanno che un numero primo non è rappresentabile come prodotto di interi che lo precedono e si dice primo se è divisibile esattamente solo per 1 e per se stesso.</p><h3 id="8aae8c3c-f1b4-4eef-b872-9937a7b81667" class=""><mark class="highlight-red">Teoremi di Euclide sui numeri primi</mark></h3><ul id="ff031140-c5d7-4def-a6d5-5514e523f60b" class="bulleted-list"><li style="list-style-type:disc">Primo Teorema di Euclide: ogni numero intero N si scrive in modo unico (a parte l’ordine) come prodotto di numeri primi.</li></ul><ul id="2108fcfb-b629-4949-8386-030d6126b1d8" class="bulleted-list"><li style="list-style-type:disc">Secondo Teorema di Euclide: i numeri primi formano una successione infinita.</li></ul><h2 id="d352398a-df82-418e-8d37-cb03b2dfac3a" class=""><mark class="highlight-red">Aritmetica modulare</mark> (calcolo del mod m)</h2><p id="b649ed54-4c12-4bf3-b286-3c01d73da232" class="">Nella aritmetica modulare il quoziente nell’operazione di divisione è irrilevante mentre unica importanza lo assume il resto, e viene così indicato:</p><p id="c28b4161-6913-4308-b643-4144a80e05d0" class="">Q il quoziente della divisione fra il dividendo X e il divisore m, mentre è R il resto e viene indicato con la seguente notazione: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">X(mod m) = R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></span><span>﻿</span></span> che si legge: “X modulo m è uguale a R” e si dice anche “R è congruo a X modulo m”.</p><p id="9043b799-3845-4168-9cb5-d7b481869395" class="">
+</p><figure id="35500a98-089c-4f6f-a63f-b1fca3f1548f" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_169.png"><img style="width:462px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_169.png"/></a></figure><p id="6abb2011-bfdc-4d33-9925-71d52c1a198a" class="">
+</p><p id="11d52e9f-5c16-4b86-b266-e941e6b00d66" class="">Possiamo fare tre <mark class="highlight-red_background">osservazioni sul resto</mark> R:</p><ul id="2606f1cc-5b7b-47f2-96fa-95df00ca3a62" class="bulleted-list"><li style="list-style-type:disc">vale sempre la relazione R &lt; m;</li></ul><ul id="43e16623-3ddd-4a5d-899f-31e828208506" class="bulleted-list"><li style="list-style-type:disc">tutti i possibili resti sono in numero pari a m e con valori compresi fra 0 e m – 1, e l’insieme dei resti viene indicato con Zn = { 0, 1, 2, ..., n – 1};</li></ul><ul id="2026210d-2f38-4e89-895f-42d62a174c24" class="bulleted-list"><li style="list-style-type:disc">se X &lt; m allora X(mod m)=X.</li></ul><h2 id="bd0b71ca-322e-4613-b15c-218048f11f03" class=""><mark class="highlight-red">Tipi di Crittografia</mark></h2><p id="093720cb-bcaa-4971-bc02-e2d42fbaebfc" class="">Naturalmente le regole di cifratura devono essere note sia al mittente del messaggio che al destinatario, in modo che quest’ultimo possa, alla sua ricezione, effettuarne il decriptaggio e comprenderne il significato.</p><p id="269ffef6-d998-4e04-bbce-25a91f06d1af" class="">
+</p><figure id="7cfdf32e-02d6-4337-8257-b57a25583a20" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_166.png"><img style="width:307px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_166.png"/></a></figure><p id="9e0de6da-88c6-4f28-b1f6-781f11983162" class="">La <mark class="highlight-red">regola di cifratura</mark> è generalmente composta da due elementi:</p><ul id="f66c3f7e-57f6-4783-bc3b-9e7b0bba1338" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">La regola vera e propria (l’algoritmo utilizzato)</mark>, che in questo caso consiste nella “sostituzione di un carattere con un altro”;</li></ul><ul id="67c4ec3c-96a5-4bd8-9664-2e42ba6d8b41" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Uno (o più) parametri</mark>, in questo caso la posizione del carattere da prendere (nell’esempio il successivo a quello in chiaro: se invece si fosse trasmesso CMZVQ le posizioni sarebbero state due in avanti).</li></ul><p id="2b883bea-be04-4b44-9bdd-27dc76d44c94" class="">Quando la <mark class="highlight-red_background">chiave di cifratura coincide</mark> con quella di decifratura lo schema crittografico si dice <mark class="highlight-red">simmetrico</mark> e la chiave prende il nome di <mark class="highlight-red">chiave comune</mark>.</p><figure id="61df7766-c845-4eed-9bbc-bfa8cb6a2941" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_167.png"><img style="width:505px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_167.png"/></a></figure><p id="7d891272-8883-46eb-b70c-ee377b31a546" class="">Quando la <mark class="highlight-red_background">chiave di cifratura</mark> è invece <mark class="highlight-red_background">diversa </mark>da quella usata per la decifratura lo schema crittografico si dice <mark class="highlight-red">asimmetrico </mark>e le due chiavi si chiamano <mark class="highlight-red">chiave pubblica</mark> quella usata per la cifratura, che è comune a tutti i mittenti e di pubblico dominio, e <mark class="highlight-red">chiave privata</mark> quella utilizzata per la decifratura, che è segreta e di conoscenza solo del destinatario del messaggio.</p><figure id="77b6f90b-8c6d-4037-a3b2-45c0bd778677" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_168.png"><img style="width:505px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_168.png"/></a></figure><p id="2999b16e-f0a2-4eca-b109-9ca274945a98" class="">Questo procedimento è alla base della moderna sicurezza delle reti: il mittente non deve comunicare col destinatario o accordarsi preventivamente, ma utilizza la chiave pubblica del destinatario che, proprio perché pubblica, è a disposizione di tutti, e con essa prepara il messaggio da trasmettere criptandolo in modo tale che solo chi è in possesso della chiave privata lo può decriptare.</p><h2 id="67eae66e-4abd-4736-a77e-ce6ae7d4cfbc" class=""><mark class="highlight-red">Crittoanalisi</mark></h2><p id="005f07ce-7d8c-4843-9c7c-c5aeb700bf03" class="">Generalmente l’algoritmo di cifratura è noto e standardizzato, quindi conosciuto e soggetto a crittoanalisi da parte dei malintenzionati per individuare la chiave utilizzata e quindi decriptare il messaggio</p><ul id="22043279-6895-4acd-8397-1b44aa7adbe9" class="bulleted-list"><li style="list-style-type:disc">è l&#x27;arte della &quot;rottura&quot; dei codici e dei cifrari.</li></ul><ul id="27175b7c-8203-4bda-aa44-b5cd3dbbee45" class="bulleted-list"><li style="list-style-type:disc">La crittoanalisi <mark class="highlight-orange_background">studia come decifrare un messaggio senza esserne “autorizzati”</mark>.</li></ul><ul id="d0a63605-d7d1-45b3-95f7-2a3d254e225b" class="bulleted-list"><li style="list-style-type:disc">La decrittazione è la riconversione di un testo cifrato nella sua forma originaria, cioè nel testo in chiaro , senza essere in possesso della chiave.</li></ul><ul id="4d90fd67-7c5f-4950-90e6-3b8e2a68a178" class="bulleted-list"><li style="list-style-type:disc">E’ lo studio dei metodi perottenere il signifi cato di informazioni cifrate: tipicamente si tratta delle operazioni effettuate alla ricerca della chiave segreta.</li></ul><ul id="a74eb5b9-50eb-43bd-81f7-93fa094592f8" class="bulleted-list"><li style="list-style-type:disc">La crittoanalisi ha il ruolo fondamentale di far capire quanto un sistema di cifratura/decifratura sia sicuro.</li></ul><h3 id="94867d73-274e-4141-bf5a-d7a3538fdd4f" class=""><mark class="highlight-red">Principio di KERCKHOFFS</mark></h3><p id="61efcf37-ecf2-476d-8fdf-bb9df023f0f0" class="">La sicurezza di un crittosistema deve <mark class="highlight-orange_background">dipendere solo dalla segretezza della chiave</mark> e non dalla segretezza dell’algoritmo usato.</p><h1 id="01efcac2-ed01-4c42-b7a1-9d8005d7a775" class=""><mark class="highlight-red">La crittografia simmetrica, cifrari a sostituzione e a trasposizione</mark></h1><p id="0b10dc8c-d285-45f7-8c6d-7dcd89a36dba" class="">La <mark class="highlight-red_background">crittografia simmetrica</mark> è un tipo di crittografia che utilizza <mark class="highlight-orange_background">una sola chiave per cifrare e decifrare i messaggi</mark>. In questo tipo di crittografia, la stessa chiave è utilizzata sia dal mittente che dal destinatario per cifrare e decifrare il messaggio.</p><p id="0b98d575-8669-468c-a379-972a204694fb" class="">I <mark class="highlight-red_background">cifrari a sostituzione</mark> sono un tipo di crittografia simmetrica che sostituiscono ogni carattere del messaggio originale con un altro carattere o simbolo. In genere, la sostituzione avviene in base ad una tabella di sostituzione predefinita, detta alfabeto segreto. Un esempio di cifrario a sostituzione è il cifrario di Cesare, che sostituisce ogni lettera del messaggio originale con la lettera spostata di un certo numero di posizioni nell&#x27;alfabeto.</p><p id="37d58b77-f553-4251-8482-6e64c6434c37" class="">I <mark class="highlight-red_background">cifrari a trasposizione</mark>, invece, sono un tipo di crittografia simmetrica che rimescolano le lettere del messaggio originale. In questo tipo di cifrario, l&#x27;ordine delle lettere del messaggio viene cambiato in base ad una chiave segreta, detta chiave di trasposizione. Un esempio di cifrario a trasposizione è il cifrario di Colonna, che organizza le lettere del messaggio originale in colonne sulla base della chiave di trasposizione e poi le legge in righe.</p><p id="8ecccfcb-dafe-4407-8bd6-2aa4b1580e33" class="">In entrambi i casi, la crittografia simmetrica e i cifrari a sostituzione e a trasposizione sono tecniche che possono essere utilizzate per proteggere la privacy dei messaggi scambiati tra due parti. Tuttavia, questi metodi di crittografia possono essere vulnerabili ad attacchi di tipo brute-force o attacchi di crittanalisi, per cui è necessario utilizzare tecniche più avanzate di crittografia come la crittografia asimmetrica.</p><h2 id="48fcb67f-1cb0-4439-9752-f572452319c1" class=""><mark class="highlight-red">DES</mark> (data Encyption Standard)</h2><div id="2d5ad665-1ef7-4bb0-8869-2bd85827e10f" class="column-list"><div id="ae511e05-ca2b-4f12-a90c-b80b516475ef" style="width:50%" class="column"><h3 id="0bc5b87b-83a2-480c-a8f4-85795fc07d49" class=""><mark class="highlight-red">Storia</mark></h3><ol type="1" id="f1c0df6b-4f7b-48ce-8a94-9b40f8b210b7" class="numbered-list" start="1"><li>1973: Il National Bureau of Standards (NBS) pubblica un bando in cui richiede un algoritmo di cifratura:<ul id="578bcb9f-6cdf-430b-98c2-b277cd9d319a" class="bulleted-list"><li style="list-style-type:disc">La cui sicurezza risiedesse nella segretezza della chiave e non nel processo di cifratura</li></ul><ul id="df2ed275-d290-44d7-bd48-2b74e065c830" class="bulleted-list"><li style="list-style-type:disc">Che potesse essere realizzato efficientemente a livello hardware</li></ul></li></ol><ol type="1" id="0b5d3fcc-024b-4117-b97c-0b7baf6a9514" class="numbered-list" start="2"><li>IBM propone una prima versione del DES</li></ol><ol type="1" id="99ef714e-6f8a-40ad-bd00-5e6c4289f395" class="numbered-list" start="3"><li>NSA (National Security Agency) lo certifica ma propone delle variazioni:<ul id="2be43b97-54eb-4e75-acfd-b65557b4e11e" class="bulleted-list"><li style="list-style-type:disc">Riduzione della lunghezza della chiave, da 128 bit a 56 bit</li></ul><ul id="f4a62ac8-046c-497d-af2a-4376ac934eec" class="bulleted-list"><li style="list-style-type:disc">Modifica delle funzioni contenute nelle S-box</li></ul></li></ol><ol type="1" id="d3a2f5c6-d076-4107-b3d1-1cca9003de8a" class="numbered-list" start="4"><li>1977: DES viene accettato e reso pubblicamente disponibile.<ul id="8bd2c20d-bcbf-4e3c-86b8-137a92018b8c" class="bulleted-list"><li style="list-style-type:disc">Primo cifrario certificato ufficialmente come sicuro e noto a tutti.</li></ul><ul id="6ee30661-c14f-459e-8443-888c6e62049c" class="bulleted-list"><li style="list-style-type:disc">Certificato ufficialmente ogni 5 anni</li></ul></li></ol><ol type="1" id="b24636c3-8a0c-4f23-9bf2-c790529a93a8" class="numbered-list" start="5"><li>1987: Prime manifestazioni di sfiducia sul DES</li></ol><ol type="1" id="0925b4ba-58ea-45c3-b030-93f4ccdfd272" class="numbered-list" start="6"><li>1998: Il DES viene rotto</li></ol><ol type="1" id="7c07f14d-7310-41fc-bc83-212cb49b7343" class="numbered-list" start="7"><li>2000: NBS sceglie il successore del DES, denominato Advanced Encryption Standard (AES).</li></ol><p id="4d79765d-732c-45c5-a60c-bdb12353f11d" class="">
+</p></div><div id="69249d2d-e707-4206-8827-2a24966d0fef" style="width:50%" class="column"><figure id="4a6cf330-d767-4000-a990-36d86cf0cb67" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_174.png"><img style="width:384px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_174.png"/></a></figure><p id="9ef9462e-2399-4238-8d23-14695c04fd0a" class="">
+</p></div></div><h3 id="93566b7d-fbf0-4fc6-a2bc-193aecca0ef1" class="">Le <mark class="highlight-red">basi </mark>del <mark class="highlight-red">DES</mark></h3><p id="4fc7c022-c70e-47b6-90b3-069090e9474c" class="">Proprietà desiderabili di un algoritmo di cifratura secondo Shannon.</p><ul id="3d66247f-248d-4c54-a226-a0437774711b" class="bulleted-list"><li style="list-style-type:disc">Diffusione: Alterare la struttura del testo in chiaro “spargendo” i caratteri su tutto il testo cifrato.</li></ul><ul id="f40ea3b9-207e-492f-9964-d382231a175c" class="bulleted-list"><li style="list-style-type:disc">Confusione: Combinare in modo complesso il messaggio e la chiave, per non permettere al crittoanalista di separare le due sequenze mediante l’analisi del crittogramma.</li></ul><h3 id="e2234e6b-d429-4cfc-a641-7670f71f91cf" class="">La <mark class="highlight-red">struttura </mark>del <mark class="highlight-red">DES</mark></h3><ul id="2e78fd8e-3968-4946-ad7d-017bb0183f8d" class="bulleted-list"><li style="list-style-type:disc">Un blocco di testo in chiaro (64 bit) viene permutato dal blocco IP, il risultato di questa permutazione andrà in ingresso alla prima iterazione.</li></ul><ul id="101a28df-da58-4f76-bf7f-ddbec1a4eb3d" class="bulleted-list"><li style="list-style-type:disc">In ogni iterazione il blocco di 64 bit viene opportunamente mescolato con una Kiesima chiave.</li></ul><ul id="31df28bf-7aa9-4c1b-96e1-30f88a846d7e" class="bulleted-list"><li style="list-style-type:disc">In tutto 16 iterazioni.</li></ul><ul id="a2df71fe-ec61-4d72-9b37-ae0c4f8f81df" class="bulleted-list"><li style="list-style-type:disc">Dopo le 16 iterazioni al testo di 64 bit oramai cifrato viene applicata la permutazione iniziale inversa IP^-1</li></ul><div id="eab430bc-1739-4a27-8c02-0986e6ec01ad" class="column-list"><div id="3b7bf247-9fca-4ae5-b0fe-7f150b125751" style="width:50%" class="column"><h2 id="63084a1a-d3c0-45bd-b7a1-0643d5e2f8d7" class=""><mark class="highlight-red">3DES</mark></h2><p id="ea89fc7c-458f-4071-98f6-1146c87efaad" class="">Nel 1999 è stato introdotto il Triple DES, con <mark class="highlight-orange_background">3 passaggi di cifratura DES consecutivi con 3 chiavi diverse</mark> per un totale di 168 bit: la maggiore sicurezza rispetto a quella del DES è proprio nella lunghezza tripla della chiave.</p><p id="a11d1a28-4139-40ac-9dd1-788f281aeb03" class="">
+</p></div><div id="f7d9e8be-187d-47c5-9c11-7f49a2f29cda" style="width:50%" class="column"><figure id="757eca0a-8819-49ed-9843-d0c0032aab8e" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled.png"><img style="width:576px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled.png"/></a></figure></div></div><h1 id="050aa1aa-9ac1-49a9-8c43-d20cdc10d5ad" class=""><mark class="highlight-red">La crittografia asimmetrica (RSA), sicurezza nell’utilizzo delle chiavi</mark></h1><p id="7e08b5e3-769f-4ef0-984b-be7103f1a148" class="">La crittografia asimmetrica, conosciuta anche come crittografia a chiave privata, è un sistema di crittografia che utilizza due chiavi distinte anziché una sola. Una delle chiavi è nota come chiave pubblica e può essere diffusa liberamente, mentre l&#x27;altra è nota come chiave privata e deve essere mantenuta segreta dall&#x27;utente.</p><p id="b562ff6d-bcf4-401b-9e7c-2015b9f4537c" class=""><mark class="highlight-red_background">L&#x27;algoritmo di crittografia più comune utilizzato nella crittografia asimmetrica è RSA</mark>, che prende il nome dai suoi tre creatori: Ron Rivest, Adi Shamir e Leonard Adleman. L&#x27;RSA è stato sviluppato negli anni &#x27;70, ma è ancora ampiamente utilizzato oggi per proteggere le comunicazioni su Internet.</p><p id="e363c1ac-cf13-4bc1-8fbf-78c46afe3b00" class="">La <mark class="highlight-red_background">sicurezza </mark>nella crittografia asimmetrica <mark class="highlight-red_background">dipende dalla sicurezza delle chiavi</mark>. La chiave privata deve essere protetta con cura, poiché se caduta nelle mani sbagliate, può essere utilizzata per decifrare i messaggi crittografati con la chiave pubblica. Inoltre, la chiave pubblica deve essere autenticata in modo che l&#x27;utente possa essere sicuro di aver ricevuto la chiave pubblica corretta e non una chiave fraudolenta.</p><p id="793329f4-0c14-469e-ae2f-956bf4b0d02b" class="">Per garantire la sicurezza nella crittografia asimmetrica, sono stati sviluppati molti protocolli di sicurezza, tra cui il protocollo <mark class="highlight-red_background">SSL/TLS</mark> utilizzato per proteggere le comunicazioni su Internet. Questi protocolli utilizzano la crittografia asimmetrica per stabilire una connessione sicura tra i due utenti, e poi passano a un sistema di crittografia simmetrica per il resto della comunicazione.</p><p id="64ec6e47-bfa7-46cc-b952-b69554f362e5" class="">In conclusione, la crittografia asimmetrica è un importante strumento per proteggere le comunicazioni su Internet, ma la sicurezza dipende dalla protezione delle chiavi e dall&#x27;adozione di protocolli di sicurezza adeguati.</p><h2 id="881c3f0b-9a30-4151-9065-fc0998f3fb4a" class=""><mark class="highlight-red">Calcolo delle chiavi RSA</mark></h2><div id="6851533c-21f8-4882-93d9-3c94c711b287" class="column-list"><div id="073204c0-5149-4ecd-8f06-da20f61648b3" style="width:50%" class="column"><p id="c2cb0fe2-24d5-4030-af03-c199fdf9f991" class="">Vediamo come funziona RSA con due persone, A e B, che vogliono scambiarsi i messaggi. A è l’utente che genera due chiavi pubbliche (utilizziamo per l’esempio numeri primi piccoli).</p><ul id="473a3093-69f9-4f83-84bc-8e98f1173c8b" class="bulleted-list"><li style="list-style-type:disc">A genera due numeri primi distinti p e q e li moltiplica tra di loro ottenendo il numero N che viene reso pubblico, mentre p e q devono restare segreti.
+Esempio:<mark class="highlight-orange_background">
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>5</mn><mo separator="true">;</mo><mi>q</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">p = 5; q = 11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">11</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background">
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∗</mo><mi>q</mi><mo>=</mo><mn>5</mn><mo>∗</mo><mn>11</mn><mo>=</mo><mn>55</mn></mrow><annotation encoding="application/x-tex">p * q = 5 * 11 = 55</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6597200000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">11</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">55</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background">
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>55</mn></mrow><annotation encoding="application/x-tex">N = 55</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">55</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background">, prima chiave pubblica</mark></li></ul><ul id="85b22e43-58e8-4f0c-94cf-f849d272f5b6" class="bulleted-list"><li style="list-style-type:disc">A calcola b (funzione di Eulero):<p id="7f8978f5-ba6d-4f7e-84f5-5835c9d99b50" class=""> <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>p</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>∗</mo><mo stretchy="false">(</mo><mi>q</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">b = Φ(n) = (p-1)*(q-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Φ</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span>. Il numero b deve restare segreto.
+Esempio:</p><p id="82213fc9-b4f5-41e1-8ace-0b7309d440a1" class="">Φ(55) = (5 - 1) * (11 - 1) = 4 * 10 = 40
+b = 40</p></li></ul></div><div id="82c73a9c-8812-458b-b57d-daca9f8482cc" style="width:49.99999999999999%" class="column"><figure id="6f608f29-13c4-46a9-af2a-ce246965c3ab" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled.jpeg"><img style="width:624px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled.jpeg"/></a></figure><figure id="4d4f6457-7a08-44ff-ae42-60cd4db3a4bf" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled%201.jpeg"><img style="width:624px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled%201.jpeg"/></a></figure><figure id="6fee71ea-b58e-4c41-aafd-e479020a2552" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled%202.jpeg"><img style="width:1209px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Untitled%202.jpeg"/></a></figure><p id="5e15233b-5f99-4abf-b71f-f147d2278c44" class="">
+</p></div></div><ul id="1e824d9d-0c02-460c-8e97-104e0fd70110" class="bulleted-list"><li style="list-style-type:disc">A calcola il primo intero e che sia primo con b (non abbia divisori in comune, ovvero <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>C</mi><mi>D</mi><mo stretchy="false">(</mo><mi>e</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">MCD(e, b) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">MC</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span>). Il numero e è la seconda chiave pubblica.
+Esempio:<p id="d491f708-9f0d-4215-a70b-b068e77fe650" class=""><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">e = 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> perchè </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>C</mi><mi>D</mi><mo stretchy="false">(</mo><mn>3</mn><mo separator="true">,</mo><mn>40</mn><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">MCD(3, 40) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">MC</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">40</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background">
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">e = 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> seconda chiave pubblica</mark></p></li></ul><ul id="ac2aaa84-7972-4387-9cf2-7774434e3b57" class="bulleted-list"><li style="list-style-type:disc">A calcola il numero d inverso di e nella classe di congruenza modulo b, che è il più piccolo x per cui sia <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∗</mo><mi>d</mi><mi>m</mi><mi>o</mi><mi>d</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">e * d mod (b) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span>; il numero d é la chiave per decifrare e deve restare segreta, chiave privata. Per il calcolo di d è efficiente un&#x27;estensione del classico algoritmo di Euclide per l&#x27;MCD ( detto anche teorema cinese del resto), noi invece useremo semplice metodo a tentativi:
+Esempio:<p id="26ae5a29-91e4-4c7a-85d9-2f23dc11e17c" class=""><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d = 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> -&gt; </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.3</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">2.3 mod 40 = 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2.3</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> NO
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">d = 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> -&gt; </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.3</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">3.3 mod 40 = 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">3.3</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> NO
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">d = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> -&gt; </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.3</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">4.3 mod 40 = 12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">4.3</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">12</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> NO
+...
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">d = 26</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">26</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> -&gt; </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>26.3</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>78</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>38</mn></mrow><annotation encoding="application/x-tex">26.3 mod 40 = 78 mod 40 = 38</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">26.3</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">78</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">38</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> NO
+</mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">d = 27</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">27</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> -&gt; </mark><mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>27.3</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>81</mn><mi>m</mi><mi>o</mi><mi>d</mi><mn>40</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">27.3 mod 40 = 81 mod 40 = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">27.3</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">81</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord">40</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span></mark><mark class="highlight-orange_background"> SI</mark>
+<mark class="highlight-orange_background"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">d = 27</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">27</span></span></span></span></span><span>﻿</span></span></mark></p></li></ul><h1 id="6921d94d-638f-421f-b1fc-0b3cfbe351e2" class=""><mark class="highlight-red">Certificati e firma digitale</mark></h1><ul id="13a7cf6a-6cc1-4ba7-b8ea-cb39ee92b4ab" class="bulleted-list"><li style="list-style-type:disc">La <mark class="highlight-red_background">firma digitale</mark> è un <mark class="highlight-orange_background">sistema di cifratura basata sulla crittografia asimmetrica</mark> di documenti elettronici che <mark class="highlight-orange_background">garantisce l&#x27;autenticità dell&#x27;autore e la validità del contenuto</mark>, è basata su un <mark class="highlight-red_background">certificato elettronico</mark>, che è un documento digitale che identifica l&#x27;autore della firma.</li></ul><ul id="604cd811-1b28-4810-8ca0-6138afb20b01" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-red_background">certificato digitale</mark> è rilasciato da un&#x27;autorità di certificazione (CA), che è un&#x27;organizzazione che verifica l&#x27;identità dell&#x27;utente e garantisce la validità del certificato ed è responsabile della gestione e del controllo dei certificati digitali.</li></ul><p id="6e93f84a-c5b4-4aa7-8b8f-f13f4f4e2605" class="">I certificati digitali sono utilizzati per garantire la sicurezza delle transazioni elettroniche, come la firma di contratti, la trasmissione di dati sensibili e la gestione di documenti legali. La firma digitale è considerata legale e vincolante in molti paesi, compresi gli Stati Uniti e l&#x27;Unione Europea.</p><p id="b9b09424-5670-4561-a602-4b25d411c6b4" class="">La firma digitale è un modo sicuro e affidabile per garantire l&#x27;autenticità e la validità dei documenti elettronici. Grazie ai certificati digitali, gli utenti possono essere certi che un documento è stato firmato da una persona specifica e che il contenuto del documento non è stato alterato in alcun modo.</p><p id="72ff7a2e-54ac-4c6b-97f5-97cb8157b064" class=""><mark class="highlight-orange_background">RSA è uno degli algoritmi di crittografia a chiave pubblica più utilizzati per la firma digitale</mark> a causa della sua sicurezza e della sua efficienza. Tuttavia, ci sono anche altri algoritmi di crittografia a chiave pubblica che possono essere utilizzati per implementare la firma digitale, come ad esempio il DSA (Digital Signature Algorithm) e l&#x27;ECDSA (Elliptic Curve Digital Signature Algorithm).</p><p id="de56aded-2095-42f1-afd4-ec431204970f" class="">La firma digitale viene solitamente <mark class="highlight-orange_background">salvata in un file separato con estensione &quot;.p7s&quot; o &quot;.p7m&quot;</mark>, a seconda del formato utilizzato. Il formato &quot;.p7s&quot; è utilizzato per la firma digitale con crittografia asimmetrica (ad esempio, RSA), mentre il formato &quot;.p7m&quot; è utilizzato per la firma digitale con crittografia simmetrica.</p><h1 id="e3eb93df-9efb-4e15-8083-82cc004178d0" class=""><mark class="highlight-red">HTTP Request e HTTP Response</mark></h1><p id="d78ee322-22e4-47af-914e-488ef76927d4" class="">L&#x27;HTTP (Hypertext Transfer Protocol) è un protocollo di comunicazione che permette il trasferimento di dati tra il client (ad esempio il browser web) e il server web.</p><ul id="3f64c4ac-f3eb-4805-bc67-34eb2c684e27" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">L&#x27;HTTP Request</mark> è il <mark class="highlight-orange_background">messaggio inviato dal client al server</mark>, contenente informazioni sulla risorsa richiesta, il metodo di richiesta (GET, POST, PUT, DELETE, ecc.) e altri parametri come i dati del form.</li></ul><ul id="605cd254-7e1d-499a-885d-4f57089f0b74" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">L&#x27;HTTP Response</mark> è invece la <mark class="highlight-orange_background">risposta del server alla richiesta inviata dal client</mark>. Essa contiene i dati richiesti, come ad esempio il contenuto di una pagina web, e informazioni supplementari come il codice di stato HTTP, che indica lo stato del processo della richiesta.</li></ul><p id="cca55562-741a-4c9e-930d-cb5f4d63b90c" class="">Esistono molti codici di stato HTTP, tra cui il più comune è il codice 200 OK, che indica che la richiesta è stata completata con successo. Altri codici di stato comuni includono il 404 Not Found, che indica che la risorsa richiesta non è stata trovata, o il 500 Internal Server Error, che indica un errore interno del server.</p><h1 id="6568b5bc-154a-4434-adeb-c0ef15c77cb7" class=""><mark class="highlight-red">Header, Metodi e Codici di Stato HTTP</mark></h1><p id="7216c232-c0fa-4bd2-a66c-94bc04723e9d" class="">HTTP, acronimo di Hypertext Transfer Protocol, è un protocollo di comunicazione utilizzato per lo scambio di dati tra il client e il server su una rete di computer. In questo documento, verranno trattati i tre aspetti chiave di HTTP: header, metodi e codici di stato.</p><h2 id="38a5c3da-d094-46f4-8ef0-cfebddf98d3b" class=""><mark class="highlight-red_background">Header</mark></h2><p id="e23302b5-80b3-46ae-8813-a074b898929d" class="">L&#x27;header HTTP è una <mark class="highlight-orange_background">sezione dell&#x27;intera richiesta o della risposta</mark>, che <mark class="highlight-orange_background">contiene informazioni aggiuntive sulle richieste e sulle risposte</mark>. Ci sono diversi tipi di header HTTP, come l&#x27;header generale, l&#x27;header della richiesta, l&#x27;header della risposta e l&#x27;header dell&#x27;entità. L&#x27;header generale viene utilizzato per le informazioni che si applicano all&#x27;intera richiesta o risposta. L&#x27;header della richiesta viene utilizzato per le informazioni specifiche della richiesta inviata al server. L&#x27;header della risposta viene utilizzato per le informazioni specifiche della risposta ricevuta dal server. L&#x27;header dell&#x27;entità viene utilizzato per le informazioni relative all&#x27;entità inviata o ricevuta.</p><h2 id="49253afa-e7ef-42c3-b6b4-b458403b30d8" class=""><mark class="highlight-red_background">Metodi</mark></h2><p id="0d02a8bd-eab1-4101-b913-1e53b06bd934" class="">I metodi HTTP sono i <mark class="highlight-orange_background">comandi utilizzati per indicare l&#x27;azione richiesta dal client</mark>. I metodi HTTP più comuni sono <mark class="highlight-orange_background">GET, POST, PUT, DELETE, HEAD e OPTIONS</mark>. Il metodo <mark class="highlight-orange_background">GET</mark> viene utilizzato per richiedere una risorsa specifica dal server. Il metodo <mark class="highlight-orange_background">POST</mark> viene utilizzato per inviare dati al server per essere elaborati. Il metodo <mark class="highlight-orange_background">PUT</mark> viene utilizzato per aggiornare una risorsa specifica sul server. Il metodo <mark class="highlight-orange_background">DELETE</mark> viene utilizzato per eliminare una risorsa specifica dal server. Il metodo <mark class="highlight-orange_background">HEAD</mark> viene utilizzato per richiedere le informazioni sull&#x27;header di una risorsa specifica senza richiedere il corpo della risposta. Il metodo <mark class="highlight-orange_background">OPTIONS</mark> viene utilizzato per richiedere le opzioni di comunicazione disponibili per una risorsa specifica.</p><h2 id="9767bb19-5e62-4d8e-ae2e-f98cc0a4cbbf" class=""><mark class="highlight-red_background">Codici di Stato</mark></h2><p id="bdb8b942-e869-406d-8705-5d4b128cda69" class="">I codici di stato HTTP vengono utilizzati per <mark class="highlight-orange_background">indicare lo stato della richiesta o della risposta</mark>. Ci sono diversi codici di stato HTTP, come <mark class="highlight-orange_background">1xx, 2xx, 3xx, 4xx e 5xx</mark>. I codici di stato <mark class="highlight-orange_background">1xx</mark> vengono utilizzati per indicare una risposta informativa. I codici di stato <mark class="highlight-orange_background">2xx</mark> vengono utilizzati per indicare una risposta di successo. I codici di stato <mark class="highlight-orange_background">3xx</mark> vengono utilizzati per indicare una reindirizzamento della richiesta. I codici di stato <mark class="highlight-orange_background">4xx</mark> vengono utilizzati per indicare un errore nella richiesta inviata dal client. I codici di stato <mark class="highlight-orange_background">5xx</mark> vengono utilizzati per indicare un errore generato dal server durante l&#x27;elaborazione della richiesta.</p><h1 id="1ec27d0f-bee2-4e90-8623-0698b3450155" class=""><mark class="highlight-red">Il modello client-server</mark></h1><p id="cd045ae1-b06a-4565-b66b-d6dc846684af" class="">Il modello client-server è un&#x27;<mark class="highlight-orange_background">architettura di rete</mark> che <mark class="highlight-orange_background">suddivide le funzionalità dei programmi</mark> in due parti distinte: il <mark class="highlight-orange_background">client e il server</mark>.</p><ul id="93e269e7-5863-4e0e-ba36-77689a7f6aef" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-red_background">client</mark> è il programma o l&#x27;applicazione che viene eseguito <mark class="highlight-orange_background">sul computer dell&#x27;utente finale</mark>.</li></ul><ul id="4b5c6a6e-1c1d-406d-aadb-1b02ef42d504" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-red_background">server</mark> è il programma o l&#x27;applicazione che viene eseguito su un computer dedicato, noto come server, che <mark class="highlight-orange_background">fornisce un servizio o una risorsa al client</mark>.</li></ul><p id="3c11d28d-9b52-4bd5-b30d-7d4821a31159" class="">Il modello client-server è stato progettato per migliorare l&#x27;efficienza delle comunicazioni in rete e per garantire una maggiore sicurezza dei dati. In questo modello, il client non ha accesso diretto alle risorse del server, ma deve fare richieste attraverso una connessione di rete. Il server, a sua volta, risponde alle richieste del client e fornisce le informazioni richieste.</p><p id="5ad89e77-73d7-41ff-8a64-b2b323177629" class="">Il modello client-server è utilizzato in una vasta gamma di applicazioni, come ad esempio nei siti web, nei servizi di posta elettronica, nei giochi online e nei sistemi di gestione di database. In questo modo, i client possono accedere alle informazioni e alle risorse del server senza dover disporre di hardware o software specifici.</p><p id="7849562b-db95-445c-8db3-39c8a25d3ad5" class="">Inoltre, il modello client-server consente di gestire meglio le risorse della rete, poiché le richieste dei client vengono elaborate dal server in modo centralizzato e gestito da un amministratore di sistema. In questo modo, è possibile garantire un maggiore controllo e una maggiore sicurezza delle informazioni scambiate sulla rete.</p><h2 id="5b097779-aac6-4379-98fd-64ed398d8acc" class=""><mark class="highlight-red_background">Funzionamento</mark></h2><ol type="1" id="65352ecc-4ad0-4f0d-9eb1-6314098d8a37" class="numbered-list" start="1"><li>il client manda una richiesta al server.</li></ol><ol type="1" id="8af7932e-616e-4df8-b552-9a031f199c0a" class="numbered-list" start="2"><li>il server (in attesa) riceve la richiesta.</li></ol><ol type="1" id="e25d0324-5000-421d-b9fd-01dba47e299e" class="numbered-list" start="3"><li>il server esegue il servizio richiesto (generando un thread concorrente).</li></ol><ol type="1" id="a23b6a8a-668d-4972-9f2c-5943b9b72d00" class="numbered-list" start="4"><li>il server manda una risposta ed eventualmente dei dati.</li></ol><ol type="1" id="742b4836-6ed0-49fe-904d-8a6fec2716ea" class="numbered-list" start="5"><li>il client riceve la risposta ed eventualmente i dati.</li></ol><h3 id="2552759a-ab6e-4fb4-9382-f55d9d38b66a" class=""><mark class="highlight-red_background">Esempi di servizi client - server</mark></h3><ul id="79d77408-0dc8-4e7a-a31a-466c64781859" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Telnet</mark>: mediante un tale programma (programma client) è possibile operare su un computer remoto come si opera su un computer locale; questo è possibile se sulla macchina remota è presente un programma server in grado di esaudire le richieste del client telnet.</li></ul><ul id="b0b9c53f-825e-4d20-a859-79e5f516fac3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">HTTP</mark>: il browser è un client http (Web), che richiede pagine Web ai computer su cui è installato un Web server, il quale esaudirà le richieste spedendo la pagina desiderata.</li></ul><ul id="8870cab0-b3b0-44d8-909b-1a1538373f47" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">FTP</mark>: tramite un client FTP è possibile copiare e cancellare file su un computer remoto, purché qui sia presente un server FTP.</li></ul><ul id="11f79857-f0ce-4ff9-871c-8130879fabb8" class="bulleted-list"><li style="list-style-type:disc">Altri servizi di questo tipo sono SMTP, IMAP, NFS, NIS…</li></ul><h1 id="af751c4d-9632-48a4-9a3b-f10123b8bcb6" class=""><mark class="highlight-red">Caratteristiche delle applicazioni client e delle applicazioni server</mark></h1><p id="d243cb0f-dd56-4623-8de4-0c6a07a9f868" class="">Le applicazioni client e le applicazioni server sono due tipi di software utilizzati per la gestione e l&#x27;elaborazione dei dati. Tuttavia, presentano alcune importanti differenze tra loro.</p><h3 id="d2397d73-338b-4228-a27c-a440a0da3e38" class=""><mark class="highlight-red_background">Applicazioni client</mark></h3><p id="4fd7f54b-c72b-4894-a7c0-094d5c6f9886" class="">Le applicazioni client sono programmi che vengono eseguiti sul computer dell&#x27;utente finale e richiedono una connessione a un server per funzionare correttamente. Sono progettati per interagire con l&#x27;utente e fornire una interfaccia grafica per l&#x27;elaborazione dei dati. Alcune delle caratteristiche delle applicazioni client includono:</p><ul id="1aa57330-505a-404f-9082-0b2e318dda04" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Interfaccia utente</strong></mark> - Le applicazioni client sono progettate per fornire all&#x27;utente una interfaccia grafica per l&#x27;elaborazione dei dati. Ciò significa che l&#x27;utente può interagire con l&#x27;applicazione utilizzando la tastiera, il mouse o altri dispositivi di input.</li></ul><ul id="4ec3bb9b-b09e-49c2-935c-f2e699012319" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Elaborazione locale</strong></mark> - Le applicazioni client utilizzano le risorse del computer dell&#x27;utente per l&#x27;elaborazione dei dati. Ciò significa che il computer dell&#x27;utente deve essere dotato di una quantità sufficiente di memoria e di una CPU abbastanza potente per eseguire l&#x27;applicazione correttamente.</li></ul><ul id="338dc65a-260b-4ec7-a666-2b970827b7ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Connessione remota</strong></mark> - Le applicazioni client richiedono una connessione a un server per funzionare correttamente. Ciò significa che l&#x27;utente deve avere una connessione Internet stabile e veloce per utilizzare l&#x27;applicazione.</li></ul><ul id="cf151d98-dd85-4092-978c-4ce05aeb0bed" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Installazione locale</strong></mark> - Le applicazioni client devono essere installate sul computer dell&#x27;utente prima di poter essere utilizzate. Ciò significa che l&#x27;utente deve avere i permessi di amministratore per installare l&#x27;applicazione.</li></ul><h3 id="83cd0ce2-a0b8-42cc-b5af-e1873f1d1535" class=""><mark class="highlight-red_background">Applicazioni server</mark></h3><p id="3a558927-abf8-4a7c-8425-29f972e84699" class="">Le applicazioni server sono programmi che vengono eseguiti su un server remoto e forniscono servizi ad altre applicazioni o utenti. Sono progettati per elaborare i dati in modo efficiente e fornire una solida infrastruttura per la gestione dei dati. Alcune delle caratteristiche delle applicazioni server includono:</p><ul id="fe821570-0a91-498f-b3c5-832a5e304674" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Elaborazione remota</strong></mark> - Le applicazioni server utilizzano le risorse del server per l&#x27;elaborazione dei dati. Ciò significa che il server deve essere dotato di una quantità sufficiente di memoria e di una CPU abbastanza potente per eseguire l&#x27;applicazione correttamente.</li></ul><ul id="e0246fb2-aba4-4bd4-94f4-d59c560cee42" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Connessioni multiple</strong></mark> - Le applicazioni server possono gestire molte connessioni contemporaneamente. Ciò significa che possono fornire servizi a molti utenti contemporaneamente senza compromettere le prestazioni.</li></ul><ul id="d95de467-dbe4-4a64-bda9-386668f3e70c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Installazione remota</strong></mark> - Le applicazioni server non richiedono l&#x27;installazione sul computer dell&#x27;utente. Ciò significa che l&#x27;utente può accedere all&#x27;applicazione tramite una connessione Internet senza dover installare alcun software.</li></ul><ul id="5dd2b3b3-e5ff-48f7-a04d-ab6c46a4e564" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background"><strong>Sicurezza</strong></mark> - Le applicazioni server dispongono di meccanismi di sicurezza per proteggere i dati degli utenti. Ciò significa che i dati degli utenti sono protetti da accessi non autorizzati.</li></ul><h1 id="9052a3be-58f1-42c7-b03a-b7a40b9da60b" class=""><mark class="highlight-red">Livelli e Strati (Applicazioni Two-Tier, Three-Tier, Multi-Tier)</mark></h1><p id="764599c6-eca8-4ed3-bd15-9b3b94f2a036" class="">Nella progettazione di applicazioni software, un aspetto fondamentale è la definizione dei livelli e degli strati che compongono il sistema. In particolare, la suddivisione in livelli e strati consente di separare le diverse funzionalità dell&#x27;applicazione, semplificando la gestione e la manutenzione del codice.</p><h2 id="818615ed-a3ee-4366-b238-9916ac38541e" class=""><mark class="highlight-red_background">Architettura One-Tier</mark></h2><ul id="bf41fb74-c1de-4dcc-b6cc-c00bfeb29bb3" class="bulleted-list"><li style="list-style-type:disc">A partire dagli anni Settanta, le architetture si riducevano a <mark class="highlight-orange_background">un solo mainframe al quale erano collegati i terminali “stupidi”</mark>.</li></ul><ul id="d57cd9f7-b6b1-42b5-8d57-20b394772d12" class="bulleted-list"><li style="list-style-type:disc">Tutta l’elaborazione era effettuata dall’elaboratore centrale e i terminali servivano solo per le fasi di I/O.</li></ul><ul id="953bbe07-210e-415c-8f4d-fbdbdfda1e0b" class="bulleted-list"><li style="list-style-type:disc">Questa architettura non rientra nella tipologia client-server e può essere classificata come architettura a un solo livello (1 tier) ed è la situazione che si presentava prima dell’avvento dei sistemi distribuiti.</li></ul><h2 id="6120e109-1fc1-478d-b95a-d5b62051b79f" class=""><mark class="highlight-red_background">Applicazioni Two-Tier</mark></h2><p id="e93bda77-e806-4400-a698-2e6c3fc7e3e9" class="">Le applicazioni Two-Tier, o a due livelli, sono caratterizzate dalla presenza di <mark class="highlight-orange_background">due strati principali: il client e il server</mark>. </p><div id="b4a72663-1866-4708-a349-c4b0902e9d33" class="column-list"><div id="fe3d4eda-4d27-4d69-9000-e7b21ca0a1f1" style="width:68.75%" class="column"><ul id="9fb8b9d0-0d22-453d-a4d3-45af648d372e" class="bulleted-list"><li style="list-style-type:disc">ll modello <mark class="highlight-orange_background">thin-client</mark>: <ul id="7dc685b6-3706-4974-99b7-b45d8900c676" class="bulleted-list"><li style="list-style-type:circle">Il server è responsabile della logica applicativa e gestione dei dati</li></ul><ul id="cfb13a85-3c92-43cd-a32a-52f9fa7ac897" class="bulleted-list"><li style="list-style-type:circle">Il client è responsabile della esecuzione del software di presentazione.</li></ul></li></ul></div><div id="6ecf4f53-2fbc-4d65-9719-e2de9bb9d8fc" style="width:31.25%" class="column"><figure id="4335126d-4501-46fb-bdf5-52260f86cb54" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_176.png"><img style="width:263px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_176.png"/></a></figure></div></div><div id="c116c684-5a6a-40bc-9620-620ba0b18e0e" class="column-list"><div id="62f252d0-7f10-4c83-84c4-f477e230920d" style="width:68.75%" class="column"><ul id="17f6d7a7-0101-4714-ad16-bb8c2d84068f" class="bulleted-list"><li style="list-style-type:disc">Il modello <mark class="highlight-orange_background">thick-client</mark> (o fat-client):<ul id="dca16423-f5d8-42b2-b6a1-c4f44f9be002" class="bulleted-list"><li style="list-style-type:circle">Il server è responsabile della gestione dei dati.</li></ul><ul id="2ef3d737-fedf-4f76-8029-0434c2476e8e" class="bulleted-list"><li style="list-style-type:circle">Il client è responsabile di presentazione e logica applicativa.</li></ul></li></ul></div><div id="5f145be3-d5bf-423b-a3aa-7a44f946661e" style="width:31.249999999999993%" class="column"><figure id="db13880d-63d7-4b13-baa9-b62e8125ae2b" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_177.png"><img style="width:261px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_177.png"/></a></figure></div></div><p id="2fb0dfe5-2412-44ec-aeec-692976b7acb7" class="">Mentre il modello thin-client è stato il primo passo per effettuare il passaggio dai sistemi mainframe alle architetture distribuite, con il thick-client si è spostata parte della applicazione sul client favorendo la connessione di host di tipo diverso che era di fatto praticamente impossibile nei modelli precedenti.</p><p id="4c555cb8-1396-4952-aa37-765d8da2ca10" class="">In questo tipo di architettura, quindi, la gestione dei dati è centralizzata e affidata al server.</p><h2 id="2290ade7-2e1d-43d0-928a-a12daff78f2f" class=""><mark class="highlight-red_background">Applicazioni Three-Tier</mark></h2><div id="b9e00311-019d-4fd7-99dc-11da88da630b" class="column-list"><div id="35be5cdc-a367-46be-9904-4b2b565a908a" style="width:62.5%" class="column"><p id="08a0a28e-2d2d-4256-a759-5ca37460a455" class="">Le applicazioni Three-Tier, o a tre livelli, prevedono la presenza di un <mark class="highlight-orange_background">ulteriore strato intermedio rispetto alle applicazioni Two-Tier</mark>. Questo strato, chiamato server di applicazione o application server, ha il compito di <mark class="highlight-orange_background">gestire la logica di business e l&#x27;accesso ai dati</mark>. Il client, invece, si occupa solo dell&#x27;interfaccia utente e della presentazione dei dati, mentre il database è affidato al terzo strato.</p><ul id="dd2707a6-7fff-4d68-8398-8c6f53986a77" class="bulleted-list"><li style="list-style-type:disc">front-end o presentation tier: è l’interfaccia verso l’utente.</li></ul><ul id="f6c2fcb2-627b-41f2-877b-cca5139abe58" class="bulleted-list"><li style="list-style-type:disc">logica applicativa o middle tier (business-tier).</li></ul><ul id="162ffd8f-71f6-4848-95c9-697a0e5a47ae" class="bulleted-list"><li style="list-style-type:disc">back-end con l’accesso alle risorse/ai dati, anche detto data tier (o resource-tier).</li></ul></div><div id="7d0b1b59-1a0b-4266-8231-22d397b9a76b" style="width:37.5%" class="column"><figure id="693ecf5a-8424-4581-985e-dbc72d7ae37d" class="image"><a href="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_178.png"><img style="width:240px" src="APPUNTI%20TIPSIT%20(PIETRO%20VACCARI)%208d8b5713c84d4e8daf4c2961ca81ede3/Screenshot_178.png"/></a></figure></div></div><h2 id="bf041334-5d18-4ac0-af47-a888f0d26288" class=""><mark class="highlight-red_background">Applicazioni Multi-Tier</mark></h2><p id="cad531a6-04be-4a5b-a969-2e42cdf8a1bb" class="">Le applicazioni Multi-Tier, o a più livelli, prevedono la presenza di più strati intermedie rispetto alle applicazioni Three-Tier. Questa architettura è utilizzata per <mark class="highlight-orange_background">gestire applicazioni di grandi dimensioni e complessità</mark>, in cui è necessario suddividere le funzionalità in diverse componenti. In questo caso, è possibile suddividere le funzionalità in moduli separati, ciascuno dei quali può essere gestito da un server di applicazione dedicato.</p><h1 id="f25e12dc-9620-411e-80e7-7527dfad1e72" class=""><mark class="highlight-red">HTML e CSS - Javascript</mark></h1><ul id="a8b19203-d3ab-416a-9987-1cf77e13de6b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">HTML</mark> e <mark class="highlight-red_background">CSS</mark> sono i <mark class="highlight-orange_background">linguaggi di markup e di stile</mark> utilizzati per creare <mark class="highlight-orange_background">pagine web</mark>. Javascript, invece, è un linguaggio di programmazione utilizzato per creare interazioni dinamiche all&#x27;interno di una pagina web.</li></ul><ul id="de80adad-bfda-4aae-bb2e-a750aa813f2e" class="bulleted-list"><li style="list-style-type:disc">Con HTML, possiamo creare la struttura di una pagina web, come il titolo, i paragrafi, le immagini e i collegamenti. CSS, invece, ci permette di definire lo stile della pagina, come il colore del testo, il tipo di carattere e la posizione degli elementi.</li></ul><ul id="a5ac04f6-509a-42be-a935-199336a2d3c1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Javascript</mark>, invece, ci permette di <mark class="highlight-orange_background">creare interazioni dinamiche all&#x27;interno di una pagina web</mark>, come ad esempio la verifica dei campi di un modulo prima dell&#x27;invio dei dati, la creazione di effetti visivi, l&#x27;aggiornamento di parti della pagina senza doverla ricaricare completamente e molto altro ancora.</li></ul><ul id="77cd8ffc-b615-4e83-b3b1-3c47125aad20" class="bulleted-list"><li style="list-style-type:disc">Insieme, HTML, CSS e Javascript permettono di creare pagine web moderne e interattive, in grado di offrire un&#x27;esperienza utente coinvolgente e di alta qualità.</li></ul><h2 id="d8981d1e-7cf0-42ed-b259-f9884cadeead" class=""><mark class="highlight-red_background">Esempio HTML / CSS</mark></h2><pre id="8e5fafac-f44d-4889-bce5-b8e1db607a18" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;La mia pagina web&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;stile.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Benvenuti nella mia pagina web&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Chi siamo&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contatti&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h2&gt;La nostra storia&lt;/h2&gt;
+        &lt;p&gt;Esempio storia.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Il nostro team&lt;/h2&gt;
+        &lt;p&gt;Il nostro team è composto da professionisti altamente qualificati.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;Copyright &amp;copy; 2023. Tutti i diritti riservati.&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><pre id="b124e428-21a9-4b17-a83d-90c1ce1c9c57" class="code"><code>/* Stile per il body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Stile per l&#x27;header */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Stile per il logo */
+header h1 {
+  margin: 0;
+}
+
+/* Stile per la navigazione */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Stile per le sezioni */
+section {
+  padding: 20px;
+}
+
+/* Stile per il footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}</code></pre><p id="a1ea83ae-0172-429a-99ea-474879ee3454" class="">In questo esempio, il codice HTML definisce una pagina web con un header, un main e un footer. Il tag <code><strong>&lt;link&gt;</strong></code> nella sezione head viene utilizzato per importare il file CSS &quot;stile.css&quot;, che definisce lo stile visivo della pagina.</p><p id="5374e48d-9f0d-47f4-9dd5-1196963e87a3" class="">Il codice CSS definisce lo stile visivo della pagina, come i colori di sfondo, il font e il layout della pagina. In questo esempio, il CSS viene utilizzato per definire lo stile dell&#x27;header, della navigazione, delle sezioni e del footer.</p><p id="d5ddafb2-65b2-47e7-b13b-ebec0a6aad53" class="">Questo è solo un esempio molto semplice, ma HTML e CSS possono essere utilizzati per creare pagine web molto più complesse e interattive.</p><h2 id="f07d4c72-cb5e-4443-92b7-b4f6163e9f64" class=""><mark class="highlight-red_background">Esempio JavaScript</mark></h2><pre id="0b24dec1-d8d2-4214-84a3-cc20774e0293" class="code"><code>function greet(name) {
+  console.log(&quot;Hello, &quot; + name + &quot;!&quot;);
+}
+
+greet(&quot;John&quot;);</code></pre><p id="42e915f1-4148-4c38-94d0-dfe02124b51d" class="">Questo codice definisce una funzione <code><strong>greet</strong></code> che prende un parametro <code><strong>name</strong></code> e stampa una stringa di saluto che include il nome passato come parametro. La funzione viene poi chiamata con il nome &quot;John&quot;.</p><p id="9d90e230-6bbc-48c2-86a2-1c8dc7e7fd08" class="">Ora analizziamo la sintassi del codice riga per riga:</p><ul id="b9fcee7c-7226-4aff-8a50-0522603b3ccb" class="bulleted-list"><li style="list-style-type:disc"><code><strong>function greet(name) {</strong></code>: questa riga definisce una funzione chiamata <code><strong>greet</strong></code> che ha un parametro chiamato <code><strong>name</strong></code>. Il corpo della funzione è racchiuso tra le parentesi graffe <code><strong>{}</strong></code>.</li></ul><ul id="219a0a32-8fa0-400d-9563-439188944f5b" class="bulleted-list"><li style="list-style-type:disc"><code><strong>console.log(&quot;Hello, &quot; + name + &quot;!&quot;);</strong></code>: questa riga stampa una stringa che include il testo &quot;Hello, &quot;, il valore del parametro <code><strong>name</strong></code> e il carattere &quot;!&quot; utilizzando l&#x27;operatore di concatenazione <code><strong>+</strong></code>. La funzione <code><strong>console.log</strong></code> viene utilizzata per stampare il risultato sulla console del browser.</li></ul><ul id="40e664ab-880b-4bc0-96ba-de28f4c4ace1" class="bulleted-list"><li style="list-style-type:disc"><code><strong>greet(&quot;John&quot;);</strong></code>: questa riga chiama la funzione <code><strong>greet</strong></code> passando il valore &quot;John&quot; come argomento per il parametro <code><strong>name</strong></code>.</li></ul><p id="ed4623fb-8443-4347-aafe-a0135b7e540d" class="">In generale, la sintassi di Javascript è simile ad altri linguaggi di programmazione come Java e C++. Le funzioni vengono definite con la parola chiave <code><strong>function</strong></code> seguita dal nome della funzione e dai parametri racchiusi tra parentesi tonde <code><strong>()</strong></code>. Il corpo della funzione è racchiuso tra parentesi graffe <code><strong>{}</strong></code>. Le variabili vengono dichiarate utilizzando le parole chiave <code><strong>var</strong></code>, <code><strong>let</strong></code> o <code><strong>const</strong></code>. Gli operatori aritmetici e logici sono simili ad altri linguaggi e includono <code><strong>+</strong></code>, <code><strong>-</strong></code>, <code><strong>*</strong></code>, <code><strong>/</strong></code>, <code><strong>%</strong></code>, <code><strong>&amp;&amp;</strong></code>, <code><strong>||</strong></code> e <code><strong>!</strong></code>.</p><p id="bb712399-434a-4a6b-b2fd-8dcbed037f7e" class="">Inoltre, Javascript è un linguaggio interpretato, quindi non è necessario compilare il codice prima di eseguirlo. Il codice viene eseguito direttamente dal browser o dal motore Javascript sul server.</p><pre id="0fe6954a-c1ea-46c8-830f-9c51cb7f12de" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Esempio JavaScript in HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Calcolatrice&lt;/h1&gt;
+    &lt;input type=&quot;number&quot; id=&quot;num1&quot; placeholder=&quot;Inserisci un numero&quot;&gt;
+    &lt;input type=&quot;number&quot; id=&quot;num2&quot; placeholder=&quot;Inserisci un altro numero&quot;&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;button onclick=&quot;calcola()&quot;&gt;Calcola&lt;/button&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div id=&quot;risultato&quot;&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+      function calcola() {
+        const num1 = document.getElementById(&quot;num1&quot;).value;
+        const num2 = document.getElementById(&quot;num2&quot;).value;
+        const risultato = parseInt(num1) + parseInt(num2);
+        document.getElementById(&quot;risultato&quot;).innerHTML = &quot;Il risultato è: &quot; + risultato;
+      }
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="cc252ac0-b71d-45ab-8d22-cab763573ef8" class="">In questo esempio, abbiamo creato una semplice pagina HTML che contiene una calcolatrice. Abbiamo incluso il codice JavaScript all&#x27;interno del tag <code><strong>&lt;script&gt;</strong></code> all&#x27;interno del documento HTML. La funzione <code><strong>calcola()</strong></code> definita in JavaScript prende i valori inseriti negli elementi di input, li somma e visualizza il risultato nell&#x27;elemento con id &quot;risultato&quot;. Abbiamo anche associato la funzione <code><strong>calcola()</strong></code> a un pulsante tramite l&#x27;attributo <code><strong>onclick</strong></code>.</p><p id="72a022ab-01de-42f9-919c-1d60cea77aea" class="">Nota che questo è solo un esempio di come potresti utilizzare il codice JavaScript generato in una pagina HTML. In generale, il codice JavaScript viene incluso in un file separato con estensione <code><strong>.js</strong></code> e viene collegato alla pagina HTML tramite il tag <code><strong>&lt;script&gt;</strong></code> con l&#x27;attributo <code><strong>src</strong></code>.</p><h1 id="a958e11d-e0d1-4064-9071-1fc99f23111b" class=""><mark class="highlight-red">Protocolli SOAP, REST</mark></h1><p id="dadf01ee-bafd-4631-b957-fe7ced29b797" class="">I protocolli SOAP e REST sono entrambi utilizzati per la comunicazione tra applicazioni web, ma differiscono nella loro architettura e funzionalità.</p><ul id="55fd8fad-5470-4e2c-aea2-397575d95514" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">SOAP (Simple Object Access Protocol)</mark> è un <mark class="highlight-orange_background">protocollo basato su XML</mark> che utilizza una struttura complessa per la comunicazione tra applicazioni web. SOAP richiede l&#x27;utilizzo di un WSDL (Web Services Description Language) per <mark class="highlight-orange_background">definire la struttura dei dati scambiati</mark> tra le applicazioni e utilizza il protocollo HTTP per la trasmissione dei dati.</li></ul><ul id="123acec3-624b-4869-abaa-90b0d3d159b1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">REST (Representational State Transfer)</mark> è invece un protocollo più semplice basato sull&#x27;<mark class="highlight-orange_background">utilizzo delle richieste HTTP GET, POST, PUT e DELETE. REST</mark> utilizza una comunicazione stateless, ovvero <mark class="highlight-orange_background">ogni richiesta contiene tutte le informazioni necessarie per l&#x27;esecuzione dell&#x27;operazione richiesta</mark>. REST non richiede un WSDL per la definizione della struttura dei dati.</li></ul><p id="a3d8b868-9ec4-4d25-8c72-36a4e87d0d91" class="">In sintesi, SOAP è più complesso ma offre una maggiore flessibilità nella definizione della struttura dei dati, mentre REST è più semplice e veloce ma meno flessibile nella definizione della struttura dei dati.</p><ul id="b860b21a-29ea-4d56-8e0b-fcf38d924ad0" class="bulleted-list"><li style="list-style-type:disc">Ecco un esempio di utilizzo di SOAP:<p id="a10e57dd-4c59-4e1c-8dac-edeee55e1d92" class="">Supponiamo di voler sviluppare un&#x27;applicazione che consenta agli utenti di ottenere informazioni sui prezzi dei prodotti di un negozio online. In questo caso, potremmo utilizzare il protocollo SOAP per accedere ai servizi web dell&#x27;applicazione del negozio online. Ad esempio, potremmo creare una richiesta SOAP che includa il nome del prodotto e il codice del paese, e inviarla al servizio web del negozio online per ottenere il prezzo del prodotto in quel paese.</p></li></ul><ul id="d89b893a-ad3e-4b06-8356-2583e71aab39" class="bulleted-list"><li style="list-style-type:disc">Ecco un esempio di utilizzo di REST:<p id="a71876ef-aace-471a-905a-d760c0c4510a" class="">Supponiamo di voler sviluppare un&#x27;applicazione che consenta agli utenti di cercare le recensioni degli utenti sui ristoranti di una città. In questo caso, potremmo utilizzare il protocollo REST per accedere ai dati del servizio di recensioni online. Ad esempio, potremmo creare una richiesta HTTP GET che includa l&#x27;indirizzo del ristorante e inviarla al servizio web del servizio di recensioni per ottenere le recensioni degli utenti per quel ristorante.</p></li></ul><p id="c9323536-2fe6-4031-80e1-b5c291b3ffbe" class="">In sintesi, SOAP è un protocollo basato su XML e utilizzato principalmente per la comunicazione tra applicazioni aziendali, mentre REST è un protocollo basato su HTTP e utilizzato principalmente per la comunicazione tra applicazioni web. La scelta tra i due dipende dalle specifiche esigenze del progetto e dal tipo di dati e di applicazioni coinvolte.</p><h1 id="fee8aca2-3fcc-420c-9d46-3b315280861f" class=""><mark class="highlight-red">XML e JSON; AJAX</mark></h1><p id="1c5491e2-a8b2-4eac-9555-181c37eaa3b8" class="">XML e JSON sono due formati di dati utilizzati per lo scambio di informazioni tra diversi sistemi. Entrambi i formati sono basati su testo e sono ampiamente utilizzati per la trasmissione di dati su Internet.</p><ul id="dfef50cc-7562-44ad-b5ca-68352ea9d79d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">XML (Extensible Markup Language)</mark> è un formato di dati strutturato che <mark class="highlight-orange_background">consente di definire tag personalizzati e strutture di dati complesse</mark>. XML è stato sviluppato per la condivisione di dati strutturati sui sistemi di rete e viene utilizzato per la <mark class="highlight-orange_background">creazione di documenti HTML, RSS e molti altri formati di dati</mark>.</li></ul><ul id="96b5e66d-507a-48fd-b57a-2351279793ae" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">JSON (JavaScript Object Notation)</mark> è un formato di dati <mark class="highlight-orange_background">basato su JavaScript</mark> e viene utilizzato per la <mark class="highlight-orange_background">trasmissione di dati tra client e server</mark>. JSON è facile da leggere e scrivere e viene utilizzato in molte applicazioni Web per lo <mark class="highlight-orange_background">scambio di dati</mark>.</li></ul><ul id="7b0563d5-e441-4aca-befe-eb6ff0cb87bf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">AJAX (Asynchronous JavaScript and XML)</mark> è una tecnologia Web che consente di <mark class="highlight-orange_background">caricare dati in modo asincrono senza dover aggiornare l&#x27;intera pagina</mark>. AJAX utilizza <mark class="highlight-orange_background">JavaScript e XML o JSON</mark> per effettuare richieste al server e <mark class="highlight-orange_background">aggiornare solo le parti della pagina che devono essere modificate</mark>.</li></ul><p id="818efac9-1b66-4e40-81fc-0bce92df766b" class="">In sintesi, XML e JSON sono formati di dati utilizzati per lo scambio di informazioni tra i sistemi e AJAX è una tecnologia Web che utilizza questi formati per caricare dati in modo asincrono.</p><h2 id="0417b295-8f45-4a16-b642-daa5c4f68fdb" class=""><mark class="highlight-red_background">JSON</mark></h2><p id="25287159-0467-427a-8af5-117dd2d83bda" class="">JSON è un <mark class="highlight-orange_background">formato di scambio dati leggero</mark> e <mark class="highlight-orange_background">facile da leggere e scrivere per le macchine e gli umani</mark>. È basato sulla <mark class="highlight-orange_background">sintassi</mark> degli oggetti <mark class="highlight-orange_background">JavaScript</mark>, ma è un formato di testo indipendente dal linguaggio di programmazione. Questo lo rende un formato molto popolare per lo scambio di dati tra applicazioni web.</p><p id="4a66fa50-d315-4d72-b20c-e35d88056b5c" class="">JSON è costituito da <mark class="highlight-orange_background">coppie chiave-valore</mark>, dove ogni campo viene separato da una virgola e racchiuso tra parentesi graffe. La sintassi è molto simile a quella degli oggetti JavaScript. Qui di seguito un esempio di un oggetto JSON:</p><pre id="8a1b078a-2b29-4b73-ad1c-103d12dea3a3" class="code code-wrap"><code>{
+   &quot;name&quot;: &quot;Mario Rossi&quot;,
+   &quot;age&quot;: 30,
+   &quot;city&quot;: &quot;Roma&quot;
+}</code></pre><p id="866ef007-eefc-4d16-ae7d-1e60e685a075" class="">È possibile utilizzare JSON per rappresentare dati strutturati come array, oggetti, numeri, stringhe, booleani e null. Questo lo rende un formato molto flessibile e adatto a molte applicazioni.</p><p id="99e591a2-c381-4f20-bf43-964639bba662" class="">JSON è anche facile da usare con molti linguaggi di programmazione. La maggior parte dei linguaggi di programmazione moderni ha librerie per la lettura e la scrittura di dati JSON. Questo lo rende un formato molto popolare per lo scambio di dati tra diverse applicazioni.</p><p id="b48f9520-b119-47fe-b898-dedc05fbca68" class="">In definitiva, JSON è un formato di scambio dati molto popolare e utile per lo sviluppo di applicazioni web. Grazie alla sua leggibilità e flessibilità, è stato adottato da molte aziende e organizzazioni come formato di scambio dati predefinito.</p><h3 id="509e0422-6429-44ec-a2d3-3dac9441d7fa" class=""><mark class="highlight-red_background">Esempio JSON</mark></h3><pre id="30554e7d-5253-40f5-8e4a-cd39595b98c2" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script lang=&quot;javascript&quot;&gt;
+            document.write(&quot;&lt;h1&gt;Esempio JSON&lt;/h1&gt;&quot;);
+            document.write(&quot;&lt;br&gt;&quot;)
+        var oggetto1 = 
+        {
+            &quot;nome&quot; : &quot;Libro 1&quot;,
+            &quot;linguaggio&quot; : &quot;Java&quot; ,
+            &quot;autore&quot; : &quot;JKR&quot; ,
+        };
+        document.write(&quot;&lt;h2&gt;Nome:&quot;+ oggetto1.nome +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;h2&gt;Linguaggio: &quot;+ oggetto1.linguaggio +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;h2&gt;Autore: &quot;+ oggetto1.autore +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;br&gt;&quot;);
+        var oggetto2 = 
+        {
+            &quot;nome&quot; : &quot;Libro 2&quot;,
+            &quot;linguaggio&quot; : &quot;C#&quot; ,
+            &quot;autore&quot; : &quot;Maurizio Merluzzo&quot; ,
+        };
+        document.write(&quot;&lt;h2&gt;Nome:&quot;+ oggetto2.nome +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;h2&gt;Linguaggio: &quot;+ oggetto2.linguaggio +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;h2&gt;Autore: &quot;+ oggetto2.autore +&quot; &lt;/h2&gt;&quot;);
+        document.write(&quot;&lt;br&gt;&quot;)
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="e99a1f4e-2ba8-43ca-bf67-d2cda65fc581" class="">Questo è un codice HTML che contiene anche del codice JavaScript per creare oggetti JSON e stamparli a schermo.</p><p id="5e2cc6e6-f55b-40ac-8c52-78630b4b434b" class="">&lt;!DOCTYPE html&gt; indica la versione del documento HTML utilizzata, mentre &lt;html lang=&quot;en&quot;&gt; indica la lingua del documento.
+Nel tag &lt;head&gt; sono presenti alcune informazioni sul documento, come la codifica dei caratteri (&lt;meta charset=&quot;UTF-8&quot;&gt;) e del codice JavaScript.</p><p id="927b969b-8311-4352-a721-9538779782a9" class="">La sezione di codice JavaScript inizia con &lt;script lang=&quot;javascript&quot;&gt; e termina con &lt;/script&gt;. In questo esempio viene creato un oggetto JSON (oggetto1) che contiene le proprietà &quot;nome&quot;, &quot;linguaggio&quot; e &quot;autore&quot;. Queste proprietà vengono stampate a schermo utilizzando la funzione document.write().</p><p id="632953b2-0559-4d91-b456-9ef1eaaa4fd4" class="">Viene poi creato un secondo oggetto JSON (oggetto2) con proprietà simili, e anche queste vengono stampate a schermo utilizzando la funzione document.write().</p><p id="7721512f-a08d-4756-b8e6-30f4f6fb7d92" class="">Il risultato finale sarà una pagina HTML con due oggetti JSON visualizzati a schermo.</p><h2 id="39605ce5-ec59-4b1d-aacf-868c9fd0f15d" class=""><mark class="highlight-red_background">XML</mark></h2><p id="76c85829-a50d-4902-97e7-54c21f4e99f0" class="">XML (Extensible Markup Language) è un linguaggio di markup flessibile utilizzato per la <mark class="highlight-orange_background">creazione di documenti strutturati</mark> e scambi di dati tra diverse applicazioni. In pratica, XML fornisce una sintassi per definire e descrivere i dati in un formato leggibile da una vasta gamma di programmi e sistemi.</p><p id="a2dde797-3afd-4d6c-9b6e-6474e66c2212" class="">Gli <mark class="highlight-orange_background">elementi principali</mark> di XML sono le <mark class="highlight-orange_background">&quot;tag&quot;</mark>, ovvero i tag di apertura e chiusura che definiscono gli elementi del documento. Ad esempio, un elemento XML potrebbe avere un tag di apertura <code><strong>&lt;nome&gt;</strong></code> e un tag di chiusura <code><strong>&lt;/nome&gt;</strong></code>, all&#x27;interno dei quali si trova il contenuto dell&#x27;elemento, come il nome di una persona o un valore numerico.</p><p id="55132b2f-67f5-44b0-bc99-5ea18ba4b84a" class="">Inoltre, XML consente di definire i propri tag personalizzati e di <mark class="highlight-orange_background">creare strutture dati complesse, come tabelle, grafici e documenti interattivi</mark>. XML è spesso utilizzato per lo scambio di dati tra applicazioni di diversi fornitori, in quanto offre una sintassi standard e aperta che può essere facilmente interpretata da qualsiasi sistema.</p><p id="aac0081a-bf47-4459-9db6-8f1e7f7aee37" class="">Esistono molte tecnologie e linguaggi basati su XML, come ad esempio RSS, SOAP, XHTML e molti altri.</p><p id="e6ee90c8-0262-4bd0-81f4-956850bbcf9d" class="">
+</p><pre id="8ee20dfc-9083-4e9d-9d71-57bc9cde9c9a" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;libro&gt;
+&lt;titolo&gt;Il signore degli anelli&lt;/titolo&gt;
+&lt;autore&gt;J.R.R. Tolkien&lt;/autore&gt;
+&lt;genere&gt;Fantasy&lt;/genere&gt;
+&lt;anno&gt;1954&lt;/anno&gt;
+&lt;prezzo valuta=&quot;euro&quot;&gt;15.99&lt;/prezzo&gt;
+&lt;/libro&gt;</code></pre><p id="737d52ea-8f1d-411a-873b-2ecdc9d6c101" class="">In questo esempio, il codice XML inizia con una dichiarazione che indica la versione del linguaggio e la codifica dei caratteri. Il documento principale è il tag <code><strong>&lt;libro&gt;</strong></code> che contiene diversi elementi, come il titolo del libro, l&#x27;autore, il genere, l&#x27;anno di pubblicazione e il prezzo. L&#x27;elemento <code><strong>&lt;prezzo&gt;</strong></code> contiene un attributo denominato &quot;valuta&quot; con il valore &quot;euro&quot;.</p><p id="124c1342-58b4-4f9c-8ff9-0d99825fa1cb" class="">L&#x27;uso degli elementi e degli attributi in XML è molto flessibile e può essere adattato alle esigenze specifiche di ciascun progetto.</p><h2 id="bd40424d-b6ea-432e-bfad-d40d8608b1d4" class=""><mark class="highlight-red_background">AJAX</mark></h2><p id="fccb7245-a514-4b92-af7b-7274f127e288" class="">AJAX (Asynchronous JavaScript and XML) è una tecnologia di programmazione Web utilizzata per <mark class="highlight-orange_background">creare applicazioni web dinamiche e interattive senza dover ricaricare l&#x27;intera pagina web</mark>. In pratica, AJAX consente di <mark class="highlight-orange_background">inviare e ricevere dati in background da un server, senza interferire con la visualizzazione della pagina web</mark>.</p><p id="2c50c1d6-620b-41ef-8e24-8d8b23a70e0e" class="">Il principale vantaggio di AJAX è che consente agli utenti di interagire con una pagina web senza dover attendere il caricamento completo della pagina ogni volta che viene effettuata una richiesta. Ad esempio, quando si scrive un messaggio in una chat online, AJAX può <mark class="highlight-orange_background">inviare la richiesta al server in background e aggiornare la chat in tempo reale, senza dover ricaricare l&#x27;intera pagina web</mark>.</p><p id="4f4127c4-ebf2-4635-89d8-bf3a5dbbb88a" class="">AJAX utilizza principalmente <mark class="highlight-orange_background">tre tecnologie</mark>: <mark class="highlight-orange_background">HTML</mark> (Hypertext Markup Language), <mark class="highlight-orange_background">CSS</mark> (Cascading Style Sheets) e JavaScript. HTML e CSS sono utilizzati per la struttura e lo stile della pagina web, mentre JavaScript è utilizzato per gestire le richieste e le risposte del server.</p><p id="a38b23e1-553c-42e2-a3e9-82be110b80fe" class="">Il <mark class="highlight-orange_background">flusso di lavoro di una richiesta AJAX</mark> è il seguente: quando un utente interagisce con una pagina web, ad esempio <mark class="highlight-orange_background">facendo clic su un pulsante, il codice JavaScript invia una richiesta al server senza dover ricaricare la pagina</mark>. Il <mark class="highlight-orange_background">server elabora la richiesta</mark> e <mark class="highlight-orange_background">restituisce una risposta in formato XML, JSON o HTML</mark>. Infine, il codice <mark class="highlight-orange_background">JavaScript aggiorna la pagina web in base alla risposta del server, senza dover ricaricare l&#x27;intera pagina</mark>.</p><p id="4e638ee5-206a-4c8e-a7bc-8e7f17271d3c" class="">AJAX è utilizzato in molte applicazioni Web moderne, come le applicazioni di posta elettronica, le piattaforme di social media e molti altri siti web interattivi e dinamici.</p><p id="f1c9d11a-f977-4c12-82e4-8abcb42ea8fd" class="">
+</p><pre id="ac673c7f-9e3e-4b4f-8567-e0089de0124d" class="code"><code>// Creazione di un&#x27;istanza dell&#x27;oggetto XMLHttpRequest
+var xhttp = new XMLHttpRequest();
+
+// Definizione della funzione di gestione della risposta del server
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 &amp;&amp; this.status == 200) {
+    // Aggiornamento del contenuto della pagina con la risposta del server
+    document.getElementById(&quot;demo&quot;).innerHTML = this.responseText;
+  }
+};
+
+// Invio della richiesta al server
+xhttp.open(&quot;GET&quot;, &quot;esempio.php&quot;, true);
+xhttp.send();</code></pre><p id="b8fd652b-9403-46bb-be36-13e9f721a6e0" class="">
+</p><p id="0cb06fe9-f11b-4eec-bedd-cbfd82e83f7c" class="">In questo esempio, l&#x27;oggetto XMLHttpRequest viene utilizzato per inviare una richiesta GET al file &quot;esempio.php&quot; sul server. La funzione di gestione della risposta del server viene definita con l&#x27;attributo <code><strong>onreadystatechange</strong></code>
+, che si attiva ogni volta che lo stato dell&#x27;oggetto XMLHttpRequest cambia. Quando lo stato è 4 (richiesta completata) e lo status è 200 (risposta OK), la risposta del server viene visualizzata nell&#x27;elemento con l&#x27;id &quot;demo&quot; tramite la proprietà <code><strong>innerHTML</strong></code></p><p id="9a93034e-541d-4984-9e10-25189a06fa44" class="">
+</p></div></article></body></html>

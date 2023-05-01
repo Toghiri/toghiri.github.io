@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI S&amp;R (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7b0c7575-df6d-422f-90a0-26fd6cda68d4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📝</span></div><h1 class="page-title">APPUNTI S&amp;R (PIETRO VACCARI)</h1></header><div class="page-body"><p id="d664cd33-4262-42da-aff5-6c4275ded275" class="">
+</p><nav id="adcb296f-07a2-4b9e-9cf7-bc3838b8baec" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#29873a70-e7ec-4fd0-a103-187ec87e9d21"><mark class="highlight-red">(Il livello delle applicazioni nei modelli ISO/OSI e TCP/IP) e (I protocolli a livello di applicazione: HTTP, FTP, SMTP, POP, IMAP, DNS)</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#69d283e0-6004-4fdd-b7eb-ae220bd4f233"><mark class="highlight-red_background">ISO/OSI</mark>:</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2afba456-2202-40b6-b0c4-f8452b31ae44"><mark class="highlight-red_background">Livello 7 (ISO/OSI) - Il Livello Applicazione</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6052d049-6df9-4345-9697-43682ea60c4e"><mark class="highlight-red_background">TCP/IP</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b11e1e43-a7eb-464c-a0ac-d7b5aa5fd545"><mark class="highlight-red_background">Livello 4 (TCP/IP) - Il Livello Applicazione</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dd417236-90bb-4dda-a6a9-2146f550baa3"><mark class="highlight-red">La sicurezza nei sistemi informativi, tipologie di attacchi informatici</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#592d9394-91f9-4887-b6cb-ce1a781e0dec"><mark class="highlight-red_background">Tipi di minacce</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b4a0e0fa-9e27-44a0-8f2f-268046c649ad"><mark class="highlight-red_background">Obbiettivi della sicurezza</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e158c8b8-ee15-4695-ba98-8cbd676e595b"><mark class="highlight-red_background">3 Pilastri della sicurezza</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#aa6abd4c-c432-4c89-9208-0bc38290b597"><mark class="highlight-red_background">Processo di stima dei rischi</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3be70098-d811-451b-aada-179292e5ac25"><mark class="highlight-red_background">Tipi di attacco</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f2bc0b7-60e0-4197-8435-92485680cb94"><mark class="highlight-red"><strong><strong>La sicurezza delle connessioni con SSL/TLS; HTTPS</strong></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c32c6d05-5f91-4cf7-bbd0-33c53b83cd2a"><mark class="highlight-red">VPN</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e9d40634-25bc-4ce3-8e1f-2e1f037f65d7"><mark class="highlight-red">Proxy, </mark><mark class="highlight-red"><strong><strong>Firewall, ACL e DMZ</strong></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b5c5da43-86fd-47a9-ace8-27c0c845fad3"><mark class="highlight-red">Business continuity e disaster recovery</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b1aa9bc5-b90b-4c94-a627-a3941665c37d"><mark class="highlight-red"><strong><strong>Wireless: comunicare senza fili</strong></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a0a2a66e-beb3-42ef-b670-8642654984e0"><mark class="highlight-red">Trasmissione wireless</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fcd8e6a8-56fe-4cb2-8492-1729f33a83e1"><mark class="highlight-red_background">WLAN</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4844b732-62bf-4aa1-9d84-d96855687af6"><mark class="highlight-red_background">Accesso</mark> alla WLAN</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b7463d5-cc64-4668-961c-13e91691de04"><mark class="highlight-red_background">Tipi di onde: Infrarossi e Radio</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#abebfd9b-4e80-4eda-acf5-afef33cb171a">Il protocollo <mark class="highlight-red_background">802.11</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#56dfeb51-c438-4614-9114-b119fd8bbe57"><mark class="highlight-red_background">Tipologie di Reti Mobili</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#513358a9-4828-4eeb-9f77-0857de8b25b8"><mark class="highlight-red">Autenticazione nelle reti wireless</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#71312a51-351c-458b-91b5-1ea21cd91267"><mark class="highlight-red">Le applicazioni e i sistemi distribuiti</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c2baceea-9fca-446d-a196-9daafb78650f"><mark class="highlight-red">Architetture dei sistemi web</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cec7393f-b0f3-4feb-9d62-5ac3ceaea45c"><mark class="highlight-red">API</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5300cd5e-b173-4691-a03e-cc54e443f261"><mark class="highlight-red">Socket</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1004265e-b1c0-4a4f-b277-4e198250cea2"><mark class="highlight-red">La comunicazione seriale</mark></a></div></nav><p id="d225ebaa-94c9-4ff5-be35-d52af5266f54" class="">
+</p><p id="e50f641b-9bcf-4336-b348-151c6918a3cb" class="">
+</p><p id="4ab64608-166f-4c19-b358-bec90d8afad6" class="">
+</p><h1 id="29873a70-e7ec-4fd0-a103-187ec87e9d21" class=""><mark class="highlight-red">(Il livello delle applicazioni nei modelli ISO/OSI e TCP/IP) e (I protocolli a livello di applicazione: HTTP, FTP, SMTP, POP, IMAP, DNS)</mark></h1><div id="d1744a40-9e06-423a-b85b-8004b49161b1" class="column-list"><div id="497e24f3-a98d-468a-8f80-3b58323b4ea1" style="width:56.25%" class="column"><h3 id="69d283e0-6004-4fdd-b7eb-ae220bd4f233" class=""><mark class="highlight-red_background">ISO/OSI</mark>:</h3><p id="d9447ccc-a75d-4b6f-9e11-0fd3b0bc9ef5" class="">(Open Systems Interconnection): Il modello OSI contiene sette livelli disposti concettualmente dal basso verso l&#x27;alto. I livelli ISO OSI sono: Fisico, Collegamento Dati, Rete, Trasporto, Sessione, Presentazione, e Applicazione.</p><p id="9071999e-0c92-45cd-8809-525cd32099bf" class="">
+</p></div><div id="5577ffee-7d8e-4e5c-8f30-3a787cd2f717" style="width:43.75%" class="column"><figure id="a1ad3873-0a17-46ed-9a06-2e393775f323" class="image"><a href="APPUNTI%20S&amp;R%20(PIETRO%20VACCARI)%207b0c7575df6d422f90a026fd6cda68d4/Untitled.png"><img style="width:960px" src="APPUNTI%20S&amp;R%20(PIETRO%20VACCARI)%207b0c7575df6d422f90a026fd6cda68d4/Untitled.png"/></a></figure></div></div><h3 id="2afba456-2202-40b6-b0c4-f8452b31ae44" class=""><mark class="highlight-red_background">Livello 7 (ISO/OSI) - Il Livello Applicazione</mark></h3><p id="9533afb1-2675-4e2e-a627-9e187a977a21" class="">Il livello 7 è quello con cui la maggior parte delle persone ha familiarità perché comunica direttamente con l&#x27;utente. Un&#x27;applicazione che gira su un dispositivo può comunicare con altri livelli OSI, ma l&#x27;interfaccia viene eseguita sul livello 7. Quando un messaggio viene ricevuto dal client, il livello applicazione è ciò che lo presenta agli occhi dell&#x27;utente. I protocolli di applicazione includono l&#x27;SMTP (Simple Mail Transfer Protocol) e l&#x27;HTTP, che costituisce il protocollo per la comunicazione tra browser e web server.</p><h3 id="6052d049-6df9-4345-9697-43682ea60c4e" class=""><mark class="highlight-red_background">TCP/IP</mark></h3><p id="1133152a-afa7-4b5d-ad38-fa82144081e8" class="">◦ IP (Internet Protocol);
+◦ TCP (Transmission Control Protocol).</p><p id="92e7af1d-b0c6-4d22-ad83-9dec8da0ec46" class="">L’architettura del modello TCP/IP si basa solo su quattro livelli, a differenza del modello ISO/OSI che ne prevede sette.</p><ul id="018e7e73-7ecc-4144-b45b-bd25198bcc0c" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-orange_background">protocollo UDP</mark> (User Datagram Protocol) è un protocollo di trasporto non affidabile, non orientato alla connessione, che non garantisce l&#x27;arrivo dei dati a destinazione in modo corretto e in ordine. La comunicazione con il protocollo UDP non prevede una fase di handshake per stabilire i parametri di trasmissione e i dati vengono trasmessi senza garantire la corretta ricezione. Questo protocollo viene utilizzato quando la perdita di alcuni dati non è critica o quando è necessario un tempo di latenza minimo.</li></ul><ul id="2039b058-0524-4543-9e70-272009c83e78" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-orange_background">protocollo TCP</mark> (Transmission Control Protocol) è un protocollo di trasporto affidabile, orientato alla connessione, che garantisce l&#x27;arrivo dei dati a destinazione in modo corretto e in ordine. La comunicazione con il protocollo TCP richiede l&#x27;apertura di una connessione tra il mittente e il destinatario, che prevede una fase di handshake per stabilire i parametri di trasmissione. Una volta stabilita la connessione, i dati vengono trasmessi attraverso il canale di comunicazione. Il protocollo TCP garantisce la corretta ricezione dei dati tramite il controllo di flusso, il controllo degli errori e la ritrasmissione dei pacchetti persi.</li></ul><ul id="56500bfd-6b5b-4565-8d67-cfdda9ab8092" class="bulleted-list"><li style="list-style-type:disc">Il <mark class="highlight-orange_background">protocollo IP</mark> fornisce l’instradamento dei pacchetti in modalità detta best-effort delivery (“miglior sforzo per spedire a destinazione”). Questa non è affidabile e non effettua la correzione di errore. Inoltre non effettua alcun controllo sulla congestione e sul flusso. </li></ul><p id="d0e96ae4-628f-453e-a7a5-46eeba5f6f00" class="">Quando un’applicazione invia dei dati utilizzando l’architettura TCP/IP, questi seguono un percorso “dall’alto verso il basso” attraverso tutti i livelli della pila fino a essere trasmessi dal livello fisico. Ogni livello aggiunge una serie di informazioni di controllo ai primi dati che riceve, gli header (intestazione), fino a giungere al livello di rete che, oltre all’intestazione aggiunge anche alcuni dati in coda (il cosiddetto trailer).</p><ul id="9447bf8f-5544-43a6-944f-30f5cac68531" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Lo strato di applicazione aggiunge un’intestazione (header-app) ai dati utente prima di passarli allo strato di trasporto</mark>.</li></ul><ul id="4553b94b-288f-4d16-8b6a-88315d67eabd" class="bulleted-list"><li style="list-style-type:disc">Il protocollo TCP (oppure <mark class="highlight-orange_background">UDP</mark>) dello stato di trasporto aggiunge anch’esso un’intestazione: l’unità di dati prende ora il nome di segmento e viene passata allo <mark class="highlight-orange_background">strato di rete</mark>.</li></ul><ul id="ac966d7e-ac85-4a82-a98c-ed5868ad873e" class="bulleted-list"><li style="list-style-type:disc">Lo <mark class="highlight-orange_background">strato di rete</mark> acclude a sua volta un’intestazione comprendente l’indirizzo IP: a questo punto il dato assume la denominazione di datagramma IP. </li></ul><p id="f9d55d3f-b575-4b4d-ba8a-197f7315919a" class="">Questa unità di informazione viene infine passata ai livelli inferiori, dove lo strato di collegamento aggiunge la propria intestazione (header) e una coda (trailer): siamo finalmente arrivati alla trama (frame ethernet)</p><h3 id="b11e1e43-a7eb-464c-a0ac-d7b5aa5fd545" class=""><mark class="highlight-red_background">Livello 4 (TCP/IP) - Il Livello Applicazione</mark></h3><p id="fd5712c0-5495-4066-b9d3-40cf4e49ee43" class="">Il livello di applicazione (o Application Layer) comprende tutti i protocolli di alto livello e di dialogo con l’utente, tra cui quelli specifici per il trasferimento di file, le e-mail, il login remoto.</p><ul id="6e80a731-653d-49f3-8e69-6998c1dfe06d" class="bulleted-list"><li style="list-style-type:disc">Alcuni dei protocolli presenti a questo livello sono:</li></ul><ul id="2031f06c-fe57-46a3-8065-d82f959c9b2e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">HTTP (Hypertext Transfer Protocol): è un protocollo di comunicazione utilizzato per la trasmissione di informazioni sulla rete. Funziona tramite richieste e risposte tra client e server. Il client invia una richiesta utilizzando un metodo (ad esempio GET o POST) e specificando un&#x27;URL per indicare la risorsa richiesta. Il server risponde con un codice di stato (ad esempio 200 OK) e i dati richiesti.</mark></li></ul><ul id="2bb4814c-4f4a-4df5-aa68-c115cac33ad3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">FTP</mark> (File Transfer Protocol): è un protocollo utilizzato per la trasmissione di file tra computer sulla rete. FTP consente agli utenti di accedere ai file su un server remoto e di trasferirli sulla loro macchina locale.</li></ul><ul id="ae39b0ba-5972-4794-a70c-64e4a826c8ed" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SMTP</mark> (Simple Mail Transfer Protocol): è un protocollo utilizzato per la trasmissione di email su Internet. SMTP viene utilizzato per inviare email dal client email del mittente al server email del destinatario.</li></ul><ul id="263b182d-da63-467b-a3db-0912e3f80bcc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">POP</mark> (Post Office Protocol): è un protocollo utilizzato per la ricezione di email su un client email. POP consente al client email di scaricare le email dal server email del provider.</li></ul><ul id="d1202737-55ba-4b1c-a428-5db0cac3484e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">IMAP</mark> (Internet Message Access Protocol): è un protocollo utilizzato per la ricezione di email su un client email. IMAP consente al client email di accedere alle email sul server email del provider e di visualizzarle senza doverle scaricare.</li></ul><ul id="35bbb148-a021-4e7d-88fb-c739c0763af0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">DNS</mark> (Domain Name System): è un protocollo utilizzato per la risoluzione dei nomi di dominio in indirizzi IP. DNS consente agli utenti di accedere ai siti web utilizzando un nome di dominio comprensibile anziché l&#x27;indirizzo IP numerico.</li></ul><h1 id="dd417236-90bb-4dda-a6a9-2146f550baa3" class=""><mark class="highlight-red">La sicurezza nei sistemi informativi, tipologie di attacchi informatici</mark></h1><p id="27ef44c2-5e6e-4e6e-8006-36caebf2e17c" class="">La sicurezza nei sistemi informativi è una disciplina che si occupa di proteggere le informazioni e i dati all&#x27;interno di un sistema informatico dalle minacce esterne. Le tipologie di attacchi informatici sono molteplici e in costante evoluzione.</p><h2 id="592d9394-91f9-4887-b6cb-ce1a781e0dec" class=""><mark class="highlight-red_background">Tipi di minacce</mark></h2><ul id="896c6e4a-454b-466e-83b7-5847cce63d98" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">NATURALI</mark>: è l’insieme delle minacce che non dipendono da attacchi / errori umani (inondazioni, terremoti, blackout).</li></ul><ul id="9f64053a-ab36-4086-930a-edc64846684a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">UMANE</mark>: è l’insieme delle minacce che dipendono da uno o più esseri umani (attacchi, sicurezza mal gestita).</li></ul><h2 id="b4a0e0fa-9e27-44a0-8f2f-268046c649ad" class=""><mark class="highlight-red_background">Obbiettivi della sicurezza</mark></h2><ul id="44a6c31f-fc97-4442-8c0e-c4b19bf1132f" class="bulleted-list"><li style="list-style-type:disc">Garantire il <mark class="highlight-orange_background">PRINCIPIO MINIMO DI SICUREZZA</mark>: 1) essere protetto dagli attacchi passivi, 2) eseguire analisi periodiche per prevenire attacchi attivi.</li></ul><ul id="81a77429-5709-4e24-8f48-5673a67c779b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Autenticazione</mark>: processo mediante il quale un sistema verifica l&#x27;identità di un utente o di un dispositivo.</li></ul><ul id="4ed5cca8-3fe4-44d8-b4ab-20c4b09ac4ea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Autorizzazione</mark>: processo di concessione o negazione di accesso a risorse informatiche specifiche da parte di utenti o dispositivi autenticati.</li></ul><ul id="443670e1-d199-4a7e-8f75-2b3fd99da63a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Riservatezza</mark>: garanzia che le informazioni siano accessibili solo a coloro che hanno il permesso di accedervi.</li></ul><ul id="c6f7d0c3-a862-43fe-a353-57514cb86ef1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Disponibilità</mark>: garanzia che le informazioni e le risorse siano disponibili e accessibili agli utenti autorizzati quando necessario.</li></ul><ul id="14ef35c3-aa39-4038-bfbe-cc0ebd438381" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Integrità</mark>: garanzia che le informazioni siano complete, accurate e non manipolate.</li></ul><ul id="d1d8bca9-01cf-4d6f-9c3e-3b988cdf4a48" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Paternità</mark>: garanzia che le informazioni siano attribuite correttamente all&#x27;autore o all&#x27;origine appropriata.</li></ul><h2 id="e158c8b8-ee15-4695-ba98-8cbd676e595b" class=""><mark class="highlight-red_background">3 Pilastri della sicurezza</mark></h2><ul id="28d05822-b355-4580-b9d3-215993a1b84f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Prevenzione</mark> (avoidance) mediante protezione dei sistemi e delle comunicazioni (crittografia, firewall, VPN).</li></ul><ul id="f0da9498-88f8-4fc9-b603-9671bac68a59" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Rilevazione</mark> (detection) mediante il monitoraggio e il controllo degli accessi tramite autenticazione con password e certificati.</li></ul><ul id="1bc9a8e1-a2ba-4332-bb05-5fadd803ac22" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Investigazione</mark> (investigation) con l’analisi dei dati, il controllo interno con il confronto e la collaborazione degli utenti ecc.</li></ul><h2 id="aa6abd4c-c432-4c89-9208-0bc38290b597" class=""><mark class="highlight-red_background">Processo di stima dei rischi</mark></h2><p id="45862f7a-e42e-4cb4-ae6d-08a10f152854" class="">Il processo di stima dei rischi in una rete informatica è un&#x27;attività fondamentale per garantire la sicurezza e la protezione delle informazioni e delle risorse. Il processo può essere suddiviso in diversi passaggi:</p><div id="25968610-1ea0-4244-9808-29bdb99c2c40" class="column-list"><div id="5698d8f8-e62d-4603-8866-c253fb632ed6" style="width:75%" class="column"><ol type="1" id="d42e788b-5cb0-469b-9499-384f3b037643" class="numbered-list" start="1"><li>Identificazione delle informazioni e delle risorse critiche: in questa fase si individuano le informazioni e le risorse di maggior valore o importanza all&#x27;interno della rete informatica. Ciò può includere dati sensibili, informazioni personali, informazioni di proprietà dell&#x27;azienda o risorse hardware o software di fondamentale importanza per il corretto funzionamento del sistema.</li></ol><ol type="1" id="74f126af-0d6a-41e0-93b5-e0698c42f2fb" class="numbered-list" start="2"><li>Identificazione delle minacce: in questa fase si individuano tutte le possibili minacce alla sicurezza delle informazioni e delle risorse, come ad esempio attacchi informatici, accessi non autorizzati, errori umani, malfunzionamenti hardware o software, calamità naturali, ecc.</li></ol><ol type="1" id="2e5bb72f-8e3b-469d-9c84-af570e489fe0" class="numbered-list" start="3"><li>Analisi dei rischi: in questa fase si valutano le probabilità di accadimento di ogni minaccia e il relativo impatto sui sistemi informatici. L&#x27;analisi viene effettuata in modo quantitativo o qualitativo, attraverso strumenti specifici.</li></ol><ol type="1" id="3eaf6cbd-ec4f-48ae-acdb-5cc86422f27b" class="numbered-list" start="4"><li>Valutazione dei controlli di sicurezza: in questa fase si analizzano i controlli di sicurezza esistenti all&#x27;interno della rete informatica e si valutano la loro efficacia nel mitigare i rischi individuati.</li></ol><ol type="1" id="7adcd24f-708b-4b83-9b22-d756e97207d7" class="numbered-list" start="5"><li>Identificazione di misure di mitigazione dei rischi: in questa fase si individuano le misure di mitigazione necessarie per ridurre i rischi individuati. Ciò può includere l&#x27;implementazione di nuovi controlli di sicurezza, l&#x27;aggiornamento di software, la formazione degli utenti, ecc.</li></ol><ol type="1" id="7c6c2a52-802c-4b91-9e7e-19fc67b34005" class="numbered-list" start="6"><li>Monitoraggio e revisione: il processo di stima dei rischi in una rete informatica è un processo continuo, che richiede un costante monitoraggio e revisione delle informazioni e dei rischi. Ciò consente di individuare e gestire eventuali nuove minacce o rischi e di adattare costantemente i controlli di sicurezza per garantire la massima protezione possibile.</li></ol></div><div id="3eaa8fe9-cbf0-467a-8b73-f77b35526ff2" style="width:25.000000000000007%" class="column"><figure id="75080a45-7a22-410b-977c-dd379c2ba701" class="image"><a href="APPUNTI%20S&amp;R%20(PIETRO%20VACCARI)%207b0c7575df6d422f90a026fd6cda68d4/Screenshot_175.png"><img style="width:381px" src="APPUNTI%20S&amp;R%20(PIETRO%20VACCARI)%207b0c7575df6d422f90a026fd6cda68d4/Screenshot_175.png"/></a></figure><p id="a176914e-1bea-447e-bebf-e48d6d83a1d1" class="">(ASSET: insieme dei dati e persone necessarie all’erogazione del servizio).</p><p id="3b890ae3-bbc6-4c5c-8d18-abefc7f76cc6" class="">(AUDIT: valutazione finale).</p></div></div><h2 id="3be70098-d811-451b-aada-179292e5ac25" class=""><mark class="highlight-red_background">Tipi di attacco</mark></h2><ul id="6dfbcf8a-5cbd-4e4a-8dee-1182219b1bde" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">PASSIVI</mark>:<ul id="22addbaf-5a87-49e0-bd15-898482770b25" class="bulleted-list"><li style="list-style-type:circle">Lettura del contenuto ad esempio mediante lo sniffing di pacchetti sulla LAN;</li></ul><ul id="a855dfc0-1811-4b67-af56-1e17f466036a" class="bulleted-list"><li style="list-style-type:circle">Analisi del sistema e del traffico di rete, senza analizzare i contenuti.</li></ul></li></ul><ul id="50e6bfe7-942f-4982-984a-8a9b279330c4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">ATTIVI</mark>:<ul id="517baa42-5a0e-426b-a7b1-28fc32ef7976" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">Intercettazione</mark>: a differenza di quella passiva che si limita a “spiare” i dati (packet sniffing), quella attiva mira a intercettare le password per avere accesso al sistema ed effettuare modifiche ai dati. È possibile che per effettuare l’intercettazione sia necessario un attacco preventivo per istallare componenti hardware (dispositivi pirata) o software specifici. Ad esempio, potrebbero essere inseriti nella rete dei server pirata (shadow server) che si spacciano per i server originali nei quali sono state modificate le tabelle di routing (spoofing) oppure possono essere installati programmi che emulano servizi del sistema registrando al contempo le informazioni riservate digitate dall’utente: potrebbe essere sostituito il programma di login così che quando un utente si connette gli viene intercettata la password (password cracking). </li></ul><ul id="d7ec8e3f-03df-4ea4-b95a-e9c94985877a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">Sostituzione di un host</mark>: sempre tramite la modifica delle tabelle di indirizzamento dei router (IP spoofing) qualcuno si sostituisce a un host falsificando l’indirizzo di rete del mittente (solitamente si falsifica l’indirizzo di livello 3 (IP) ma nulla vieta di falsificare anche quello di livello 2). Questo tipo di attacco prende il nome di source address spoofing e ha lo scopo di effettuare la falsificazione di dati mediante l’accesso non autorizzato ai sistemi informativi.</li></ul><ul id="87a7b81a-fa9d-4033-99a9-90185abafb53" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">Produzione</mark>: i malintenzionati producono nuovi componenti che vengono inseriti nel sistema con lo scopo di produrre un danno, e non di prelevare informazioni. Sono dei veri e propri atti di sabotaggio che hanno l’obiettivo di ridurre l’integrità e la disponibilità delle risorse del sistema. Le principali tecniche di disturbo sono le seguenti:<ul id="cbd082fd-09ae-45ea-95c9-c31858ec7f69" class="bulleted-list"><li style="list-style-type:square"> attacchi <mark class="highlight-teal_background">virus</mark>: programma che provoca danni e si replica “infettando” altri host.</li></ul><ul id="42d184af-a16a-4eab-b72e-bed218f6dbc5" class="bulleted-list"><li style="list-style-type:square">attacchi tramite <mark class="highlight-teal_background">worm</mark>: la sua caratteristica è proprio che si replica senza bisogno di “attaccarsi” a un altro programma provocando danni proprio perché “consuma” risorse.</li></ul><ul id="63c1995b-70c8-46ee-a610-e331b058d1bd" class="bulleted-list"><li style="list-style-type:square"> attacchi di disturbo denial of service (<mark class="highlight-teal_background">DoS</mark>): in questa categoria rientrano le tecniche che mirano a “tenere occupato” un host con operazioni inutili così da impedire che possa offrire i propri servizi alla rete. Alcune tecniche di DoS sono le seguenti:<ul id="885203f7-82ad-4cf3-a657-2b2e8761113b" class="bulleted-list"><li style="list-style-type:disc"> saturazione della posta/log.</li></ul><ul id="c21242af-749f-48da-a226-7d10bad0abf0" class="bulleted-list"><li style="list-style-type:disc">ping flooding (“guerra dei ping”).</li></ul><ul id="2b8a899c-14ac-4218-aedf-98cd1f73cce8" class="bulleted-list"><li style="list-style-type:disc">SYN attack.</li></ul><ul id="0355c9b2-c53f-4bbe-8eb1-edfcc0404fc7" class="bulleted-list"><li style="list-style-type:disc">distributed denial-of-service (<mark class="highlight-teal_background">DDoS</mark>): viene installato un software per DoS su molti nodi costituendo una Botnet: questi programmi sono anche chiamati daemon, zombie o malbot (i daemon sono generalmente controllati remotamente da un master tramite canali cifrati e hanno capacità di auto-aggiornamento).</li></ul></li></ul></li></ul><ul id="6c2aabc7-dcb2-4fc0-9522-04d838fe9cdd" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">Phishing</mark>; attraverso spamming di email si attrae un utente su un server pirata (shadow server): in modo da catturare le credenziali di autenticazione o altre informazioni personali; oppure viene invitato l’utente a installare un plugin o una estensione che in realtà sono o virus o trojan. Una variante evoluta è lo spear phishing che include nella mail molti dati personali per aumentare la credibilità del messaggio.</li></ul><ul id="a41d3d0f-175f-4d08-80b6-310073b55818" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">Intrusione</mark>: l’intrusione è l’accesso vero e proprio non autorizzato a uno o più host, che può essere il risultato delle tecniche prima descritte: una volta che un intruso si è introdotto in un sistema può modificare o cancellare le informazioni altrui, prelevare i dati che gli interessano, introdurre dati falsi ecc.</li></ul></li></ul><h1 id="0f2bc0b7-60e0-4197-8435-92485680cb94" class=""><mark class="highlight-red"><strong><strong>La sicurezza delle connessioni con SSL/TLS; HTTPS</strong></strong></mark></h1><p id="394460eb-0aa1-4fb7-ac39-d0f44c8654be" class="">La sicurezza delle connessioni con SSL/TLS è un protocollo crittografico utilizzato per garantire la sicurezza delle comunicazioni tra client e server su Internet. SSL (Secure Sockets Layer) è stato il primo protocollo di sicurezza a essere utilizzato, ma è stato sostituito da TLS (Transport Layer Security) che è più sicuro.</p><p id="3783d422-2101-4e9a-9b0e-a484a658c1df" class=""><mark class="highlight-red_background">SSL/TLS</mark> utilizza un sistema di crittografia a chiave pubblica per garantire che i dati scambiati tra il client e il server siano protetti da terze parti. In particolare, il client e il server stabiliscono una connessione crittografata utilizzando un certificato digitale rilasciato da un&#x27;autorità di certificazione.</p><p id="defdcef5-8c7c-4e66-81b2-381da3fe353b" class=""><mark class="highlight-red">HTTPS </mark>(HyperText Transfer Protocol Secure) è una versione sicura del protocollo HTTP utilizzata per le comunicazioni web. HTTPS utilizza SSL/TLS per crittografare le comunicazioni tra il browser del client e il server web, garantendo la privacy e l&#x27;integrità dei dati scambiati. La connessione HTTPS viene identificata dall&#x27;URL &quot;https&quot; e dalla presenza di un lucchetto nella barra degli indirizzi del browser.</p><p id="358fd163-9d4a-45f7-b3f6-8a4417d6c52e" class="">In sintesi, SSL/TLS e HTTPS sono protocolli di sicurezza fondamentali per garantire la protezione dei dati scambiati su Internet. L&#x27;utilizzo di queste tecnologie è essenziale per prevenire la compromissione dei dati sensibili degli utenti durante le comunicazioni web.</p><h1 id="c32c6d05-5f91-4cf7-bbd0-33c53b83cd2a" class=""><mark class="highlight-red">VPN</mark></h1><p id="f12f1e5c-d91c-468b-b234-13df94a4c38f" class="">Una VPN (Virtual Private Network) è una tecnologia di rete che consente di creare una connessione sicura e crittografata tra un dispositivo e una rete privata su Internet.</p><p id="9f3b80bc-09ca-4499-8db4-3f87d88c6a4c" class="">In pratica permette di connettersi a Internet attraverso un server remoto che funge da &quot;ponte&quot; tra il dispositivo dell&#x27;utente e la rete privata. In questo modo, tutti i dati trasmessi tra il dispositivo e la rete privata vengono criptati, rendendoli inaccessibili a terze parti.</p><p id="e23221c8-d140-483d-a284-9d38a3664c4f" class="">Le VPN vengono utilizzate principalmente per proteggere la privacy degli utenti su Internet. Ad esempio, una persona che utilizza una VPN può nascondere il proprio indirizzo IP e la propria posizione geografica, impedendo ai siti web e agli hacker di tracciare le proprie attività online.</p><p id="a82c8568-68db-4978-ba83-af7004021a54" class="">A livello tecnico utilizzano diversi protocolli per creare una connessione sicura tra il dispositivo dell&#x27;utente e la rete privata a cui si vuole accedere.</p><p id="e57327b7-176c-4310-9e4c-3e492738dad3" class="">Il protocollo più comunemente utilizzato per creare una VPN è il protocollo OpenVPN, che utilizza la crittografia SSL/TLS per creare una connessione sicura tra il dispositivo e il server.</p><p id="1880e0f9-f766-459c-9786-6aa49f614a92" class="">Per creare la connessione, il client VPN (cioè il software installato sul dispositivo dell&#x27;utente) e il server VPN devono scambiarsi informazioni di autenticazione, come le credenziali di accesso dell&#x27;utente e le chiavi di crittografia. Queste informazioni sono protette da un processo di autenticazione forte, che prevede l&#x27;uso di password complesse e/o di un token di autenticazione generato da un&#x27;applicazione dedicata.</p><p id="f326b638-0214-4c79-b3ee-24e710bfa62d" class="">Una volta che la connessione VPN è stata stabilita, tutti i dati trasmessi tra il dispositivo e il server VPN vengono criptati utilizzando algoritmi di crittografia sicuri come AES (Advanced Encryption Standard).</p><p id="e2ceaec7-8529-4185-b3bd-2f0dbb542490" class="">Il client può anche essere configurato per utilizzare diversi protocolli VPN, tra cui PPTP, L2TP/IPsec e IKEv2. Ogni protocollo presenta vantaggi e svantaggi in termini di sicurezza, velocità e compatibilità con i diversi dispositivi.</p><h1 id="e9d40634-25bc-4ce3-8e1f-2e1f037f65d7" class=""><mark class="highlight-red">Proxy, </mark><mark class="highlight-red"><strong><strong>Firewall, ACL e DMZ</strong></strong></mark></h1><p id="f3447bc4-47df-4d94-a479-798736fbd499" class=""> Proxy, Firewall, ACL e DMZ sono tutti strumenti di sicurezza informatica che vengono utilizzati per proteggere le reti aziendali e i sistemi informatici.</p><ul id="551595db-6831-4a85-84ab-58d947b21caa" class="bulleted-list"><li style="list-style-type:disc">Un <mark class="highlight-red_background">PROXY </mark>è un server che funge da intermediario tra gli utenti di una rete e il server di destinazione a cui si vuole accedere. In altre parole, quando un utente accede a un sito web o a un&#x27;altra risorsa su Internet, il suo computer non comunica direttamente con il server di destinazione, ma invia la richiesta al proxy, che a sua volta inoltra la richiesta al server di destinazione. Ha diverse funzioni tecniche, tra cui:<ul id="54d6e26a-db62-431f-a64f-f674b5a7df54" class="bulleted-list"><li style="list-style-type:circle">Nascondere l&#x27;indirizzo IP dell&#x27;utente: il proxy utilizza il suo indirizzo IP per connettersi al server di destinazione, nascondendo l&#x27;indirizzo IP dell&#x27;utente.</li></ul><ul id="9d5ab7cb-ef91-4ed1-9462-2924b6135204" class="bulleted-list"><li style="list-style-type:circle">Caching delle risorse: può salvare in memoria cache le risorse richieste dagli utenti, come pagine web o file, in modo da accedervi più velocemente in futuro.</li></ul><ul id="82926af6-fcb2-40dd-bc27-15f30c7d7e44" class="bulleted-list"><li style="list-style-type:circle">Controllo dell&#x27;accesso: può essere configurato per limitare l&#x27;accesso a determinati siti web o risorse sulla base di regole specifiche.</li></ul><ul id="6fa829f5-4bad-45aa-a881-0f621a1d7ac6" class="bulleted-list"><li style="list-style-type:circle">Filtraggio dei contenuti: può filtrare i contenuti in base a criteri specifici, come parole chiave o categorie, per impedire l&#x27;accesso a contenuti inappropriati o pericolosi.</li></ul><ul id="6de3bb83-2f79-4bc0-bc1a-779880e07eb4" class="bulleted-list"><li style="list-style-type:circle">Miglioramento della velocità: può migliorare la velocità di accesso alle risorse riducendo la quantità di dati che devono essere inviati e ricevuti tra l&#x27;utente e il server di destinazione.</li></ul><ul id="d737d201-63e7-4417-b5d4-d16904c57af5" class="bulleted-list"><li style="list-style-type:circle">Monitoraggio delle attività: può essere utilizzato per monitorare le attività degli utenti sulla rete, per esempio per rilevare eventuali violazioni della politica di sicurezza dell&#x27;azienda.</li></ul></li></ul><ul id="63a1495c-3163-4516-94a8-4e14cf7ea862" class="bulleted-list"><li style="list-style-type:disc">Un <mark class="highlight-red_background">FIREWALL </mark>è un sistema di sicurezza di rete che monitora e controlla il traffico di rete in entrata e in uscita in base a regole di sicurezza predefinite. I firewall possono essere hardware, software o una combinazione di entrambi. Lo scopo principale di un firewall è quello di creare una barriera tra una rete interna sicura e Internet o altre reti non affidabili. Agisce come un guardiano, consentendo solo il traffico autorizzato di passare mentre blocca i tentativi di accesso non autorizzati. Utilizzano un insieme di regole per determinare quale traffico deve essere consentito o bloccato. Queste regole possono essere basate su indirizzi IP, protocolli, porte o applicazioni. Ad esempio, un firewall può essere configurato per consentire il traffico HTTP in ingresso (porta 80) ma bloccare tutto il resto del traffico in ingresso. Possono anche essere configurati per registrare e avvisare gli amministratori di eventuali attività sospette. Questo può includere tentativi di accedere a risorse bloccate o tentativi di accesso falliti ripetuti.</li></ul><ul id="bb55135a-1ecb-45d6-adf6-a772eba1cabe" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">ACL </mark>(Access Control List) è una lista di controllo degli accessi che definisce i permessi di accesso per utenti e gruppi di utenti a una risorsa o a una rete. Le ACL vengono utilizzate per limitare l&#x27;accesso non autorizzato alle risorse della rete e per proteggere i dati sensibili. Possono essere implementate a livello di firewall, router o server.</li></ul><ul id="ff80178c-6690-4fc5-88cd-c4e07dd722ba" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">DMZ </mark>(DeMilitarized Zone) è un&#x27;area della rete che si trova tra il firewall interno e quello esterno e che viene utilizzata per ospitare server pubblici, come server web o di posta elettronica. La DMZ separa i server pubblici dalla rete interna dell&#x27;azienda, creando una zona &quot;neutralizzata&quot; che limita l&#x27;accesso diretto alla rete interna e riduce il rischio di attacchi informatici.</li></ul><h1 id="b5c5da43-86fd-47a9-ace8-27c0c845fad3" class=""><mark class="highlight-red">Business continuity e disaster recovery</mark></h1><ul id="6878c6eb-c07e-456b-9d30-bab306eec764" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">BUSINESS CONTINUITY</mark>: capacità di un&#x27;organizzazione di mantenere le sue attività operative in caso di interruzione o fallimento di uno o più dei suoi processi critici. In altre parole, è la capacità di un&#x27;organizzazione di continuare a funzionare nonostante gli eventi avversi. La business continuity si concentra sulle soluzioni per ridurre al minimo gli impatti negativi di situazioni di emergenza.</li></ul><ul id="1de2621f-6f39-40f0-b87f-7c0e572b4c8e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">DISASTER RECOVERY</mark>: è l’insieme delle misure che un&#x27;organizzazione adotta per recuperare le sue attività in seguito a una situazione di emergenza o di disastro. Questo può includere il ripristino dei sistemi IT, la ricostruzione dei dati, la creazione di nuove infrastrutture o la sostituzione di attrezzature danneggiate. L&#x27;obiettivo del disaster recovery è di minimizzare il tempo di inattività e di riprendere le attività il più rapidamente possibile.</li></ul><p id="d8d3ad1b-c52c-4240-bfce-b3566ff8f17e" class="">Per implementare business continuity e disaster recovery, le organizzazioni adottano solitamente una serie di procedure e di soluzioni tecnologiche, tra cui:</p><ul id="b7ccef10-0a42-420b-ab74-8de5895f6050" class="bulleted-list"><li style="list-style-type:disc">Backup dei dati: l&#x27;organizzazione deve eseguire regolarmente il backup dei dati in modo da poterli ripristinare in caso di perdita o di distruzione.</li></ul><ul id="a1e82e42-ef0b-4017-ae41-c963b19a0fd5" class="bulleted-list"><li style="list-style-type:disc">Replicazione dei dati: l&#x27;organizzazione può utilizzare la replica dei dati per mantenere una copia esatta dei dati in un luogo diverso dal sito primario.</li></ul><ul id="c5ff99d1-a74a-463f-bdfe-e98b22426281" class="bulleted-list"><li style="list-style-type:disc">Archiviazione di backup offline: i backup critici possono essere archiviati in un luogo sicuro offline per prevenire la loro compromissione in caso di attacchi informatici.</li></ul><ul id="4d210a5b-b889-4be1-9c7c-c6acb578ccab" class="bulleted-list"><li style="list-style-type:disc">Piani di emergenza: l&#x27;organizzazione deve sviluppare e testare piani di emergenza per ogni possibile scenario di interruzione delle attività.</li></ul><ul id="38bb5dfb-3627-407c-ae0e-5a47294f7d5f" class="bulleted-list"><li style="list-style-type:disc">Soluzioni di continuità: l&#x27;organizzazione può utilizzare soluzioni di continuità del business come la replica dell&#x27;intera infrastruttura IT in un sito alternativo.</li></ul><ul id="e07d5674-d880-4a99-b90a-d37d4e1ca63b" class="bulleted-list"><li style="list-style-type:disc">Soluzioni di disaster recovery: l&#x27;organizzazione può utilizzare soluzioni di disaster recovery come la replicazione delle applicazioni e dei dati in un sito alternativo.</li></ul><h1 id="b1aa9bc5-b90b-4c94-a627-a3941665c37d" class=""><mark class="highlight-red"><strong><strong>Wireless: comunicare senza fili</strong></strong></mark></h1><p id="5ec2b146-8b5c-4fb2-8ec5-c08b5034b2fd" class="">Il wireless è una tecnologia che consente la comunicazione senza fili tra dispositivi e sistemi di rete, consentendo la connessione tra dispositivi senza la necessità di un cavo fisico. La connessione wireless è utilizzata per creare reti locali wireless (<mark class="highlight-red_background">WLAN</mark>) o per connettersi a reti esterne tramite tecnologie come il Wi-Fi.</p><p id="d00c95d9-5d3f-4fe4-85f0-ed492feda182" class="">Per creare una WLAN, è necessario un access point wireless (WAP) che agisca come hub per la connessione tra i dispositivi. Il WAP riceve e trasmette i dati attraverso l&#x27;etere, il mezzo di trasmissione wireless, e gli altri dispositivi si connettono all&#x27;access point per accedere alla rete.</p><p id="c167de3c-f905-4f95-96fe-2d95a7bfd5eb" class="">Ci sono diverse tecnologie wireless utilizzate per la comunicazione nel campo dell&#x27;informatica. Il Wi-Fi, ad esempio, è una tecnologia basata sullo standard IEEE 802.11 e utilizza frequenze radio per trasmettere dati tra dispositivi. Il Bluetooth è un&#x27;altra tecnologia wireless utilizzata per la connessione tra dispositivi a breve distanza.</p><h1 id="a0a2a66e-beb3-42ef-b670-8642654984e0" class=""><mark class="highlight-red">Trasmissione wireless</mark></h1><p id="9d4ef44b-a348-4cb2-a708-1d2dfcd944c9" class="">La trasmissione wireless è la tecnologia che consente di trasferire dati tra dispositivi senza l&#x27;utilizzo di un cavo fisico. La trasmissione wireless avviene attraverso l&#x27;invio di onde elettromagnetiche, che si propagano nell&#x27;aria o nello spazio libero.</p><p id="f2f43501-d43b-4714-a48c-9d153e6e47f2" class="">Per la trasmissione il segnale elettrico che contiene i dati viene convertito in una forma di energia elettromagnetica, che può essere trasmessa attraverso l&#x27;antenna del dispositivo. Il segnale trasmesso viene poi ricevuto dall&#x27;antenna del dispositivo di destinazione, che lo converte nuovamente in un segnale elettrico.</p><p id="f4a1f92e-706d-4c66-aa0d-6d2a365e80b9" class="">Le tecnologie più comuni sono Wi-Fi, Bluetooth, NFC e cellulari. Ogni tecnologia utilizza un tipo specifico di onda elettromagnetica, che può essere modulata per trasportare informazioni in diverse frequenze.</p><p id="ed386137-9b77-456b-aff1-a4efd65c6706" class="">La trasmissione wireless presenta diversi vantaggi, come la flessibilità nell&#x27;installazione e nell&#x27;uso dei dispositivi, la mobilità e la possibilità di connettere dispositivi remoti. Tuttavia presenta anche alcune limitazioni, come la sensibilità alle interferenze e alle distanze, la necessità di dispositivi compatibili e la sicurezza delle comunicazioni. Per garantire la sicurezza delle trasmissioni vengono utilizzati protocolli di crittografia e autenticazione, come WPA e WPA2 per le reti Wi-Fi, che assicurano la privacy delle informazioni trasmesse e proteggono la rete da eventuali attacchi informatici.</p><h2 id="fcd8e6a8-56fe-4cb2-8492-1729f33a83e1" class=""><mark class="highlight-red_background">WLAN</mark></h2><p id="580ce910-82ae-4c5f-92fd-7adc5c63eb6e" class="">La LAN con accesso wireless prende anche il nome di WLAN. Quando un dispositivo vuole connettersi a una WLAN esegue uno scanning alla ricerca di un AP (AccesPoint) compatibile con il quale eseguire l’associazione.</p><p id="b71b4d54-3be0-4ca2-8689-791c9c94de17" class="">Lo scanning può essere:</p><ul id="2dabdc27-2079-4055-a14a-013bd00d1c68" class="bulleted-list"><li style="list-style-type:disc">Attivo (active): il client lancia una richiesta per unirsi alla LAN contenente un SSID (Service Set Identifier) e, se viene accettata analizzando le credenziali del richiedente e controllando gli eventuali diritti di accesso, l’AP gli risponde permettendogli il collegamento.</li></ul><ul id="17575a0f-cbd0-4add-a84f-58b10665d60c" class="bulleted-list"><li style="list-style-type:disc">Passivo (passive): il client si pone in ascolto di messaggi (bacon) trasmessi dall’AP in attesa di riceverne uno contente l’ SSID della rete alla quale desidera connettersi.</li></ul><h2 id="4844b732-62bf-4aa1-9d84-d96855687af6" class=""><mark class="highlight-red_background">Accesso</mark> alla WLAN</h2><p id="617c2ba5-8294-407b-bfac-c4bb7901ecc4" class="">L’SSID è il nome con cui una rete Wi-Fi si presenta ai suoi utenti: consiste in genere in una serie di caratteri ASCII stampabili e viene continuamente trasmesso in modo che gli utenti possano individuare la presenza della rete di loro interesse alla quale connettersi.</p><p id="1127e7d4-84b3-4096-b989-2cb2d19923b9" class="">L’autenticazione per l’accesso a una WLAN è a livello 2 e quindi viene autenticato il dispositivo e non l’utente: se la LAN offre un servizio di “sistema aperto”, cioè permette libero accesso ad alcuni servizi (tipo la connessione Internet) da parte di chiunque ne faccia esplicita richiesta ( è sufficiente che coincidano il SSID della LAN e del client).</p><p id="29c08c8a-3e66-4876-88e6-01512b771bdd" class="">Per accessi a rete privata o LAN aziendali l’AP viene configurato per inviare la richiesta a un server di autenticazione oppure può effettuare direttamente la validazione mediante una chiave condivisa: in questo caso è richiesta la crittografia WEP (Wireless Equivalent Protocol) a 64 o 128 bit della comunicazione per evitare intrusioni indesiderate: all’AP e a tutti i nodi viene assegnata staticamente la chiave di accesso, e dal semplice confronto di questa si determina l’autenticazione del client. A seguito dell’autenticazione l’AP effettua l’associazione e quindi autorizza il client a connettersi alla rete e a trasferire i dati.</p><h2 id="5b7463d5-cc64-4668-961c-13e91691de04" class=""><mark class="highlight-red_background">Tipi di onde: Infrarossi e Radio</mark></h2><ul id="a21805ee-a860-4eab-9b97-74a893ee75b9" class="bulleted-list"><li style="list-style-type:disc">La tecnologia a raggi infrarossi può essere utilizzata solo in uno spazio aperto o all’interno di un singolo locale essendo estremamente sensibile agli ostacoli.</li></ul><ul id="275186c7-04f5-4da0-9a5d-896a070b90ca" class="bulleted-list"><li style="list-style-type:disc">Per una rete locale che si estende all’interno di edifici l’unica soluzione è quella che utilizza le onde radio: il protocollo 802.11 prevede infatti che la propagazione dei segnali avvenga utilizzando questo tipo di onde.</li></ul><ul id="2b33a87a-7c4a-4c18-aa79-957a6f34890b" class="bulleted-list"><li style="list-style-type:disc">Le trasmissioni occupano una banda di frequenze che viene suddivisa in tanti canali tra loro separati.</li></ul><ul id="45090fff-a9f0-4f64-8b0d-26346499a714" class="bulleted-list"><li style="list-style-type:disc">Per trasmettere su un particolare canale è necessario possedere il rispettivo codice di autorizzazione.</li></ul><h2 id="abebfd9b-4e80-4eda-acf5-afef33cb171a" class="">Il protocollo <mark class="highlight-red_background">802.11</mark></h2><ul id="1ec7040a-cb63-479c-bccf-c43ecbcf6fa0" class="bulleted-list"><li style="list-style-type:disc">Per reti non cablate: pensato per gestire il colloquio fra tante stazioni che comunicano tra loro in modo paritetico.</li></ul><ul id="d341dfee-7089-4062-97ca-43b7cfa59bd7" class="bulleted-list"><li style="list-style-type:disc">Per reti cablate: pensato per l’accesso a una rete più articolata da parte di un dispositivo per la realizzazione di Distributed System (Sistema di distribuzione dell’informazione).</li></ul><ul id="73eec945-9830-4b08-bb28-5cc0f51e8952" class="bulleted-list"><li style="list-style-type:disc">802.11: i dispositivi comunicano tra loro a 2.4 GHz con velocità da 1 a 2 Mbps.</li></ul><ul id="376adba5-5184-4acf-962a-3a40fe3ba595" class="bulleted-list"><li style="list-style-type:disc">802.11b: arriva fino a 11 Mbps ed è chiamata Wi-Fi o wireless ad alta velocità.</li></ul><ul id="e5429e3c-9434-447b-b405-5dd4b9e0c990" class="bulleted-list"><li style="list-style-type:disc">802.11a: per i dispositivi wireless che operano a 5 GHz e arrivano fino a 54 Mbps.</li></ul><ul id="cf976a02-381f-4c2b-9f84-06e7c2508205" class="bulleted-list"><li style="list-style-type:disc">802.11g: utilizza tecniche di modulazione OFDM(Orthogonal Frequency-Division Multiplexing).</li></ul><ul id="c05edf1a-5db4-4be1-a935-830e471ea51f" class="bulleted-list"><li style="list-style-type:disc">Nel protocollo sono definite:<ul id="25eaf6ee-dfc7-4510-b1bd-47a0e8c3ed23" class="bulleted-list"><li style="list-style-type:circle">le modalità in cui diverse stazioni costituiscono un’Ad Hoc Network, cioè una rete ad hoc wireless in ambito locale.</li></ul><ul id="42655cde-8329-482f-8703-af20ad0a7726" class="bulleted-list"><li style="list-style-type:circle">le modalità per cui le stazioni appartenenti a singole Ad Hoc Network possono colloquiare con un Distributed System attraverso dei punti di accesso, gli AccessPoint (AP).</li></ul></li></ul><h2 id="56dfeb51-c438-4614-9114-b119fd8bbe57" class=""><mark class="highlight-red_background">Tipologie di Reti Mobili</mark></h2><ol type="1" id="d7a777ae-839d-49db-8d49-ede9abdc9c10" class="numbered-list" start="1"><li><mark class="highlight-brown_background">Access mobility</mark> – Sono i sistemi tipicamente indoor con raggio di azione inferiore ai 500 m, come i sistemi cordless telefonici che tramite un access point connettono alla rete fissa di tele comunicazione.</li></ol><ol type="1" id="9350262a-91cc-4266-8c2f-44ad0631df2c" class="numbered-list" start="2"><li><mark class="highlight-brown_background">Terminal mobility</mark> – Sono i sistemi nei quali il terminale è in movimento e può accedere, rimanere connesso e identificato in una rete di telecomunicazione.</li></ol><ol type="1" id="f0f68574-9eed-4aec-aa5d-289e3a489d48" class="numbered-list" start="3"><li><mark class="highlight-brown_background">Service profile portability</mark> – In questo sistema un terminale può connettersi non solo alla propria rete ma anche ad altre reti di telecomunicazione per poter usufruire dei servizi associati al proprio profilo; esiste quindi la portabilità del proprio profilo su provider diversi, in modo trasparente per l’utente.</li></ol><ol type="1" id="5a272c86-3c9b-406b-9135-e5c1160fdc97" class="numbered-list" start="4"><li><mark class="highlight-brown_background">Personal mobility</mark> – In questo sistema è l’utente che può accedere ai servizi di telecomunicazione tramite qualsiasi terminale: la rete riconosce l’utente e non il terminale; questo permette un’offerta completa di servizi ed in questo caso si parla di Personal Communications Services (PCS).</li></ol><h2 id="513358a9-4828-4eeb-9f77-0857de8b25b8" class=""><mark class="highlight-red">Autenticazione nelle reti wireless</mark></h2><p id="cb8302f7-5f48-4154-8e88-1fd2f728e862" class="">L&#x27;autenticazione nelle reti wireless avviene solitamente attraverso il protocollo di sicurezza Wi-Fi Protected Access (WPA) o Wi-Fi Protected Access II (WPA2), che utilizzano l&#x27;algoritmo di crittografia Advanced Encryption Standard (AES) per proteggere la comunicazione tra il dispositivo e il punto di accesso (access point).</p><p id="cd70a209-3ef7-4d53-a5aa-dfbc3e499d88" class="">Il processo di autenticazione di solito prevede l&#x27;utilizzo di una password o di una passphrase, chiamata pre-shared key (PSK), che deve essere inserita nel dispositivo che si vuole connettere alla rete. In alternativa, è possibile utilizzare un sistema di autenticazione basato su certificati, dove il dispositivo deve possedere un certificato digitale che viene verificato dal server di autenticazione.</p><h1 id="71312a51-351c-458b-91b5-1ea21cd91267" class=""><mark class="highlight-red">Le applicazioni e i sistemi distribuiti</mark></h1><p id="031e7044-b311-4ec3-9ffe-f267e334a613" class="">Le applicazioni e i sistemi distribuiti sono basati sulla suddivisione del software e delle risorse su diversi nodi di una rete. Ciò permette di ottenere una maggiore scalabilità, affidabilità e flessibilità rispetto ai sistemi centralizzati.</p><p id="d21b4bed-90c7-46cd-a9bc-0abc390456cd" class="">In questo tipo di architettura, le applicazioni sono costituite da diversi componenti software, ciascuno dei quali può essere distribuito su un nodo di rete diverso. Questi componenti interagiscono tra loro attraverso un protocollo di comunicazione standard, spesso basato su HTTP o su altri protocolli di rete.</p><p id="aaf9e235-7a72-4390-ba7c-eec5f9e9f166" class="">Il sistema distribuito è costituito da diversi nodi di rete, ciascuno dei quali ospita uno o più componenti dell&#x27;applicazione. Questi nodi sono collegati tra loro tramite una rete di comunicazione, solitamente basata su Internet o su una rete privata.</p><p id="28951505-a81d-47c1-8539-e38839bdb3a9" class="">Uno dei principali vantaggi dei sistemi distribuiti è la scalabilità: i nodi possono essere aggiunti o rimossi a seconda delle esigenze dell&#x27;applicazione, senza dover interrompere il funzionamento dell&#x27;intero sistema. Inoltre, i sistemi distribuiti offrono un maggiore grado di affidabilità: se uno dei nodi di rete fallisce, gli altri nodi possono continuare a funzionare, garantendo così la continuità del servizio.</p><p id="78de9062-0233-4230-b159-bfcaadd96c68" class="">Tuttavia, i sistemi distribuiti presentano anche alcuni svantaggi. Ad esempio, la complessità dell&#x27;architettura può rendere più difficile la gestione del sistema e la risoluzione dei problemi. Inoltre, la sicurezza dei sistemi distribuiti può essere una sfida, in quanto i dati devono essere protetti durante la trasmissione su una rete aperta.</p><p id="67aab3f9-cdce-4ffd-a2ae-656ff750d779" class="">Per questo motivo, l&#x27;autenticazione e l&#x27;autorizzazione sono elementi cruciali nella progettazione di sistemi distribuiti. Gli utenti devono essere autenticati prima di poter accedere alle risorse del sistema e l&#x27;autorizzazione deve essere implementata in modo tale che gli utenti possano accedere solo alle risorse a cui hanno diritto.</p><p id="d36fe1c8-e295-4787-9b25-a61950dd4396" class="">SISTEMA DISTRIBUITO: è costituito da un insieme di applicazioni logicamente indipendenti che collaborano per il perseguimento di obbiettivi comuni attraverso un’infrastruttura di comunicazione hardware / software</p><p id="1d5e64bf-035f-4706-960f-1b5eb6191d11" class="">COMPOSTO da 3 ELEMENTI:</p><ul id="f6d4214e-78e1-42bd-aa0e-7d333953d53b" class="bulleted-list"><li style="list-style-type:disc">CLIENT: utilizzatore e richiedente.</li></ul><ul id="e2dd0367-a677-4103-85a2-e0ea931f75f8" class="bulleted-list"><li style="list-style-type:disc">SERVER: fornitore del servizio.</li></ul><ul id="f455d0f7-5d2a-4a9c-a6f2-4a9476dab13e" class="bulleted-list"><li style="list-style-type:disc">ACTOR: sia il client che il server.</li></ul><p id="509343ad-8e9d-4038-860d-93eb718c70a0" class="">FAMIGLIE dei SISTEMI DISTRIBUITI:</p><ul id="e743dc79-cd14-4ce9-a5f7-61f03c399a4e" class="bulleted-list"><li style="list-style-type:disc">Sistemi di CALCOLO distribuiti: calcolo ad alte prestazioni.</li></ul><ul id="6f7def43-6478-4010-86a4-ddbd5051b78d" class="bulleted-list"><li style="list-style-type:disc">Sistemi INFORMATIVI distribuiti: applicazioni e sistemi web.</li></ul><ul id="3db8e7eb-f757-4a56-9cc0-3910763f5de7" class="bulleted-list"><li style="list-style-type:disc">Sistemi distribuiti PERVASIVI: connessione wireless, sottoparti di sistemi più grandi (PAN, reti di sensori, sistemi domestici).</li></ul><p id="b5c5ca7c-8c2d-4e9d-8989-fd75c12a0273" class="">BENEFICI della DISTRIBUZIONE:</p><ul id="48f95a3f-1021-47f2-9c33-2eeaca9d1a25" class="bulleted-list"><li style="list-style-type:disc">Affidabilità: indica la capacità di un sistema distribuito di funzionare in modo continuo e senza interruzioni, anche in presenza di guasti di uno o più nodi del sistema.</li></ul><ul id="0c1f6968-cc14-4601-bc59-74079180243e" class="bulleted-list"><li style="list-style-type:disc">Trasparenza: si riferisce alla capacità di un sistema distribuito di nascondere la complessità della sua architettura e di presentare un&#x27;interfaccia uniforme e coerente agli utenti e alle applicazioni.</li></ul><ul id="a8b2c847-d3b7-4f9c-8cb7-cad283d68487" class="bulleted-list"><li style="list-style-type:disc">Di accesso: permette di accedere a risorse locali da remoto.</li></ul><ul id="9dbc28a4-9418-4b05-8c34-6699780ca96f" class="bulleted-list"><li style="list-style-type:disc">Di locazione: si riferisce alla capacità di nascondere l&#x27;indirizzo IP e la posizione fisica dei nodi del sistema distribuito, rendendo più facile la gestione e la distribuzione delle risorse.</li></ul><ul id="079829ca-8b74-4471-99a2-5e4d50b01bc5" class="bulleted-list"><li style="list-style-type:disc">Di concorrenza: indica la capacità di elaborare più richieste contemporaneamente in modo efficiente e affidabile. La concorrenza può migliorare le prestazioni e la scalabilità del sistema distribuito.</li></ul><ul id="fc102b99-8ce7-4b45-b2ab-618f3dee6cab" class="bulleted-list"><li style="list-style-type:disc">Di replicazione: indica la possibilità di creare copie di dati o di componenti del sistema distribuito in modo da garantire la disponibilità delle risorse anche in caso di guasti o di congestioni.</li></ul><ul id="dbec5f14-ce13-4c5e-b407-c414bfea6944" class="bulleted-list"><li style="list-style-type:disc">Di scalabilità: indica la capacità di un sistema distribuito di gestire un aumento del carico di lavoro in modo efficiente, senza perdere prestazioni o affidabilità.</li></ul><ul id="a242ea05-5f8e-4f89-a65f-c07b8317c61e" class="bulleted-list"><li style="list-style-type:disc">Di prestazioni: indica la capacità di un sistema distribuito di elaborare le richieste degli utenti in modo rapido e efficiente, migliorando l&#x27;esperienza dell&#x27;utente.</li></ul><ul id="fd68cd53-e745-4b7d-b8dc-1a99d757b4e9" class="bulleted-list"><li style="list-style-type:disc">Di migliorazione: indica la capacità di un sistema distribuito di migliorare le prestazioni, l&#x27;affidabilità e la scalabilità nel tempo, attraverso l&#x27;aggiunta di nuovi nodi o componenti. Ciò garantisce che il sistema possa adattarsi alle esigenze in evoluzione degli utenti e delle applicazioni.</li></ul><h1 id="c2baceea-9fca-446d-a196-9daafb78650f" class=""><mark class="highlight-red">Architetture dei sistemi web</mark></h1><p id="cb9add9f-f2ed-4794-9d9d-9040537650d6" class="">Le architetture dei sistemi web definiscono il modo in cui un&#x27;applicazione web è organizzata e si connette con altri sistemi. Le architetture più comuni sono:</p><ol type="1" id="c9792738-32e6-4833-9375-2a7dbfdf6bb1" class="numbered-list" start="1"><li>Architettura <mark class="highlight-red_background">client-server</mark>: in questa architettura, il client (solitamente un browser web) richiede le risorse da un server web, che le fornisce in risposta. Il client elabora quindi i dati e presenta l&#x27;interfaccia utente.</li></ol><ol type="1" id="a3c68b23-5633-4203-8715-fd2340d772c1" class="numbered-list" start="2"><li>Architettura a <mark class="highlight-red_background">tre strati</mark>: in questa architettura, l&#x27;applicazione è suddivisa in tre componenti: la presentazione (interfaccia utente), la logica di business (che esegue le operazioni dell&#x27;applicazione) e il database (dove vengono memorizzati i dati). Questi componenti possono essere eseguiti su diversi server.</li></ol><ol type="1" id="c9accc50-919d-4504-a9d7-ea2deb5ce7b3" class="numbered-list" start="3"><li>Architettura a <mark class="highlight-red_background">microservizi</mark>: in questa architettura, l&#x27;applicazione è suddivisa in servizi autonomi che possono essere distribuiti su più server. Questi servizi comunicano tra di loro utilizzando API (interfacce di programmazione delle applicazioni) e si occupano ciascuno di una specifica funzionalità.</li></ol><ol type="1" id="6a0f4d8f-fdd0-4d00-91f9-5f93c1a64d97" class="numbered-list" start="4"><li>Architettura a <mark class="highlight-red_background">serverless</mark>: in questa architettura, l&#x27;applicazione è composta da funzioni che vengono eseguite su server cloud. Le funzioni vengono attivate in risposta a eventi specifici (come richieste HTTP) e non richiedono un server dedicato.</li></ol><h1 id="cec7393f-b0f3-4feb-9d62-5ac3ceaea45c" class=""><mark class="highlight-red">API</mark></h1><p id="5b277605-b4d5-45f4-85ab-474e6a83a411" class="">Le API, acronimo di Application Programming Interface, sono un insieme di specifiche tecniche e regole che consentono ad un software di comunicare con un altro. In sostanza sono una sorta di ponte che consente ad un&#x27;applicazione di utilizzare le funzionalità di un&#x27;altra applicazione o servizio esterno.</p><p id="3ade350a-72f5-42d5-bf22-8b48cdc85f11" class="">Le API sono spesso utilizzate per la creazione di applicazioni distribuite o per l&#x27;integrazione di sistemi diversi. Ci sono diverse tipologie di API, tra cui le API web, le API di sistema e le API di terze parti:</p><ul id="401b01ab-18ce-4e94-b083-10b826628dcc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">API WEB</mark>: sono tra le più utilizzate e permettono la comunicazione tra applicazioni web tramite protocolli standard come HTTP e HTTPS. Possono essere realizzate in diverse forme, come ad esempio API REST (Representational State Transfer) o SOAP (Simple Object Access Protocol).</li></ul><ul id="01c2e890-df8b-4872-b743-4b4cb46f82c4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">API DI SISTEMA</mark>: sono utilizzate per accedere alle funzionalità del sistema operativo o del software. Ad esempio, le API di sistema possono essere utilizzate per accedere al filesystem o alla rete.</li></ul><ul id="cefb956e-874f-4b87-b19a-52304c5c74c2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">API DI TERZE PARTI</mark>: sono fornite da aziende o enti esterni e consentono l&#x27;integrazione di funzionalità specifiche all&#x27;interno delle applicazioni. Ad esempio, le API di Facebook consentono ad una applicazione di integrare le funzionalità di Facebook, come l&#x27;autenticazione, la pubblicazione di post, etc.</li></ul><h1 id="5300cd5e-b173-4691-a03e-cc54e443f261" class=""><mark class="highlight-red">Socket</mark></h1><p id="b2bef74b-b4a6-4e59-91a3-0228277163ce" class="">I socket sono una API di comunicazione a basso livello che consente la comunicazione tra processi o applicazioni su una rete. Essi forniscono un modo standardizzato per i processi su un computer di comunicare tra loro e di scambiarsi dati. La comunicazione tramite socket utilizza due protocolli principali: TCP e UDP.</p><div id="721947b0-cc7f-4798-8885-d593a58bcd37" class="column-list"><div id="dd88281c-3307-4018-96a3-901aa20a8d58" style="width:50.000000000000014%" class="column"><p id="6e714d3b-7462-44ef-a4d4-2d9e9a6974a0" class="">Il concetto di socket è stato sviluppato come estensione diretta del paradigma UNIX di I/O su file, che si basa sulla sequenza di <mark class="highlight-red_background">operazioni</mark> open-read-write-close:</p><ul id="f3962566-ffd3-480e-9830-cc323207869a" class="bulleted-list"><li style="list-style-type:disc">open: permette di accedere a un file.</li></ul><ul id="2501ccc0-0757-4b7d-954e-1349da74cd5b" class="bulleted-list"><li style="list-style-type:disc">read/write: accedono ai contenuti del file.</li></ul><ul id="97bf0226-a238-4fbb-9c89-c8dd85f86dff" class="bulleted-list"><li style="list-style-type:disc">close: terminazione dell’utilizzo del file.</li></ul><p id="c55bed47-7689-40a1-9e55-c701e335011c" class="">
+</p></div><div id="475012b9-4f11-4611-a1a7-51fa3498f8d8" style="width:50%" class="column"><p id="c607916d-aefa-459f-96c8-7943b2491922" class=""><mark class="highlight-red_background">Famiglie</mark> di socket:</p><ul id="09527567-baf7-450f-9629-9690b852ccaa" class="bulleted-list"><li style="list-style-type:disc">Internet socket (AF_INET): permette il trasferimento di dati tra processi posti su macchine remote connesse tramite una LAN o Internet.</li></ul><ul id="b8173886-a426-4864-96a1-cf76a79bc89e" class="bulleted-list"><li style="list-style-type:disc">Unix Domain socket (AF_UNIX): permette il trasferimento di dati tra processi sulla stessa macchina Unix.</li></ul><p id="8cef8d1c-8065-459e-8096-98628e6752a8" class="">
+</p></div></div><p id="11ba1605-38ef-4e9a-b320-5c14357a57cc" class=""><mark class="highlight-red_background">Funzioni</mark> più utilizzate:</p><ul id="fac6abe1-c3b7-4ed0-aa6d-abce3531fdb7" class="bulleted-list"><li style="list-style-type:disc">socket/serversocket: crea un nuovo socket.</li></ul><ul id="ec79628b-9b77-482d-af75-bd09260e7ff2" class="bulleted-list"><li style="list-style-type:disc">close: termina l’utilizzo di un socket.</li></ul><ul id="c0a4e9f8-4302-4789-834a-b3a13d2c6326" class="bulleted-list"><li style="list-style-type:disc">bind: collega un indirizzo di rete a un socket.</li></ul><ul id="fbe963e1-5c49-495d-a677-7a6516031b64" class="bulleted-list"><li style="list-style-type:disc">listen: aspetta messaggi in ingresso.</li></ul><ul id="b7dee72b-d5d5-4ad0-b33b-1342a85d0aec" class="bulleted-list"><li style="list-style-type:disc">accept: comincia a utilizzare una connessione in ingresso.</li></ul><ul id="71ad3a3d-6d24-4a28-a06e-17ef6fa826ac" class="bulleted-list"><li style="list-style-type:disc">connect: crea una connessione con un host remoto.</li></ul><ul id="02366b11-5afb-4319-a785-46bab761caeb" class="bulleted-list"><li style="list-style-type:disc"> send: trasmette dati su una connessione attiva.</li></ul><ul id="339a401a-c6d4-4a38-8718-17a6fd688716" class="bulleted-list"><li style="list-style-type:disc">recv: riceve dati da una connessione attiva.</li></ul><p id="e5227dcd-f67f-41fc-aad2-d3abb59189a3" class=""><mark class="highlight-red_background">Tipi fondamentali</mark> di Socket: </p><ul id="7c9790c0-b73f-4c3a-b239-57d2f1a8386b" class="bulleted-list"><li style="list-style-type:disc">stream socket: Operativamente, ogni processo crea il proprio endpoint creando l’oggetto socket in Java e successivamente: <ul id="df80399a-86a9-46b7-aa7c-c184ecf54012" class="bulleted-list"><li style="list-style-type:circle">il server si mette in ascolto in attesa di un collegamento e quando gli arriva una richiesta la esaudisce; successivamente crea un nuovo socket dedicato alla connessione.</li></ul><ul id="9c8bf0a1-2bd0-49de-9e36-27924f0bb843" class="bulleted-list"><li style="list-style-type:circle">il client si pone in coda sul socket del server e quando viene “accettato” dal server crea implicitamente il binding (trad.legante) con la porta locale.</li></ul></li></ul><ul id="2fd8351b-4e10-4f3c-83d7-6766bb5668c6" class="bulleted-list"><li style="list-style-type:disc">datagram socket: viene realizzata la comunicazione che permette di scambiare dati senza connessione.</li></ul><ul id="a0041344-20ee-41d7-a17b-9286caec927c" class="bulleted-list"><li style="list-style-type:disc">raw socket: utilizzati nello sviluppo di protocolli.</li></ul><h1 id="1004265e-b1c0-4a4f-b277-4e198250cea2" class=""><mark class="highlight-red">La comunicazione seriale</mark></h1><p id="baf59450-9712-48d8-b2fd-06e08203cc09" class="">La comunicazione seriale è un metodo di trasmissione dati che prevede l&#x27;invio dei dati bit per bit in modo sequenziale su un singolo canale di comunicazione. Questo tipo di comunicazione è utilizzato per collegare dispositivi elettronici tra loro in modo che possano scambiare informazioni.</p><p id="38b5573f-4085-418d-89f4-78eecee228cb" class="">Per effettuare una comunicazione seriale, è necessario utilizzare un protocollo di comunicazione che definisce il modo in cui i dati vengono inviati e ricevuti. I due protocolli di comunicazione seriale più comuni sono RS-232 e RS-485.</p><p id="c8ba1317-4e48-42b3-a3ec-7976610264c3" class="">Il protocollo RS-232 prevede la trasmissione seriale di dati in modalità asincrona, ovvero i dati vengono trasmessi senza utilizzare un clock comune per sincronizzare la trasmissione e la ricezione dei dati. Questo tipo di protocollo prevede due fili per la trasmissione dei dati (TX) e la ricezione dei dati (RX).</p><p id="548b63a9-5d9c-4575-ab51-4f47bf781e2b" class="">Il protocollo RS-485 prevede invece la trasmissione seriale di dati in modalità sincrona, ovvero i dati vengono trasmessi utilizzando un clock comune per sincronizzare la trasmissione e la ricezione dei dati. Questo tipo di protocollo prevede un solo filo per la trasmissione dei dati (TX) e un altro filo per la ricezione dei dati (RX).</p></div></article></body></html>

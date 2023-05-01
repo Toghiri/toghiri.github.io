@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI GPOI (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="826325a9-9bce-430a-943e-a74f943da4a6" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📝</span></div><h1 class="page-title">APPUNTI GPOI (PIETRO VACCARI)</h1></header><div class="page-body"><p id="ca10e334-1e06-4d3e-b8ca-7107b5e4d0b3" class="">
+</p><nav id="d6d8b523-e84f-48cd-a2b9-21986aa3f9b4" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#823c50d9-e39f-481a-9ec1-42f02e477f4e"><mark class="highlight-red">BENI, BISOGNI E SERVIZI</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8548da60-e5b0-4650-950d-c5cd24e17f1f"><mark class="highlight-red">TEORIA DI BASE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6d6a9b8e-ce9f-4485-8c2b-ce34c0550806"><mark class="highlight-red">ATTI DI PRODUZIONE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#73087b77-a517-429e-a329-5d5764798ab6"><mark class="highlight-red">FATTORI PRODUTTIVI</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7821dcfb-4d40-4b0c-985d-97e8d38087b0"><mark class="highlight-red">SETTORI ECONOMICI</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#56d4fc2c-f26d-4573-be9b-5f395f68b414"><mark class="highlight-red">FUNZIONE DI PRODUZIONE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01e21f8d-ded1-4d32-ac8f-34d68865ec94"><mark class="highlight-red">SISTEMI ECONOMICI</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7e802dbb-b528-4299-8c54-062266142cfc"><mark class="highlight-red">FORME DI MERCATO</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#820ffad4-5ead-49f7-8af6-eaef61ca5ee2"><mark class="highlight-red">UNITA’ ORDINALE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f79b5f5-ce74-429f-8a4e-7ed5248064f9"><mark class="highlight-red">LEGGE DELLA DOMANDA</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#12f58e1d-5ab8-4ae9-ac8a-ac5ac82886c1"><mark class="highlight-red">LEGGE DELL’OFFERTA</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3b9bb985-a51c-460e-bf58-de5c49fb4217"><mark class="highlight-red">TIPI DI IMPRESE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5d9e3dae-2f6c-4031-8fc0-25081f094ac9"><mark class="highlight-red">AZIENDE</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#57c75813-c92f-4325-acfa-ca9a0f9b13ae"><mark class="highlight-red">I COSTI E SISTEMI DI PIANIFICAZIONE E CONTROLLO</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e2af5fcc-4661-4b65-a483-2922fd04a071"><mark class="highlight-red">PIANIFICAZIONE DI UN PROGETTO</mark></a></div></nav><p id="82c09235-141c-42c5-a21e-a332bd5e9858" class="">
+</p><h2 id="823c50d9-e39f-481a-9ec1-42f02e477f4e" class=""><mark class="highlight-red">BENI, BISOGNI E SERVIZI</mark></h2><p id="6c5aad88-c359-4d3a-899e-1bdd2b195ce8" class=""><mark class="highlight-red">BISOGNO</mark>: stato / sensazione di disagio / necessità che va soddisfatto, per soddisfarlo bisogna privarsi di parte del proprio reddito tramite un bene o servizio o del proprio tempo.<div class="indented"><p id="f0d01d75-0513-492a-801f-17461de0c209" class="">CARATTERISTICHE:<div class="indented"><ul id="a389f618-44a3-41c7-9238-29f2ad9bc604" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">VARIABILI</mark>: da individuo a individuo e nel tempo.</li></ul><ul id="8ddc4ee6-1249-4ddb-b9cc-3ce2c0e55ec1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SAZIABILI</mark>: che possono essere soddisfatti.</li></ul><ul id="f41bc50e-4709-4bbb-8a89-7d64babf7996" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">RISORGENTI</mark>: possono ripresentarsi (mangiare).</li></ul><ul id="9ff72bb6-6cd8-4d8f-a342-1ce905a2c573" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">ILLIMITATI</mark>: ce ne sarà sempre uno o più.</li></ul><ul id="48b7611c-14a6-417d-b5f2-c2c8ef56445a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">COMPLEMENTARI</mark>: per essere soddisfatti hanno bisogno di qualcos’altro (ho bisogno di spostarmi ⇒ bene automobile + bene benzina).</li></ul></div></p><p id="ecc2c203-d57a-4288-a012-87d3f9c0ff31" class="">CLASSIFICAZIONI:<div class="indented"><ul id="c645e8d6-9d42-469e-99e2-6a598f4911c4" class="bulleted-list"><li style="list-style-type:disc">IMPORTANZA:<ul id="fcbd1766-7d33-4ffd-b88b-b30133055e87" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">PRIMARI</mark>: permettono di rimanere in vita (mangiare).</li></ul><ul id="82158910-a7c2-4899-a915-c8b0f5cc66fa" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">SECONDARI</mark>: si possono non soddisfare ma possono migliorare la qualità della vita (automobile).</li></ul><ul id="3779f5b3-5aff-4df5-9062-9150fad0571f" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">VOLUTUARI</mark>: superflui (appagamento puramente psicologico).</li></ul></li></ul><ul id="398ca28f-43d0-4b0e-99da-1771ad42424b" class="bulleted-list"><li style="list-style-type:disc">TEMPO:<ul id="03094721-d85e-4759-ac29-6f46992e0481" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">ATTUALI</mark>: bisogni che ho subito.</li></ul><ul id="6ab64abb-aa3d-47b9-8d6f-f95f1c945fb0" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">FUTURI</mark>: bisogni che non si hanno in questo momento ma che potrò avere in futuro.</li></ul></li></ul><ul id="77d9a4be-2e22-4cbd-9fb5-22f2bbc51a7b" class="bulleted-list"><li style="list-style-type:disc">NUMERO DI SOGGETTI RICEVENTI:<ul id="4995f34f-8c9e-42f0-aa09-7dc37834b5a8" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">INDIVIDUALI</mark>: bisogni del singolo.</li></ul><ul id="cc8d8714-eedf-438b-bcd2-310625d78bbd" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">COLLETTIVI</mark>: bisogni avvertiti da una collettività.</li></ul></li></ul></div></p><p id="9a220f99-9398-401b-80e4-db11d0e447ee" class="">COME VENGONO <mark class="highlight-orange_background">SODDISFATTI</mark> I BISOGNI?<div class="indented"><ul id="5da75458-6aca-4254-9eb4-36eaf8fb49fb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">BENE</mark>: oggetto tangibile</li></ul><ul id="de5214f5-3506-49c6-9759-5f2ce3e3e89a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">SERVIZIO</mark>: lavoro / prestazione svolti da un 3° idonei a soddisfare un bisogno</li></ul></div></p></div></p><p id="fd15c031-42c4-438a-b164-70f444da4e03" class="">
+</p><p id="a167beb5-ed54-4e54-85f8-f9b963334f02" class=""><mark class="highlight-red">BENE</mark>: oggetti o servizi che soddisfano un bisogno<div class="indented"><ul id="ffcba22e-a2ee-4d9e-8d01-f37c17d6bf5a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">ECONOMICI</mark>: per soddisfare il bisogno e ottenere il bene devo privarmi di una parte del reddito.</li></ul><ul id="ce6d73b7-5bd1-4014-b462-cca5877903c6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">NON ECONOMICI</mark>: non dipende dai soldi (sonno, riflessione…)</li></ul><p id="ffc81ecb-16e7-4be4-a1b0-f9d96e1ab5fd" class="">CARATTERISTICHE BENI ECONOMICI:<div class="indented"><ul id="314cb011-c0ce-4359-9226-fdbb614d36dc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">UTILE</mark>: idoneo a soddisfare il bisogno che ho.</li></ul><ul id="1b0593e4-c1f8-4388-aee1-b6a6dcaec8c4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">ACCESSIBILE</mark>: il soggetto che ha il bisogno deve potervi accedere.</li></ul><ul id="12bc263f-c5c1-4133-a4b0-0275c601a5e0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SCARSO </mark>/ <mark class="highlight-orange_background">LIMITATO</mark>: ve ne è un certo numero (+ quantità ⇒ - valore || - quantità ⇒ + valore)</li></ul></div></p><p id="c4a2f498-7026-49fb-826b-1b5b857d89bf" class="">TIPOLOGIE BENI ECONOMICI: <div class="indented"><ul id="f00ca86b-b9cd-44f2-beed-bab6adc635c9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">DUREVOLI</mark>: beni che durano nel tempo (automobile).</li></ul><ul id="5004dd87-59c8-4f94-88cf-4ac4f1e7cdd2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">NON DUREVOLI</mark>: dopo averli consumati non esistono più (cibo).</li></ul><p id="390184ca-6dbb-421c-a9af-9aa95952d153" class="">
+</p><ul id="e1d26989-3f11-430e-9496-c4eabf39041b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">DI CONSUMO</mark>: li consumi per soddisfare direttamente il bisogno (pane).</li></ul><ul id="e710fa4c-ff59-457e-b988-77899f5ec372" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">STRUMENTALI</mark>: servono a produrre qualcosa che soddisfa il bisogno (farina).</li></ul><p id="52e68018-383f-4e65-9aa3-aa029482b5ef" class="">
+</p><ul id="7df2e2fa-0168-4606-9de3-600ae7c85dfa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SUCCEDANEI</mark> o ALTERNATIVI: beni diversi tra loro che soddisfano lo stesso bisogno (olio di semi / d’oliva).</li></ul><ul id="10c5f51b-95eb-4070-8629-69512615f1d3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">COMPLEMENTARI</mark>: per soddisfare il bisogno devono essere per forza affiancati ad un altro bene (bene automobile + bene benzina).</li></ul><ul id="4265d27f-ff9c-4335-9b37-75039c2858cb" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></p></div></p><p id="26aaaac5-497b-4ffb-9238-8f5ef231075c" class=""><mark class="highlight-red">SERVIZIO</mark>: prestazione di un 3° che soddisfa un bisogno<div class="indented"><ul id="eed76d69-e121-4c09-993d-92229240ef3f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">PUBBLICI</mark>: offerti dallo stato o da enti pubblici.</li></ul><ul id="33446d95-22b5-49cb-b1c6-9c725f56a9ab" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">PRIVATI</mark>: offerti da soggetti o aziende private.</li></ul></div></p><h2 id="8548da60-e5b0-4650-950d-c5cd24e17f1f" class=""><mark class="highlight-red">TEORIA DI BASE</mark></h2><p id="a14a87b7-3178-4bea-b0fc-f3c3eabc564c" class=""><mark class="highlight-red_background">OFFERTA</mark>: è la quantità di un bene o servizio prodotto in cambio di denaro.</p><p id="71698035-aacc-4e89-9d18-4382e1451567" class=""><mark class="highlight-red_background">UTILITA’</mark>: idoneità di un bene o servizio a soddisfare un bisogno.</p><p id="bf920cc1-ff6a-43ec-ada8-1e92915e3860" class=""><mark class="highlight-red_background">LEGGE DELL’OFFERTA</mark>: a parità di altre condizioni esiste una relazione diretta tra il prezzo di un bene e la quantità dell’offerta: quando il presso aumenta la quantità offerta tende ad aumentare, quando il prezzo diminuisce l’offerta tende a diminuire.</p><p id="8bda64fb-3f9e-4be8-bd85-eb932f04a11d" class="">IMPRENDITORE ⇒ ha lo scopo di massimizzare il profitto ⇒ è predisposto a produrre beni che lo fanno guadagnare di più.</p><p id="2ba4fe09-760f-46a3-a060-d953b6afaa49" class=""><mark class="highlight-red_background">LIVELLO TECNOLOGICO</mark>: l’aumento delle tecnologie di produzione rende l’industria più efficiente aumenta la produzione e diminuisce i costi.</p><p id="15018e7a-c50a-4b77-87df-f4a1e0834ac8" class="">All’aumentare del prezzo ⇒ </p><ul id="46bc7708-c19f-4c2a-8c94-fbdadda1b299" class="bulleted-list"><li style="list-style-type:disc">offerta aumenta se: <ul id="d5ea6f76-11c1-499c-a344-36d061c2267e" class="bulleted-list"><li style="list-style-type:circle">aumenta il livello tecnologico.</li></ul><ul id="116bfbaa-3662-42b9-adaa-b18366667bf3" class="bulleted-list"><li style="list-style-type:circle">diminuisce il prezzo di produzione.</li></ul></li></ul><ul id="ea33af98-fa90-4b87-9fcc-3515bb471258" class="bulleted-list"><li style="list-style-type:disc">offerta diminuisce se:<ul id="f66d224f-dc1a-430f-b66d-f6eed98b7a2d" class="bulleted-list"><li style="list-style-type:circle">cala il livello tecnologico.</li></ul><ul id="68e2b85d-9426-48d6-aa6f-7a13bc2e9820" class="bulleted-list"><li style="list-style-type:circle">aumenta il prezzo di produzione.</li></ul></li></ul><p id="64574c95-3ed3-4c3f-8f56-930d41e23b61" class=""><mark class="highlight-red_background">MACRO ECONOMIE</mark> (mercato globale): somma delle curve di tutti i singoli produttori.</p><p id="a037614f-8c9b-407c-8b97-fee2e2fbf5ea" class=""><mark class="highlight-red_background">MERCATO</mark>: luogo dove si incontrano tutti gli operatori economici, ha il ruolo di mettere a contatto produttori e acquirenti.</p><p id="179010a6-2d0b-4bc8-b199-a1e27eca7e21" class=""><mark class="highlight-red_background">PRODUZIONE</mark>: attività diretta a creare valore aggiunto (pane €€ &gt; farina €), combina vari fattori produttivi (capitale, forza lavoro, macchine…) per ottenere un prodotto.</p><h2 id="6d6a9b8e-ce9f-4485-8c2b-ce34c0550806" class=""><mark class="highlight-red">ATTI DI PRODUZIONE</mark></h2><ul id="5597d967-0e66-41ed-b69b-37d48c4793f7" class="bulleted-list"><li style="list-style-type:disc">Trasformazioni materiale: classica produzione.</li></ul><ul id="c547dd79-1758-4ba7-a709-837a9f6ecbea" class="bulleted-list"><li style="list-style-type:disc">Trasformazioni nello spazio: trasferire da un luogo all’altro.</li></ul><ul id="37ae2200-b6d3-414b-bce0-91734b7e83c8" class="bulleted-list"><li style="list-style-type:disc">Trasformazioni nel tempo: esempio vino (vendita in un momento successivo).</li></ul><ul id="a2ba0dfc-0132-41f8-b3b8-ed50b64604fb" class="bulleted-list"><li style="list-style-type:disc">Prestazione di servizi: vendita di servizi particolari che non sono beni materiali (avvocati, catering…).</li></ul><h2 id="73087b77-a517-429e-a329-5d5764798ab6" class=""><mark class="highlight-red">FATTORI PRODUTTIVI</mark></h2><ul id="bdfb8b8e-e2a6-47f1-8c80-abe8546342ae" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Risorse naturali</mark> (T): 1) Luogo della sede, 2) Materie prime, 3) Clima.</li></ul><ul id="449ba6e1-456a-4706-9514-b11c7bc63e1c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Lavoro </mark>(L): attività umana.</li></ul><ul id="75315754-a7fd-488c-8d09-2f4f617d799d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Capitale </mark>(K): i beni usati per la produzione (macchinari e fabbriche).</li></ul><ul id="e10dabe3-4882-4159-9b3a-35485e3dfda7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Capitale finanziario</mark>: soldi.<ul id="b53ca129-599d-4703-9951-ccfda72d3cd6" class="bulleted-list"><li style="list-style-type:circle">Fissi: riutilizzati per tanto tempo.</li></ul><ul id="0e0ffc38-c9f6-4040-b885-de846ed6ae70" class="bulleted-list"><li style="list-style-type:circle">Circolanti: si rinnovano nel tempo (soldi e magazzino).</li></ul></li></ul><ul id="06bd83e3-f3be-4280-9321-fed1c0856085" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Organizzazione</mark>: decisioni dell’imprenditore.</li></ul><h2 id="7821dcfb-4d40-4b0c-985d-97e8d38087b0" class=""><mark class="highlight-red">SETTORI ECONOMICI</mark></h2><ul id="7b7c5d85-d62f-4417-b11a-9fe16dfeb338" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">1° SETTORE: AGRICOLO E MATERIE PRIME</mark>.</li></ul><ul id="5f3d9a0d-6544-401b-af26-879066808b2e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">2° SETTORE: INDUSTRIA E TRASFORMAZIONE DELLE MATERIE PRIME</mark>.</li></ul><ul id="c8c30e9f-9ccd-4ed6-a31d-1dc7d44f81e2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">3° SETTORE: SERVIZI</mark>.</li></ul><p id="17fe9d9a-fe88-43e4-b650-ee9336fd0dc7" class=""><mark class="highlight-orange_background">ENTI LOCALI</mark>: province e comuni.</p><p id="85e7d205-73da-4ca4-881d-a10109c3b0a5" class=""><mark class="highlight-orange_background">ENTI TERRITORIALI</mark>: regioni.</p><p id="36de8742-0277-4720-89bd-0ef14986665c" class=""><mark class="highlight-orange_background">PUBBLICA AMMINISTRAZIONE</mark>: scuole, università, autostrade.</p><h2 id="56d4fc2c-f26d-4573-be9b-5f395f68b414" class=""><mark class="highlight-red">FUNZIONE DI PRODUZIONE</mark></h2><p id="467cf7ce-4700-412f-baec-900170b4099c" class="">L’output dipende da quanti fattori produttivi ci sono: Y = quantità prodotta, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><msub><mo separator="true">,</mo><mn>2</mn></msub><msub><mo separator="true">,</mo><mn>3</mn></msub></mrow><annotation encoding="application/x-tex"> X_1,_2,_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct"><span class="mpunct">,</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct"><span class="mpunct">,</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> = quantità fattori produttivi, OUTPUT = <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>X</mi><mn>1</mn></msub><msub><mo separator="true">,</mo><mn>2</mn></msub><msub><mo separator="true">,</mo><mn>3</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Y - F(X_1,_2,_3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct"><span class="mpunct">,</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct"><span class="mpunct">,</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span>.</p><p id="b3228165-541e-4c64-a863-ef23e416949c" class="">Coefficiente di produzione: quantità di un bene per ottenere un prodotto:<div class="indented"><ul id="12a21df6-f422-430c-8fc5-d60174b05818" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Fissi</mark>: quantità sempre fisse che non cambiano nel tempo.</li></ul><ul id="625b437f-9c8b-4247-a68a-460d646652ae" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Variabili</mark>: la stessa quantità può essere prodotta da diverse combinazioni di bene (sostituibilità tra fattori produttivi).</li></ul></div></p><p id="85707fa1-509f-4c46-a16c-f158ab94c5d4" class=""><mark class="highlight-red_background">PRODUTTIVITA’ MARGINALE</mark>: quantità addizionale ottenuta aggiungendo un fattore produttivo.</p><ul id="a5ba8f48-efe4-4436-b8d7-eef2a4648c71" class="bulleted-list"><li style="list-style-type:disc">Produttività marginale media dei fattori produttivi: media di resa per fattore produttivo.</li></ul><ul id="a3737158-7cf6-4f9b-91d4-352c3b3c50f0" class="bulleted-list"><li style="list-style-type:disc">Produttività marginale globale: mira a capire qual è il fattore più produttivo.<p id="4d5e18c9-8679-4e37-acd6-1c058fbe923a" class="">Il prodotto totale, quando aggiungo un fattore produttivo aumenterà in misura non proporzionale.</p></li></ul><h2 id="01e21f8d-ded1-4d32-ac8f-34d68865ec94" class=""><mark class="highlight-red">SISTEMI ECONOMICI</mark></h2><ul id="a60e54fd-4fd0-4500-b3c3-1a3695c6d13a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SISTEMA LIBERISTA</mark>: lo stato non interviene in nessun modo nella sua economia.</li></ul><ul id="62460952-1640-4744-bcee-93aba8b799fd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SISTEMA COLLETTIVISTA</mark> o AD ECONOMIA RAMIFICATA (es. regimi totalitari):<ul id="c1778204-0857-4160-9f09-a8aea29943e5" class="bulleted-list"><li style="list-style-type:circle">STATO: controlla tutte le aziende e imprese del paese, garantisce lavoro e sanità a tutti.</li></ul><ul id="4f47997c-7ee0-4531-8eeb-01f6c2960be7" class="bulleted-list"><li style="list-style-type:circle">PROBLEMI: appiattimento produttivo, condizioni di vita basse, offerta limitata, limitazione libertà personale</li></ul></li></ul><ul id="605ff861-e6db-451e-a883-3932f89a0b1c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SISTEMA DI ECONOMIA MISTA</mark> (unione dei 2 sistemi):<ul id="05f6c729-bdcc-4e33-ab61-d9a137429f39" class="bulleted-list"><li style="list-style-type:circle">STATO: crea beni e servizi a prezzi più bassi di quelli prodotti dai privati, tutela i cittadini, ha iniziative economiche (dazi, regola scambi), cerca di organizzare i momenti di troppa espansione e recessione economica aiutando aziende e cittadini e permette la creazione e gestione di aziende private.</li></ul></li></ul><h2 id="7e802dbb-b528-4299-8c54-062266142cfc" class=""><mark class="highlight-red">FORME DI MERCATO</mark></h2><ul id="75a0c6f1-7efc-4e4f-a316-9796366bd046" class="bulleted-list"><li style="list-style-type:disc">A SECONDA DELL’AMPIEZZA / AREA / DIMENSIONE:<ul id="7ef94e3c-e477-4228-a4b9-481fe8b10bee" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">MONDIALE </mark>/ <mark class="highlight-orange_background">NAZIONALE </mark>/ <mark class="highlight-orange_background">LOCALE</mark>.</li></ul></li></ul><ul id="b0308bd7-9357-4761-bd85-bf5d0827d41f" class="bulleted-list"><li style="list-style-type:disc">A SECONDA DELLA DESTINAZIONE DELLA MERCE:<ul id="88f4cd68-9c62-4c98-9718-7ec4c54ac7d9" class="bulleted-list"><li style="list-style-type:circle">ALL’<mark class="highlight-orange_background">INGROSSO</mark> / AL <mark class="highlight-orange_background">DETTAGLIO</mark>.</li></ul></li></ul><ul id="977134d9-859b-4dbc-9759-ab45acc08a0a" class="bulleted-list"><li style="list-style-type:disc">A SECONDA DELLA FORMA / REGIME DEL MERCATO:<ul id="74ee687e-6891-4db8-8243-52e23cdec7d6" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">CONCORRENZA PERFETTA</mark>: tante aziende producono tutte lo stesso bene e il prezzo è regolato dal mercato.</li></ul><ul id="d0461d21-21ad-434f-aed3-dfa4885ab903" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">CONCORRENZA MONOPOLISTICA</mark>: tante aziende con beni differenti e i prezzi sono decisi dagli imprenditori.</li></ul><ul id="fd5da765-1b9f-4b8a-a6f7-490874150b74" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">OLIGOPOLIO</mark>: poche aziende con beni differenti e i prezzi sono decisi dagli imprenditori.</li></ul><ul id="e378c50f-4746-4100-85dc-624d79cd0553" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">MONOPOLIO</mark>: 1 azienda, 1 prodotto e prezzo deciso dall’imprenditore.</li></ul></li></ul><h2 id="820ffad4-5ead-49f7-8af6-eaef61ca5ee2" class=""><mark class="highlight-red">UNITA’ ORDINALE</mark></h2><p id="0122dfdd-e336-4656-b724-4e65c8b3dfa6" class=""><mark class="highlight-orange_background">ECONOMIA POLITICA</mark>: scienza che studia i comportamenti dei soggetti economici.</p><p id="d57cb633-04c0-4017-ab17-d38103c8cd13" class=""><mark class="highlight-orange_background">TEORIA DI PARETO</mark>: l’utilità è la misurazione di quanto un bene soddisfa un bisogno e non può essere misurata, si può solo misurare la scelta a base del consumatore.</p><p id="66721670-8a0e-4ad8-976e-c67e60a68b3f" class="">CONSUMATORE ⇒ ORDINE DELLE PREFERERNZE ⇒ PANIERI (insieme di tanti punti nello SPAZIO DEL CONSUMO) ⇒ sono suscettibili alle preferenze e hanno proprietà transitiva</p><p id="59e73acd-74c2-42f7-a574-da4cbefdf55e" class=""><mark class="highlight-red_background">PANIERI</mark>: Un paniere è un insieme di beni, ognuno dei quali è associato ad una determinata quantità. Ad esempio, il paniere A è composto da 2 litri di latte e 1 chilo di pane, mentre il paniere B è composto da 1 litro di latte e tre chili di pane. Sia il paniere A che il paniere B contengono i medesimi beni, il pane e il latte, ciò che cambia è la quantità di ognuno di essi.</p><div id="7c3aba79-a649-4c34-9d70-abce046641f9" class="column-list"><div id="4c3dc482-983a-4de2-80ee-45d7380a5860" style="width:75%" class="column"><p id="f5f9f8ad-de96-4cce-8adf-3fc588ff2e70" class=""><mark class="highlight-red_background">CURVA DELL’INDIFFERENZA</mark>: Le curve di indifferenza mostrano sul piano cartesiano le combinazioni di due beni economici con medesimo livello di utilità. Ad esempio, per una persona consumare 2 mele e 1 pera ( scelta A ) ha la medesima utilità che consumare 1 mela e 2 pere ( scelta B ). Entrambe le combinazioni di scelta ( A e B ) forniscono al consumatore il medesimo livello di utilità ( soggettiva ) sulla curva di indifferenza I&#x27;.</p><p id="fc3a1340-ea34-4429-86f7-ad6d4ee0d26b" class=""><mark class="highlight-red_background">UNITA’ ORDINALE</mark>: è una nozione di utilità in cui i panieri dei beni sono disposti su una scala ordinale senza essere associati ad alcuna grandezza assoluta. Con l&#x27;utilità ordinale gli economisti abbandonano il tentativo di misurare l&#x27;utilità ( utilità cardinale ). Nell&#x27;utilità ordinale ciò che conta è soltanto l&#x27;ordine delle scelte. Non è quindi possibile sommare in modo aritmetico le utilità individuali. È invece possibile confrontare l&#x27;utilità delle scelte di consumo su diversi panieri di beni. Ad esempio, un consumatore preferisce il paniere A al paniere B senza quantificare in termini assoluti tale preferenza.</p><p id="45d9ee2f-f820-4045-b0a6-c0564c28505b" class="">
+</p></div><div id="e7a80b52-8872-4a35-a6ea-11c170062ea7" style="width:25%" class="column"><figure id="90693260-5e09-43a3-9e78-416c6666ec24" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled.png"><img style="width:330px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled.png"/></a></figure><p id="a339b0e7-6f6d-4a16-ac31-19c1e4bf5987" class="">
+</p></div></div><h2 id="0f79b5f5-ce74-429f-8a4e-7ed5248064f9" class=""><mark class="highlight-red">LEGGE DELLA DOMANDA</mark></h2><div id="0f5af2f7-8114-4dc5-8b24-a6ad2df780a7" class="column-list"><div id="15ba1e0c-0814-42fc-9fe2-6eff967d046c" style="width:68.75%" class="column"><p id="6ecc30d9-b449-46a1-9227-52863e3f1463" class=""><mark class="highlight-red">Domanda di un consumatore:</mark> quantità di un bene acquistato da un consumatore in corrispondenza di un determinato prezzo.</p><p id="dd589ef4-7582-48d7-8dec-675b56527690" class=""><mark class="highlight-red">LEGGE DELLA DOMANDA</mark>: A parità di tutte le condizioni esiste una relazione inversa tra il prezzo di un bene e la quantità domandata di questo bene da un consumatore (prezzo aumenta ⇒ quantità richiesta diminuisce, quantità richiesta aumenta ⇒ prezzo aumenta)</p><p id="cc9a2d67-e81e-49e7-900b-ba9faf3bf067" class="">Altri fattori che influenzano la domanda: reddito del consumatore, gusti, suggerimenti dalla moda, prezzo altri beni.</p><p id="b5c4d8ad-07cd-4b41-9e6e-566d60ad6a03" class="">Affinché la legge della domanda possa ritenersi valida dobbiamo ipotizzare che queste <mark class="highlight-orange_background">variabili</mark> siano <mark class="highlight-orange_background">ininfluenti</mark>.</p><p id="3e4f7d1f-f5e7-43ed-966d-c470e0090ac3" class="">La domanda è influenzata anche da altre <mark class="highlight-red">variabili</mark>:<div class="indented"><ul id="ebd5dd97-c617-4a06-959f-a6c891aea0e1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Reddito</mark>: c’è una relazione diretta tra reddito del consumatore e domanda (più è alto il mio reddito più io sono disposto ad acquistare quantità di un bene);</li></ul><ul id="73cefedd-9729-481d-a3fa-499e48d89fe1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Gusti del consumatore</mark> \ <mark class="highlight-red_background">mode </mark>\ <mark class="highlight-red_background">pubblicità</mark>: c’è sempre una relazione diretta (più mi piace \ sono spinto a comprare un bene più ne comprerò a prescindere dal mio reddito);</li></ul><ul id="972a1c3a-7bd2-4646-91a6-18ed69b1e41f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Prezzo di altri beni</mark>:<ul id="b04ff324-c151-40bb-b800-4bd7c2dd9373" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">Beni succedanei</mark>: beni alternativi, che soddisfano lo stesso bisogno (es. burro \ margarina, olio di semi \ olio d’oliva), esiste una relazione diretta tra il prezzo del bene succedaneo e la quantità domandata del bene (aumenta il bene del prezzo succedaneo ⇒ aumenta la domanda del bene principale);</li></ul><ul id="bfd8d10d-052d-4994-86c6-b1c6d6795e29" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">Beni complementari</mark>: beni che devono essere utilizzati insieme al bene principale (b.p.= automobile, b.c = benzina), esiste una relazione inversa tra il prezzo del bene complementare e la domanda del bene principale (aumenta il prezzo della benzina ⇒ diminuisce la richiesta dell’auto).</li></ul></li></ul></div></p><p id="ec2eb272-3ef3-40fd-a172-b408e9f5b48f" class="">
+</p><p id="fea0eab1-1d0a-4cd5-9415-f18a96a84336" class=""><strong><mark class="highlight-red">DOMANDA DI MERCATO</mark></strong>: è data dalla somma di tutte le domande individuali di tutti i consumatori.</p><p id="5b33dda7-508a-48ef-b845-624b7c7d1f07" class="">Conoscendo quindi le domande di tutti i singoli consumatori, per conoscere la domanda di mercato si devono sommare per ogni livello di prezzo le quantità domandate da ogni consumatore.</p></div><div id="2b015c1c-1e68-4c07-b439-54cd6ee34abb" style="width:31.25%" class="column"><figure id="b372e22b-a6e3-41a9-81b0-82fe0a0a9fc7" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%201.png"><img style="width:240px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%201.png"/></a></figure><p id="0bcdf77e-bb11-48ca-8045-48bc6e9f3b05" class="">(Curva della domanda in assenza di variabili)</p><figure id="100036de-4edf-4fc6-a372-de15516dba80" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%202.png"><img style="width:1644px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%202.png"/></a></figure><figure id="c7fa0285-e516-4bdd-8f21-e94e43f80d55" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%203.png"><img style="width:380px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%203.png"/></a></figure></div></div><h2 id="12f58e1d-5ab8-4ae9-ac8a-ac5ac82886c1" class=""><mark class="highlight-red">LEGGE DELL’OFFERTA</mark></h2><div id="d666bee0-c04f-4401-b6ba-a1c614eb68bd" class="column-list"><div id="f1cea3f4-db45-4d29-a16d-a28409468740" style="width:68.75%" class="column"><p id="a9bf6f44-870d-481d-be6b-cc9aac01fc58" class=""><mark class="highlight-red">Offerta</mark>: quantità di un bene o servizio prodotto da un’impresa in corrispondenza di un determinato prezzo.</p><p id="b18840f7-816c-4a09-b139-de6bbae5649b" class=""><mark class="highlight-red">LEGGE DELL’OFFERTA</mark>: se considero solo il prezzo del bene e ipotizziamo costanti gli altri fattori che influenzano l’offerta esiste una relazione diretta tra il prezzo del bene e la quantità offerta dall’impresa.</p><p id="ddecf669-2d6b-437c-9c60-d40a1807705c" class="">Abbiamo un eccezione quando siamo in presenza di un economia di scala.<div class="indented"><p id="f1b5870e-2b88-484e-8e01-bd3713707714" class=""><mark class="highlight-red_background">ECONOMIE DI SCALA</mark>: benefici che l’imprenditore può trarre da una grande produzione (aumenta produzione ⇒ risparmio di costi ⇒ prodotti ad un prezzo minore).</p></div></p><p id="412fbb6f-922f-4ecb-9d4f-8c9b4f2c67fd" class="">L’offerta è influenzata anche da altre <mark class="highlight-red">variabili</mark>:<div class="indented"><ul id="5421dc3e-9863-4406-9cd0-922f6f64d3c4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Livello tecnologico</mark>: a parità delle altre condizioni, l’offerta di un bene ha una relazione diretta con il livello tecnologico (aumento liv. tecnologico ⇒ diminuzione costo produttivo ⇒ aumenta l’offerta);</li></ul><ul id="0574a054-3c17-4768-aaa3-26b242094d5d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Prezzo dei beni succedanei</mark>: a parità delle altre condizione l’offerta di un bene è in relazione inversa rispetto al prezzo dei beni succedanei (aumenta il prezzo dei beni succedanei ⇒ offro più i beni succedanei e diminuisce l’offerta del bene principale).</li></ul></div></p><p id="804200f9-741c-4f4e-bc14-3014485d1755" class=""><strong><mark class="highlight-red">OFFERTA DI MERCATO</mark></strong>: è data dalla somma dell’offerta di tutti i produttori di quel bene.</p><p id="5c50d0bc-847a-42c6-8613-ef185fddfa27" class="">(Curva dell’offerta in assenza di variabili)</p></div><div id="3f17bf29-a124-4519-a3dc-e2a65abb5bf8" style="width:31.25%" class="column"><figure id="8e2bbe13-0080-4330-bfe5-4237df531592" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%204.png"><img style="width:240px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%204.png"/></a></figure><figure id="da313552-1159-49dc-8e2c-69d96db18b31" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%205.png"><img style="width:1570px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%205.png"/></a></figure><figure id="eb7b2f4d-0885-4d09-b0bf-af3e833fed15" class="image"><a href="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%206.png"><img style="width:737px" src="APPUNTI%20GPOI%20(PIETRO%20VACCARI)%20826325a99bce430a943ea74f943da4a6/Untitled%206.png"/></a></figure><p id="3b2a79bd-9f10-46ed-bc4c-c99f8e523c5c" class="">
+</p></div></div><h2 id="3b9bb985-a51c-460e-bf58-de5c49fb4217" class=""><mark class="highlight-red">TIPI DI IMPRESE</mark></h2><ul id="19b2e43f-3bca-4dd9-b78c-08a0dc341aaf" class="bulleted-list"><li style="list-style-type:disc">Private e pubbliche:<ul id="b3b42c99-fb89-45be-a34f-c37f981825d9" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">PRIVATE</mark>: gestite da imprenditori privati.</li></ul><ul id="4851a984-c833-457e-aa96-822b2cd1b4d4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">PUBBLICHE</mark>: controllate dallo stato o da enti pubblici.</li></ul></li></ul><ul id="ce3a85c6-20ee-4a32-848d-125d92befe1d" class="bulleted-list"><li style="list-style-type:disc">Individuali o collettive:<ul id="80c2fd37-ab8b-4639-9e17-e815cacbd071" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">INDIVIDUALI</mark>: singolo imprenditore.</li></ul><ul id="ca249114-7d11-4556-be05-250d55cbafe8" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">COLLETTIVE</mark>: sorge dopo un contratto tra più persone.</li></ul></li></ul><ul id="694a5395-4c1b-44fd-8925-e70ee9afc7d7" class="bulleted-list"><li style="list-style-type:disc">Gruppo di imprese o HOLDING:<ul id="62df6311-ff24-4b76-a133-04227acfe0fc" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">GRUPPO DI IMPRESE</mark>: gruppo che opera tutto sotto le regole della holding.</li></ul><ul id="3bc36c62-08c6-4d83-9107-c6d95adfa5fa" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">HOLDING</mark>: azienda “madre” che ha azioni più elevate degli altri azionisti nelle singole imprese sottostanti e che quindi le controlla.</li></ul></li></ul><h2 id="5d9e3dae-2f6c-4031-8fc0-25081f094ac9" class=""><mark class="highlight-red">AZIENDE</mark></h2><p id="020ff6b8-695b-43c7-b8eb-b58c19027335" class="">Enti o organizzazioni private che offrono beni e servizi in cambio di denaro / complesso dei beni organizzati dall’imprenditore per lo svolgimento delle sue attività.</p><p id="455a5626-0bdb-4bec-bac4-8e0fc6f35d5e" class=""><mark class="highlight-red_background">COMPONENTI FONDAMENTALI</mark>:</p><ol type="1" id="9b6775ce-81c1-4405-af51-be50c1b2bb35" class="numbered-list" start="1"><li><mark class="highlight-orange_background">IMPRENDITORE</mark>: colui che svolge professionalmente un’attività economica ai fini di produrre beni o servizi</li></ol><ol type="1" id="eb76836a-21ff-4f36-8adf-cfb98631a05d" class="numbered-list" start="2"><li><mark class="highlight-orange_background">IMPRESA</mark>: attività svolta dall’imprenditore.</li></ol><ol type="1" id="c9d8b9eb-e1d3-45b0-8cde-5f166f66f4f3" class="numbered-list" start="3"><li><mark class="highlight-orange_background">AZIENDA</mark>: insieme di elementi che permette lo svolgimento delle attività.<ul id="787092ab-bb69-4557-b710-fe6511802682" class="bulleted-list"><li style="list-style-type:disc">BENI MOBILI: impianti, attrezzature, mezzi…</li></ul><ul id="4d698469-4a5b-4266-a5b4-06af1e5b79b1" class="bulleted-list"><li style="list-style-type:disc">BENI IMMOBILI: magazzino, negozio…</li></ul><ul id="1e1feb87-f238-4eb3-ba41-77531b0eaecb" class="bulleted-list"><li style="list-style-type:disc">ELEMENTI IMMATERIALI: crediti, debiti, software…</li></ul><ul id="fba4e27b-a9db-4eb1-92c3-806ea1a0b388" class="bulleted-list"><li style="list-style-type:disc">LAVORATORI: personale che deve essere coordinato per massimizzare i profitti e minimizzare i costi.</li></ul></li></ol><p id="58b43c6b-cf73-427c-b72b-14eb620f0d81" class=""><mark class="highlight-red_background">TIPOLOGIE DI AZIENDE</mark>: </p><ul id="23f501f0-4cb6-492b-8559-35412e7438ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">INDUSTRIALE</mark>: trasforma materie prime in prodotti finiti (fabbrica).</li></ul><ul id="67a3cce2-20fc-4cff-a58e-3de418203875" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SERVIZI</mark>: fornisce servizi e non beni fisici (trasporto).</li></ul><ul id="0b35e8df-7c8c-4ffd-945b-12ea957bf975" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">COMMERCIALE</mark>: acquistano una merce e la rivendono (supermercato).</li></ul><p id="19b06c83-d798-49c8-860a-9c1170175efa" class=""><mark class="highlight-red_background">ORGANIZZAZIONE</mark>: serve a combinare i fattori produttivi per produrre un bene / servizio.</p><p id="dae22019-8cb7-45de-b51c-16273114d2fc" class=""><mark class="highlight-red_background">ORGANIZZAZIONE AZIENDALE</mark>: si intende quella disciplina che stabilisce le funzioni da svolgere all’interno di un’azienda e studia la predisposizione e le combinazioni economicamente più convenienti dei fattori produttivi di cui dispone l’azienda (obbiettivo = raggiungere l’obbiettivo con la maggiore efficienza possibile).<div class="indented"><p id="29114453-095a-45d9-adc7-85d2d58d4bc1" class=""><mark class="highlight-red_background">FUNZIONE AZIENDALE</mark>: insieme di attività finalizzate al raggiungimento di obbiettivi comuni e che riguardano lo stesso oggetto operativo.<div class="indented"><ul id="f3341230-024e-4206-a8df-4a065ffa7e75" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">PRIMARIE</mark>: quelle che in qualche misura realizzano l’oggetto per il quale svolgiamo l’attività di impresa.<ul id="60bcb39d-4df3-4be4-a187-7b71654162da" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">PRODUZIONE</mark>: è l’attività o l’insieme di attività aziendali finalizzate a realizzare il processo di trasformazione dei beni che avvengono all’interno dell’impresa.</li></ul><ul id="59e7c3e3-f711-4356-9754-3325d19bbb00" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">VENDITE</mark>: è l’attività o l’insieme di attività che si occupa di tutti i problemi connessi alla commercializzazione e distribuzione del bene che l’azienda produce.</li></ul><ul id="d17fde26-6fe1-42a8-a480-11845efdb2fb" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">MARKETING</mark>: è rappresentata da tutte le attività che studiano il mercato di riferimento per comprendere le preferenze dei consumatori e che determinano quali saranno le strategie di vendita più adatte a questi mercati (orienta tutte le decisioni produttive prese all’interno dell’azienda al fine di incrementare le vendite).</li></ul><ul id="2f860181-eafa-4208-a269-d77079caf058" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">LOGISTICA</mark>: è l’attività o l’insieme di attività che collega tra di loro le varie fasi della gestione (acquisizione ⇒ processo di trasformazione ⇒ vendita) (movimentazione e spostamento fisico di merci, materie prime…).<ul id="66876bd5-581c-4a32-af28-465143182dba" class="bulleted-list"><li style="list-style-type:square">IN ENTRATA: è la logistica che si occupa dello spostamento che avviene all’interno della mia azienda (ho realizzato il prodotto ⇒ lo sposto nello stoccaggio).</li></ul><ul id="7592aa53-0f4e-473d-81f7-aef46fcc18a4" class="bulleted-list"><li style="list-style-type:square">IN USCITA: distribuzione ai clienti (consegna fisica del bene).</li></ul></li></ul></li></ul><ul id="812794be-ce0a-4a99-8979-05b2fc1c6b29" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SUPPORTO</mark>:<ul id="6d8b5ee8-e672-4c40-b567-b953cf66df37" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">APPROVIGIONAMENTI</mark>: chi si occupa delle operazioni che permettono all’azienta di procurarsi i beni necessari alla produzione.</li></ul><ul id="49593b6a-0470-442d-bb7e-bee8e46aed6b" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">PERSONALE</mark>: chi si occupa di tutto ciò che riguarda il personale dipendente (reclutamento, formazione, contratti di assunzione).</li></ul><ul id="5fa42f80-b5f8-43a8-8e12-db7cb51f03a3" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">RICERCA E SVILUPPO</mark>: chi si occupa di curare la progettazione e lo sviluppo di nuovo prodotti o idee che permettano di sviluppare e migliorare il prodotto.</li></ul></li></ul><ul id="5870d770-897c-4f6b-a155-2907b037ca92" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">INFRASTRUTTURALI</mark>:<ul id="15313889-1ccb-4b95-afc6-3b9a63fe8521" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">DIREZIONE GENERALE</mark>: spetta decidere le strategie aziendali (obbiettivi medio-lungo periodo).</li></ul><ul id="532f69b0-df11-4646-ba09-1ab539684e0f" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">CONTABILITA’ E BILANCIO</mark>: raccolta ed elaborazione dei dati contabili.</li></ul><ul id="9731b13e-0c14-4980-99b6-09d89f8a5e03" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">FINANZA</mark>: coloro che si dedicano alla raccolta i mezzi finanziari che servono alla azienda per svolgere la sua attività.</li></ul><ul id="e0e0991f-c414-4156-8b24-633f0c0034aa" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow_background">CONTROLLO DI GESTIONE</mark>: programma e controlla i dati e il rispetto dei programmi di produzione.</li></ul></li></ul><p id="c43083ac-c646-4ca8-b8ba-c7117d02109c" class="">
+</p><ul id="14d2cc4c-b2e2-4152-b0c3-e0d7de5bb213" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">ORGANI DELL’AZIENDA</mark>: si intende una o più persone a cui è affidata l’esecuzione delle funzioni aziendali (gli sono concessi determinati poteri e le relative responsabilità):<ul id="f9b32943-06dd-4194-81b5-cb44b07e1b5e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">ORGANO VOLITIVO O DECISIONALE</mark> (vertice strategico): è quell’organo dotato dei massimi poteri decisionali, decidono obbiettivi e strategie da utilizzare (CEO, amministratori).</li></ul><ul id="e92cd7bb-81da-48b4-bc63-36cdbb0a4e10" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">ORGANI DIRETTIV</mark>I: sono gli organi dotati da poteri decisionali conferiti dal vertice strategico responsabili di ogni funzione (manager) .<ul id="186fd4e1-1d49-4714-b905-9bd92d9653ac" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background">PROJECT MANAGER</mark>: manager di un singolo progetto, devono prendere le decisioni relative alle scelte tattiche di gestione, ma sottostare a quelle dell’organo decisionale (scelta fornitore, scelta personale adeguato, scelta processi migliori).</li></ul><ul id="6491c0d9-9515-4a75-8e90-3d662d81ea9b" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background">PRODUCT MANAGER</mark>: manager responsabile per la strategia e sviluppo di un singolo prodotto (si occupa di tutto quello che riguarda la strategia, pianificazione e vendita di un prodotto).</li></ul><ul id="23a380b4-15cf-41bd-9634-db5b86ac0f99" class="bulleted-list"><li style="list-style-type:square">La differenza tra PRM e PJM manager è che il PRM si occupa del singolo prodotto (studio, strategia e produzione del singolo bene), il PJM supervisiona e gestisce tutto il progetto (esecuzione e ottimizzazione del piano).</li></ul></li></ul><ul id="ba90894d-6108-43ca-9255-776335c988c5" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">ORGANI ESECUTIVI</mark>: formato dai dipendenti e dai lavoratori, eseguono materialmente e si occupano della gestione del prodotto (nessun potere decisionale).</li></ul></li></ul></div></p><p id="2600cf55-156a-4012-8727-ba14a14163d3" class=""><mark class="highlight-red_background">CATENA DEL VALORE</mark>: Modello che descrive la struttura di un organizzazione (attività / azienda) come un insieme limitato di processi ordinati (9 processi, 5 primari e 4 di supporto):<div class="indented"><p id="5d8f1393-50bd-468c-bc78-8bab4a802f18" class=""><mark class="highlight-orange_background">PRIMARI</mark>:</p><ol type="1" id="5573ea54-062c-4c1e-8d2b-6d40accaccc7" class="numbered-list" start="1"><li>LOGISTICA IN INGRESSO: ricevere e accogliere le materie prime.</li></ol><ol type="1" id="798fd1c9-07be-4882-93aa-3315f6c7da71" class="numbered-list" start="2"><li>ATTIVITA’ CARATTERISTICA O OPERATIVA: produzione bene o servizio</li></ol><ol type="1" id="12a40469-8df6-4fce-827f-4767015f3bf6" class="numbered-list" start="3"><li>LOGISTICA IN USCITA: trasporto bene sul mercato</li></ol><ol type="1" id="b198666e-dd81-44ee-a3b2-913dd86a3d27" class="numbered-list" start="4"><li>MARKETING ALLE VENDITE E PRODUZIONE.</li></ol><ol type="1" id="68aedbed-9efc-4109-b26d-966ea32362e7" class="numbered-list" start="5"><li>ASSISTENZA TECNICA CLIENTI.</li></ol><p id="a21bbc92-a78f-4416-bb73-1f961ec2a045" class="">Di <mark class="highlight-orange_background">SUPPORTO </mark>ai primari (non contribuiscono direttamente alla produzione ma sono necessari):</p><ol type="1" id="5382c3dd-998f-4f8d-b4dd-d77990976ca9" class="numbered-list" start="1"><li>PROCESSI DI APPROVIGIONAMENTO: fa arrivare alla logistica in ingresso i miei beni.</li></ol><ol type="1" id="bb17149c-9158-4397-8b86-676564683be4" class="numbered-list" start="2"><li>GESTIONE DELLE RISORSE UMANE: tutto ciò che riguarda il personale.</li></ol><ol type="1" id="e9ab543f-6192-458f-8a24-7c9e977fa248" class="numbered-list" start="3"><li>RICERCA E SVILUPPO: mira a migliorare il prodotto.</li></ol><ol type="1" id="89b97d97-b9f8-4250-a3e9-d1bb9702573b" class="numbered-list" start="4"><li>ATTIVITA’ INFRASTRUTTURALI: insieme di tutte le attività di supporto e non di produzione (es. amministrazione).</li></ol></div></p></div></p><h2 id="57c75813-c92f-4325-acfa-ca9a0f9b13ae" class=""><mark class="highlight-red">I COSTI E SISTEMI DI PIANIFICAZIONE E CONTROLLO</mark></h2><p id="ec3dc3a8-eafe-4332-be86-39f98f32df70" class=""><mark class="highlight-red_background">CLASSIFICAZIONE OBBIETTIVI</mark>:</p><ul id="c9b9cbeb-253e-49bd-8cd1-97bf47cd168c" class="bulleted-list"><li style="list-style-type:disc">A BREVE termine (es. 1 anno).</li></ul><ul id="470c2e30-841a-4fb3-bef9-a92fd7fab729" class="bulleted-list"><li style="list-style-type:disc">A LUNGO termine (es. 3-5 anni)</li></ul><p id="d961b01b-2da9-4ce3-851a-72033463f254" class="">Serve creare una pianificazione strategica per gestire l’azienda, ovvero disporre tutti i beni che serviranno nel tempo per soddisfare la pianificazione (attività che investe TUTTI gli addetti e gli impiegati).</p><p id="872bfde4-fc85-4bae-9cd9-0a320ffa4db6" class=""><mark class="highlight-red_background">BUDJET</mark>: documento che permette di organizzare e perseguire annualmente l’obbiettivo, determina quali e quanti investimenti saranno fatti nell’anno successivo e quanto si produrrà. Inoltre permette di effettuare dei controlli mediante i REPORT, cioè misurazioni numeriche ottenute dal rapporto di analisi periodiche sui budjet<div class="indented"><p id="4977bef6-e2aa-49f9-8a00-8ed95b0d2e80" class="">TIPI DI BUDJET:</p><ul id="782bfea9-c8e8-4931-b770-ad47c771eec6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">ECONOMICO</mark>: progettazione orientata alla produzione e vendita dell’anno successivo (RICAVI / COSTI).</li></ul><ul id="54021ad9-bf94-48cb-a022-c6b983d61c20" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">INVESTIMENTI</mark>: progettazione orientata all’acquisizione di beni strumentali o al disuso di beni vecchi.</li></ul><ul id="61951572-6498-42ca-95a7-6c3c68fbfc19" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">FINANZIAMENTI</mark>: progettazione orientata ai finanziamenti bancari (fonti esterne) / soldi in possesso (fonti interne) / obbligazioni (prestiti dal pubblico).</li></ul></div></p><p id="b609337f-bb57-4ce5-ae07-d25bc05fec0b" class=""><mark class="highlight-red_background">PROCESSO DI PIANIFICAZIONE STRATEGICA</mark>:</p><ol type="1" id="af0aea9b-2dcb-4ba1-84fc-cbbcba4bfce5" class="numbered-list" start="1"><li>ANALISI DEL MERCATO: saturo / possibilità.</li></ol><ol type="1" id="7d069df9-6334-4e97-a33b-88c694a33e3e" class="numbered-list" start="2"><li>ANALISI INTERNA “SWOT” (Strengths, Weaknesses, Opportunities, Threats): capire i punti di forza / debolezza.</li></ol><ol type="1" id="4866597e-de06-4b7a-9cfd-78a95e555d1a" class="numbered-list" start="3"><li>DEFINIZIONE OBBIETTIVI DA RAGGIUNGERE: può essere fatto per tutta l’azienda o anche solo per alcune funzioni.</li></ol><ol type="1" id="799f28c7-edf2-42b4-9b7c-0e738ae25893" class="numbered-list" start="4"><li>DEFINIZIONE STRATEGIA PER IL PRAGGIUNGIMENTO DEGLI OBBIETTIVI.</li></ol><ol type="1" id="2f3a885e-8e9f-4c5e-95fa-c404f0ef7675" class="numbered-list" start="5"><li>BUDJET.</li></ol><ol type="1" id="930d282a-0748-467e-96f9-652187f35c70" class="numbered-list" start="6"><li>APPROVAZIONE ED ESECUZIONE DEL PIANO.</li></ol><p id="ff702945-bd82-4d98-b225-481c5ab62af7" class=""><mark class="highlight-red_background">CLASSIFICAZIONE DEI COSTI</mark>:</p><ul id="94043704-95de-4dfc-8897-56ec15e1bb46" class="bulleted-list"><li style="list-style-type:disc">COSTI FISSI: non variano al variare della quantità prodotta (affitto, stipendi amministrativi, macchine).</li></ul><ul id="ff2f9090-56d2-49e7-83e7-850bdc176959" class="bulleted-list"><li style="list-style-type:disc">COSTI VARIABILI: aumentano all’aumentare della produzione (materiale, mano d’opera diretta).</li></ul><ul id="18274d0f-6477-4629-9f70-8e26e628203e" class="bulleted-list"><li style="list-style-type:disc">COSTI TOTALI = C.FISSI + C.VARIABILI.</li></ul><ul id="c0e7f19e-da0f-416c-a1f3-59df0384c0d1" class="bulleted-list"><li style="list-style-type:disc">DIRETTI: direttamente attribuibili ad un prodotto / progetto (materie per la produzione di 1 singolo prodotto).</li></ul><ul id="cc3e06dc-984c-48bb-b739-db2a07f125dd" class="bulleted-list"><li style="list-style-type:disc">INDIRETTI: sostenuti per la realizzazione di più prodotti.</li></ul><h2 id="e2af5fcc-4661-4b65-a483-2922fd04a071" class=""><mark class="highlight-red">PIANIFICAZIONE DI UN PROGETTO</mark></h2><p id="3bca299a-5f0b-4afc-9129-3ecc35482ff7" class=""><mark class="highlight-red_background">WBS</mark> (Work Breakdown Structure):</p><ul id="6c475a72-4e67-4894-9214-c7250a14bf3a" class="bulleted-list"><li style="list-style-type:disc">E’ uno strumento che consente di rappresentare graficamente la scomposizione del lavoro su base gerarchica (ordine alto ⇒ basso) ed è un diagramma ad albero la cui radice rappresenta il progetto nel suo complesso = obbiettivo da perseguire.</li></ul><ul id="722f6acb-53f5-46e6-988d-eca51e5c4313" class="bulleted-list"><li style="list-style-type:disc">E’ una convenzione che offre vantaggi ottimizzativi:<ul id="33dcfbbf-5430-469f-8ca6-4f9fcc44c420" class="bulleted-list"><li style="list-style-type:circle">Divide un progetto in fasi più piccole.</li></ul><ul id="68fc8e08-ef3d-4fc5-a288-bf70cd837d87" class="bulleted-list"><li style="list-style-type:circle">Minore dispersione dei costi.</li></ul><ul id="9f34a216-a364-45b3-be6f-bfdbad288981" class="bulleted-list"><li style="list-style-type:circle">Aiuta ad orientarsi all’interno dell’attività.</li></ul><ul id="f1f054ca-9423-4c2d-b78b-ac4b3944f6a1" class="bulleted-list"><li style="list-style-type:circle">funziona come base di comunicazione con i vari settori della produzione.</li></ul><ul id="b1c96884-2d11-4ecb-bd80-2576ae09da8a" class="bulleted-list"><li style="list-style-type:circle">può essere utilizzato per capire se c’è necessità di altri piani organizzativi.</li></ul></li></ul><ul id="4965d13b-e679-41bf-8720-3e930e89b051" class="bulleted-list"><li style="list-style-type:disc">E’ strutturato per: - compiti / funzioni (compiti nella produzione), - tempo (tempo di svolgimento compiti), - oggetti (unire più oggetti).</li></ul><ul id="c698ca76-6b6b-4b89-9c0e-cd54fb91160e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">REALIZZAZIONE</mark>:<ol type="1" id="8a9c67f2-bdd5-4565-a755-00136164a969" class="numbered-list" start="1"><li>RADICE: lavoro nel suo complesso.</li></ol><ol type="1" id="7b1fe1e9-feae-43d7-9e51-bf76d55d44ad" class="numbered-list" start="2"><li>Suddivisione del PROGETTO in parti.</li></ol><ol type="1" id="e3dcef71-2901-4eb7-b356-bbb9f1e1437a" class="numbered-list" start="3"><li>Suddivisione della PARTE in elementi più dettagliati.</li></ol><ol type="1" id="b60c377d-531e-428c-b5eb-08456ad9cad2" class="numbered-list" start="4"><li>Suddivisione degli ultimi elementi da realizzare (Work Packages)</li></ol></li></ul><ul id="2d7fef0a-e437-46f6-a3ce-34ee7a764756" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">ESEMPIO</mark>:<ol type="1" id="854d2e06-68d3-4f53-9c92-f3ba9454a5c0" class="numbered-list" start="1"><li>Costruire una CASA.</li></ol><ol type="1" id="96b751c1-5b53-447e-b469-a804775517b1" class="numbered-list" start="2"><li>Fondamenta, struttura, tetto…</li></ol><ol type="1" id="c44f12b5-0136-4c35-bdff-c11f813c8ca0" class="numbered-list" start="3"><li>Fondamenta = scavo, armatura, confine…;    Struttura = creazione, getto di cemento…;   Tetto = sostegni…</li></ol><ol type="1" id="18e6736e-a590-4437-9e80-8d60488a532d" class="numbered-list" start="4"><li>Preparare l’attrezzatura, traportare il materiale…</li></ol><p id="3ad218e9-41be-4d9f-84f6-c8288474af67" class="">
+</p></li></ul></div></article></body></html>
