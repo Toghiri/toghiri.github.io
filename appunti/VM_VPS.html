@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>VIRTUAL MACHINE E VPS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ddb1a12-7332-45bf-b14f-335d0722a2b7" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🖥️</span></div><h1 class="page-title">VIRTUAL MACHINE E VPS</h1></header><div class="page-body"><h1 id="35424862-0e70-4ed7-9ee3-29e628c43257" class="block-color-red">Virtual Machine </h1><p id="3eeb53bb-9a36-4053-bc64-4d122309906b" class="">Le <mark class="highlight-red">Virtual Machine (VM)</mark> sono <mark class="highlight-red_background">ambienti virtuali</mark> che <mark class="highlight-red_background">consentono di eseguire un sistema operativo (OS) e le relative applicazioni all&#x27;interno di un altro sistema operativo ospite</mark>. In pratica, una VM è un&#x27;<mark class="highlight-red_background">istanza di un computer virtuale che emula le funzionalità di un hardware fisico</mark>, come processore, memoria, dispositivi di input/output, ecc.</p><p id="08cbc230-466d-48df-965b-b8e416c108e8" class="">Le VM sono <mark class="highlight-red_background">create utilizzando un software chiamato hypervisor o virtual machine monitor (VMM) </mark>che consente di <mark class="highlight-red_background">allocare le risorse hardware</mark> del sistema host in modo da supportare il funzionamento del sistema operativo guest. <mark class="highlight-red_background">L&#x27;hypervisor gestisce l&#x27;accesso alle risorse hardware e gestisce anche la comunicazione tra le VM e il sistema host</mark>.</p><p id="ac1179c2-ceff-411b-a99b-cc1cc1edcc0a" class=""><mark class="highlight-red">Vantaggi</mark>:</p><ul id="e918e4cb-fbbf-43ba-a3f7-220948296589" class="bulleted-list"><li style="list-style-type:disc">Possibilità di <mark class="highlight-red_background">eseguire più sistemi operativi sullo stesso hardware</mark>.</li></ul><ul id="1a559197-4262-4d4a-804a-827f764e7f0b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Riduzione del costo</mark> di acquisizione e manutenzione dell&#x27;hardware.</li></ul><ul id="840890b7-86c5-44a5-a600-ccf1e681bc8f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Semplificazione della migrazione</mark> di applicazioni tra ambienti di sviluppo e produzione.</li></ul><ul id="093556a6-9507-48b7-afa4-3ccc630a7868" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Isolamento delle applicazioni e dei dati</mark> per migliorare la sicurezza.</li></ul><ul id="080532b8-a5e5-449b-b500-31fe29c1c450" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Facilitazione del testing e del debugging</mark> di applicazioni.</li></ul><p id="9965a94b-ef72-43fe-acc2-6d451b5a6b31" class=""><mark class="highlight-red">Svantaggi</mark>:</p><ul id="5a937e7d-2bbf-4de1-8517-195db873d2ab" class="bulleted-list"><li style="list-style-type:disc">Leggera <mark class="highlight-red_background">riduzione delle prestazioni rispetto a un sistema fisico equivalente</mark>.</li></ul><ul id="1e94f678-cd3f-4ab8-af32-d0a9241af55d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Maggiore utilizzo delle risorse di memoria e di storage</mark>.</li></ul><ul id="d02a1d28-8896-4b12-8926-9f00645c9a21" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Necessità</mark> di una <mark class="highlight-red_background">maggiore gestione delle VM</mark>.</li></ul><ul id="faf59eac-a2bb-4044-b1a8-983ac7114379" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Necessità di configurare e gestire l&#x27;hypervisor</mark>.</li></ul><ul id="3fb7d54e-c8fd-4d85-ae52-e89bdb5d25b0" class="bulleted-list"><li style="list-style-type:disc">Possibilità di <mark class="highlight-red_background">problemi di compatibilità hardware o di driver tra il sistema guest e il sistema host</mark>.</li></ul><p id="6d69f463-d6cc-4e6d-8e43-74e7650f619c" class="">In generale, le VM sono <mark class="highlight-red_background">utilizzate per consolidare più server fisici su un&#x27;unica macchina</mark>, <mark class="highlight-red_background">fornire servizi di hosting di macchine virtual</mark>i, sviluppare e testare applicazioni in un ambiente isolato e riproducibile, fornire soluzioni di disaster recovery, fornire soluzioni di sandboxing per l&#x27;esecuzione di applicazioni potenzialmente pericolose, ecc.</p><h1 id="c921b284-dfe5-4a4a-8270-03a5f29fd9e6" class=""><mark class="highlight-red">VPS </mark></h1><p id="5df11777-1fb5-4a81-8536-d95a35ddfd7e" class="">Una <mark class="highlight-red">VPS (Virtual Private Server) </mark>è un <mark class="highlight-red_background">server virtuale</mark> creato tramite software di virtualizzazione che <mark class="highlight-red_background">consente di dividere un server fisico in diverse macchine virtuali indipendenti</mark>, ognuna con il proprio sistema operativo, risorse hardware e software.</p><p id="c89632b4-76ac-4bf6-a4c4-e399b39b96d5" class="">In pratica, una VPS è una <mark class="highlight-red_background">porzione di un server fisico dedicata esclusivamente a un utente specifico</mark>, che può configurarla, personalizzarla e utilizzarla come se fosse un server fisico dedicato. Tuttavia, diversamente da un server fisico dedicato, una VPS <mark class="highlight-red_background">condivide le risorse hardware del server fisico con altre VPS</mark>, ma ogni VPS è <mark class="highlight-red_background">isolata dalle altre</mark>, garantendo una maggiore sicurezza e affidabilità.</p><p id="e5c02d12-6b2c-4bcb-94d5-cdedf4baa170" class="">Le VPS sono <mark class="highlight-red_background">utilizzate principalmente come soluzione di hosting per siti web</mark>, <mark class="highlight-red_background">applicazioni web</mark> e servizi online, ma possono anche essere utilizzate per scopi di sviluppo, test e sperimentazione. Le VPS offrono numerosi vantaggi rispetto ad altri tipi di hosting, come la flessibilità, la scalabilità, la personalizzazione, il controllo, l&#x27;isolamento e l&#x27;affidabilità.</p><p id="73c8d819-65bd-4179-9829-e83bd47acf8c" class="">Le VPS possono essere <mark class="highlight-red_background">gestite tramite un&#x27;interfaccia web o tramite accesso SSH</mark> al sistema operativo della VPS. L&#x27;utente può installare il proprio software, gestire il proprio database e configurare il proprio server web, proprio come se fosse un server fisico dedicato.</p><p id="4423c9ce-0a7e-4dcd-9a94-701077ea21c1" class="">Le VPS possono essere implementate su diversi sistemi di virtualizzazione, come VMware, KVM, Hyper-V, Xen e altri. Inoltre, i fornitori di hosting offrono diverse configurazioni di VPS, come il tipo di sistema operativo, la quantità di memoria, la capacità di archiviazione, la larghezza di banda e altre specifiche hardware, in modo che l&#x27;utente possa scegliere la configurazione più adatta alle proprie esigenze.</p><p id="dd34356c-9c08-42ea-902c-4e09a9e39d40" class="">I <mark class="highlight-red">vantaggi </mark>delle VPS includono:</p><ol type="1" id="cb1681fb-1bb9-4f2b-b06c-8bbd56ae7c37" class="numbered-list" start="1"><li><mark class="highlight-red_background">Flessibilità</mark>: le VPS <mark class="highlight-orange_background">consentono di scegliere il sistema operativo e le specifiche hardware necessarie per le proprie esigenze</mark>, senza dover acquistare un server fisico dedicato.</li></ol><ol type="1" id="058b3d20-f289-4ff1-b3dd-749ea102d504" class="numbered-list" start="2"><li><mark class="highlight-red_background">Scalabilità</mark>: le VPS consentono di <mark class="highlight-orange_background">aumentare o diminuire le risorse hardware in base alle necessità</mark>, senza dover acquistare nuovo hardware.</li></ol><ol type="1" id="a806e0de-dc79-4004-8fb6-c5f64f5fb31a" class="numbered-list" start="3"><li><mark class="highlight-red_background">Personalizzazione</mark>: le VPS consentono di <mark class="highlight-orange_background">personalizzare il sistema operativo e il software installato</mark>, in modo da soddisfare le esigenze specifiche dell&#x27;utente.</li></ol><ol type="1" id="77298beb-f1a4-4e98-a68e-ddb07ffed550" class="numbered-list" start="4"><li><mark class="highlight-red_background">Controllo</mark>: le VPS consentono all&#x27;utente di <mark class="highlight-orange_background">avere il controllo completo del server, inclusi i permessi di amministrazione e la configurazione del software</mark>.</li></ol><ol type="1" id="7e59fc68-8342-47b9-bade-07d0c6dccd5f" class="numbered-list" start="5"><li><mark class="highlight-red_background">Isolamento</mark>: le VPS sono <mark class="highlight-orange_background">isolate dalle altre</mark>, garantendo una maggiore sicurezza e affidabilità rispetto ad altri tipi di hosting.</li></ol><ol type="1" id="e2e142ba-00e5-4e8b-bb9b-e8ef1ef47aae" class="numbered-list" start="6"><li><mark class="highlight-red_background">Affidabilità</mark>: le VPS sono <mark class="highlight-orange_background">meno suscettibili a interruzioni rispetto a un server condiviso, in quanto ogni VPS è isolata dalle altre</mark>.</li></ol><p id="ab0316e3-a86b-4f02-8db1-bbfcf6024524" class="">I principali <mark class="highlight-red">utilizzi</mark> delle VPS includono:</p><ol type="1" id="8ad50aee-36ae-415c-bddf-480f60078cff" class="numbered-list" start="1"><li><mark class="highlight-red_background">Hosting di siti web</mark>: le VPS sono <mark class="highlight-orange_background">utilizzate per l&#x27;hosting di siti web, applicazioni web e servizi online</mark>.</li></ol><ol type="1" id="01226d97-3630-4dd2-ab50-75e59e96bab2" class="numbered-list" start="2"><li><mark class="highlight-red_background">Sviluppo e test</mark>: le VPS sono utilizzate per lo <mark class="highlight-orange_background">sviluppo e il test di software e applicazioni</mark>.</li></ol><ol type="1" id="de2e3349-9045-4b1c-915e-9be52d57b47f" class="numbered-list" start="3"><li><mark class="highlight-red_background">Archiviazione</mark>: le VPS sono utilizzate per <mark class="highlight-orange_background">l&#x27;archiviazione di dati e file</mark>.</li></ol><ol type="1" id="1d5aa07b-62df-47b9-afbf-c776e442a0f4" class="numbered-list" start="4"><li><mark class="highlight-red_background">Gaming</mark>: le VPS sono utilizzate per il <mark class="highlight-orange_background">gaming online</mark>.</li></ol><ol type="1" id="908ded5f-2d54-49df-a04d-18434c5fd798" class="numbered-list" start="5"><li><mark class="highlight-red_background">Streaming</mark>: le VPS sono utilizzate per lo <mark class="highlight-orange_background">streaming di contenuti video e audio</mark>.</li></ol><p id="b86734b7-e731-4496-9b45-90e58fa4cd00" class="">I principali <mark class="highlight-red">svantaggi</mark> delle VPS includono:</p><ol type="1" id="681372d0-4d9d-482c-86c5-2f6072f4e3cd" class="numbered-list" start="1"><li><mark class="highlight-red_background">Costo</mark>: le VPS <mark class="highlight-orange_background">possono essere costose rispetto ad altri tipi di hosting</mark>, soprattutto se si sceglie una configurazione hardware avanzata.</li></ol><ol type="1" id="b87b432d-cf26-44cd-ac2a-90a5c8085751" class="numbered-list" start="2"><li><mark class="highlight-red_background">Condivisione delle risorse</mark>: le VPS c<mark class="highlight-orange_background">ondividono le risorse hardware del server fisico con altre VPS, il che potrebbe influire sulle prestazioni in caso di picchi di traffico</mark>.</li></ol><ol type="1" id="45aae42b-d88a-4f83-9feb-d75d9ad28913" class="numbered-list" start="3"><li><mark class="highlight-red_background">Complessità</mark>: la <mark class="highlight-orange_background">gestione di una VPS richiede conoscenze tecniche avanzate</mark> e un&#x27;esperienza di amministrazione di server.</li></ol><ol type="1" id="1b3212bf-5612-47ee-82d6-d1a0ea4b5a92" class="numbered-list" start="4"><li><mark class="highlight-red_background">Scalabilità limitata</mark>: la <mark class="highlight-orange_background">scalabilità delle VPS può essere limitata in base alla configurazione hardware scelta</mark>.</li></ol><ol type="1" id="593b22d9-0dd6-4e31-86f1-276e72b4385b" class="numbered-list" start="5"><li><mark class="highlight-red_background">Sicurezza</mark>: <mark class="highlight-orange_background">se la VPS non è configurata correttamente, potrebbe essere vulnerabile a attacchi informatici</mark>.</li></ol><p id="9eaa73e2-1246-48fa-9954-3609020d48ee" class="">
+</p></div></article></body></html>
