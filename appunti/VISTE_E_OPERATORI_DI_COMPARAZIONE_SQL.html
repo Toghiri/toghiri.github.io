@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SQL Server e MySQL</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6f42013b-cfd2-4fae-ada3-68833897ffd9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💻</span></div><h1 class="page-title">SQL Server e MySQL</h1></header><div class="page-body"><p id="8ed30d61-4fc1-4ad1-90c5-99661ba5df4a" class="">
+</p><nav id="da0d9e8a-24a6-43bf-8597-62bf022593e4" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7c682e2c-913b-458c-905a-33a7f53f554b"><mark class="highlight-red"><strong>SQL Server</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a68464f8-f06e-444a-9fd6-695a2653240e"><mark class="highlight-red_background"><strong>Viste</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#61403c45-53af-4473-8bf3-c1c9a8c642b9"><strong><mark class="highlight-red_background">Configurazione di un database</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7b1ec6c9-54bc-4d54-9067-716b2bd8cf04"><strong><mark class="highlight-red">MySQL</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b0855271-f4e2-43fe-b3c7-4662f87b465b"><strong><mark class="highlight-red_background">Definizione dei dati</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0117a672-9327-4d69-9b7a-1e47e6643108"><strong><mark class="highlight-red_background">GROUP BY</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f02bf9bd-2994-4f77-941d-a0dd478d8889"><strong><mark class="highlight-red_background">HAVING</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a4d848e9-8cff-4cc2-a921-d379c9568b64"><strong><mark class="highlight-red_background">IN, EXISTS</mark></strong> e <strong><mark class="highlight-red_background">ALL</mark></strong></a></div></nav><h1 id="7c682e2c-913b-458c-905a-33a7f53f554b" class=""><mark class="highlight-red"><strong>SQL Server</strong></mark></h1><h2 id="a68464f8-f06e-444a-9fd6-695a2653240e" class=""><mark class="highlight-red_background"><strong>Viste</strong></mark></h2><p id="6d05b56d-eeb3-4c19-9a67-bc6f98d3273b" class="">Le viste in SQL Server sono <mark class="highlight-red_background">oggetti che permettono di visualizzare una porzione di una o più tabelle</mark>, sotto forma di una <mark class="highlight-red_background">tabella virtuale</mark>. Le viste <mark class="highlight-red_background">non contengono dati</mark>, ma <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">rappresentano una vista personalizzata dei dati contenuti nelle tabelle sottostanti</mark></span>. In pratica, le viste sono come una finestra su un insieme di dati di una o più tabelle, e <mark class="highlight-red_background">consentono di manipolare questi dati senza dover modificare le tabelle stesse</mark>.</p><p id="9c52d5ba-7e9e-49df-bd8e-5b94b4b38d5c" class="">Per <strong><span style="border-bottom:0.05em solid">creare una vista in SQL Server</span></strong>, è possibile utilizzare il <mark class="highlight-red_background">comando</mark> <strong><code>CREATE VIEW</code></strong>, <mark class="highlight-red_background">seguito dal nome della vista</mark> e dalla <mark class="highlight-red_background">definizione della vista stessa</mark>. Ad esempio, per creare una vista che mostri solo i nomi dei clienti di una tabella &quot;Clienti&quot;, è possibile utilizzare il seguente codice SQL:</p><pre id="077d90fc-7a6a-477e-9245-33a7d8ac6855" class="code code-wrap"><code>CREATE VIEW VistaClienti AS
+SELECT NomeCliente FROM Clienti;</code></pre><p id="86ed3e71-3910-4822-bfac-9faa930a17c5" class=""><mark class="highlight-red_background">Una volta creata la vista</mark>, è possibile <mark class="highlight-red_background">utilizzarla come se fosse una tabella normale</mark>. Ad esempio, per visualizzare i dati della vista appena creata, <mark class="highlight-red_background">è possibile utilizzare il comando</mark> <strong><code>SELECT</code></strong>:</p><pre id="6da40e82-8253-4ff8-9dbe-7bb49af515d9" class="code code-wrap"><code>SELECT * FROM VistaClienti;</code></pre><h2 id="61403c45-53af-4473-8bf3-c1c9a8c642b9" class=""><strong><mark class="highlight-red_background">Configurazione di un database</mark></strong></h2><p id="b8f61f02-072c-469b-bdc3-d84c950ed09a" class="">La configurazione di un database in SQL Server dipende dalle esigenze specifiche dell&#x27;applicazione e delle funzionalità richieste. In generale, <mark class="highlight-red_background">è possibile configurare il database utilizzando lo strumento di gestione SQL Server Management Studio (SSMS)</mark>, che consente di configurare vari aspetti del database, come ad esempio le <mark class="highlight-red_background">opzioni di sicurezza</mark>, le <mark class="highlight-red_background">impostazioni di backup</mark>, le <mark class="highlight-red_background">proprietà del database</mark> e così via.</p><p id="b4bb24e6-ac99-48b4-aea0-3d898f79c679" class="">Per creare tabelle in SQL Server, è possibile utilizzare il comando <strong><code>CREATE TABLE</code></strong>, seguito dal <mark class="highlight-red_background">nome della tabella</mark> e dalle <mark class="highlight-red_background">definizioni delle colonne</mark>. Ad esempio, per creare una tabella &quot;Clienti&quot; con le colonne &quot;IDCliente&quot;, &quot;NomeCliente&quot; e &quot;CognomeCliente&quot;, è possibile utilizzare il seguente codice SQL:</p><pre id="cb6252db-47ed-4ccb-876c-33e64709e692" class="code code-wrap"><code>CREATE TABLE Clienti (
+    IDCliente INT PRIMARY KEY,
+    NomeCliente VARCHAR(50),
+    CognomeCliente VARCHAR(50)
+);</code></pre><p id="56fab706-b090-4546-bbdb-3ab61e23a500" class="">In questo esempio, la colonna &quot;IDCliente&quot; è definita come <mark class="highlight-red_background">chiave primaria della tabella</mark>. Una volta creata la tabella, è possibile <mark class="highlight-red_background">inserire i dati utilizzando il comando</mark> <strong><code>INSERT</code></strong>, oppure modificare i dati utilizzando il comando <strong><code>UPDATE</code></strong>.</p><h1 id="7b1ec6c9-54bc-4d54-9067-716b2bd8cf04" class=""><strong><mark class="highlight-red">MySQL</mark></strong></h1><p id="01d063da-a5a1-4050-888a-a3ce2bb18ad3" class="">Creazione viste:
+In SQL Server, la <mark class="highlight-red_background">creazione di una vista</mark> si basa sulla <mark class="highlight-red_background">selezione di una porzione di una o più tabelle</mark>, e la sua definizione viene <mark class="highlight-red_background">salvata come oggetto separato nel database</mark>. Per creare una vista, è possibile <mark class="highlight-red_background">utilizzare il comando</mark> <code><strong>CREATE VIEW</strong></code>, specificando il <mark class="highlight-red_background">nome della vista</mark> e la <mark class="highlight-red_background">definizione della selezione</mark>. Ad esempio, per creare una vista che mostra solo i nomi e i cognomi dei clienti nella tabella &quot;Clienti&quot;, è possibile utilizzare il seguente comando SQL:</p><pre id="3e36dcfa-7d3e-4fa1-a019-e6d20b30ab39" class="code code-wrap"><code>CREATE VIEW VistaClienti AS
+SELECT NomeCliente, CognomeCliente
+FROM Clienti;</code></pre><h2 id="b0855271-f4e2-43fe-b3c7-4662f87b465b" class=""><strong><mark class="highlight-red_background">Definizione dei dati</mark></strong></h2><p id="3034d5ed-6f07-4158-a81c-bd470395d8d4" class="">In SQL Server, la <mark class="highlight-red_background">definizione dei dati viene effettuata attraverso l&#x27;utilizzo del comando</mark> <strong><code>CREATE TABLE</code></strong>, che permette di <mark class="highlight-red_background">creare una nuova tabella</mark> all&#x27;interno del database. La definizione della tabella prevede la <mark class="highlight-red_background">specifica dei nomi</mark> delle <mark class="highlight-red_background">colonne</mark> e dei <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">tipi di dati associati</mark></span> ad ognuna di esse. Ad esempio, per creare una tabella &quot;Ordini&quot; con le colonne &quot;IDOrdine&quot;, &quot;DataOrdine&quot; e &quot;ImportoOrdine&quot;, si può utilizzare il seguente comando SQL:</p><pre id="191fbd4e-4596-49d5-93bd-568eadc22049" class="code code-wrap"><code>CREATE TABLE Ordini (
+    IDOrdine INT PRIMARY KEY,
+    DataOrdine DATE,
+    ImportoOrdine DECIMAL(10,2)
+);</code></pre><h2 id="0117a672-9327-4d69-9b7a-1e47e6643108" class=""><strong><mark class="highlight-red_background">GROUP BY</mark></strong></h2><p id="acf48e02-851b-45aa-a448-99f7540fcfd7" class="">Il comando <code><strong>GROUP BY</strong></code> viene utilizzato per <mark class="highlight-red_background">raggruppare i record in base al valore di una o più colonne della tabella</mark>, restituendo un set di risultati aggregati. Ad esempio, per ottenere il totale degli ordini per ciascun cliente nella tabella &quot;Ordini&quot;, è possibile utilizzare il seguente comando SQL:</p><pre id="cae9e808-bf51-41ec-a4a0-5e2d1f54e16a" class="code code-wrap"><code>SELECT IDCliente, SUM(ImportoOrdine) as TotaleOrdini
+FROM Ordini
+GROUP BY IDCliente;</code></pre><h2 id="f02bf9bd-2994-4f77-941d-a0dd478d8889" class=""><strong><mark class="highlight-red_background">HAVING</mark></strong></h2><p id="3aa74cee-c570-486c-883b-79d0409bf206" class="">Il comando <code><strong>HAVING</strong></code> viene utilizzato per <mark class="highlight-red_background">filtrare i risultati di una query che utilizza il comando</mark> <strong><code>GROUP BY</code></strong>. In pratica, consente di <mark class="highlight-red_background">specificare una condizione di filtro</mark> che viene <mark class="highlight-red_background">applicata ai risultati aggregati</mark>. Ad esempio, per ottenere solo i clienti che hanno effettuato ordini per un importo superiore a 1000, è possibile utilizzare il seguente comando SQL:</p><pre id="caea3bfe-b77e-40c7-bae2-bb5d111baaa8" class="code code-wrap"><code>SELECT IDCliente, SUM(ImportoOrdine) as TotaleOrdini
+FROM Ordini
+GROUP BY IDCliente
+HAVING SUM(ImportoOrdine) &gt; 1000;</code></pre><h2 id="a4d848e9-8cff-4cc2-a921-d379c9568b64" class=""><strong><mark class="highlight-red_background">IN, EXISTS</mark></strong> e <strong><mark class="highlight-red_background">ALL</mark></strong></h2><p id="eb29879d-d474-40c5-8dcf-17dc07747b05" class=""><mark class="highlight-red_background">IN, EXISTS e ALL</mark> sono <mark class="highlight-red_background">operatori di comparazione</mark> che possono essere utilizzati in SQL per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">filtrare i dati in una query</mark></span>. Ecco una breve descrizione di ciascun operatore:</p><ul id="b979c0bc-fcbf-45bd-a805-2c63dabcbce5" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">IN</mark></strong>: l&#x27;operatore <code><strong>IN</strong></code> viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">confrontare un valore con un set di valori definiti in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record che contengono un valore corrispondente a uno dei valori presenti nella sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;clienti&quot; che corrispondono a uno dei valori presenti nella sottoquery:</li></ul><pre id="af69d0f3-8ca9-487e-afcd-b1c52ec61639" class="code code-wrap"><code>SELECT *
+FROM clienti
+WHERE id_cliente IN (1, 2, 3);</code></pre><ul id="0c30c704-208f-4363-a401-063db5c49b20" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">EXISTS</mark></strong>: l&#x27;operatore <code><strong>EXISTS</strong></code><strong> </strong>viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">verificare l&#x27;esistenza di almeno un record in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record della tabella principale solo se esiste almeno un record corrispondente nella sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;ordini&quot; che corrispondono a un cliente presente nella tabella &quot;clienti&quot;:</li></ul><pre id="9fe7be74-5461-4651-845c-dda57b736aae" class="code code-wrap"><code>SELECT *
+FROM ordini o
+WHERE EXISTS (
+    SELECT 1
+    FROM clienti c
+    WHERE c.id_cliente = o.id_cliente
+);</code></pre><ul id="00b3f6ef-8281-4ae5-891a-2b50a828f505" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">ALL</mark></strong>: l&#x27;operatore <code><strong>ALL</strong></code> viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">confrontare un valore con tutti i valori presenti in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record che corrispondono al confronto con tutti i valori della sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;prodotti&quot; che hanno un prezzo superiore a tutti i prodotti della categoria &quot;alimentari&quot;:</li></ul><pre id="2530a70a-3f09-4ce9-8c63-5d5aa50017ea" class="code code-wrap"><code>SELECT *
+FROM prodotti
+WHERE prezzo &gt; ALL (
+    SELECT prezzo
+    FROM prodotti
+    WHERE categoria = &#x27;alimentari&#x27;
+);</code></pre></div></article></body></html>
