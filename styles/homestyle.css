@@ -1,0 +1,48 @@
+body
+{
+    background-color: rgb(155, 155, 155);
+    font-family: sans-serif;
+}
+
+li {
+    display: inline;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+li a:hover {
+    background-color: #111;
+}
+
+#logo{
+    border-radius: 50%;
+    width: 100px ;
+    height: 100px;
+}
+
+#footer {
+    text-align: center;
+    font-family: sans-serif;
+    position:fixed;
+    bottom: 5px;
+    width: 99%;
+    border-top:1px solid black;
+    padding-top:10px;
+}
