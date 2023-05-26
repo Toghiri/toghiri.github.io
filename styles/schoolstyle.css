@@ -26,7 +26,6 @@ ul {
     background-color: #333;
 }
 
-
 li a {
     display: block;
     color: white;
@@ -43,6 +42,13 @@ li a:hover {
 #nav{
     position: fixed;
     width: 99%;
+}
+
+@media all and (max-width:1000px){
+    #nav{
+        position: fixed;
+        width: 97%;
+    }
 }
 
 #footer {
