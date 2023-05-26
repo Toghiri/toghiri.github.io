@@ -31,6 +31,21 @@ li a:hover {
     background-color: #111;
 }
 
+.rif a:link{
+    color: #e60000;
+    text-decoration: none;
+}
+
+.rif a:visited{
+    color: #e60000;
+    text-decoration: none;
+}
+
+hr{
+    border: 1px solid #333;
+    width: 70%;
+}
+
 #logo{
     border-radius: 50%;
     width: 100px ;
