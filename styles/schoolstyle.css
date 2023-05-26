@@ -39,6 +39,15 @@ li a:hover {
     background-color: #111;
 }
 
+h3{
+    display: inline;
+}
+
+.icona {
+    height: 7vh;
+    width: 7vh;
+}
+
 #nav{
     position: fixed;
     width: 99%;
