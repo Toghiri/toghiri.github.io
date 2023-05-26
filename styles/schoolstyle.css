@@ -49,13 +49,15 @@ h3{
 }
 
 #nav{
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 99%;
 }
 
 @media all and (max-width:1000px){
     #nav{
-        position: fixed;
+        position: sticky;
+        top: 0;
         width: 100%;
         left: 0;
     }
