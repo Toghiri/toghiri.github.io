@@ -41,8 +41,9 @@ li a:hover {
     text-align: center;
     font-family: sans-serif;
     position:fixed;
+    left: 0;
     bottom: 5px;
-    width: 99%;
+    width: 100%;
     border-top:1px solid black;
     padding-top:10px;
 }
