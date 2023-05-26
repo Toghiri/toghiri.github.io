@@ -64,8 +64,18 @@ h3{
 #footer {
     text-align: center;
     font-family: sans-serif;
-    bottom: 5px;
-    width: 100%;
+    bottom: 0;
+    height: 20px;
+    width: 99%;
     border-top:1px solid black;
     padding-top:10px;
+    background-color: rgb(155, 155, 155);
+}
+
+
+@media all and (max-width:1200px){
+    #footer{
+        width: 100%;
+        left: 0;
+    }
 }
