@@ -47,7 +47,8 @@ li a:hover {
 @media all and (max-width:1000px){
     #nav{
         position: fixed;
-        width: 97%;
+        width: 100%;
+        left: 0;
     }
 }
 
