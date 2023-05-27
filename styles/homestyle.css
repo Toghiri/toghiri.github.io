@@ -31,6 +31,11 @@ li a:hover {
     background-color: #111;
 }
 
+p{
+    display: inline;
+    border-bottom: 1px solid black;
+}
+
 .rif a:link{
     color: #e60000;
     text-decoration: none;
@@ -41,15 +46,15 @@ li a:hover {
     text-decoration: none;
 }
 
-hr{
-    border: 1px solid #333;
-    width: 70%;
-}
-
-#logo{
+.rimmagine{
     border-radius: 50%;
     width: 100px ;
     height: 100px;
+}
+
+hr{
+    border: 1px solid #333;
+    width: 70%;
 }
 
 #footer {

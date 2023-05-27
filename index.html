@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="styles/homestyle.css">
     <link rel="icon" type="image/x-icon" href="images/icons/home.ico">
     <title>Home</title>
+    <script>
+        var countDownDate = new Date("Jun 21, 2023 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "g " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </head>
 <body>
     <div>
@@ -22,7 +38,7 @@
         <table border="0" bordercolor="black" class="text" cellpadding="10">
             <tr>
                 <td>
-                    <img id="logo" src="images/toghiri_logo.png" alt="logo">
+                    <img class="rimmagine" src="images/toghiri_logo.png" alt="logo">
                 </td>
                 <td>
                     <b class="rif">
@@ -39,7 +55,7 @@
         <table border="0" bordercolor="black" class="text" cellpadding="10">
             <tr>
                 <td>
-                    <img id="logo" src="images/sergio.jpg" alt="logo">
+                    <img class="rimmagine" src="images/sergio.jpg" alt="sergio">
                 </td>
                 <td>
                     <b class="rif">
@@ -48,7 +64,24 @@
                 </td>
             </tr>
         </table>
-        <br><br>
+        <br>
+        <hr>
+        <br>
+        <div align="center">
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="images/maturita.png" alt="maturita">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Alla prima prova d'esame di <a href="https://www.istruzione.it/esami-di-stato/tutto-sulla-maturita-2023.html">maturità</a> mancano&nbsp;
+                            <p id="countdown"></p>
+                        </b>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div id="footer">
         <b>By Pietro Vaccari</b>
