@@ -12,14 +12,14 @@
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = days + "g " + hours + "h " + minutes + "m " + seconds + "s ";
+            var giorni = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var ore = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minuti = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var secondi = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = giorni + "g " + ore + "h " + minuti + "m " + secondi + "s ";
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
+                document.getElementById("countdown").innerHTML = "0 giorni, buona fortuna!";
             }
         }, 1000);
     </script>
@@ -59,7 +59,7 @@
                 </td>
                 <td>
                     <b class="rif">
-                        Ho anche una pagina su <a href="https://github.com/Toghiri">GitHub</a> con l'immagine di un mio bassotto.
+                        Ho anche una pagina su <a href="https://github.com/Toghiri" target="_blank">GitHub</a> con l'immagine di un mio bassotto.
                     </b>
                 </td>
             </tr>
@@ -75,7 +75,7 @@
                     </td>
                     <td>
                         <b class="rif">
-                            Alla prima prova dell'esame di <a href="https://www.istruzione.it/esami-di-stato/tutto-sulla-maturita-2023.html">maturità</a> mancano&nbsp;
+                            Alla prima prova dell'esame di <a href="https://www.istruzione.it/esami-di-stato/tutto-sulla-maturita-2023.html" target="_blank">maturità</a> mancano
                             <p id="countdown"></p>
                         </b>
                     </td>
