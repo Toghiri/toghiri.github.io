@@ -39,6 +39,18 @@ li a table tr td img{
     filter: invert(100%);
 }
 
+.imglogo{
+    filter: none;
+    height: 23px;
+    border-radius: 50%;
+}
+
+.imglogo-scritta{
+    filter: none;
+    height: 23px;
+    width: 100%;
+}
+
 .rif a:link{
     color: #e60000;
     text-decoration: none;
@@ -53,6 +65,10 @@ li a table tr td img{
     border-radius: 50%;
     width: 100px ;
     height: 100px;
+}
+
+.logosito{
+    height: 20px;
 }
 
 hr{

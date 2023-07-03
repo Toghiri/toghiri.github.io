@@ -53,6 +53,12 @@ h3{
     filter: invert(100%);
 }
 
+.imglogo-scritta{
+    filter: none;
+    height: 23px;
+    width: 100%;
+}
+
 #nav{
     position: sticky;
     top: 0;
