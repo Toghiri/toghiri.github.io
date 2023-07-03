@@ -4,6 +4,10 @@ body
     font-family: sans-serif;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 li {
     display: inline;
     float: left;
@@ -27,6 +31,12 @@ li a {
 
 li a:hover {
     background-color: #111;
+}
+
+.icona-navbar{
+    height: 23px;
+    width: 23px;
+    filter: invert(100%);
 }
 
 .rif a:link{

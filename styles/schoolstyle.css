@@ -47,6 +47,12 @@ h3{
     width: 65px;
 }
 
+.icona-navbar{
+    height: 23px;
+    width: 23px;
+    filter: invert(100%);
+}
+
 #nav{
     position: sticky;
     top: 0;
