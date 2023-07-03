@@ -47,13 +47,13 @@ h3{
     width: 65px;
 }
 
-.icona-navbar{
+li a table tr td img{
     height: 23px;
     width: 23px;
     filter: invert(100%);
 }
 
-.imglogo-scritta{
+#scrittalogo{
     filter: none;
     height: 23px;
     width: 100%;
