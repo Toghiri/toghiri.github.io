@@ -33,7 +33,7 @@ li a:hover {
     background-color: #111;
 }
 
-.navimg{
+li a table tr td img{
     height: 23px;
     width: 23px;
     filter: invert(100%);
