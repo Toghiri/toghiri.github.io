@@ -5,8 +5,15 @@ var visitCount = localStorage.getItem("page_view_home");
 if (visitCount) {
   visitCount = Number(visitCount) + 1;
   localStorage.setItem("page_view_home", visitCount);
-} else {
+} 
+else {
   visitCount = 1;
   localStorage.setItem("page_view_home", 1);
 }
-counterContainer.innerHTML = visitCount + "&nbsp;volte";
+
+if(visitCount == 1){
+  counterContainer.innerHTML = visitCount + "&nbsp;volta";
+}
+else{
+  counterContainer.innerHTML = visitCount + "&nbsp;volte";
+}

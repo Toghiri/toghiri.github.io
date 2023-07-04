@@ -9,4 +9,10 @@ if (visitCount) {
   visitCount = 1;
   localStorage.setItem("page_view_info5", 1);
 }
-counterContainer.innerHTML = visitCount + "&nbsp;volte";
+
+if(visitCount == 1){
+  counterContainer.innerHTML = visitCount + "&nbsp;volta";
+}
+else{
+  counterContainer.innerHTML = visitCount + "&nbsp;volte";
+}
