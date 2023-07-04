@@ -39,6 +39,14 @@ li a table tr td img{
     filter: invert(100%);
 }
 
+.website-counter {
+    display: inline;
+    color: #e60000;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
 .rif a:link{
     color: #e60000;
     text-decoration: none;
@@ -70,10 +78,10 @@ hr{
     width: 100%;
 }
 
-#countdown{
+/*#countdown{
     display: inline;
     border-bottom: 1px solid black;
-}
+}*/
 
 #footer {
     text-align: center;

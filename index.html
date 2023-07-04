@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth">
 <head>
-    <meta charset="UTF-8">                                                  <!--Specifica l'encoding dei caratteri utilizzato all'interno del documento.-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">                   <!--Specifica al browser quale versione del motore di rendering utilizzare -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
-    <link rel="stylesheet" href="styles/home.css">                     <!--Imposta lo stile CSS della pagina-->
-    <link rel="icon" type="image/x-icon" href="media/icons/homenew2.ico">      <!--Imposta l'icona della pagina-->
-    <title>Home</title>                                                     <!--Imposta il titolo della pagina-->
-    <script type="text/javascript" src="javascript/home.js"></script>               <!--Importa gli script di 'home.js'-->
+    <meta charset="UTF-8">                                                      <!--Specifica l'encoding dei caratteri utilizzato all'interno del documento.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">                       <!--Specifica al browser quale versione del motore di rendering utilizzare -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
+    <link rel="stylesheet" href="styles/home.css">                              <!--Imposta lo stile CSS della pagina-->
+    <link rel="icon" type="image/x-icon" href="media/icons/homenew2.ico">       <!--Imposta l'icona della pagina-->
+    <title>Home</title>                                                         <!--Imposta il titolo della pagina-->
+    <script defer type="text/javascript" src="./javascript/views_home.js"></script>   <!--Importa gli script di 'home.js'-->
 </head>
 <body>
     <div>                                                                   <!--Barra di navigazione-->
@@ -107,8 +107,27 @@
             </tr>
         </table>
         <br>
+        <hr>
+        <br>
     </div>
-    <div id="footer">                                                   <!--Piè di pagina-->
+    <div align="center">                                                    <!--Paragrafo Views_sito-->
+        <table border="0" bordercolor="black" class="text" cellpadding="10">
+            <tr>
+                <td>
+                    <img class="rimmagine" src="./media/images/views2.jpg" alt="maturita">
+                </td>
+                <td>
+                    <b class="rif">
+                        Questa pagina è stata visitata per un totale di
+                        <div class="website-counter"></div>
+                        .
+                    </b>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="footer">                                                       <!--Piè di pagina-->
         <b>By Pietro Vaccari</b>
     </div>
 </body>

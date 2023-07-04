@@ -42,6 +42,13 @@ h3{
     display: inline;
 }
 
+.website-counter {
+    display: inline;
+    color: #135eff;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
 .icona {
     height: 65px;
     width: 65px;
