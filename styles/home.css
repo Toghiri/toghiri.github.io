@@ -48,6 +48,14 @@ li a table tr td img{
     font-size: 20px;
   }
 
+  .t-views-counter {
+    display: inline;
+    color: #e60000;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
 .rif a:link{
     color: #e60000;
     text-decoration: none;
