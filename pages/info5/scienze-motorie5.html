@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI GINNASTICA (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f02a67d2-4bb4-4cc7-a6ed-80610e376670" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏅</span></div><h1 class="page-title">APPUNTI GINNASTICA (PIETRO VACCARI)</h1><p class="page-description"></p></header><div class="page-body"><h1 id="b2e12c8a-0f9c-4804-811e-edc64c2f3e8a" class="block-color-red"><strong>Basket (fondamentali e partite)</strong></h1><p id="0aa40f59-213d-4b29-b55e-60507c786652" class="">Il basket è uno <mark class="highlight-red_background">sport di squadra che prevede il passaggio della palla tra i giocatori e il tentativo di segnare canestri</mark>. Ci sono vari <mark class="highlight-red_background">fondamentali</mark> che ogni giocatore deve conoscere per poter giocare efficacemente, come il <mark class="highlight-red_background">dribbling</mark>, il <mark class="highlight-red_background">passaggio</mark>, il <mark class="highlight-red_background">tiro</mark>, il <mark class="highlight-red_background">rimbalzo</mark> e la <mark class="highlight-red_background">difesa</mark>.</p><p id="489b8474-41d2-4e71-b401-16d3c541147d" class="">Il <strong><mark class="highlight-red">dribbling</mark></strong><mark class="highlight-red"> </mark>è l&#x27;azione di <mark class="highlight-red_background">controllare e spostare la palla lungo il campo</mark> utilizzando le mani <mark class="highlight-red_background">evitando i difensori avversari</mark>.</p><p id="eeb3af40-2c05-4f24-ba17-00f19f549d5a" class="">Il <strong><mark class="highlight-red">passaggio </mark></strong>consiste nel <mark class="highlight-red_background">lanciare la palla ad un compagno di squadra</mark>.</p><p id="baa48394-e12b-4dfc-b55f-e4fc0a2cdafb" class="">Il <strong><mark class="highlight-red">tiro </mark></strong>prevede il <mark class="highlight-red_background">tentativo di segnare canestri lanciando la palla nel canestro avversario</mark>.</p><p id="a93989e6-17f9-49a7-9592-7bcdf3171a2a" class="">Il <strong><mark class="highlight-red">rimbalzo </mark></strong>può essere <mark class="highlight-red_background">offensivo o difensivo</mark>, e si verifica quando <mark class="highlight-red_background">la palla rimbalza sul bordo del campo o sul tabellone</mark>.</p><p id="d1a9309c-dc33-4a88-a51a-36ba217e0554" class="">La <strong><mark class="highlight-red">difesa </mark></strong>consiste nell&#x27;<mark class="highlight-red_background">intercettare la palla o impedire all&#x27;avversario di segnare canestri</mark>.</p><p id="be14888f-f5c3-4e62-9e4c-502b36d5091d" class="">Le partite di basket sono solitamente divise in <mark class="highlight-red_background">quattro tempi</mark>, chiamati <mark class="highlight-red_background">quarti</mark>, ciascuno della durata di <mark class="highlight-red_background">10 o 12 minuti</mark>, a seconda della lega o della competizione. Alla <mark class="highlight-red_background">fine dei primi due quarti c&#x27;è l&#x27;intervallo</mark>, di solito di <mark class="highlight-red_background">15 minuti</mark>, mentre alla fine del terzo quarto c&#x27;è una breve pausa.</p><p id="74571138-4fd7-4126-9215-64ef6aae482d" class="">Il <mark class="highlight-red_background">punteggio nel basket viene ottenuto segnando canestri</mark>. Un <mark class="highlight-red_background">canestro da dentro l&#x27;arco vale due punti, mentre un canestro segnato da fuori l&#x27;arco dei tre punti vale tre punti</mark>. In alcuni casi, un giocatore può anche guadagnare un <mark class="highlight-red_background">tiro libero</mark>, ovvero un tiro a canestro senza essere disturbato dalla difesa avversaria, dopo essere stato fatto fallo da un avversario.</p><p id="4427b9b8-e44f-4296-b706-e9d823fc1457" class="">La squadra che <mark class="highlight-red_background">segna più punti alla fine della partita vince</mark>. In caso di <mark class="highlight-red_background">parità</mark>, ci possono essere uno o più <mark class="highlight-red_background">tempi supplementari</mark> per determinare il vincitore.</p><p id="82e4029a-c904-4b78-aeec-3873619da02e" class="">Nel basket, i <strong><mark class="highlight-red">falli </mark></strong>sono chiamati quando un giocatore commette una violazione delle regole. Ci sono diverse tipologie di falli nel basket, tra cui:</p><ol type="1" id="d8a573b1-d341-476c-902c-94ca2c64ff76" class="numbered-list" start="1"><li><strong><mark class="highlight-red">Fallo personale</mark></strong>: questo tipo di fallo viene chiamato quando <mark class="highlight-red_background">un giocatore trattiene, spinge, colpisce o ostacola in qualsiasi modo un altro giocatore</mark>. Il fallo personale può essere di tipo <mark class="highlight-red_background">&quot;comune&quot; o &quot;tecnico&quot;</mark>.</li></ol><ol type="1" id="71473254-8535-4e68-88ba-431e786b05df" class="numbered-list" start="2"><li><strong><mark class="highlight-red">Fallo di rimessa</mark></strong>: questo tipo di fallo viene chiamato quando <mark class="highlight-red_background">un giocatore commette una violazione come ad esempio camminare, fare una doppia regola o fare un fallo di campo</mark>. Il fallo di rimessa <mark class="highlight-red_background">dà il possesso della palla all&#x27;altra squadra</mark>.</li></ol><ol type="1" id="21cee5bf-020e-4b2e-985d-1ef81dd2e061" class="numbered-list" start="3"><li><strong><mark class="highlight-red">Fallo antisportivo</mark></strong>: questo tipo di fallo viene chiamato quando <mark class="highlight-red_background">un giocatore commette un&#x27;azione violenta o pericolosa contro un altro giocatore</mark>, come ad esempio colpire un avversario con il gomito o spingerlo violentemente.</li></ol><ol type="1" id="a7251060-3b01-48c7-b4cc-449c70750b19" class="numbered-list" start="4"><li><strong><mark class="highlight-red">Fallo tecnico</mark></strong>: questo tipo di fallo viene chiamato quando <mark class="highlight-red_background">un giocatore commette una violazione delle regole del gioco, ma non è un fallo personale</mark>. Ad esempio, un giocatore potrebbe commettere un fallo tecnico se <mark class="highlight-red_background">protesta troppo contro una decisione dell&#x27;arbitro o se fa un gesto offensivo</mark>.</li></ol><h1 id="a12e38fa-85dd-4cd4-86ed-8d4b189c2f9c" class=""><strong><mark class="highlight-red">NUOTO</mark></strong></h1><p id="ef91679b-9dad-4aa3-92c7-483be95e1850" class="">Esistono <mark class="highlight-red_background">quattro stili principali</mark> del nuoto: il crawl (o stile libero), il dorso, la rana e il delfino. Ognuno di questi stili richiede una <mark class="highlight-red_background">diversa tecnica di respirazione e di movimento degli arti</mark>.</p><ul id="3eff004f-015c-4fa4-94d0-779f62da65f1" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">Il crawl (o stile libero)</mark></strong> è il <mark class="highlight-red_background">più veloce</mark> degli stili del nuoto. Il nuotatore si muove a <mark class="highlight-red_background">bracciate alternate con le gambe in un movimento ondulatorio</mark>. La <mark class="highlight-red_background">testa</mark> del nuotatore è tenuta <mark class="highlight-red_background">sott&#x27;acqua</mark>, tranne quando il nuotatore deve prendere aria.</li></ul><ul id="03fff010-f255-4c6f-809a-6af7010a1e17" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">Il dorso</mark></strong> è un altro stile molto comune. Il nuotatore si muove <mark class="highlight-red_background">sulla schiena con le braccia che si muovono in modo sincronizzato con le gambe</mark>, come nella rana. Il nuotatore prende aria ogni volta che la testa è inclinata all&#x27;indietro.</li></ul><ul id="bc032fde-890e-4dc6-89ad-2c5f9fb4294b" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">La rana</mark></strong> è uno stile in cui il nuotatore si muove a <mark class="highlight-red_background">bracciate alternate mentre le gambe si muovono insieme come le pinne di una rana</mark>. La <mark class="highlight-red_background">testa</mark> del nuotatore viene tenuta <mark class="highlight-red_background">sott&#x27;acqua</mark> per la maggior parte del tempo, ma il nuotatore deve prendere aria di tanto in tanto.</li></ul><ul id="2b754e05-d337-4e49-afff-2ea068f5f05f" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">Il delfino</mark></strong> è lo stile <mark class="highlight-red_background">più difficile</mark> del nuoto. Il nuotatore si muove a <mark class="highlight-red_background">bracciate alternate con un movimento ondulatorio del corpo</mark>. <mark class="highlight-red_background">Le gambe si muovono insieme come una coda di delfino</mark>. La <mark class="highlight-red_background">testa</mark> del nuotatore rimane <mark class="highlight-red_background">sott&#x27;acqua</mark>, ma il nuotatore deve <mark class="highlight-red_background">prendere aria ogni volta che la testa emerge dall&#x27;acqua</mark>.</li></ul><p id="bc3c3be7-7b99-4102-ba0c-4aa722c084da" class="">Le <strong><mark class="highlight-red">competizioni </mark></strong>di nuoto si svolgono generalmente in una piscina o in acque libere come il mare o un lago. Le competizioni sono <mark class="highlight-red_background">suddivise in diverse distanze</mark>, dalle <mark class="highlight-red_background">brevi distanze come i 50 metri ai più lunghi come i 1500 metri</mark>. Ci sono anche <mark class="highlight-red_background">gare di staffetta</mark> in cui <mark class="highlight-red_background">quattro nuotatori</mark> si alternano in uno stile di nuoto specifico. Le competizioni di nuoto sono <mark class="highlight-red_background">regolate da regole precise sulla tecnica di nuoto e sulle distanze</mark>, e i nuotatori <mark class="highlight-red_background">gareggiano per stabilire il tempo più veloce per completare la distanza</mark>.</p><h2 id="d8d32f8e-af58-4bed-b857-63bf22d7289e" class="block-color-red"><strong>CURIOSITÀ</strong></h2><ol type="1" id="c8c4a625-9c48-4d3d-809d-2dbf9d98dff8" class="numbered-list" start="1"><li><strong>Il nuoto è uno degli </strong><mark class="highlight-red_background"><strong>sport più antichi al mondo</strong></mark><p id="a3250253-8303-4507-aa6f-a18c422e6cb9" class="">Reperti storici ci raccontano che <mark class="highlight-red_background">praticare nuoto fosse una buona abitudine già 7000 anni fa</mark>: <mark class="highlight-red_background">pitture rupestri ritrovate in una grotta</mark> situata in un altipiano libico <mark class="highlight-red_background">simulano movimenti che riproducono l’attività natatoria</mark>.</p></li></ol><ol type="1" id="c1744cc0-9b01-4020-ad0e-371b6d34a625" class="numbered-list" start="2"><li><mark class="highlight-red_background"><strong>Più nuoti, più bruci</strong></mark><p id="14b2506a-b3c3-49c1-b6f6-d366db67c99e" class="">Siamo così tanto abituati alle nostre reazioni fisiche, che c’è chi crede che nuotare non sia faticoso: non sudo, dice, non sento i muscoli indolenziti! Grandissimo errore: <mark class="highlight-red_background">l’acqua è circa 800 volte più densa dell’aria,</mark> quindi <mark class="highlight-red_background">per muoverci all’interno di questo liquido facciamo una fatica molto più elevata e, di conseguenza, bruciamo più calorie</mark>.</p></li></ol><ol type="1" id="f4979988-3432-4193-af68-c84096bd0e58" class="numbered-list" start="3"><li><strong>Il nuoto ed il filosofo</strong><p id="5f99756f-3611-4818-82af-407c9b9fc904" class="">Anche se stiamo parlando di curiosità sul nuoto, vogliamo scomodare un personaggio di enorme levatura: <mark class="highlight-red_background">Platone nei suoi scritti, elogiava il nuoto come sport fondamentale per l’educazione dei bambini</mark>.</p></li></ol><ol type="1" id="736750e8-58e2-4457-b45b-2ebc0876c154" class="numbered-list" start="4"><li><mark class="highlight-red_background"><strong>La prima piscina</strong></mark><p id="df5294da-eef8-468d-91a6-f82dfa0240c2" class="">Così come della storia del nuoto, abbiamo reperti storici anche della creazione delle piscine. La<mark class="highlight-red_background"> prima sembra essere quella costruita a Mohenjo-daro, in Pakistan, risalente al III millennio</mark>.</p></li></ol><ol type="1" id="82d18488-7628-4534-9f9c-55c495818109" class="numbered-list" start="5"><li><mark class="highlight-red_background"><strong>Acqua ed astronauti</strong></mark><p id="71e43df0-313a-4463-ad29-37b7e03d830b" class="">Tra le varie <mark class="highlight-red_background">fasi della preparazione di un astronauta</mark>, ce n’è anche una durante la quale i potenziali esploratori del cielo <mark class="highlight-red_background">vengono immersi nell’acqua di apposite piscine per simulare l’assenza di gravità</mark>.</p></li></ol><ol type="1" id="bc2d07b2-b386-4e1b-b873-6c80d7493ba8" class="numbered-list" start="6"><li><mark class="highlight-red_background"><strong>Fortifica il cuore</strong></mark><p id="bd6d127a-baf3-4de7-af7e-372ee7fec6f2" class="">Tutti gli sport hanno un buon impatto sul nostro benessere fisico. Il nuoto nello specifico <mark class="highlight-red_background">aiuta a regolarizzare i battiti e migliora l’ossigenazione</mark>.</p></li></ol><ol type="1" id="c3c639c5-d6ea-4e55-90e2-46c0570a259f" class="numbered-list" start="7"><li><mark class="highlight-red_background"><strong>Impariamo a respirare</strong></mark><p id="8636393a-10a3-43e9-a6aa-344818da3676" class="">Parlando di respirazione: <mark class="highlight-red_background">l’alternanza tra apnea e respirazione aiuta a regolarizzare quest’ultima</mark> e ti mette più in collegamento con questo fondamentale aspetto.</p></li></ol><ol type="1" id="067a9840-d7f6-40dc-9e89-ab2dc51fd255" class="numbered-list" start="8"><li><strong>I </strong><mark class="highlight-red_background"><strong>successi del nuoto</strong></mark><p id="5d73d106-7bf6-4e29-9db3-5e1823f2b425" class="">Vogliamo fare un conto? <mark class="highlight-red_background">La Federazione Italiana Nuoto ci dice che ad oggi siamo a quota 907 medaglie conquistate negli Europei, 388 ai Mondiali, 43 alle Olimpiadi, 124 agli World Games</mark>.</p></li></ol><ol type="1" id="6c1aaf98-51cc-4ff3-b8bd-cb64609dac15" class="numbered-list" start="9"><li><strong>Uomini e donne, </strong><mark class="highlight-red_background"><strong>chi sono i migliori</strong></mark><strong>?</strong><p id="479d21fb-eaef-4428-8447-329bdb3d8595" class="">La <mark class="highlight-red_background">classifica maschile</mark> vede al primo posto <mark class="highlight-red_background">Michael Phelps, con 33 medaglie mondiali e 28 olimpiche</mark>. Nella <mark class="highlight-red_background">femminile</mark> troviamo invece in vetta <mark class="highlight-red_background">Natalie Coughlin con 12 medaglie olimpiche e 19 mondiali</mark>.</p></li></ol><h2 id="dd0b777c-54a7-4365-b721-3b0452267c8a" class=""><mark class="highlight-red"><strong>FEDERICA PELLEGRINI</strong></mark></h2><p id="45a54cdb-e8c8-44d3-a8e1-5a7673ab87e5" class="">Federica Pellegrini è una <mark class="highlight-red_background">nuotatrice italiana</mark> di grande successo. Nata il <mark class="highlight-red_background">5 agosto 1988</mark> a <mark class="highlight-red_background">Mirano</mark>, in provincia di <mark class="highlight-red_background">Venezia</mark>, è considerata una delle più grandi nuotatrici italiane di tutti i tempi.</p><p id="46626086-4790-4b5d-83e9-21af2fd51055" class="">Pellegrini ha ottenuto numerosi risultati di rilievo nel corso della sua carriera. È stata <mark class="highlight-red_background">campionessa olimpica nel 2008 a Pechino</mark>, vincendo la <mark class="highlight-red_background">medaglia d&#x27;oro nei 200 metri stile libero</mark>. È stata anche <mark class="highlight-red_background">quattro volte campionessa del mondo nei 200 metri stile libero</mark>, conquistando il titolo nel <mark class="highlight-red_background">2009</mark>, <mark class="highlight-red_background">2011</mark>, <mark class="highlight-red_background">2017</mark> e <mark class="highlight-red_background">2019</mark>.</p><p id="f67d6f77-99a4-4122-8404-5336e9e06ad8" class="">Oltre ai successi olimpici e mondiali, Pellegrini ha stabilito <mark class="highlight-red_background">diversi record del mondo nel corso della sua carriera</mark>. Ha <mark class="highlight-red_background">dominato la distanza dei 200 metri stile libero</mark> per molti anni ed è stata una <mark class="highlight-red_background">figura di spicco nel nuoto italiano e internazionale</mark>.</p><p id="d3b32f89-2d41-49e3-a56a-d82c00e6a6ac" class="">Federica Pellegrini è anche molto amata dal pubblico italiano per la sua personalità affascinante e il <mark class="highlight-red_background">suo impegno nel promuovere lo sport e uno stile di vita sano</mark>. Ha rappresentato l&#x27;Italia in numerose competizioni internazionali, dimostrando sempre una grande passione e determinazione.</p><p id="29017a62-a3b1-4743-8361-52820782bbc5" class="">Oltre alle sue imprese sportive, Pellegrini è un&#x27;icona di stile e glamour. È spesso apparsa sulle <mark class="highlight-red_background">copertine di riviste di moda e ha collaborato con diversi brand di abbigliamento e accessori</mark>.</p><p id="18f18ff8-f927-46ec-bf7b-474e5fb2f9de" class="">Federica Pellegrini è un esempio straordinario di atleta di successo e continua a ispirare giovani nuotatori italiani a perseguire i loro sogni nel nuoto e nello sport.</p><p id="018227fe-dbb7-41f2-997f-f0f5711f9430" class="">
+</p></div></article></body></html>

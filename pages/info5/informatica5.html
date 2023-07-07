@@ -1,0 +1,1147 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI INFORMATICA (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="526c7fd6-511c-44e1-92b6-05189255ea8c" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💻</span></div><h1 class="page-title">APPUNTI INFORMATICA (PIETRO VACCARI)</h1><p class="page-description"></p></header><div class="page-body"><nav id="475e306d-2239-468d-82cb-51bcd03997bc" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#af8ef509-0de1-4e9b-af6f-740e0c494eea"><strong><mark class="highlight-red">PROGETTAZIONE E CREAZIONE DI UN DB</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4e35e496-c365-4d37-8dc2-e12acdd74a4a"><strong><mark class="highlight-red">Conoscere ed utilizzare SQL Server</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f514d6db-cea8-46fb-b47e-de92628716c8"><strong><mark class="highlight-red">Database e SQL</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6f9a219c-e6d5-415e-904d-1977156718c7"><mark class="highlight-red"><strong>Linguaggio SQL</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7962037a-3025-4e99-b3c4-d039cf23c0a8"><mark class="highlight-red"><strong>DDL</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#95fafde4-efc9-4c4f-8db2-3b59d180a8a1"><mark class="highlight-red"><strong>DML</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a82f6038-cb18-4f4f-9c75-b7935344ec07"><mark class="highlight-red"><strong>DQL</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b3724220-9867-49be-9590-30e3debdedf6"><mark class="highlight-red"><strong>TCL</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2e2aeea7-fa32-445a-887b-5668347cfab8"><strong><mark class="highlight-red">Normalizzazione (anomalie, forme normali e dipendenze funzionali in un database)</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#82e3f0b7-f480-41dc-a4d6-94f27c75de71"><strong><mark class="highlight-red">Generalizzazione nei diagrammi E/R</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#63595605-1ace-4fb4-9070-87ca7290ca90"><mark class="highlight-red"><strong>TRIGGER E INDICI IN SQL</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#53c7b2d9-2ae7-4b1f-a102-6a81dd4428cc"><strong><mark class="highlight-red">SQL CHECK</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f28204be-794e-405e-b9d6-643d00a578eb"><strong><mark class="highlight-red">SQL ENUM</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9adc72b8-5a65-4def-8e78-9fe97238c678"><strong>SQL LIKE</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#064eb0da-2416-421e-906d-8a67d4236b31"><strong>SQL COUNT</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5513f0c3-4d81-4730-80f2-ef1494f4b392"><strong><mark class="highlight-red">SQL JOIN</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#af098f91-454f-451c-bd97-2019a58640e2"><strong>INVIO EMAIL DAL DB</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e4ae7be5-0952-41ce-868a-d956674097be"><strong><mark class="highlight-red">VIEW (VISTE)</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#940e828c-1ded-456e-8a1d-31b14c3e9bff"><mark class="highlight-red"><strong>Configurazione di un database</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3a0a8c68-f090-4697-99e5-2dec286dac3d"><strong><mark class="highlight-red">Stored procedures</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#650ed567-5597-4887-8258-6423ec20559a"><strong><mark class="highlight-red">MySQL</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#08575359-6d75-4e61-81b0-847a344e5c79"><strong><mark class="highlight-red">PHP</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fb745b71-8c3d-426e-8f76-b79ebdfc3ea8"><strong><mark class="highlight-red">FUNZIONI SQL NEL PHP</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a35b9fd0-c267-4c05-949f-323da7292b0c"><mark class="highlight-red"><strong>Eempio PHP per l’aggiunta di dati in un db da una pagina HTML</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#49856dcc-81e6-4990-93d8-434137354fea"><mark class="highlight-red"><strong>HTML</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4b825e9c-611d-434d-a82e-6fc5d24e9325"><mark class="highlight-red"><strong>PHP</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#14b960f1-2510-4ff7-9ff3-e88d27d6ceeb"><strong><mark class="highlight-red">Wordpress</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2a307bbe-f00d-4f9c-bc11-62b0968e5c02"><strong><mark class="highlight-red">Sviluppo di un sito Wordpress</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9011a391-2643-4316-abfb-50e62d755e9f"><strong>Algebra Razionale</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#061f71cf-01a3-4ca1-8ae6-fb0908f4ef86"><strong><mark class="highlight-red">Accesso ai database (MySQL e SQL Server) tramite C#</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4ce58e23-3d62-4e5c-86da-94dcb2e23a62"><strong><mark class="highlight-red">NOSQL Database</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2d4592e5-296e-4370-83c7-58080a996f61"><strong><mark class="highlight-red">Progettazione software</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e8021b1d-1360-4813-9155-f60e16bada70"><strong><mark class="highlight-red">Big Data</mark></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d92367f0-e6fc-45a4-8bfc-c081dc7bca23"><mark class="highlight-red"><strong>Analisi dei dati con MS Excel pivot table e MS Power BI</strong></mark></a></div></nav><h1 id="af8ef509-0de1-4e9b-af6f-740e0c494eea" class=""><strong><mark class="highlight-red">PROGETTAZIONE E CREAZIONE DI UN DB</mark></strong></h1><p id="ae8937e0-4b51-4bbb-a70c-5b337648d26c" class="">Le<mark class="highlight-red"> </mark><strong><mark class="highlight-red">fasi di progettazione di un database</mark></strong> in SQL possono essere suddivise in diverse attività principali:</p><ol type="1" id="f08150db-fa26-49ab-b041-d4f27b3f2d98" class="numbered-list" start="1"><li><strong><mark class="highlight-red">Analisi dei requisiti</mark></strong>: in questa fase, <mark class="highlight-red_background">si analizzano i requisiti del sistema, raccogliendo informazioni sulle funzionalità richieste, sui dati da gestire, sulle relazioni tra i dati e sulle restrizioni applicabili ai dati</mark>.</li></ol><ol type="1" id="e27494b4-532f-4e7c-a863-5b13e2e67ed1" class="numbered-list" start="2"><li><strong><mark class="highlight-red">Progettazione concettuale</mark></strong>: La progettazione concettuale è la fase in cui <mark class="highlight-red_background">si identificano le entità principali del sistema e le relazioni tra di esse</mark>. L&#x27;obiettivo è di sviluppare un modello concettuale del database, che r<mark class="highlight-red_background">appresenta la struttura logica del sistema in modo indipendente dal DBMS che verrà utilizzato per implementarlo</mark>.<p id="ac3d9721-08c5-47cf-9132-9752c7a695a8" class="">In questa fase, si utilizza il modello <strong><mark class="highlight-red">Entity-Relationship (ER)</mark></strong>, che prevede la <mark class="highlight-red_background">rappresentazione grafica delle entità e delle relazioni tra di esse</mark>. <mark class="highlight-red_background">L&#x27;entità rappresenta un oggetto o un concetto di interesse per il sistema, mentre la relazione rappresenta un legame o una connessione tra le entità</mark>.</p><figure id="0eb739ef-1133-45a6-85fc-71ffb4606a54" class="image"><a href="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled.png"><img style="width:471px" src="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled.png"/></a></figure><ul id="e31c55ca-8e60-4a8d-b810-5f04b4fecee6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Diagramma E/R</strong></mark>:<ul id="e997ae04-c1fb-4a44-b20c-97b2654bf61d" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">Entità</mark>: Rappresenta un <mark class="highlight-red_background">oggetto o un concetto del mondo reale</mark>. Viene rappresentato come un <mark class="highlight-red_background">rettangolo</mark> con il nome dell&#x27;entità all&#x27;interno.</li></ul><ul id="c15b7463-03c7-47bd-bc6b-f6c8b99310f5" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">Relazione</mark>: Rappresenta <mark class="highlight-red_background">l&#x27;associazione tra due o più entità</mark>. Viene rappresentato come un <mark class="highlight-red_background">rombo</mark> con il nome della relazione all&#x27;interno.</li></ul><ul id="b3f92c28-b304-4c40-8f7e-9d09ed259683" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">Attributi</mark>: <mark class="highlight-red_background">Caratteristiche o proprietà delle entità</mark>. Vengono rappresentati come <mark class="highlight-red_background">ovali collegati all&#x27;entità</mark>.</li></ul><ul id="d90c5714-a471-4046-af06-a38c10a040f4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red_background">Cardinalità</mark>: Indica il <mark class="highlight-red_background">numero di istanze di una relazione che possono essere associate a un&#x27;istanza di un&#x27;altra entità</mark>. Viene rappresentata attraverso linee o frecce che collegano le entità alla relazione.</li></ul></li></ul><ul id="8bc8d36c-f9a9-4b41-9863-f033f2c51162" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Schemi logici</strong></mark>:<ul id="697e6bbe-c33a-4722-836f-5b53633b3f68" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red"><strong>Schema logico 1-N </strong></mark><strong>(uno-a-molti):</strong><p id="2b1c3003-9934-4ba8-b4aa-51087a9bef4b" class="">Nell&#x27;esempio, abbiamo due entità: &quot;Azienda&quot; e &quot;Dipendente&quot;. L&#x27;azienda può avere molti dipendenti, ma un dipendente può appartenere a una sola azienda.</p><p id="aa1b41ac-6480-47cf-a7a7-8f715760f65c" class=""><strong>Azienda</strong> (ID_Azienda, Nome_Azienda, ...)</p><ul id="2eccbf68-6a51-4e3b-b8a7-21a263c7fcd6" class="bulleted-list"><li style="list-style-type:square">ID_Azienda (Chiave primaria)</li></ul><ul id="1f92d86d-f885-4e4e-9c9d-6858cbbd6ceb" class="bulleted-list"><li style="list-style-type:square">Nome_Azienda</li></ul><ul id="b3a5da34-ff81-4c56-b079-7b9f76d4de95" class="bulleted-list"><li style="list-style-type:square">...</li></ul><p id="18ed013b-3371-43c4-83d5-6f6651be5f2b" class=""><strong>Dipendente</strong> (ID_Dipendente, Nome_Dipendente, ID_Azienda, ...)</p><ul id="734a5fc7-0053-4391-b63e-a59d187d15bf" class="bulleted-list"><li style="list-style-type:square">ID_Dipendente (Chiave primaria)</li></ul><ul id="345bb5b0-6372-431f-8a0b-f452cf4cae60" class="bulleted-list"><li style="list-style-type:square">Nome_Dipendente</li></ul><ul id="bf66adde-58bf-4323-8fa0-5e89c56f41e5" class="bulleted-list"><li style="list-style-type:square">ID_Azienda (<mark class="highlight-red_background">Chiave esterna che fa riferimento a ID_Azienda in Azienda</mark>)</li></ul><ul id="e994ba9a-ae9a-4459-b1c1-215d8b02abd2" class="bulleted-list"><li style="list-style-type:square">...</li></ul><p id="2a1d264b-55ca-4f6c-928e-aac3e97fcdd1" class=""><mark class="highlight-red_background">Nella tabella Dipendente, il campo ID_Azienda è una chiave esterna che collega ogni dipendente all&#x27;azienda a cui appartiene</mark>.</p></li></ul><ul id="01f08b2e-9b84-42cd-becc-16c82c13c9bd" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red"><strong>Schema logico N-N </strong></mark><strong>(molti-a-molti):</strong><p id="8f085cc9-bbe3-438d-a570-0650333f4fed" class="">Nell&#x27;esempio, abbiamo due entità: &quot;Studente&quot; e &quot;Corso&quot;. Uno studente può iscriversi a molti corsi e un corso può avere molti studenti.</p><p id="d4c76656-6ab8-4562-9505-ecae13254b52" class=""><strong>Studente</strong> (ID_Studente, Nome_Studente, ...)</p><ul id="20fc1bb5-5722-4666-ad2a-35248ef56c6c" class="bulleted-list"><li style="list-style-type:square">ID_Studente (Chiave primaria)</li></ul><ul id="ec93f053-af23-45e0-9b4c-54222c3eda55" class="bulleted-list"><li style="list-style-type:square">Nome_Studente</li></ul><ul id="3172afd3-04b8-4114-93fb-3bd517d090b5" class="bulleted-list"><li style="list-style-type:square">...</li></ul><p id="ccf32d78-874d-4964-a569-f9bc548aabcd" class=""><strong>Corso</strong> (ID_Corso, Nome_Corso, ...)</p><ul id="dd722bee-854a-4fda-bae4-9b3345385f79" class="bulleted-list"><li style="list-style-type:square">ID_Corso (Chiave primaria)</li></ul><ul id="c2b506a2-7d40-455f-b70a-7d701776b762" class="bulleted-list"><li style="list-style-type:square">Nome_Corso</li></ul><ul id="80cc244a-00c1-49ec-8249-19923fb07e03" class="bulleted-list"><li style="list-style-type:square">...</li></ul><p id="e28b0ef2-3ac5-4cf7-86f9-49a47b9c9996" class=""><strong>Iscrizione</strong> (ID_Studente, ID_Corso)</p><ul id="30f2695b-7a4e-4094-9cc6-e5779e27cda4" class="bulleted-list"><li style="list-style-type:square">ID_Studente (<mark class="highlight-red_background">Chiave esterna che fa riferimento a ID_Studente in Studente</mark>)</li></ul><ul id="c09f636f-8241-4907-b62f-e4463895921e" class="bulleted-list"><li style="list-style-type:square">ID_Corso (<mark class="highlight-red_background">Chiave esterna che fa riferimento a ID_Corso in Corso</mark>)</li></ul><p id="22e8e356-6ac6-4839-97ed-6258292de703" class=""><mark class="highlight-red_background">La tabella Iscrizione collega gli studenti ai corsi a cui sono iscritti utilizzando le chiavi esterne ID_Studente e ID_Corso</mark>.</p></li></ul></li></ul></li></ol><ol type="1" id="763d3663-f524-4d97-b63a-0a6f7c67f18d" class="numbered-list" start="3"><li><strong><mark class="highlight-red">Progettazione logica</mark></strong>: La progettazione logica è la fase in cui <mark class="highlight-red_background">il modello concettuale viene tradotto in un modello logico. Il modello logico è un insieme di tabelle, campi e relazioni tra di esse</mark>, ed è la base per la creazione del database fisico.<p id="dbafee23-3835-49c3-85ff-452b6458b3c5" class="">In questa fase, si passa dalla rappresentazione grafica del modello ER a un <mark class="highlight-red_background">diagramma relazionale</mark>, che prevede la <mark class="highlight-red_background">rappresentazione delle tabelle e dei campi, delle chiavi primarie e delle chiavi esterne</mark>. Le tabelle rappresentano le entità identificate nella fase di progettazione concettuale, mentre i campi rappresentano gli attributi delle entità.</p><p id="d8e10af2-69ee-47cd-8468-970b3ea29fba" class="">Il modello logico prevede inoltre la <mark class="highlight-red_background">definizione di vincoli e regole di integrità dei dati, come ad esempio la definizione delle chiavi primarie e delle chiavi esterne, la definizione delle restrizioni di unicità, di nullità, di validità e di trigger</mark>.</p></li></ol><ol type="1" id="5d7efabe-f426-4601-9083-b26578eac825" class="numbered-list" start="4"><li><strong><mark class="highlight-red">Progettazione fisica</mark></strong>: La progettazione fisica è la fase in cui <mark class="highlight-red_background">si definiscono le specifiche tecniche per l&#x27;implementazione del database sul DBMS scelto</mark>. In questa fase si decide come le tabelle, i campi e le relazioni saranno effettivamente implementati in un database fisico.<p id="7160a766-9e2a-4659-aaa3-271e3f88fe3b" class="">In particolare, <mark class="highlight-red_background">si definiscono i tipi di dati per i campi, le dimensioni dei campi, gli indici, le procedure di accesso ai dati e si stabilisce come i dati saranno fisicamente archiviati su disco</mark>.</p><p id="78cb529a-72d3-48f3-bf0c-f450fa859061" class="">In questa fase, è inoltre importante definire una strategia di backup e ripristino dei dati, una strategia di gestione della sicurezza e delle autorizzazioni di accesso, nonché una strategia di gestione delle prestazioni del database.</p></li></ol><ol type="1" id="abd7b05d-58c3-4f75-826a-4a780354d3a2" class="numbered-list" start="5"><li><strong><mark class="highlight-red">Implementazione e popolamento del database</mark></strong>: In questa fase, <mark class="highlight-red_background">si creano le tabelle e i campi nel database, si definiscono le relazioni tra le tabelle, si impostano le chiavi primarie e le chiavi esterne e si specificano i tipi di dati e le restrizioni per ogni campo</mark>. Successivamente, <mark class="highlight-red_background">si popola il database con i dati e si creano le viste</mark>, le stored procedure e le funzioni necessarie. In questa fase, è importante utilizzare il linguaggio SQL corretto per creare e manipolare il database.</li></ol><ol type="1" id="bde6ac78-4000-4099-835b-275fae2a209e" class="numbered-list" start="6"><li><strong><mark class="highlight-red">Test e verifica</mark></strong>: in questa fase <mark class="highlight-red_background">si verificano i dati inseriti, si testano le procedure di accesso ai dati, si testano le funzionalità e si valutano le prestazioni del database</mark>.</li></ol><ol type="1" id="d4a3ccc4-a1d2-4087-ba42-e56cd5f48a23" class="numbered-list" start="7"><li><strong><mark class="highlight-red">Manutenzione del database</mark></strong>: in questa fase <mark class="highlight-red_background">si effettuano le operazioni di manutenzione del database, come la pulizia dei dati, l&#x27;aggiornamento degli indici, la gestione delle autorizzazioni di accesso, la pianificazione dei backup e della ripristino</mark>.</li></ol><figure id="1124b0a7-14e0-4688-8571-a96936c34eec" class="image"><a href="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%201.png"><img style="width:960px" src="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%201.png"/></a></figure><p id="bb2e43fd-a1a8-4b28-96d3-6db04059a899" class="">
+</p><div id="7e1a59ca-bf4b-452b-b3c3-98688f45ccb6" class="column-list"><div id="76a52a70-94ea-444d-a2d8-502cf8ed34e9" style="width:37.5%" class="column"><h1 id="4e35e496-c365-4d37-8dc2-e12acdd74a4a" class=""><strong><mark class="highlight-red">Conoscere ed utilizzare SQL Server</mark></strong></h1><p id="260a6922-3c1c-45cb-b9d4-085ecbb98d46" class="">SQL Server è un database relazionale di Microsoft, che consente di archiviare, gestire e analizzare grandi quantità di dati. Di seguito spiego alcuni concetti chiave relativi a SQL Server e alla sua gestione.</p></div><div id="918b1431-c2c8-4532-a804-7f54a5ffd105" style="width:62.5%" class="column"><p id="5e84ee0f-b404-4899-a6c7-d0cf3637f0d9" class="">
+</p><figure id="ee6c4a4d-0a39-4c87-ba48-fe041db7c074" class="image"><a href="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%202.png"><img style="width:1369px" src="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%202.png"/></a></figure></div></div><ol type="1" id="7d5937a2-f57e-4911-b724-9720e06701b2" class="numbered-list" start="1"><li>Confronto tra le <mark class="highlight-red_background">versioni di SQL Server</mark>:
+SQL Server è disponibile in diverse versioni, ognuna delle quali ha funzionalità e limitazioni diverse. Le principali versioni di SQL Server sono:<ol type="a" id="35a60a29-16ce-4b2f-9ae2-8ce34f4a1da7" class="numbered-list" start="1"><li>SQL Server Express: versione gratuita con funzionalità di base e limitazioni sui dati archiviati e sulle prestazioni.</li></ol><ol type="a" id="59cb1e25-643b-4cdb-8de4-5fa33b791c1d" class="numbered-list" start="2"><li>SQL Server Standard: versione a pagamento con funzionalità avanzate, che consente di gestire grandi quantità di dati.</li></ol><ol type="a" id="86c7e85d-9cfa-4708-a1b1-dece3b40feca" class="numbered-list" start="3"><li>SQL Server Enterprise: versione a pagamento con funzionalità avanzate per la gestione di grandi quantità di dati e per l&#x27;elaborazione analitica.</li></ol><ol type="a" id="9e7f3758-9342-45d6-b6ab-805ddc5cd34e" class="numbered-list" start="4"><li>SQL Server Developer: versione gratuita per gli sviluppatori, con funzionalità simili a quelle della versione Enterprise.</li></ol><ol type="a" id="2a1f3abb-1822-413f-b8af-419ebed9b209" class="numbered-list" start="5"><li>SQL Server Web: versione a pagamento destinata alla pubblicazione di applicazioni web.</li></ol></li></ol><ol type="1" id="e3821c4f-eca0-482e-bb0c-c9f84a50b8ec" class="numbered-list" start="2"><li><mark class="highlight-red_background">Installazione</mark> e <mark class="highlight-red_background">configurazione</mark>:
+L&#x27;installazione di SQL Server può essere effettuata tramite il programma di installazione di Microsoft. Durante l&#x27;installazione, è possibile scegliere le funzionalità da installare, configurare le opzioni di sicurezza e configurare i servizi di rete.</li></ol><ol type="1" id="b362fad0-e20f-493c-91fa-5aa3f334e751" class="numbered-list" start="3"><li><mark class="highlight-red_background">SQL Server Management Studio</mark>:
+SQL Server Management Studio è un&#x27;applicazione che consente di gestire e amministrare un&#x27;istanza di SQL Server. È possibile creare database, tabelle, viste, funzioni, trigger e stored procedure, nonché eseguire query e monitorare le prestazioni del server.</li></ol><ol type="1" id="5725aef4-89a7-4e77-b6ad-544726e2e310" class="numbered-list" start="4"><li><mark class="highlight-red_background">Configurazione dei DB</mark>:
+È possibile configurare i database in SQL Server tramite SQL Server Management Studio. È possibile definire le tabelle, le viste, gli indici e le relazioni tra le tabelle.</li></ol><ol type="1" id="c4adbb9d-31ae-4e2b-8889-a64518a4face" class="numbered-list" start="5"><li><mark class="highlight-red_background">Creazione di tabelle, viste e indici</mark>:
+La creazione di tabelle, viste e indici è possibile tramite SQL Server Management Studio. È possibile definire i campi delle tabelle, i tipi di dati, le relazioni tra le tabelle e gli indici.</li></ol><ol type="1" id="9cfea070-fea8-4499-85a2-165dbc89869a" class="numbered-list" start="6"><li><mark class="highlight-red_background">Funzioni, trigger e stored procedure</mark>:
+Le funzioni, i trigger e le stored procedure sono oggetti del database che consentono di automatizzare le operazioni di gestione dei dati. Le stored procedure sono eseguite sul server e possono accedere ai dati archiviati nel database.</li></ol><ol type="1" id="0e571e20-3124-412d-8770-2a6bf6100a01" class="numbered-list" start="7"><li><mark class="highlight-red_background">Gestione della sicurezza</mark>:
+La gestione della sicurezza in SQL Server può essere effettuata tramite SQL Server Management Studio. È possibile definire gli utenti e i gruppi di utenti, assegnare i diritti di accesso e definire le regole di sicurezza.</li></ol><ol type="1" id="23dc1a10-ae41-499d-8091-db2537674a70" class="numbered-list" start="8"><li><mark class="highlight-red_background">Backup e recupero</mark>:
+SQL Server consente di eseguire il backup e il ripristino dei dati archiviati nel database. È possibile effettuare il backup dei dati tramite SQL Server Management Studio o utilizzando strumenti di backup di terze parti.</li></ol><ol type="1" id="59440367-80f3-4e1c-9ef9-d60b89cce5a7" class="numbered-list" start="9"><li><mark class="highlight-red_background">Porting dei dati</mark>:
+Il porting dei dati consente di migrare i dati da un database a un altro. È possibile utilizzare strumenti di porting di terze parti o utilizzare le funzionalità di importazione ed esportazione di SQL Server.</li></ol><ol type="1" id="58c042e0-b4a9-4bf3-b555-5214d27c07be" class="numbered-list" start="10"><li><mark class="highlight-red_background">Gestione ed amministrazione di sistema</mark>:
+La gestione ed amministrazione di sistema in SQL Server è una parte molto importante per garantire la continuità delle attività e la sicurezza dei dati. In questo contesto, il lavoro dell&#x27;amministratore di sistema comprende le seguenti attività:<ul id="09e0ec26-8df8-40a0-8def-d2a5f8cb3e20" class="bulleted-list"><li style="list-style-type:disc">Installazione di SQL Server: l&#x27;installazione può essere fatta in diverse modalità, come ad esempio l&#x27;installazione in modalità &quot;basic&quot; o l&#x27;installazione avanzata con molte opzioni personalizzabili.</li></ul><ul id="746dadcb-dd73-4aae-98cc-914dbae207f5" class="bulleted-list"><li style="list-style-type:disc">Configurazione di SQL Server: dopo l&#x27;installazione, il server può essere configurato per funzionare in modo specifico per le esigenze dell&#x27;applicazione e dell&#x27;ambiente in cui viene utilizzato.</li></ul><ul id="37a44469-706c-43ab-b11b-4005d6675f59" class="bulleted-list"><li style="list-style-type:disc">Monitoraggio delle prestazioni: l&#x27;amministratore deve essere in grado di monitorare le prestazioni del server per individuare eventuali problemi e garantire una risposta rapida in caso di problemi.</li></ul><ul id="bb81b33f-85b5-46a6-9409-16b0958b4558" class="bulleted-list"><li style="list-style-type:disc">Ottimizzazione delle prestazioni: l&#x27;amministratore deve avere la capacità di identificare e risolvere i problemi di prestazioni.</li></ul><ul id="7c460603-7456-48e5-94e2-7aee2fdee7c4" class="bulleted-list"><li style="list-style-type:disc">Gestione della capacità: l&#x27;amministratore deve essere in grado di gestire la capacità del server, pianificando eventuali espansioni o aggiornamenti.</li></ul><ul id="14004a46-df11-4389-abd9-72518bb24c9e" class="bulleted-list"><li style="list-style-type:disc">Gestione delle patch: l&#x27;amministratore deve tenere il server sempre aggiornato con le ultime patch di sicurezza e funzionalità.</li></ul><ul id="a4931ee6-86e6-42c1-a386-375ca078b46a" class="bulleted-list"><li style="list-style-type:disc">Backup e ripristino: l&#x27;amministratore deve pianificare e gestire le attività di backup e ripristino dei dati, in modo da garantire la continuità del servizio anche in caso di problemi.</li></ul></li></ol><ol type="1" id="ef30d9f9-4658-460e-9453-d51214fc17aa" class="numbered-list" start="11"><li><mark class="highlight-red_background">Pianificazione delle operazioni</mark>:
+La pianificazione delle operazioni è un&#x27;attività fondamentale per garantire la continuità del servizio e la disponibilità dei dati. Tra le attività principali di pianificazione delle operazioni troviamo:<ul id="86cc0076-4f8f-4729-bed8-9bf5a5ed3bfb" class="bulleted-list"><li style="list-style-type:disc">Pianificazione dei backup: l&#x27;amministratore deve pianificare le attività di backup dei dati in modo da garantire la disponibilità dei dati anche in caso di problemi.</li></ul><ul id="f52b9acc-afa0-4e35-a9e5-44fd70fc203a" class="bulleted-list"><li style="list-style-type:disc">Pianificazione delle attività di manutenzione: l&#x27;amministratore deve pianificare le attività di manutenzione del server, come ad esempio la deframmentazione dei dischi.</li></ul><ul id="8e76e045-5735-4fb4-96dd-8badf14fcc2c" class="bulleted-list"><li style="list-style-type:disc">Pianificazione degli aggiornamenti: l&#x27;amministratore deve pianificare gli aggiornamenti del server, garantendo la continuità del servizio anche durante l&#x27;aggiornamento.</li></ul></li></ol><ol type="1" id="a3465982-1944-427d-8f53-46919576c587" class="numbered-list" start="12"><li><mark class="highlight-red_background">Cenni su transazioni</mark>:
+Le transazioni sono utilizzate per garantire l&#x27;integrità dei dati e per garantire l&#x27;atomicità delle operazioni. Una transazione rappresenta una serie di operazioni che devono essere eseguite tutte o nessuna. In caso di problemi durante l&#x27;esecuzione della transazione, questa viene automaticamente annullata e il sistema viene riportato allo stato precedente.</li></ol><ol type="1" id="463779e5-cd11-4881-b032-a7c26c3c8c51" class="numbered-list" start="13"><li><mark class="highlight-red_background">Cenni a problemi di load balancing</mark>:
+Il load balancing è l&#x27;attività di distribuire il carico di lavoro su più server, in modo da garantire la disponibilità del servizio anche in caso di picchi di carico. SQL Server supporta il load balancing attraverso la funzionalità di clustering.</li></ol><ol type="1" id="dab5a341-456b-4e6b-9058-a7ffa2992733" class="numbered-list" start="14"><li>In SQL Server, la <mark class="highlight-red_background">sicurezza </mark>può essere gestita a livello di istanza e di database. A livello di istanza, è possibile configurare le impostazioni di sicurezza per l&#x27;intero server SQL, ad esempio tramite l&#x27;Autenticazione di Windows o l&#x27;Autenticazione di SQL Server.<p id="9e3fc7a4-e212-49d4-b37b-aaf3b6e8e343" class="">A livello di database, la sicurezza può essere gestita tramite utenti e ruoli. Gli utenti possono essere creati per accedere a un database specifico e assegnati a ruoli specifici che definiscono i permessi di accesso alle risorse del database. È possibile concedere a un utente l&#x27;accesso solo alle risorse necessarie per svolgere il proprio lavoro, limitando così il rischio di accesso non autorizzato alle informazioni.</p></li></ol><ol type="1" id="9f599c01-5d9f-4d71-985a-017e42b08c69" class="numbered-list" start="15"><li>Il <mark class="highlight-red_background">monitoraggio delle risorse</mark> è un aspetto importante dell&#x27;amministrazione del database in SQL Server. Questo include il monitoraggio delle prestazioni del server, dei database e dei processi in esecuzione. È possibile utilizzare strumenti come SQL Server Profiler o Dynamic Management Views (DMV) per monitorare le query in esecuzione e identificare eventuali problemi di prestazioni.<p id="04c242bd-eb26-4711-bfd9-bc2378f6c55c" class="">Inoltre, SQL Server offre funzionalità di load balancing per garantire la scalabilità dei database. È possibile distribuire i database su diversi server e utilizzare la replica per garantire la disponibilità dei dati. In questo modo, è possibile distribuire il carico di lavoro su più server per evitare il sovraccarico del server e migliorare le prestazioni complessive del sistema.</p></li></ol><h1 id="f514d6db-cea8-46fb-b47e-de92628716c8" class=""><strong><mark class="highlight-red">Database e SQL</mark></strong></h1><h2 id="6f9a219c-e6d5-415e-904d-1977156718c7" class=""><mark class="highlight-red"><strong>Linguaggio SQL</strong></mark></h2><p id="1d770a91-ee99-4f98-baad-58173d59c26e" class="">SQL (Structured Query Language) è un linguaggio di programmazione utilizzato per gestire i database relazionali. SQL consente agli utenti di creare, modificare e manipolare i dati all&#x27;interno di un database.</p><p id="08101720-622e-48a2-b2c8-175bf7563ca8" class="">I sotto-linguaggi principali di SQL sono:</p><ul id="8506e124-33b4-4dbc-a02c-668304702909" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Data Definition Language (DDL)</mark>: utilizzato per creare, modificare e eliminare gli oggetti del database, come tabelle, indici, viste, procedure e trigger. (CREATE, ALTER, DROP)</li></ul><ul id="197e1c61-1c0a-4ce8-9d56-d0e724559c23" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Data Manipulation Language (DML)</mark>: utilizzato per aggiungere, modificare e eliminare i dati all&#x27;interno delle tabelle. (INSERT, UPDATE, DELETE)</li></ul><ul id="d2c914f2-5b95-44e2-845a-9fb5361ed7e8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Data Query Language (DQL)</mark>: utilizzato per interrogare il database e recuperare i dati che soddisfano determinati criteri. (SELECT)</li></ul><ul id="17401ac1-e968-4dcc-bd8e-29a2bf306bb3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Transaction Control Language (TCL)</mark>: utilizzato per gestire le transazioni, ovvero un insieme di operazioni eseguite su un database come un&#x27;unità atomica. (COMMIT, ROLLBACK)</li></ul><p id="ea1e7694-f3e5-470b-94dd-8d58a196bf0f" class="">In SQL, una <mark class="highlight-orange_background">tabella </mark>è composta da una <mark class="highlight-orange_background">serie di righe e colonne che contengono i dati</mark>. Una riga rappresenta un record nel database, mentre una colonna rappresenta un attributo del record.</p><p id="75a290ff-3296-4cbd-8f4e-ae91100c5034" class="">Le query SQL sono utilizzate per recuperare i dati dal database. La query SELECT è la più comune ed è utilizzata per selezionare una o più colonne da una o più tabelle. Le query SELECT possono essere filtrate utilizzando la clausola WHERE per selezionare solo i record che soddisfano determinati criteri.</p><p id="e9b57289-7a57-46ec-878a-321b02210979" class="">Ad esempio, la seguente query seleziona tutti i record dalla tabella &quot;Utenti&quot; dove il campo &quot;Nome&quot; è uguale a &quot;Mario&quot;:</p><pre id="c0f6148a-ec6f-43f2-ba6a-15ba378d963b" class="code code-wrap"><code>SELECT * FROM Utenti WHERE Nome = &#x27;Mario&#x27;;</code></pre><h3 id="7962037a-3025-4e99-b3c4-d039cf23c0a8" class=""><mark class="highlight-red"><strong>DDL</strong></mark></h3><p id="aa9e379a-4fe4-4de5-8931-4385d2a365a7" class="">DDL (Data Definition Language) è un insieme di comandi SQL che consentono di definire la struttura e la composizione dei dati all&#x27;interno di un database. I principali comandi DDL sono:</p><ol type="1" id="6eda1ffd-0af4-4bcb-970e-c0fc04d14d2a" class="numbered-list" start="1"><li><mark class="highlight-orange_background">CREATE TABLE</mark>: consente di creare una nuova tabella all&#x27;interno del database, specificando il nome della tabella, i nomi e i tipi di dati delle colonne e le eventuali chiavi primarie e straniere.<p id="b57a449b-a1d9-4eee-855a-4a8b0a6f74d1" class="">Esempio:</p><pre id="c5915ccf-b691-4e47-989b-d9e2f11949db" class="code code-wrap"><code>CREATE TABLE prodotti (
+    id_prodotto INT(11) NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    descrizione TEXT,
+    prezzo DECIMAL(10,2) NOT NULL,
+    id_categoria INT(11) NOT NULL,
+    PRIMARY KEY (id_prodotto),
+    FOREIGN KEY (id_categoria) REFERENCES categorie(id_categoria)
+);</code></pre><p id="23e31355-ac2e-47db-980f-57bdc9e5a62d" class="">Questo comando crea una nuova tabella chiamata &quot;prodotti&quot;, con una chiave primaria &quot;id_prodotto&quot; di tipo INT, un campo &quot;nome&quot; di tipo VARCHAR, un campo &quot;descrizione&quot; di tipo TEXT, un campo &quot;prezzo&quot; di tipo DECIMAL e una chiave esterna &quot;id_categoria&quot; che fa riferimento alla tabella &quot;categorie&quot;.</p></li></ol><ol type="1" id="d7aaa5b8-7794-4373-a33d-c7ed2f23e237" class="numbered-list" start="2"><li><mark class="highlight-orange_background">ALTER TABLE</mark>: consente di modificare la struttura di una tabella già esistente, aggiungendo o rimuovendo colonne, definendo o eliminando vincoli o modificando il tipo di dati delle colonne.<p id="301b4e85-c8d4-4d2e-a7f4-6b1fbeb16812" class="">Esempio:</p><pre id="ed216a60-026d-4b8c-9e5d-143de08efb43" class="code code-wrap"><code>ALTER TABLE prodotti
+ADD COLUMN quantita INT(11) NOT NULL,
+ADD CONSTRAINT CHK_quantita CHECK (quantita &gt;= 0);</code></pre><p id="ac9896a6-df45-45bf-b29f-de71fdc30947" class="">Questo comando aggiunge una nuova colonna chiamata &quot;quantità&quot; di tipo INT alla tabella &quot;prodotti&quot; e definisce un vincolo di controllo (&quot;CHECK&quot;) che impone il valore minimo di 0 per la quantità.</p></li></ol><ol type="1" id="19bd4345-ae2f-4d0a-92d1-b3cc5af00f2f" class="numbered-list" start="3"><li><mark class="highlight-orange_background">DROP TABLE</mark>: consente di eliminare una tabella dal database.<p id="f6e705ac-725a-44b9-b2f1-bfbd1adadb32" class="">Esempio:</p><pre id="0a3da13b-3cd6-4559-a5f1-db7d879b249f" class="code code-wrap"><code>DROP TABLE prodotti;</code></pre><p id="11b8a3de-2462-4742-b82a-b4ac4f2e8024" class="">Questo comando elimina la tabella &quot;prodotti&quot; dal database.</p></li></ol><h3 id="95fafde4-efc9-4c4f-8db2-3b59d180a8a1" class=""><mark class="highlight-red"><strong>DML</strong></mark></h3><p id="0b280b2b-ea3c-4252-b5f6-5d3796345cf9" class="">DML (Data Manipulation Language) è un sottoinsieme del linguaggio SQL utilizzato per manipolare i dati all&#x27;interno di un database. I comandi DML includono:</p><ul id="c4a623ee-d051-4dce-bf37-bceef3b9ee01" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">SELECT</mark>: utilizzato per recuperare i dati dal database</li></ul><ul id="f821fc72-b247-466d-8237-1ada5539c3a0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">INSERT</mark>: utilizzato per inserire nuovi dati in una tabella del database</li></ul><ul id="46e22b7e-2f63-4c5d-873f-676098ae9965" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">UPDATE</mark>: utilizzato per modificare i dati già presenti in una tabella del database</li></ul><ul id="6ae32c74-2a4b-4102-b7ed-21113112f4e0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">DELETE</mark>: utilizzato per eliminare i dati da una tabella del database</li></ul><p id="9619ef6e-74e1-41f3-b377-5b19f3da2483" class="">Ecco alcuni esempi di come utilizzare i comandi DML in SQL:</p><pre id="1d29c736-197d-4f05-9b40-d49c919e0131" class="code"><code>SELECT * FROM tabella;
+SELECT colonna1, colonna2 FROM tabella WHERE condizione;</code></pre><pre id="0d760fe5-a770-4dad-b9b9-08a82b8ead60" class="code"><code>INSERT INTO tabella (colonna1, colonna2) VALUES (valore1, valore2);</code></pre><pre id="fd0f8dda-86cb-472d-bfab-7245d9762b84" class="code"><code>UPDATE tabella SET colonna1 = valore1, colonna2 = valore2 WHERE condizione;</code></pre><pre id="9a2fde12-d0d0-4377-9526-afa8de93e61f" class="code"><code>DELETE FROM tabella WHERE condizione;</code></pre><p id="125d2bd2-2768-465a-8675-0ef07a022b0f" class="">Il <mark class="highlight-orange_background">Join</mark> viene utilizzato per combinare i dati da due o più tabelle in base ad una relazione tra di esse. Esistono diversi tipi di Join, come l&#x27;Inner Join, il Right Join e il Left Join, ciascuno dei quali restituisce un risultato diverso a seconda delle relazioni tra le tabelle.</p><p id="d8377126-7ebf-4d90-b6df-a7b1e9ee1174" class="">L&#x27;ordinamento dei dati può essere effettuato tramite la clausola ORDER BY, che può essere utilizzata per ordinare i dati in base ad uno o più campi, sia in modo ascendente che discendente.</p><p id="63607f7a-d7c5-4189-8ac5-095d00110a37" class="">Gli operatori Aggregati (<mark class="highlight-orange_background">Count, Sum, Max, Min, Avg</mark>) vengono utilizzati per eseguire operazioni matematiche sui dati selezionati, restituendo il valore aggregato. Questi operatori sono spesso utilizzati in combinazione con la clausola <mark class="highlight-orange_background">GROUP BY</mark>, che viene utilizzata per raggruppare i dati in base ad uno o più campi.</p><p id="8785aff3-56c9-4aa8-a454-9d4d58f9803f" class="">La clausola <mark class="highlight-orange_background">HAVING</mark> viene utilizzata per filtrare i risultati di una query in base ad una condizione specificata, ed è spesso utilizzata in combinazione con la clausola GROUP BY.</p><p id="9834bbbf-280c-4d38-8dbf-aa0016ea0f35" class="">Infine, le subQuery sono una tecnica avanzata che permette di eseguire una query all&#x27;interno di un&#x27;altra query, permettendo di effettuare interrogazioni complesse e di selezionare solo i dati che soddisfano determinate condizioni.</p><p id="676e1b8b-7d55-4077-82fa-e3d91691b01d" class="">Le <mark class="highlight-orange_background">query SQL</mark> sono costituite da diverse parti fondamentali, tra cui:</p><ul id="84988df4-c5c0-4b6d-888c-c837754d9a5b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">SELECT</mark>: utilizzata per selezionare i campi che si desidera visualizzare nell&#x27;output della query.</li></ul><ul id="a1538d47-e07f-4560-8075-9946e5a1980a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">FROM</mark>: utilizzata per specificare la o le tabelle da cui recuperare i dati.</li></ul><ul id="16259e88-c446-4dcf-87f9-84e7643cc5cc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">WHERE</mark>: utilizzata per filtrare i dati in base a determinati criteri.</li></ul><ul id="72d1ef8c-973f-4a4f-b8cb-36bb42e9fd01" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">GROUP BY</mark>: utilizzata per raggruppare i dati in base a determinati attributi.</li></ul><ul id="9ea57ca7-2010-429f-8a8e-ec78f2fabed2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">ORDER BY</mark>: utilizzata per ordinare i dati in base a determinati attributi.</li></ul><ul id="171caf37-4608-4d09-ac7f-c188980333c7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">JOIN</mark>: è un&#x27;operazione che consente di combinare le righe di due o più tabelle in base a una colonna comune. Ci sono diversi tipi di join disponibili, tra cui Inner Join, Right Join e Left Join.<ul id="c2198660-eb0b-4647-9dc5-1adf4b54287b" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal_background">Inner Join</mark>: l&#x27;Inner Join restituisce solo le righe che corrispondono alle condizioni specificate nella clausola di join. In altre parole, restituisce solo le righe che hanno una corrispondenza nelle due tabelle coinvolte nella join.</li></ul><ul id="5ee67ad3-0322-4fad-9958-d36ee9558847" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal_background">Right Join</mark>: il Right Join restituisce tutte le righe della seconda tabella (la tabella a destra nella clausola di join) e solo le righe della prima tabella (la tabella a sinistra nella clausola di join) che soddisfano le condizioni specificate. Se una riga della seconda tabella non ha una corrispondenza nella prima tabella, il risultato della join conterrà NULL nella colonna corrispondente.</li></ul><ul id="a142c877-87c3-45ab-a29b-5ff184dcabeb" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal_background">Left Join</mark>: il Left Join restituisce tutte le righe della prima tabella (la tabella a sinistra nella clausola di join) e solo le righe della seconda tabella (la tabella a destra nella clausola di join) che soddisfano le condizioni specificate. Se una riga della prima tabella non ha una corrispondenza nella seconda tabella, il risultato della join conterrà NULL nella colonna corrispondente.</li></ul></li></ul><p id="090bc3f1-8856-454d-9605-9a361de26bed" class=""><mark class="highlight-orange_background">ESEMPI</mark>:</p><ol type="1" id="ba19f278-8326-4bc7-b7d4-538e6d9bc8a8" class="numbered-list" start="1"><li>Selezionare tutti i dati dalla tabella &quot;clienti&quot;:<pre id="3fc05c93-6163-4536-82c2-2a20aead47ce" class="code"><code>SELECT * FROM clienti;</code></pre></li></ol><ol type="1" id="6afafe69-5ed4-4c42-8bc1-f3cac48bff88" class="numbered-list" start="2"><li>Selezionare solo i nomi dei clienti dalla tabella &quot;clienti&quot; ordinati in ordine alfabetico crescente:<pre id="39d4a76f-0790-45e0-9d39-a6c5dcccd55c" class="code"><code>SELECT nome FROM clienti ORDER BY nome ASC;</code></pre></li></ol><ol type="1" id="153f9ee5-8887-4aa9-a233-767e12c690a0" class="numbered-list" start="3"><li>Selezionare solo i prodotti con un prezzo maggiore di 50€ dalla tabella &quot;prodotti&quot;:<pre id="e4f0d8c0-e5f0-4606-b29c-3aa51631889a" class="code"><code>SELECT * FROM prodotti WHERE prezzo &gt; 50;</code></pre></li></ol><ol type="1" id="5c8eaae3-2260-445d-bb3a-8259ec8c71f6" class="numbered-list" start="4"><li>Selezionare solo i prodotti con un prezzo maggiore di 50€ e con uno stock maggiore di 10 dalla tabella &quot;prodotti&quot;:<pre id="60ab459d-3281-47a2-8d82-4fb348e3e95f" class="code"><code>SELECT * FROM prodotti WHERE prezzo &gt; 50 AND stock &gt; 10;</code></pre></li></ol><ol type="1" id="28f9667f-52da-4526-89ae-4522d7dcdfd2" class="numbered-list" start="5"><li>Selezionare il numero totale di prodotti venduti e il loro prezzo medio dalla tabella &quot;vendite&quot;:<pre id="42fb432e-9814-4d01-bc0f-e16d92f5bed0" class="code"><code>SELECT COUNT(*), AVG(prezzo) FROM vendite;</code></pre></li></ol><ol type="1" id="a8a8baa8-491c-45ef-8ad3-ed005fb73935" class="numbered-list" start="6"><li>Selezionare il numero totale di vendite effettuate da ogni cliente dalla tabella &quot;vendite&quot;:<pre id="071f280b-5cf6-4148-a883-cdb6885ee786" class="code"><code>SELECT cliente, COUNT(*) FROM vendite GROUP BY cliente;</code></pre></li></ol><h3 id="a82f6038-cb18-4f4f-9c75-b7935344ec07" class=""><mark class="highlight-red"><strong>DQL</strong></mark></h3><p id="627b0c80-7992-4dfd-847b-5db0aa02dc09" class="">Il Data Query Language (DQL) in SQL è il linguaggio utilizzato per interrogare e manipolare i dati all&#x27;interno di un database relazionale. Consente di recuperare informazioni specifiche da una o più tabelle, selezionando determinati campi, filtrando i dati in base a specifici criteri e raggruppando le informazioni in base a determinati attributi.</p><h3 id="b3724220-9867-49be-9590-30e3debdedf6" class=""><mark class="highlight-red"><strong>TCL</strong></mark></h3><p id="f94684a7-d16d-4fa7-971b-da3a53dac8c6" class="">Transaction Control Language (TCL) è utilizzato per controllare il modo in cui vengono eseguite le transazioni e per garantire che i dati del database rimangano coerenti e accurati. I comandi principali di TCL sono COMMIT, ROLLBACK e SAVEPOINT. COMMIT viene utilizzato per confermare una transazione, mentre ROLLBACK viene utilizzato per annullare una transazione. SAVEPOINT viene utilizzato per creare un punto di ripristino all&#x27;interno di una transazione, in modo che possa essere annullata fino a quel punto.</p><h2 id="2e2aeea7-fa32-445a-887b-5668347cfab8" class=""><strong><mark class="highlight-red">Normalizzazione (anomalie, forme normali e dipendenze funzionali in un database)</mark></strong></h2><p id="e454e46b-4046-483c-96b5-0ebaf30d33f0" class="">La normalizzazione è un <mark class="highlight-orange_background">processo di progettazione</mark> dei database relazionali volto a <mark class="highlight-orange_background">minimizzare le anomalie</mark> e a <mark class="highlight-orange_background">garantire l&#x27;integrità dei dati</mark>. Ci sono diverse forme normali che descrivono la corretta organizzazione dei dati in una tabella, in base alle dipendenze funzionali tra gli attributi.</p><p id="f04e7c15-83c3-4628-b814-0719d4e6759c" class="">La prima forma normale (<mark class="highlight-red_background">1NF</mark>) richiede che ogni attributo di una tabella abbia un valore atomico e non ripetuto, ovvero che non ci siano attributi multivalore. Inoltre, deve essere presente una chiave primaria unica per ogni riga della tabella.</p><p id="8174b83a-de03-4390-9b4a-3cbdca9506fe" class="">La seconda forma normale (<mark class="highlight-red_background">2NF</mark>) richiede che ogni attributo non chiave sia funzionalmente dipendente dall&#x27;intera chiave primaria, e non solo da una parte di essa. In altre parole, ogni attributo deve dipendere interamente dalla chiave primaria, e non da una parte di essa.</p><p id="3c4f16e7-f19c-4b23-b659-3de59706f0df" class="">La terza forma normale (<mark class="highlight-red_background">3NF</mark>) richiede che ogni attributo non chiave sia dipendente solo dalla chiave primaria, e non da altri attributi non chiave. In altre parole, non ci devono essere dipendenze funzionali tra gli attributi non chiave.</p><p id="86158a0e-cbec-4a0a-b07c-dfe69ade90ef" class="">Esistono anche forme normali più avanzate, come la forma normale di Boyce-Codd (BCNF) e la quarta forma normale (4NF), che sono utilizzate per garantire un&#x27;ulteriore integrità dei dati e una maggiore efficienza nell&#x27;accesso ai dati.</p><h2 id="82e3f0b7-f480-41dc-a4d6-94f27c75de71" class=""><strong><mark class="highlight-red">Generalizzazione nei diagrammi E/R</mark></strong></h2><p id="8ef069ba-2a1f-40a7-913f-8587e7cf7b27" class="">La generalizzazione nei diagrammi ER (Entity-Relationship) rappresenta una relazione di tipo &quot;è un&quot; tra le entità. In altre parole, indica che un&#x27;entità è un tipo più specifico di un&#x27;altra entità più generale. La generalizzazione viene spesso utilizzata per modellare la gerarchia delle classi o delle entità.</p><p id="fc28f7e5-dd89-4a08-85a7-6b1ad2682b2d" class="">Di seguito ti fornisco un esempio di codice che rappresenta la generalizzazione in un diagramma ER utilizzando la notazione di Chen:</p><pre id="d742e850-9396-421c-8443-c45f51b5e18a" class="code code-wrap"><code>CREATE TABLE Person (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Age INT
+);
+
+CREATE TABLE Employee (
+  EmployeeID INT PRIMARY KEY,
+  Department VARCHAR(50),
+  Salary DECIMAL(10,2),
+  CONSTRAINT FK_Employee_Person FOREIGN KEY (EmployeeID) REFERENCES Person(ID)
+);
+
+CREATE TABLE Customer (
+  CustomerID INT PRIMARY KEY,
+  MembershipLevel VARCHAR(50),
+  CONSTRAINT FK_Customer_Person FOREIGN KEY (CustomerID) REFERENCES Person(ID)
+);</code></pre><p id="7ac60516-d5c2-42d5-9959-116e7c12b463" class="">Nell&#x27;esempio sopra, abbiamo una tabella &quot;Person&quot; che rappresenta un&#x27;entità generale con attributi come ID, Name e Age. Successivamente, abbiamo le tabelle &quot;Employee&quot; e &quot;Customer&quot; che rappresentano entità specializzate che estendono l&#x27;entità &quot;Person&quot;. Questa estensione viene modellata attraverso la generalizzazione.</p><p id="c01b1575-199b-425b-93bb-a95350ce6e86" class="">La tabella &quot;Employee&quot; rappresenta un&#x27;entità specifica per gli impiegati, con attributi aggiuntivi come EmployeeID, Department e Salary. La chiave primaria EmployeeID nella tabella &quot;Employee&quot; viene utilizzata come chiave esterna per fare riferimento all&#x27;ID della tabella &quot;Person&quot;.</p><p id="e6130104-55ef-4496-80fd-74a30eeecdd2" class="">Analogamente, la tabella &quot;Customer&quot; rappresenta un&#x27;entità specifica per i clienti, con attributi aggiuntivi come CustomerID e MembershipLevel. La chiave primaria CustomerID nella tabella &quot;Customer&quot; viene utilizzata come chiave esterna per fare riferimento all&#x27;ID della tabella &quot;Person&quot;.</p><p id="ae33eef8-e179-4f0b-80e2-0f9333c78aa0" class="">In questo modo, possiamo rappresentare la generalizzazione tra le entità &quot;Employee&quot; e &quot;Customer&quot; e l&#x27;entità generale &quot;Person&quot; nel nostro modello di dati.</p><h2 id="63595605-1ace-4fb4-9070-87ca7290ca90" class=""><mark class="highlight-red"><strong>TRIGGER E INDICI IN SQL</strong></mark></h2><p id="98fddc06-4184-4587-b1f1-f617e729012a" class="">in SQL, gli<mark class="highlight-red"> </mark><strong><mark class="highlight-red">indici</mark></strong><strong> </strong>(o index in inglese) sono <mark class="highlight-red_background">strutture dati utilizzate per accelerare la velocità delle query</mark> su grandi set di dati. Gli indici vengono creati su colonne di una tabella e <mark class="highlight-red_background">permettono di cercare rapidamente i dati in base ai valori di tali colonne</mark>.</p><p id="bb38c696-19fd-48f8-bd83-ee85e96012fd" class="">Ci sono <mark class="highlight-red_background">diversi tipi di indici</mark> che possono essere creati in SQL, tra cui gli <mark class="highlight-red_background">indici clustered e gli indici non clustered</mark>. Gli <mark class="highlight-red_background">indici clustered ordinano fisicamente i dati in base ai valori delle colonne dell&#x27;indice</mark>, mentre gli <mark class="highlight-red_background">indici non clustered creano un&#x27;altra struttura di dati per i valori delle colonne indicizzate</mark>.</p><p id="30e58889-abcf-4410-96a1-7df16ca30c9e" class="">I <strong><mark class="highlight-red">trigger </mark></strong>sono invece delle <mark class="highlight-red_background">istruzioni SQL che vengono eseguite automaticamente in risposta a determinati eventi</mark> che <mark class="highlight-red_background">si verificano nella base di dati</mark>. Gli eventi che possono attivare un trigger includono <mark class="highlight-red_background">l&#x27;inserimento, l&#x27;aggiornamento o l&#x27;eliminazione di dati da una tabella</mark>.</p><p id="11a9edee-41b3-454f-a74a-e2630e50e230" class="">Un trigger può essere utilizzato per <mark class="highlight-red_background">eseguire un&#x27;azione specifica</mark>, ad esempio l&#x27;aggiornamento di una tabella correlata o <mark class="highlight-red_background">l&#x27;invio di una notifica tramite email</mark>. I trigger possono essere <mark class="highlight-red_background">scritti in SQL</mark> o in altre lingue di scripting, come ad esempio PL/SQL o T-SQL, a seconda del tipo di database utilizzato.</p><p id="c7546eb4-04fa-4cd4-a290-771333a1a59a" class="">Ecco un esempio di come gli indici e i trigger possono essere utilizzati in SQL per migliorare le prestazioni del database e automatizzare alcune azioni:</p><p id="488270c4-de31-4119-a13d-46f06b65f9ce" class="">Supponiamo di avere una tabella chiamata &quot;Ordini&quot; che contiene informazioni sugli ordini effettuati dai clienti, tra cui l&#x27;ID dell&#x27;ordine, l&#x27;ID del cliente, la data dell&#x27;ordine e l&#x27;importo totale dell&#x27;ordine.</p><p id="e4eafe4f-b4da-4ae8-a54f-c12cdbffde34" class=""><mark class="highlight-red_background">Per accelerare le query sulla tabella degli Ordini, potremmo creare un indice non-clustered sulla colonna &quot;Data dell&#x27;ordine&quot;</mark>. In questo modo, quando eseguiamo una query che richiede gli ordini effettuati in una data specifica, <mark class="highlight-red_background">il database utilizzerà l&#x27;indice per trovare rapidamente i dati corrispondenti invece di scansionare l&#x27;intera tabella</mark>.</p><p id="bc6aa27f-ad76-43a7-a711-fe63abf81fda" class="">Esempio di creazione di un indice non-clustered:</p><pre id="a960b8c7-7dee-4329-bf3f-9cf7a15a3fad" class="code code-wrap"><code>CREATE INDEX idx_Ordini_DataOrdine ON Ordini (DataOrdine);</code></pre><p id="a8a1d73e-8ebc-41cf-b23b-f7761ce18e56" class="">Inoltre, potremmo <mark class="highlight-red_background">utilizzare un trigger per aggiornare automaticamente un&#x27;altra tabella</mark> chiamata &quot;Clienti&quot; ogni volta che viene effettuato un nuovo ordine. In particolare, potremmo voler <mark class="highlight-red_background">aggiornare la colonna &quot;Totale ordini&quot; nella tabella dei Clienti per tenere traccia dell&#x27;importo totale degli ordini effettuati da ciascun cliente</mark>.</p><p id="66a53555-9aa2-4896-8311-f5a92c0632b0" class="">Esempio di creazione di un trigger:</p><pre id="e267eee0-3c37-48ec-b72f-e5e211bd7c1b" class="code code-wrap"><code>CREATE TRIGGER tr_Ordini AFTER INSERT ON Ordini
+FOR EACH ROW
+BEGIN
+  UPDATE Clienti
+  SET TotaleOrdini = TotaleOrdini + NEW.ImportoTotale
+  WHERE IDCliente = NEW.IDCliente;
+END;</code></pre><p id="90c92322-8596-461f-8077-480a7a53877d" class="">In questo esempio, <mark class="highlight-red_background">il trigger viene attivato dopo l&#x27;inserimento di un nuovo record nella tabella degli Ordini e aggiorna automaticamente la colonna &quot;Totale ordini&quot;</mark> nella tabella dei Clienti corrispondente all&#x27;ID del cliente che ha effettuato l&#x27;ordine.</p><h2 id="53c7b2d9-2ae7-4b1f-a102-6a81dd4428cc" class=""><strong><mark class="highlight-red">SQL CHECK</mark></strong></h2><p id="cbcee74e-a001-4bda-8129-824f69b655c9" class="">In SQL, la clausola &quot;CHECK&quot; viene utilizzata per definire vincoli di integrità che limitano i valori consentiti in una colonna di una tabella. Questo vincolo specifica una condizione che deve essere soddisfatta affinché i dati siano considerati validi.</p><p id="a646ca2e-1009-4423-a2bd-aa17daf5ea67" class="">Ecco un esempio di utilizzo della clausola &quot;CHECK&quot; per definire un vincolo di integrità:</p><pre id="a6067b73-fd40-4f5b-bf6c-87de9d4d5e94" class="code code-wrap"><code>CREATE TABLE Employee (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Age INT,
+  Salary DECIMAL(10,2),
+  CONSTRAINT CHK_Age CHECK (Age &gt;= 18)
+);</code></pre><p id="1c6580ef-d8dd-4bb1-be69-0ee43c26f057" class="">Nell&#x27;esempio sopra, viene creata una tabella chiamata &quot;Employee&quot; con le colonne ID, Name, Age e Salary. Il vincolo di integrità &quot;CHK_Age&quot; viene definito utilizzando la clausola &quot;CHECK&quot; per assicurarsi che il valore nella colonna &quot;Age&quot; sia maggiore o uguale a 18. Ciò significa che quando si inseriscono o si aggiornano i dati nella tabella &quot;Employee&quot;, la condizione del vincolo di integrità deve essere soddisfatta, altrimenti verrà restituito un errore.</p><p id="b3658b1e-6700-48d1-b325-6c6a0ebb7729" class="">È importante notare che il supporto per i vincoli di integrità può variare leggermente tra i diversi DBMS, quindi la sintassi e le opzioni specifiche potrebbero differire a seconda del sistema che stai utilizzando.</p><h2 id="f28204be-794e-405e-b9d6-643d00a578eb" class=""><strong><mark class="highlight-red">SQL ENUM</mark></strong></h2><p id="15d6bcad-4a3b-4efb-a2e4-b40059d49c5e" class="">Queste sono solo alcune delle funzioni di MySQLi disponibili. MySQLi offre anche altre funzionalità, come il supporto per le transazioni, le operazioni preparate, le stored procedure e altro ancora.</p><p id="1f976616-64bd-4bb4-9bd3-e5be7feda13c" class="">In SQL, <strong><code>ENUM</code></strong><strong> </strong>è un tipo di dati che consente di definire un elenco di valori consentiti per una colonna specifica. È utile quando si desidera limitare i valori che possono essere inseriti in una colonna a un insieme predefinito di opzioni.
+Ecco un esempio di come creare una colonna di tipo <strong><code>ENUM</code></strong><strong> </strong>in una tabella:</p><pre id="e8a33099-55bb-462b-b8a5-22a5e3b10445" class="code"><code>CREATE TABLE users (  id INT PRIMARY KEY,  name VARCHAR(50),  gender ENUM(&#x27;Male&#x27;, &#x27;Female&#x27;, &#x27;Other&#x27;));</code></pre><p id="339e8479-e750-4b11-a432-72266a4c51a0" class="">Nell&#x27;esempio sopra, la colonna &quot;gender&quot; è di tipo <strong><code>ENUM</code></strong><strong> </strong>e può assumere solo uno dei valori specificati: &quot;Male&quot;, &quot;Female&quot; o &quot;Other&quot;.
+Per inserire valori in una colonna <strong><code>ENUM</code></strong>, è necessario fornire uno dei valori consentiti:</p><pre id="505f4a74-7a34-4317-b29d-00584c71858d" class="code"><code>INSERT INTO users (id, name, gender) VALUES (1, &#x27;John&#x27;, &#x27;Male&#x27;);</code></pre><p id="2892bd32-d057-4829-aad7-48bd133c320b" class="">Se si tenta di inserire un valore non consentito, verrà generato un errore.
+È anche possibile modificare una tabella per aggiungere o rimuovere valori consentiti dalla colonna <strong><code>ENUM</code></strong><strong> </strong>utilizzando l&#x27;istruzione <strong><code>ALTER TABLE</code></strong>:</p><pre id="ba79e289-b0e9-47c0-a5d9-1ce8fb011e66" class="code"><code>ALTER TABLE users MODIFY gender ENUM(&#x27;Male&#x27;, &#x27;Female&#x27;, &#x27;Other&#x27;, &#x27;Unknown&#x27;);</code></pre><p id="c1e1bd20-6e2e-4f59-b26c-d35313c1d0ea" class="">Nell&#x27;esempio sopra, è stato aggiunto un nuovo valore &quot;Unknown&quot; all&#x27;elenco dei valori consentiti per la colonna &quot;gender&quot;.
+L&#x27;utilizzo di <strong><code>ENUM</code></strong><strong> </strong>può essere utile per semplificare la validazione dei dati e garantire che solo valori specifici siano inseriti in una colonna. Tuttavia, è importante notare che <strong><code>ENUM</code></strong><strong> </strong>ha alcune limitazioni, come il fatto che l&#x27;ordine dei valori è importante e che l&#x27;elenco di valori consentiti può essere modificato solo attraverso un&#x27;operazione di modifica della tabella.</p><h2 id="9adc72b8-5a65-4def-8e78-9fe97238c678" class="block-color-red"><strong>SQL LIKE</strong></h2><p id="c45b9f74-8dce-4749-b027-91abd3da67d8" class="">LIKE è un operatore utilizzato in linguaggio SQL per effettuare una ricerca di pattern all&#x27;interno dei dati. Viene utilizzato principalmente nelle clausole WHERE di una query per filtrare i risultati basandosi su un modello di corrispondenza specifico.</p><p id="4205e87c-d679-4447-afcf-e801d61a9739" class="">La sintassi generale dell&#x27;operatore LIKE è la seguente:</p><pre id="977ab420-133e-490a-a7d4-00b38e3eb6af" class="code code-wrap"><code>SELECT column_name(s)
+FROM table_name
+WHERE column_name LIKE pattern;</code></pre><p id="e33ee6e7-5815-44ef-a62d-ceb6e865ae4e" class="">Nella clausola WHERE, il valore specificato dopo l&#x27;operatore LIKE è il pattern che si desidera cercare. Il pattern può includere caratteri speciali che consentono di effettuare una ricerca flessibile. Alcuni dei caratteri speciali utilizzati sono:</p><ul id="b0a0ad15-53b5-4133-91c1-4ee2abbf6ef0" class="bulleted-list"><li style="list-style-type:disc"><strong><code>%</code></strong> (percentuale): Rappresenta zero, uno o più caratteri qualsiasi. Ad esempio, il pattern &#x27;a%&#x27; troverà tutte le stringhe che iniziano con &#x27;a&#x27;.</li></ul><ul id="b0375755-f2b2-4771-bf6a-c080d9b8b3a6" class="bulleted-list"><li style="list-style-type:disc"><strong><code>_</code></strong> (sottolineato): Rappresenta esattamente un carattere qualsiasi. Ad esempio, il pattern &#x27;h_t&#x27; troverà stringhe come &#x27;hat&#x27;, &#x27;hot&#x27;, &#x27;hit&#x27;, ecc.</li></ul><ul id="779169ff-e478-4803-80b9-4fe25fa1e6f4" class="bulleted-list"><li style="list-style-type:disc"><strong><code>[ ]</code></strong> (parentesi quadra): Utilizzate per specificare un set di caratteri possibili. Ad esempio, &#x27;[abc]&#x27; troverà stringhe che contengono una &#x27;a&#x27;, una &#x27;b&#x27; o una &#x27;c&#x27;.</li></ul><ul id="0f5184c0-f005-4be0-8906-c3c16e2ddd66" class="bulleted-list"><li style="list-style-type:disc"><strong><code>[^ ]</code></strong> (parentesi quadra con il simbolo di negazione): Utilizzata per cercare caratteri che non appartengono a un determinato set. Ad esempio, &#x27;[^0-9]&#x27; troverà stringhe che non contengono numeri.</li></ul><p id="328e31f5-6008-4ee4-88d8-ce5eff907b5e" class="">Ecco alcuni esempi per mostrare come utilizzare l&#x27;operatore LIKE:</p><ol type="1" id="402436d3-083e-436e-930b-58ead1763781" class="numbered-list" start="1"><li>Trova tutte le persone con un nome che inizia con &#x27;Jo&#x27;:<pre id="0af97d01-51e2-4345-841a-8ec92aa3286a" class="code code-wrap"><code>SELECT *
+FROM persone
+WHERE nome LIKE &#x27;Jo%&#x27;;</code></pre></li></ol><ol type="1" id="8083c9b6-95e6-4b8b-bef1-42fb9f0ea348" class="numbered-list" start="2"><li>Trova tutti i prodotti che contengono la parola &#x27;telefono&#x27; nel nome:<pre id="336738b7-45f5-4d59-83b5-ff790608ad80" class="code code-wrap"><code>SELECT *
+FROM prodotti
+WHERE nome LIKE &#x27;%telefono%&#x27;;</code></pre></li></ol><ol type="1" id="fbe23785-22f8-421c-ac74-aed1b8e1f898" class="numbered-list" start="3"><li>Trova tutte le email che terminano con &#x27;.com&#x27;:<pre id="c2f66f9c-2bba-4b4c-b13f-d3045ab881c4" class="code code-wrap"><code>SELECT *
+FROM utenti
+WHERE email LIKE &#x27;%.com&#x27;;</code></pre></li></ol><ol type="1" id="8811a3a5-a480-47e7-81cf-ff2a8d7e98aa" class="numbered-list" start="4"><li>Trova tutte le persone il cui cognome inizia con una vocale:<pre id="1191cc05-3edb-4866-b354-204414926f4d" class="code code-wrap"><code>SELECT *
+FROM persone
+WHERE cognome LIKE &#x27;[aeiou]%&#x27;;</code></pre></li></ol><ol type="1" id="cbc4f43e-4fd2-4cdd-b6aa-700b62f2f8fa" class="numbered-list" start="5"><li>Trova tutte le persone con un nome di quattro lettere che inizia con &#x27;A&#x27; e termina con &#x27;e&#x27;:<pre id="dde6ab46-0887-4e8e-9694-d71e464a01b7" class="code code-wrap"><code>SELECT *
+FROM persone
+WHERE nome LIKE &#x27;A__e&#x27;;</code></pre></li></ol><h2 id="064eb0da-2416-421e-906d-8a67d4236b31" class="block-color-red"><strong>SQL COUNT</strong></h2><p id="cb18393b-8015-41d7-beb5-ca71bb6dd5cc" class="">L&#x27;operatore COUNT in SQL viene utilizzato per contare il numero di righe o elementi in un insieme di dati. L&#x27;operatore COUNT può essere utilizzato in combinazione con la clausola SELECT per ottenere il numero di righe o elementi corrispondenti a una determinata condizione o in un&#x27;intera tabella.</p><p id="37598a99-d1ab-4506-9bd4-239be33d8bb3" class="">La sintassi generale dell&#x27;operatore COUNT è la seguente:</p><pre id="031299d9-ee77-4a49-856b-bbe7845abdf2" class="code code-wrap"><code>SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;</code></pre><p id="b7a9adb7-2d12-4fc0-9adc-f3fc73253623" class="">Nella clausola SELECT, specificare COUNT(column_name), dove &quot;column_name&quot; può essere il nome di una colonna specifica o l&#x27;asterisco (*) per contare tutte le righe. È possibile utilizzare anche espressioni o funzioni all&#x27;interno di COUNT() per eseguire conteggi più complessi.</p><p id="40b1ac80-3c9d-4c1e-8e22-1f0c1f025f85" class="">Nella clausola FROM, specificare il nome della tabella da cui si desidera contare le righe.</p><p id="bbf116ac-dceb-49f7-be55-b04cf5d0ae90" class="">Nella clausola WHERE (opzionale), specificare la condizione che limita le righe da contare. Se non viene specificata una clausola WHERE, COUNT restituirà il numero totale di righe nella tabella.</p><p id="2d1784f0-1091-4afe-8317-969cd171a702" class="">Ecco alcuni esempi per illustrare l&#x27;uso di COUNT:</p><ol type="1" id="9a00029d-a054-431b-8c9f-8de02e5a7f75" class="numbered-list" start="1"><li>Contare il numero totale di righe in una tabella:<pre id="1ed88089-ba0f-4738-8427-5698655f6cee" class="code code-wrap"><code>SELECT COUNT(*)
+FROM table_name;</code></pre></li></ol><ol type="1" id="b659dd67-a15f-4baf-9743-2818878ddd00" class="numbered-list" start="2"><li>Contare il numero di righe in una tabella che soddisfano una determinata condizione:<pre id="f7ddbfe7-305a-4604-8388-b4f4f1ac7035" class="code code-wrap"><code>SELECT COUNT(*)
+FROM table_name
+WHERE condition;</code></pre></li></ol><ol type="1" id="214e96d3-0bd5-4a32-8345-0c6d3a23df57" class="numbered-list" start="3"><li>Contare il numero di valori non nulli in una colonna specifica:<pre id="5489308d-07df-4e17-89ef-c0e1e09e7b46" class="code code-wrap"><code>SELECT COUNT(column_name)
+FROM table_name
+WHERE column_name IS NOT NULL;</code></pre></li></ol><ol type="1" id="540c7ae1-3d35-4e90-a225-7c332f7b0213" class="numbered-list" start="4"><li>Contare il numero di righe distinte in base a una colonna specifica:<pre id="c39954ea-4200-4263-b404-bce17a44004c" class="code code-wrap"><code>SELECT COUNT(DISTINCT column_name)
+FROM table_name;</code></pre></li></ol><p id="26ed72f2-5dd0-4ec3-914d-7f485f5adbb6" class="">In questo caso, COUNT(DISTINCT column_name) restituirà il numero di valori univoci nella colonna specificata.</p><p id="d81d6793-46f2-4332-8a66-91725d02e095" class="">Ricorda che COUNT restituirà sempre un valore numerico corrispondente al numero di righe o elementi contati.</p><p id="2b2ae987-57ad-4c03-a575-d18e6efd6f2e" class="">La clausola <strong><mark class="highlight-red">GROUP BY</mark></strong><mark class="highlight-red"> </mark>viene utilizzata insieme all&#x27;operatore COUNT in SQL per effettuare il conteggio delle righe o degli elementi basato su una o più colonne specifiche e raggruppare i risultati in base a tali colonne.</p><p id="be28258f-cccc-4d1b-aa10-4768d24bc97b" class="">La clausola GROUP BY divide il set di dati in gruppi in base ai valori unici delle colonne specificate. Quindi, l&#x27;operatore COUNT viene applicato a ciascun gruppo separatamente, restituendo il numero di righe o elementi in ciascun gruppo.</p><p id="eb21f0ac-b198-4804-aa72-d734d2772f0c" class="">La sintassi generale per utilizzare GROUP BY insieme a COUNT è la seguente:</p><pre id="012a78c4-9093-4096-96eb-5a56ed116edd" class="code code-wrap"><code>SELECT column_name(s), COUNT(column_name)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s);</code></pre><p id="7eb73cbc-7b16-4800-8cdb-1ebb3e462d50" class="">Nella clausola SELECT, specificare le colonne che si desidera visualizzare insieme al conteggio. Puoi includere anche espressioni o funzioni all&#x27;interno di COUNT() per effettuare conteggi più complessi.</p><p id="e0e8c950-05c3-4284-ac4d-63082f41342b" class="">Nella clausola FROM, specificare il nome della tabella da cui si desidera contare le righe.</p><p id="856d5fa5-a55b-414c-b988-66c522db0a7c" class="">Nella clausola WHERE (opzionale), specificare la condizione che limita le righe da contare.</p><p id="bfdff920-5dff-43f3-a134-6d9962354dd0" class="">Infine, nella clausola GROUP BY, specificare le colonne in base alle quali si desidera raggruppare i dati.</p><p id="3250f074-be05-418c-83a9-efabf6ad587b" class="">Ecco un esempio per illustrare l&#x27;uso di GROUP BY con COUNT:</p><p id="8d3fe40f-0a8b-42f4-baa7-65f6fbd278cf" class="">Supponiamo di avere una tabella &quot;Orders&quot; con colonne come &quot;Product&quot; e &quot;Quantity&quot;. Vogliamo contare il numero di ordini per ciascun prodotto:</p><pre id="55c95a6e-516a-4f30-96b7-1efb1211de76" class="code code-wrap"><code>SELECT Product, COUNT(*) as TotalOrders
+FROM Orders
+GROUP BY Product;</code></pre><p id="20c18731-fb9a-4797-a23d-b0fff43fd949" class="">Questo restituirà un risultato che mostra il nome del prodotto e il numero totale di ordini per ciascun prodotto.</p><p id="85fc7892-e266-4035-9aa0-d8f555ea0b11" class="">L&#x27;utilizzo di GROUP BY con COUNT può essere utile quando si desidera ottenere statistiche o aggregazioni basate su gruppi di dati, ad esempio il numero di vendite per ciascun prodotto, il numero di studenti per ciascuna classe, o il numero di clienti per ciascuna regione. La combinazione di COUNT e GROUP BY consente di ottenere tali informazioni in modo aggregato e strutturato.</p><h2 id="5513f0c3-4d81-4730-80f2-ef1494f4b392" class=""><strong><mark class="highlight-red">SQL JOIN</mark></strong></h2><p id="5a6f501c-b082-4e72-bc19-f346713ec534" class="">Le clausole <strong><mark class="highlight-red">JOIN</mark></strong><strong> </strong>in SQL vengono utilizzate per combinare le righe di due o più tabelle basandosi su una relazione tra di esse. Ci sono diversi tipi di join disponibili, tra cui INNER JOIN, LEFT JOIN, RIGHT JOIN e FULL JOIN, ognuno dei quali ha una logica di combinazione leggermente diversa.</p><p id="bf8900c2-fcdd-4d01-a4a6-e3208019ef7a" class="">Ecco alcuni esempi di query con JOIN per illustrare l&#x27;uso di queste clausole:</p><ol type="1" id="36309135-987b-4599-b76c-83ecac54ddcf" class="numbered-list" start="1"><li>INNER JOIN: Restituisce solo le righe che hanno corrispondenze tra le tabelle coinvolte nella join.<pre id="208fc315-5f97-4dd9-b2b6-27dad4aa2bab" class="code code-wrap"><code>SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</code></pre><p id="4fd5592f-a902-4732-975e-c292dc40c69d" class="">Questa query combina la tabella &quot;Orders&quot; con la tabella &quot;Customers&quot; sulla base della colonna &quot;CustomerID&quot;, restituendo l&#x27;OrderID e il CustomerName solo per le righe che hanno una corrispondenza tra le tabelle.</p></li></ol><ol type="1" id="e555c8c9-0306-4245-b940-2d390409b5b6" class="numbered-list" start="2"><li>LEFT JOIN: Restituisce tutte le righe dalla tabella di sinistra (prima tabella menzionata nella query) e le corrispondenti righe dalla tabella di destra (seconda tabella menzionata), se esistono.<pre id="00fa75b6-a24f-4e49-aa6f-8af6b4603b0a" class="code code-wrap"><code>SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</code></pre><p id="4c456c2a-4678-492f-8a7e-68b23c574dc1" class="">Questa query restituisce il CustomerName dalla tabella &quot;Customers&quot; e l&#x27;OrderID dalla tabella &quot;Orders&quot; per tutte le righe della tabella &quot;Customers&quot;, anche se non esistono corrispondenze nella tabella &quot;Orders&quot;.</p></li></ol><ol type="1" id="bc76bdac-c8d7-4808-b067-e520d9c17afe" class="numbered-list" start="3"><li>RIGHT JOIN: Restituisce tutte le righe dalla tabella di destra (seconda tabella menzionata) e le corrispondenti righe dalla tabella di sinistra (prima tabella menzionata), se esistono.<pre id="b8c02f28-1eaf-4237-9ee9-47fd190625a3" class="code code-wrap"><code>SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</code></pre><p id="0f7bfcb1-9377-45b4-90ad-fabb5f6f0f5e" class="">Questa query restituisce il CustomerName dalla tabella &quot;Customers&quot; e l&#x27;OrderID dalla tabella &quot;Orders&quot; per tutte le righe della tabella &quot;Orders&quot;, anche se non esistono corrispondenze nella tabella &quot;Customers&quot;.</p></li></ol><ol type="1" id="e6771565-4794-4d09-ad53-616028b446ca" class="numbered-list" start="4"><li>FULL JOIN: Restituisce tutte le righe da entrambe le tabelle coinvolte nella join, indipendentemente dalla presenza di corrispondenze.<pre id="fe5099da-93d6-40c8-9e22-34ecc4b47680" class="code code-wrap"><code>SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</code></pre><p id="31df4936-7ae7-4e65-af0d-39276e048a65" class="">Questa query restituisce il CustomerName dalla tabella &quot;Customers&quot; e l&#x27;OrderID dalla tabella &quot;Orders&quot; per tutte le righe sia della tabella &quot;Customers&quot; che della tabella &quot;Orders&quot;, includendo anche le righe senza corrispondenze.</p></li></ol><h2 id="af098f91-454f-451c-bd97-2019a58640e2" class="block-color-red"><strong>INVIO EMAIL DAL DB</strong></h2><p id="3b4efcef-2824-4fca-8fa8-c30b0580581f" class="">Per inviare email dal database, ci sono alcune opzioni che puoi considerare:</p><ol type="1" id="89cea4c7-b695-4cff-b985-a409a5737ca3" class="numbered-list" start="1"><li>Utilizzare un linguaggio di programmazione: Puoi scrivere un&#x27;applicazione o uno script utilizzando un linguaggio di programmazione come Python, Java, PHP, ecc., per connetterti al database, recuperare i dati pertinenti e inviare le email utilizzando una libreria o un modulo specifico per l&#x27;invio di email. Ad esempio, in Python puoi utilizzare la libreria smtplib per inviare email tramite un server SMTP.</li></ol><ol type="1" id="49c27afa-e21f-41a9-8a1c-3188bd8f68bc" class="numbered-list" start="2"><li>Trigger o stored procedure: Se il tuo database supporta trigger o stored procedure, puoi creare una procedura specifica che viene attivata quando si verifica un determinato evento nel database (ad esempio, inserimento di nuovi dati in una tabella). All&#x27;interno di questa procedura, puoi includere la logica per l&#x27;invio delle email utilizzando le funzionalità integrate del database o richiamando funzioni specifiche per l&#x27;invio di email.</li></ol><ol type="1" id="ef514bed-6c96-46e5-a3de-93b2f3d15823" class="numbered-list" start="3"><li>SQL esteso: Alcuni database supportano l&#x27;SQL esteso, che include funzionalità per l&#x27;invio di email direttamente attraverso query SQL. Ad esempio, PostgreSQL ha una funzione chiamata <strong><code>sendmail</code></strong><strong> </strong>che può essere utilizzata per inviare email direttamente da una query.</li></ol><p id="d5f779a1-24ec-47af-a858-1e89d28b5d99" class="">Tuttavia, è importante notare che l&#x27;invio di email direttamente dal database potrebbe non essere la soluzione più scalabile o flessibile. Potrebbe essere più appropriato recuperare i dati dal database utilizzando un&#x27;applicazione esterna o uno script e poi utilizzare una libreria specifica per l&#x27;invio di email per gestire l&#x27;invio effettivo.</p><p id="9e9d76fa-f7b8-4f08-98e9-4678266caec1" class="">Inoltre, è importante prendere in considerazione questioni di sicurezza, come l&#x27;adeguata autenticazione e la gestione delle credenziali per l&#x27;invio delle email, per evitare abusi o accessi non autorizzati.</p><h2 id="e4ae7be5-0952-41ce-868a-d956674097be" class=""><strong><mark class="highlight-red">VIEW (VISTE)</mark></strong></h2><p id="017bfbf3-fb2e-46c5-8c34-3e02277d4d6e" class="">Le viste in SQL Server sono <mark class="highlight-red_background">oggetti che permettono di visualizzare una porzione di una o più tabelle</mark>, sotto forma di una <mark class="highlight-red_background">tabella virtuale</mark>. Le viste <mark class="highlight-red_background">non contengono dati</mark>, ma <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">rappresentano una vista personalizzata dei dati contenuti nelle tabelle sottostanti</mark></span>. In pratica, le viste sono come una finestra su un insieme di dati di una o più tabelle, e <mark class="highlight-red_background">consentono di manipolare questi dati senza dover modificare le tabelle stesse</mark>.</p><p id="8bc44614-1f67-4faf-b4dc-f55aa6151270" class="">Per <strong><span style="border-bottom:0.05em solid">creare una vista in SQL Server</span></strong>, è possibile utilizzare il <mark class="highlight-red_background">comando</mark> <strong><code>CREATE VIEW</code></strong>, <mark class="highlight-red_background">seguito dal nome della vista</mark> e dalla <mark class="highlight-red_background">definizione della vista stessa</mark>. Ad esempio, per creare una vista che mostri solo i nomi dei clienti di una tabella &quot;Clienti&quot;, è possibile utilizzare il seguente codice SQL:</p><pre id="cc504d5c-aa99-4be1-aff1-73ad037841b8" class="code code-wrap"><code>CREATE VIEW VistaClienti AS
+SELECT NomeCliente FROM Clienti;</code></pre><p id="373dda8c-fe0d-40d4-a250-9992b3771b1c" class=""><mark class="highlight-red_background">Una volta creata la vista</mark>, è possibile <mark class="highlight-red_background">utilizzarla come se fosse una tabella normale</mark>. Ad esempio, per visualizzare i dati della vista appena creata, <mark class="highlight-red_background">è possibile utilizzare il comando</mark> <strong><code>SELECT</code></strong>:</p><pre id="46453754-c952-413b-81b0-9a3c1375d4a6" class="code code-wrap"><code>SELECT * FROM VistaClienti;</code></pre><h2 id="940e828c-1ded-456e-8a1d-31b14c3e9bff" class=""><mark class="highlight-red"><strong>Configurazione di un database</strong></mark></h2><p id="a4a576c7-b25f-4a2a-a821-6a7a466ff52a" class="">La configurazione di un database in SQL Server dipende dalle esigenze specifiche dell&#x27;applicazione e delle funzionalità richieste. In generale, <mark class="highlight-red_background">è possibile configurare il database utilizzando lo strumento di gestione SQL Server Management Studio (SSMS)</mark>, che consente di configurare vari aspetti del database, come ad esempio le <mark class="highlight-red_background">opzioni di sicurezza</mark>, le <mark class="highlight-red_background">impostazioni di backup</mark>, le <mark class="highlight-red_background">proprietà del database</mark> e così via.</p><p id="000c2517-3b39-4930-aa69-fd4ce4ed72e0" class="">Per creare tabelle in SQL Server, è possibile utilizzare il comando <strong><code>CREATE TABLE</code></strong>, seguito dal <mark class="highlight-red_background">nome della tabella</mark> e dalle <mark class="highlight-red_background">definizioni delle colonne</mark>. Ad esempio, per creare una tabella &quot;Clienti&quot; con le colonne &quot;IDCliente&quot;, &quot;NomeCliente&quot; e &quot;CognomeCliente&quot;, è possibile utilizzare il seguente codice SQL:</p><pre id="61bf0703-046a-4863-85a6-ba1cde2b6542" class="code code-wrap"><code>CREATE TABLE Clienti (
+    IDCliente INT PRIMARY KEY,
+    NomeCliente VARCHAR(50),
+    CognomeCliente VARCHAR(50)
+);</code></pre><p id="a600b1d6-18da-4c4a-982a-c0a6ae4bca3b" class="">In questo esempio, la colonna &quot;IDCliente&quot; è definita come <mark class="highlight-red_background">chiave primaria della tabella</mark>. Una volta creata la tabella, è possibile <mark class="highlight-red_background">inserire i dati utilizzando il comando</mark> <strong><code>INSERT</code></strong>, oppure modificare i dati utilizzando il comando <strong><code>UPDATE</code></strong>.</p><h2 id="3a0a8c68-f090-4697-99e5-2dec286dac3d" class=""><strong><mark class="highlight-red">Stored procedures</mark></strong></h2><p id="072b8300-65ea-4b47-978b-055fd56fee82" class="">Le stored procedure sono blocchi di codice predefiniti che vengono salvati e eseguiti lato server in un database. Rappresentano una serie di istruzioni SQL che vengono raggruppate in un&#x27;unica entità e possono essere richiamate tramite un nome specifico. Le stored procedure sono utilizzate per semplificare e organizzare la logica del database, consentendo di eseguire operazioni complesse con una singola chiamata al database.</p><p id="8d4f798d-a3c8-4b48-84da-ebbd72c9cab3" class="">Di seguito viene fornito un esempio di come creare e utilizzare una stored procedure in MySQL:</p><p id="b1533694-b569-4051-a54b-efea878c9ef3" class="">Supponiamo di avere una tabella &quot;Employees&quot; con i campi &quot;EmployeeID&quot;, &quot;FirstName&quot; e &quot;LastName&quot;. Creeremo una stored procedure per ottenere tutti i dipendenti dal database:</p><pre id="4e0f986b-1a5e-4650-a476-719999ab7ea8" class="code code-wrap"><code>-- Creazione della stored procedure
+DELIMITER //
+
+CREATE PROCEDURE GetAllEmployees()
+BEGIN
+  SELECT * FROM Employees;
+END //
+
+DELIMITER ;</code></pre><p id="71cc281f-9d61-4175-9266-aa37aad7175f" class="">La stored procedure creata si chiama &quot;GetAllEmployees&quot;. Utilizziamo il delimitatore <strong><code>//</code></strong> per indicare l&#x27;inizio e la fine del blocco di codice della stored procedure. Successivamente, definiamo il corpo della stored procedure all&#x27;interno del blocco <strong><code>BEGIN ... END</code></strong>. Nel nostro caso, selezioniamo tutti i record dalla tabella &quot;Employees&quot; utilizzando l&#x27;istruzione SQL <strong><code>SELECT * FROM Employees;</code></strong>.</p><p id="b569201b-df90-468d-a46d-91678ba336ca" class="">Una volta creata la stored procedure, possiamo richiamarla utilizzando il suo nome:</p><pre id="2bbd6040-6498-4492-8c38-a0827250e186" class="code code-wrap"><code>-- Esecuzione della stored procedure
+CALL GetAllEmployees();</code></pre><p id="6f2cfcc7-55af-4ec5-9d97-4494cec6d603" class="">La chiamata alla stored procedure viene effettuata utilizzando l&#x27;istruzione <strong><code>CALL</code></strong><strong> </strong>seguita dal nome della stored procedure e parentesi tonde.</p><p id="15e07575-af1c-4f20-b6c9-b93663b92192" class="">La stored procedure eseguirà l&#x27;istruzione SQL all&#x27;interno del suo corpo e restituirà i risultati.</p><p id="76f10fe8-febd-41d5-a292-6671e85dbb35" class="">Le stored procedure offrono numerosi vantaggi, come la riduzione del traffico di rete, l&#x27;organizzazione del codice SQL complesso e la promozione della sicurezza del database.</p><p id="2e2c2978-ae24-444e-8709-c46bb64b20a5" class="">Si noti che l&#x27;esempio fornito è specifico per il database MySQL, ma il concetto delle stored procedure è comune a molti database relazionali, anche se la sintassi può variare leggermente tra i diversi sistemi di gestione di database.</p><h1 id="650ed567-5597-4887-8258-6423ec20559a" class=""><strong><mark class="highlight-red">MySQL</mark></strong></h1><p id="d7b5bcb8-2526-49f6-9b8c-6daccb3660f1" class="">MySQL è un <mark class="highlight-red_background">sistema di gestione di database relazionale</mark> open source che utilizza il linguaggio SQL (Structured Query Language) per la manipolazione dei dati.</p><p id="fb0a4443-c22d-42df-a7fa-e3c251488304" class="">Per installare MySQL, è necessario scaricare il pacchetto di installazione dal sito ufficiale di MySQL, quindi seguire le istruzioni per l&#x27;installazione. È anche possibile utilizzare strumenti come XAMPP o WAMP, che consentono di installare MySQL e altri strumenti necessari come Apache e PHP in un&#x27;unica installazione.</p><p id="801b098d-361a-4455-880b-412a300ed741" class="">Dopo aver installato MySQL, è possibile creare tabelle utilizzando il comando CREATE TABLE. Ad esempio, per creare una tabella &quot;clienti&quot; con tre colonne &quot;ID&quot;, &quot;nome&quot; e &quot;cognome&quot;, la query sarebbe:</p><pre id="439f3564-71d2-4730-bece-19af227161ca" class="code code-wrap"><code>CREATE TABLE clienti (
+    ID INT NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    cognome VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ID)
+);</code></pre><p id="66e0bcec-25f3-4547-9a70-4416bc658edb" class="">Per effettuare una query in MySQL, è possibile utilizzare il comando SELECT. Ad esempio, per selezionare tutti i record dalla tabella &quot;clienti&quot;, la query sarebbe:</p><pre id="b75b5988-c2ea-490c-b1a9-679a72061936" class="code code-wrap"><code>SELECT * FROM clienti;</code></pre><p id="97d8a289-583d-493f-86ae-db1ef8317994" class="">Per <mark class="highlight-red_background">amministrare</mark> MySQL, è possibile utilizzare strumenti come MySQL Workbench o la riga di comando di MySQL. Questi strumenti consentono di gestire gli utenti, i permessi, le tabelle e i dati. È anche possibile utilizzare la replica di MySQL per creare copie di backup dei dati e migliorare la disponibilità.</p><p id="a60a21ca-52d2-4013-9478-b339265687fd" class="">La <mark class="highlight-red_background">sicurezza</mark> in MySQL può essere gestita tramite l&#x27;utilizzo di utenti e privilegi. È possibile creare utenti e assegnare loro diversi livelli di accesso ai database e alle tabelle. Inoltre, MySQL supporta la crittografia dei dati in transito e a riposo per garantire la sicurezza dei dati.</p><p id="9a6f3402-e2b2-4b7c-aadc-3907cdcc1317" class="">In confronto a SQL Server, MySQL è un sistema di gestione di database relazionale open source che può essere utilizzato gratuitamente. Tuttavia, SQL Server offre una maggiore scalabilità e prestazioni, nonché strumenti di amministrazione più avanzati come SQL Server Management Studio.</p><p id="213cd0b0-a7d8-42d0-8320-76feffdeab38" class="">Per inserire una <mark class="highlight-red_background">foreign key</mark> su MySQL, puoi utilizzare il comando ALTER TABLE con la clausola ADD FOREIGN KEY, seguita dal nome della colonna che devi associare alla chiave primaria nella tabella di riferimento. Ad esempio, supponiamo di avere due tabelle &quot;Ordine&quot; e &quot;Cliente&quot;, dove &quot;Ordine&quot; ha una colonna &quot;cliente_id&quot; che deve essere una foreign key che si riferisce alla colonna &quot;id&quot; nella tabella &quot;Cliente&quot;. Il codice per creare la foreign key sarebbe il seguente:</p><pre id="a9de72e5-3ea6-4e39-bd9a-445c7351a9f7" class="code code-wrap"><code>ALTER TABLE Ordine
+ADD CONSTRAINT N_vincolo
+FOREIGN KEY (cliente_id) REFERENCES Cliente(id);</code></pre><p id="c0a9e749-3dd2-48b7-95cf-e1fbcacb89de" class="">Questo comando indica a MySQL di aggiungere una foreign key alla colonna &quot;cliente_id&quot; nella tabella &quot;Ordine&quot;, che fa riferimento alla colonna &quot;id&quot; nella tabella &quot;Cliente&quot;. Se la tabella di riferimento non esiste o non ha una chiave primaria corrispondente, verrà generato un errore. Inoltre, se ci sono già valori nella colonna &quot;cliente_id&quot; che non corrispondono a nessuna riga nella tabella &quot;Cliente&quot;, l&#x27;aggiunta della foreign key potrebbe fallire a causa di violazioni di integrità referenziale.</p><p id="6f7fb98f-d5dd-4374-9b68-ce8d3a37bbbd" class="">Ecco alcuni dei <mark class="highlight-red_background">principali comandi</mark> MySQL che puoi utilizzare per gestire un database:</p><ol type="1" id="0ac2aa1b-3d6c-4a26-8fc6-f5f997851f6f" class="numbered-list" start="1"><li><mark class="highlight-orange_background">CREATE DATABASE</mark>: consente di creare un nuovo database.</li></ol><ol type="1" id="98fb7a5c-37a3-4085-82bb-d378d3d02795" class="numbered-list" start="2"><li><mark class="highlight-orange_background">DROP DATABASE</mark>: consente di eliminare un database esistente.</li></ol><ol type="1" id="4b746bac-4db8-4458-a370-ace6586baeef" class="numbered-list" start="3"><li><mark class="highlight-orange_background">USE DATABASE</mark>: consente di selezionare un database per l&#x27;utilizzo.</li></ol><ol type="1" id="6f6b0638-9885-4f4d-846a-5db6b0677468" class="numbered-list" start="4"><li><mark class="highlight-orange_background">CREATE TABLE</mark>: consente di creare una nuova tabella all&#x27;interno del database selezionato.</li></ol><ol type="1" id="956ff9d3-ac6f-40a2-a158-bf002b7bcdd8" class="numbered-list" start="5"><li><mark class="highlight-orange_background">DROP TABLE</mark>: consente di eliminare una tabella esistente.</li></ol><ol type="1" id="7d6850ae-34fe-4bbb-bc36-6f78001dfd38" class="numbered-list" start="6"><li><mark class="highlight-orange_background">ALTER TABLE</mark>: consente di modificare la struttura di una tabella esistente, come l&#x27;aggiunta o la rimozione di colonne o la modifica di proprietà di colonna.</li></ol><ol type="1" id="466f1f83-9c38-4634-9537-c718922588cf" class="numbered-list" start="7"><li><mark class="highlight-orange_background">INSERT INTO</mark>: consente di inserire nuovi dati in una tabella.</li></ol><ol type="1" id="c494ad46-3c51-4bf8-9112-680432aaca95" class="numbered-list" start="8"><li><mark class="highlight-orange_background">SELECT</mark>: consente di recuperare dati dalla tabella.</li></ol><ol type="1" id="628b5ac0-d452-478e-a944-12424b15e81d" class="numbered-list" start="9"><li><mark class="highlight-orange_background">UPDATE</mark>: consente di aggiornare i dati esistenti nella tabella.</li></ol><ol type="1" id="d4e94efe-26f0-4a3a-a2c3-b705675ab6d8" class="numbered-list" start="10"><li><mark class="highlight-orange_background">DELETE</mark>: consente di eliminare i dati dalla tabella.</li></ol><ol type="1" id="5c6edb71-5f6c-4010-a397-1a5381b389d0" class="numbered-list" start="11"><li><mark class="highlight-orange_background">JOIN</mark>: consente di combinare dati da più tabelle in base a una relazione tra le tabelle.</li></ol><ol type="1" id="6efda244-4b41-46a6-8c19-1b124ad4b8b5" class="numbered-list" start="12"><li><mark class="highlight-orange_background">INDEX</mark>: consente di creare un indice su una o più colonne della tabella, per migliorare le prestazioni delle query.</li></ol><p id="acc4b2b1-5d4f-4e82-a4ba-9d463a72a55a" class="">Per <mark class="highlight-red_background">scrivere query complesse</mark> su MySQL, è necessario avere una conoscenza approfondita del linguaggio SQL e delle funzionalità di MySQL. Ecco alcuni consigli utili per scrivere query complesse su MySQL:</p><ol type="1" id="38984a59-1581-4c43-b47b-2f721c88a633" class="numbered-list" start="1"><li><mark class="highlight-orange_background">Pianificare la query</mark>: prima di scrivere la query, è importante capire esattamente cosa si vuole ottenere dai dati. Identificare le tabelle coinvolte, le colonne interessate e le condizioni di filtraggio.</li></ol><ol type="1" id="783b4738-b9ea-44bf-94dd-4b5d43273904" class="numbered-list" start="2"><li>Utilizzare <mark class="highlight-orange_background">JOIN</mark>: per recuperare dati da più tabelle, è necessario utilizzare JOIN. MySQL supporta diverse tipologie di JOIN, come INNER JOIN, LEFT JOIN, RIGHT JOIN e FULL OUTER JOIN. È importante scegliere il tipo di JOIN corretto in base alle esigenze della query.</li></ol><ol type="1" id="88593c14-e356-4d31-bcb8-355012b2a134" class="numbered-list" start="3"><li>Utilizzare le <mark class="highlight-orange_background">funzioni di aggregazione</mark>: le funzioni di aggregazione, come <mark class="highlight-orange_background">SUM, COUNT, AVG e MAX,</mark> consentono di eseguire calcoli sui dati della tabella. È importante utilizzare le funzioni di aggregazione corrette per ottenere i risultati desiderati.</li></ol><ol type="1" id="70176172-1bdd-4144-8d20-795a8ace7610" class="numbered-list" start="4"><li>Utilizzare le <mark class="highlight-orange_background">sottoquery</mark>: le sottoquery consentono di eseguire una query all&#x27;interno di un&#x27;altra query. Sono utili per eseguire operazioni di filtro e raggruppamento avanzate sui dati.</li></ol><ol type="1" id="e7e7ad97-1a52-49c3-89b5-3e33c50e39e8" class="numbered-list" start="5"><li>Utilizzare gli <mark class="highlight-orange_background">indici</mark>: gli indici possono migliorare le prestazioni della query. È importante creare gli indici corretti sulle colonne utilizzate nelle clausole <mark class="highlight-orange_background">WHERE</mark> e <mark class="highlight-orange_background">JOIN</mark> per migliorare le prestazioni della query.</li></ol><ol type="1" id="e319902e-7007-461c-8561-539591c1333e" class="numbered-list" start="6"><li>Utilizzare le <mark class="highlight-orange_background">istruzioni di controllo di flusso</mark>: le istruzioni di controllo di flusso, come IF e CASE, consentono di eseguire operazioni condizionali sui dati della tabella. Sono utili per eseguire operazioni complesse sui dati.</li></ol><figure id="a4b0c562-bfc7-49d7-99c4-aa82d6d7df31" class="image"><a href="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2738%27%20height=%2738%27/%3e"><img src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2738%27%20height=%2738%27/%3e"/></a></figure><p id="182954ac-5fb3-44e2-8fe1-ac4ffae20ee1" class="">Ecco alcuni esempi di codice per scrivere <mark class="highlight-red_background">query complesse</mark> su MySQL:</p><ol type="1" id="ed07acca-132d-45ad-bad8-c1e71e4fb32f" class="numbered-list" start="1"><li><mark class="highlight-orange_background">JOIN</mark>:<pre id="30c30dc3-9ecc-43df-bef9-085a4fc571f5" class="code code-wrap"><code>SELECT orders.order_id, customers.customer_name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;</code></pre><p id="5bd09a57-a3f6-4bef-b3ce-b8ab93b8ad26" class="">Questa query recupera l&#x27;ID dell&#x27;ordine e il nome del cliente associato all&#x27;ordine da due tabelle diverse, &quot;orders&quot; e &quot;customers&quot;, utilizzando INNER JOIN per combinare i dati.</p></li></ol><ol type="1" id="fdb1941f-7871-4a68-8c1a-5cbb24f4409f" class="numbered-list" start="2"><li><mark class="highlight-orange_background">Funzioni di aggregazione</mark>:<pre id="4f4f045f-63a4-434d-b9df-6251b8e2c7d6" class="code code-wrap"><code>SELECT SUM(order_amount) as total_amount, COUNT(*) as total_orders
+FROM orders;</code></pre><p id="0347d09f-26e9-4efe-bb53-e4827be07e94" class="">Questa query calcola la somma totale dell&#x27;importo dell&#x27;ordine e il numero totale di ordini nella tabella &quot;orders&quot; utilizzando le funzioni di aggregazione SUM e COUNT.</p></li></ol><ol type="1" id="c098d48b-7a42-4d47-b663-05cd33d8b923" class="numbered-list" start="3"><li><mark class="highlight-orange_background">Sottoquery</mark>:<pre id="2a211316-0bc0-4618-8275-959b3c9146df" class="code code-wrap"><code>SELECT customer_name
+FROM customers
+WHERE customer_id IN (
+   SELECT customer_id
+   FROM orders
+   WHERE order_date BETWEEN &#x27;2022-01-01&#x27; AND &#x27;2022-12-31&#x27;
+);</code></pre><p id="045f3d5d-8cec-44ee-9c45-10e2abb26652" class="">Questa query recupera i nomi dei clienti che hanno effettuato un ordine tra il 1 gennaio 2022 e il 31 dicembre 2022, utilizzando una sottoquery per recuperare l&#x27;elenco dei clienti che hanno effettuato un ordine in quel periodo.</p></li></ol><ol type="1" id="ae430162-d59e-4ef8-a488-4adcfd9a9e47" class="numbered-list" start="4"><li><mark class="highlight-orange_background">Indici</mark>:<pre id="5eae83e9-19b4-4b3b-8860-f315bd3fc30e" class="code code-wrap"><code>SELECT *
+FROM orders
+WHERE customer_id = 1234;</code></pre><p id="6a34edd0-0bd1-4edc-8f88-1f417ef44dc6" class="">Questa query recupera tutti gli ordini associati a un cliente specifico utilizzando l&#x27;indice sulla colonna &quot;customer_id&quot; per migliorare le prestazioni della query.</p></li></ol><ol type="1" id="e3c8ef91-047c-4ddc-bb71-e49a43b42d22" class="numbered-list" start="5"><li><mark class="highlight-orange_background">Istruzioni di controllo di flusso</mark>:<pre id="5533b21b-46f7-4992-a089-5197a3ec9851" class="code code-wrap"><code>SELECT customer_name, IF(order_amount &gt; 1000, &#x27;High Value&#x27;, &#x27;Low Value&#x27;) as order_value
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;</code></pre><p id="b8c9f91c-d7af-470a-b62f-ea0e0f5535a3" class="">Questa query recupera il nome del cliente e il valore dell&#x27;ordine (alto o basso) associato a ciascun ordine, utilizzando l&#x27;istruzione IF per eseguire operazioni condizionali sulla colonna &quot;order_amount&quot;.</p><h2 id="a6e9fe14-f4b7-4e39-8d3c-aa50d6486d74" class="block-color-red"><strong>Creazione viste</strong></h2><p id="d1e01198-b9d7-4259-b212-7232c541355d" class="">In SQL Server, la <mark class="highlight-red_background">creazione di una vista</mark> si basa sulla <mark class="highlight-red_background">selezione di una porzione di una o più tabelle</mark>, e la sua definizione viene <mark class="highlight-red_background">salvata come oggetto separato nel database</mark>. Per creare una vista, è possibile <mark class="highlight-red_background">utilizzare il comando</mark> <code><strong>CREATE VIEW</strong></code>, specificando il <mark class="highlight-red_background">nome della vista</mark> e la <mark class="highlight-red_background">definizione della selezione</mark>. Ad esempio, per creare una vista che mostra solo i nomi e i cognomi dei clienti nella tabella &quot;Clienti&quot;, è possibile utilizzare il seguente comando SQL:</p><pre id="7a2ef4db-cb4a-44a9-8e18-6c35ec6f5d49" class="code code-wrap"><code>CREATE VIEW VistaClienti AS
+SELECT NomeCliente, CognomeCliente
+FROM Clienti;</code></pre><h2 id="f1b792b6-5522-44a4-9d70-f6c9823b4e06" class=""><mark class="highlight-red"><strong>Definizione dei dati</strong></mark></h2><p id="fa9e97c9-8572-4974-a44a-37588bfbcc9f" class="">In SQL Server, la <mark class="highlight-red_background">definizione dei dati viene effettuata attraverso l&#x27;utilizzo del comando</mark> <strong><code>CREATE TABLE</code></strong>, che permette di <mark class="highlight-red_background">creare una nuova tabella</mark> all&#x27;interno del database. La definizione della tabella prevede la <mark class="highlight-red_background">specifica dei nomi</mark> delle <mark class="highlight-red_background">colonne</mark> e dei <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">tipi di dati associati</mark></span> ad ognuna di esse. Ad esempio, per creare una tabella &quot;Ordini&quot; con le colonne &quot;IDOrdine&quot;, &quot;DataOrdine&quot; e &quot;ImportoOrdine&quot;, si può utilizzare il seguente comando SQL:</p><pre id="89fcd00e-0e3e-4a46-b128-b04d32afbc78" class="code code-wrap"><code>CREATE TABLE Ordini (
+    IDOrdine INT PRIMARY KEY,
+    DataOrdine DATE,
+    ImportoOrdine DECIMAL(10,2)
+);</code></pre><h2 id="e7a5c91c-80ec-4a4d-8454-031549c1fa5e" class=""><mark class="highlight-red"><strong>GROUP BY</strong></mark></h2><p id="f448cce8-1c53-4b6f-9378-aaf809786743" class="">Il comando <code><strong>GROUP BY</strong></code> viene utilizzato per <mark class="highlight-red_background">raggruppare i record in base al valore di una o più colonne della tabella</mark>, restituendo un set di risultati aggregati. Ad esempio, per ottenere il totale degli ordini per ciascun cliente nella tabella &quot;Ordini&quot;, è possibile utilizzare il seguente comando SQL:</p><pre id="82408475-1369-4951-8760-42c095391c4f" class="code code-wrap"><code>SELECT IDCliente, SUM(ImportoOrdine) as TotaleOrdini
+FROM Ordini
+GROUP BY IDCliente;</code></pre><h2 id="762d65a1-9f15-4a75-92f0-59b631aea7cb" class=""><mark class="highlight-red"><strong>HAVING</strong></mark></h2><p id="25e034f1-a657-4ab7-90f0-85bff0567ebf" class="">Il comando <code><strong>HAVING</strong></code> viene utilizzato per <mark class="highlight-red_background">filtrare i risultati di una query che utilizza il comando</mark> <strong><code>GROUP BY</code></strong>. In pratica, consente di <mark class="highlight-red_background">specificare una condizione di filtro</mark> che viene <mark class="highlight-red_background">applicata ai risultati aggregati</mark>. Ad esempio, per ottenere solo i clienti che hanno effettuato ordini per un importo superiore a 1000, è possibile utilizzare il seguente comando SQL:</p><pre id="c9b09e23-9091-41de-95ad-924ab6f3f856" class="code code-wrap"><code>SELECT IDCliente, SUM(ImportoOrdine) as TotaleOrdini
+FROM Ordini
+GROUP BY IDCliente
+HAVING SUM(ImportoOrdine) &gt; 1000;</code></pre><h2 id="460e46dd-8936-4fa8-a639-b314b9458af2" class=""><mark class="highlight-red"><strong>IN</strong></mark><strong>, </strong><mark class="highlight-red"><strong>EXISTS</strong></mark> e <mark class="highlight-red"><strong>ALL</strong></mark></h2><p id="4752bd03-8bc1-4926-82ab-e9cfb436c258" class=""><mark class="highlight-red_background">IN, EXISTS e ALL</mark> sono <mark class="highlight-red_background">operatori di comparazione</mark> che possono essere utilizzati in SQL per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">filtrare i dati in una query</mark></span>. Ecco una breve descrizione di ciascun operatore:</p><ul id="3ab2f811-d6ac-4f60-8932-f6451c9f2340" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">IN</mark></strong>: l&#x27;operatore <code><strong>IN</strong></code> viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">confrontare un valore con un set di valori definiti in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record che contengono un valore corrispondente a uno dei valori presenti nella sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;clienti&quot; che corrispondono a uno dei valori presenti nella sottoquery:</li></ul><pre id="417127c1-9769-4017-a8f4-4e5e3cdaa86e" class="code code-wrap"><code>SELECT *
+FROM clienti
+WHERE id_cliente IN (1, 2, 3);</code></pre><ul id="f5d3b2a0-bfd5-447c-aea4-1bf9edeaf87e" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">EXISTS</mark></strong>: l&#x27;operatore <code><strong>EXISTS</strong></code><strong> </strong>viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">verificare l&#x27;esistenza di almeno un record in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record della tabella principale solo se esiste almeno un record corrispondente nella sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;ordini&quot; che corrispondono a un cliente presente nella tabella &quot;clienti&quot;:</li></ul><pre id="529c8c67-bf0c-48a4-a78a-e461967ad9cf" class="code code-wrap"><code>SELECT *
+FROM ordini o
+WHERE EXISTS (
+    SELECT 1
+    FROM clienti c
+    WHERE c.id_cliente = o.id_cliente
+);</code></pre><ul id="ae36682a-2d8b-400f-b6e8-49cb2fc71b48" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">ALL</mark></strong>: l&#x27;operatore <code><strong>ALL</strong></code> viene utilizzato per <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">confrontare un valore con tutti i valori presenti in una sottoquery</mark></span>. In pratica, l&#x27;operatore <span style="border-bottom:0.05em solid"><mark class="highlight-red_background">restituisce i record che corrispondono al confronto con tutti i valori della sottoquery</mark></span>. Ad esempio, la seguente query restituirebbe tutti i record della tabella &quot;prodotti&quot; che hanno un prezzo superiore a tutti i prodotti della categoria &quot;alimentari&quot;:</li></ul><pre id="1f2f4e68-8579-43de-b5c2-28046ab99068" class="code code-wrap"><code>SELECT *
+FROM prodotti
+WHERE prezzo &gt; ALL (
+    SELECT prezzo
+    FROM prodotti
+    WHERE categoria = &#x27;alimentari&#x27;
+);</code></pre></li></ol><h1 id="08575359-6d75-4e61-81b0-847a344e5c79" class=""><strong><mark class="highlight-red">PHP</mark></strong></h1><p id="38223e7d-807e-4873-9a15-2374ea7e7059" class="">In PHP, è possibile <mark class="highlight-orange_background">interagire</mark> con un <mark class="highlight-orange_background">database MySQL</mark> utilizzando l&#x27;estensione MySQLi (MySQL improved), che offre una serie di funzioni per connettersi, eseguire query e gestire i risultati, ad una pagina web.</p><p id="ef9f61a6-3f6a-4dec-89df-d8070386d95b" class="">Per creare una pagina PHP per interagire con un database MySQL, si può seguire il seguente processo:</p><ol type="1" id="87e6e402-8ac8-4b13-b8a5-4062ed1ee0cd" class="numbered-list" start="1"><li><mark class="highlight-orange_background">Connessione al database</mark>: per connettersi a un database MySQL si può utilizzare la funzione <code><strong>mysqli_connect()</strong></code>, che richiede di specificare l&#x27;host, il nome utente e la password per &#x27;accesso al database. Ad esempio:<pre id="bd8f0c29-1686-4d00-a05a-0dce91117b65" class="code code-wrap"><code>&lt;?php
+$host = &quot;localhost&quot;;
+$username = &quot;user&quot;;
+$password = &quot;password&quot;;
+$dbname = &quot;database&quot;;
+
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+// Verifica la connessione
+if (!$conn) {
+    die(&quot;Connessione al database fallita: &quot; . mysqli_connect_error());
+}
+echo &quot;Connessione al database stabilita con successo&quot;;
+?&gt;</code></pre></li></ol><ol type="1" id="2b29c326-8bf3-4bc4-8e5e-cabe8aff067a" class="numbered-list" start="2"><li><mark class="highlight-orange_background">Esecuzione di una query</mark>: una volta stabilita la connessione, si può eseguire una query SQL utilizzando la funzione <code><strong>mysqli_query()</strong></code>. Ad esempio:<pre id="2534cde6-825a-41b0-98c9-468002284fa3" class="code code-wrap"><code>$sql = &quot;SELECT * FROM users&quot;;
+$result = mysqli_query($conn, $sql);
+
+// Verifica se la query ha restituito dei risultati
+if (mysqli_num_rows($result) &gt; 0) {
+    // Itera sui risultati e li stampa a video
+    while($row = mysqli_fetch_assoc($result)) {
+        echo &quot;ID: &quot; . $row[&quot;id&quot;]. &quot; - Nome: &quot; . $row[&quot;name&quot;]. &quot; - Email: &quot; . $row[&quot;email&quot;]. &quot;&lt;br&gt;&quot;;
+    }
+} else {
+    echo &quot;Nessun risultato trovato&quot;;
+}</code></pre></li></ol><ol type="1" id="90501ae9-a099-41be-9b82-92325007d8a0" class="numbered-list" start="3"><li><mark class="highlight-orange_background">Chiusura della connessione</mark>: una volta completate le operazioni, è importante chiudere la connessione al database utilizzando la funzione <code><strong>mysqli_close()</strong></code>. Ad esempio:<pre id="64ebfd64-7ef4-4ed0-8395-9f371794096c" class="code code-wrap"><code>mysqli_close($conn);</code></pre></li></ol><p id="4129d661-04db-44df-b2cf-89ef73475748" class="">Per <mark class="highlight-orange_background">passare i valori tra pagine</mark>, si possono utilizzare le variabili di sessione o le query string dell&#x27;URL. Ad esempio, per passare un parametro <code><strong>id</strong></code> alla pagina successiva:</p><pre id="29354193-fcaa-4763-afba-ab5f8b394b4e" class="code code-wrap"><code>&lt;a href=&quot;pagina2.php?id=123&quot;&gt;Vai a pagina 2&lt;/a&gt;</code></pre><p id="01ff60b4-082b-4bd0-bddb-8fc08bf9bfe2" class="">Nella pagina successiva, il parametro può essere <mark class="highlight-orange_background">recuperato</mark> utilizzando la variabile superglobale <code><strong>$_GET</strong></code>:</p><pre id="b572e1ac-fbfe-4fd4-8dc3-04b9d1e86dae" class="code code-wrap"><code>$id = $_GET[&quot;id&quot;];</code></pre><p id="29462ecb-87a0-42ec-bf20-69b81d085d02" class="">Infine, per <mark class="highlight-orange_background">visualizzare i risultati</mark> delle query su una pagina PHP, si possono utilizzare le funzioni di output come <code><strong>echo</strong></code> o <code><strong>print</strong></code>, oppure è possibile utilizzare il markup HTML per creare tabelle o altri elementi grafici.</p><h1 id="fb745b71-8c3d-426e-8f76-b79ebdfc3ea8" class=""><strong><mark class="highlight-red">FUNZIONI SQL NEL PHP</mark></strong></h1><p id="8c5956dd-7587-40d7-9a6d-ac80f5da794d" class="">MySQLi (MySQL improved) è un&#x27;estensione di PHP che fornisce un&#x27;interfaccia migliorata per comunicare con il database MySQL. Le funzioni di MySQLi consentono di connettersi al database, eseguire query, gestire transazioni, ottenere risultati delle query e altro ancora. Di seguito sono riportate alcune delle principali funzioni offerte da MySQLi:</p><ol type="1" id="a8f1abd8-49c4-4684-bbfd-b9feccf6ebac" class="numbered-list" start="1"><li><strong><code>mysqli_connect(host, username, password, dbname)</code></strong>: Crea una nuova connessione al database MySQL utilizzando i parametri specificati (host, username, password e nome del database). Restituisce un oggetto di connessione se la connessione è stata stabilita con successo, altrimenti restituisce false.</li></ol><ol type="1" id="89d53c1c-7112-4be5-9855-6196cb24d127" class="numbered-list" start="2"><li><strong><code>mysqli_query(connection, query)</code></strong>: Esegue una query sul database utilizzando la connessione specificata e la stringa di query fornita. Restituisce un oggetto risultato se la query viene eseguita con successo, altrimenti restituisce false.</li></ol><ol type="1" id="f2667f62-3d34-406b-aef8-898e9db130dc" class="numbered-list" start="3"><li><strong><code>mysqli_fetch_assoc(result)</code></strong>: Restituisce la riga corrente di un oggetto risultato come un array associativo, avanzando il puntatore interno dei risultati. Può essere utilizzato in un ciclo per recuperare tutte le righe dei risultati.</li></ol><ol type="1" id="fbcb03aa-55dd-4ec7-890e-5c7268c63cec" class="numbered-list" start="4"><li><strong><code>mysqli_num_rows(result)</code></strong>: Restituisce il numero di righe restituite da un oggetto risultato.</li></ol><ol type="1" id="17148099-0780-4e3c-9326-c367fe497a1f" class="numbered-list" start="5"><li><strong><code>mysqli_affected_rows(connection)</code></strong>: Restituisce il numero di righe interessate dall&#x27;ultima operazione di inserimento, aggiornamento o eliminazione eseguita sulla connessione specificata.</li></ol><ol type="1" id="b06a89b8-2e40-484c-9ac2-3663230cc244" class="numbered-list" start="6"><li><strong><code>mysqli_real_escape_string(connection, string)</code></strong>: Esegue l&#x27;escape dei caratteri speciali all&#x27;interno di una stringa per evitare l&#x27;iniezione SQL. Restituisce la stringa con i caratteri speciali scappati.</li></ol><ol type="1" id="d4a9c946-5272-4cd6-8b09-332880e238b4" class="numbered-list" start="7"><li><strong><code>mysqli_error(connection)</code></strong>: Restituisce una stringa contenente la descrizione dell&#x27;errore più recente associato alla connessione specificata.</li></ol><ol type="1" id="8d616b75-e6fa-4cf4-acaf-a1c2f303cd5b" class="numbered-list" start="8"><li><strong><code>mysqli_begin_transaction(connection)</code></strong>: Avvia una nuova transazione all&#x27;interno della connessione specificata.</li></ol><ol type="1" id="0d49f8cc-c2eb-4993-9219-a9b3c668578d" class="numbered-list" start="9"><li><strong><code>mysqli_commit(connection)</code></strong>: Conferma una transazione attiva all&#x27;interno della connessione specificata.</li></ol><ol type="1" id="5b781044-6259-4eb2-a97d-689534a27f8b" class="numbered-list" start="10"><li><strong><code>mysqli_rollback(connection)</code></strong>: Annulla una transazione attiva all&#x27;interno della connessione specificata.</li></ol><h2 id="a35b9fd0-c267-4c05-949f-323da7292b0c" class=""><mark class="highlight-red"><strong>Eempio PHP per l’aggiunta di dati in un db da una pagina HTML</strong></mark></h2><h3 id="49856dcc-81e6-4990-93d8-434137354fea" class=""><mark class="highlight-red"><strong>HTML</strong></mark></h3><pre id="53486e96-7c08-494c-9c9e-417e396516cb" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;INSERIMENTO DATI&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;style&gt;
+        .text 
+        {
+            text-align: center;
+        }
+        .bottomright 
+        {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+    &lt;body bgcolor=&quot;gray&quot;&gt;
+        &lt;table align=&quot;center&quot; border=&quot;2&quot; bordercolor=&quot;black&quot; cellspacing=&quot;0&quot; cellpadding=&quot;4&quot;&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;b&gt;&lt;h3&gt;&amp;nbspREGISTRAZIONE DATI:&amp;nbsp&lt;/h3&gt;&lt;/b&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;  
+        &lt;br&gt;&lt;br&gt;
+        &lt;div align=&quot;center&quot;&gt;
+        &lt;form action=&quot;aggiungi2.php&quot; method=&quot;post&quot;&gt;
+        &lt;table border=&quot;1&quot; bordercolor=&quot;black&quot; class=&quot;text&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;b class=&quot;text&quot;&gt;Nome:&lt;/b&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;text&quot; name=&quot;nome&quot; size=&quot;20&quot; maxlength=&quot;40&quot; value=&quot;&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;b&gt;Cognome:&lt;/b&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;text&quot; name=&quot;cognome&quot; size=&quot;20&quot; maxlength=&quot;40&quot; value=&quot;&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;b&gt;Email:&lt;/b&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+            &lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;20&quot; maxlength=&quot;40&quot; value=&quot;&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;b&gt;Codice fiscale:&lt;/b&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;text&quot; name=&quot;codice_fiscale&quot; size=&quot;20&quot; maxlength=&quot;40&quot; value=&quot;&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;b&gt;Reg_date:&lt;/b&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;date&quot; name=&quot;reg_date&quot; size=&quot;20&quot; maxlength=&quot;40&quot; value=&quot;&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;table border=&quot;1&quot; bordercolor=&quot;black&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Invia i Dati&quot; name=&quot;BInvia&quot;&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type=&quot;reset&quot; value=&quot;Annulla&quot; name=&quot;BReset&quot;&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;p class=&quot;bottomright&quot;&gt;Esercizio di Pietro Vaccari&lt;/p&gt;
+    &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="0fcaaa2d-fc16-47ce-9fc6-f307ac8ef271" class="">Questo codice HTML mostra una pagina web che ha un form con campi di input per il nome, cognome, email, codice fiscale e data di registrazione di un utente. Il form ha un pulsante di invio e un pulsante di reset per cancellare i dati inseriti.</p><p id="0a08f312-f5e0-4708-893f-b4571f237f7b" class="">Il form invia i dati a un file PHP chiamato &quot;aggiungi2.php&quot; attraverso il metodo POST. Quando l&#x27;utente fa clic sul pulsante di invio, i dati vengono inviati al file PHP per essere elaborati.</p><p id="5d127207-84ef-43fc-8a6b-c3db19fc7585" class="">La pagina ha anche alcune proprietà di stile CSS, come l&#x27;allineamento del testo al centro, la posizione in basso a destra di un testo e il colore di sfondo grigio. Inoltre, il file include un&#x27;intestazione HTML con il titolo &quot;INSERIMENTO DATI&quot;.</p><h3 id="4b825e9c-611d-434d-a82e-6fc5d24e9325" class=""><mark class="highlight-red"><strong>PHP</strong></mark></h3><pre id="97013018-b618-4c71-ae07-a2c5d666597d" class="code"><code>&lt;?php
+    echo&quot;&lt;body bgcolor=&#x27;lightgreen&#x27;&gt;&quot;;$nome=$_POST[&#x27;nome&#x27;];
+    $nome = $_POST[&#x27;nome&#x27;];
+    $cognome = $_POST[&#x27;cognome&#x27;];
+    $email = $_POST[&#x27;email&#x27;];
+    $codice_fiscale = $_POST[&#x27;codice_fiscale&#x27;];
+    $reg_date = $_POST[&#x27;reg_date&#x27;];
+
+    $servername=&quot;localhost&quot;;
+    $username=&quot;root&quot;;
+    $password=&quot;&quot;;
+    $dbname=&quot;esercizio_php&quot;;
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn-&gt;connect_error) {
+        die(&quot;Connection failed: &quot; . $conn-&gt;connect_error);
+    }
+    $sql = &quot;INSERT INTO Tabella_2 (nome , cognome, email , codice_fiscale , reg_date) values (&#x27;$nome&#x27; , &#x27;$cognome&#x27; , &#x27;$email&#x27; , &#x27;$codice_fiscale&#x27; , &#x27;$reg_date&#x27;)&quot;;
+    
+    if ($conn-&gt;query($sql) === TRUE) {
+        echo &quot;AGGIORNAMENTO RIUSCITO&quot;;
+    } else {
+        echo &quot;Error &quot; . $conn-&gt;error;
+    }
+    echo&quot;&lt;br&gt;&lt;br&gt;&lt;br&gt;Ecco il riepilogo dei dati che ha inserito:&lt;br&gt;
+    Cognome e nome: $cognome $nome&lt;br&gt;
+    Email: $email&lt;br&gt;
+    Codice Fiscale: $codice_fiscale&lt;br&gt;
+    Data registazione: $reg_date&lt;br&gt;&quot;;
+    $conn-&gt;close();
+    ?&gt;</code></pre><p id="f0630dba-c71b-4713-bb7e-a3c07c6eb6c1" class="">Questo codice è un esempio di script PHP che gestisce l&#x27;input dei dati di un form HTML e li inserisce in un database MySQL.</p><p id="8064002e-efe5-410b-ba64-14f7f672574d" class="">In particolare, il codice accede ai dati inseriti dall&#x27;utente nel form HTML attraverso l&#x27;uso di variabili PHP e il metodo POST. Quindi, dichiara le variabili per il nome del server, l&#x27;utente del database, la password e il nome del database stesso, per poi stabilire una connessione al database utilizzando la classe mysqli di PHP.</p><p id="5f6a8d8d-8176-493c-952c-7838f054377e" class="">Successivamente, viene costruita una query SQL per inserire i dati forniti dall&#x27;utente nella tabella del database specificata. La query è costruita concatenando i valori delle variabili utilizzando l&#x27;operatore di stringa di concatenazione &quot;.&quot;.</p><p id="115bd9a4-e7f0-4950-a961-dff6c3d6560e" class="">Dopo che la query è stata eseguita, il codice controlla se l&#x27;operazione è stata eseguita con successo o se ci sono stati errori. Se l&#x27;operazione ha avuto successo, viene visualizzato un messaggio di conferma, altrimenti viene visualizzato un messaggio di errore insieme alla descrizione dell&#x27;errore.</p><p id="f56c5ac2-2e0d-492c-b72e-7b4b79cda29e" class="">Infine, il codice visualizza un riepilogo dei dati che l&#x27;utente ha inserito nel form HTML, utilizzando le variabili dichiarate all&#x27;inizio dello script.</p><h1 id="14b960f1-2510-4ff7-9ff3-e88d27d6ceeb" class=""><strong><mark class="highlight-red">Wordpress</mark></strong></h1><p id="cef71908-1860-433f-b1c8-32a83af222b8" class="">Wordpress è un <mark class="highlight-orange_background">sistema di gestione dei contenuti</mark> (CMS) open-source molto popolare che consente agli utenti di creare e gestire siti web. Di seguito sono riportati alcuni concetti fondamentali di Wordpress:</p><ul id="82a1bf16-0307-423f-886a-afde4bdbf3f5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Introduzione a Wordpress</mark>: Wordpress è un CMS che consente agli utenti di creare e gestire siti web. Wordpress ha un&#x27;interfaccia utente intuitiva e una vasta gamma di temi e plugin per personalizzare il design e le funzionalità del sito web.</li></ul><ul id="b5249f28-801a-49ad-aa33-2abc7e31e892" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Installazione e configurazione</mark>: Wordpress è relativamente facile da installare e configurare. Ci sono due modi principali per installare Wordpress: manualmente o tramite un provider di hosting che offre un&#x27;installazione automatica di Wordpress. Una volta installato, Wordpress richiede una configurazione iniziale, ad esempio l&#x27;impostazione del nome del sito web, dell&#x27;URL e dell&#x27;utente amministratore.</li></ul><ul id="4c519ffb-8f68-4fd8-8f0c-c9f7bc466b76" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Componenti principali e loro utilizzo</mark>: I componenti principali di Wordpress includono i temi, i plugin e i widget. I temi determinano l&#x27;aspetto del sito web, mentre i plugin forniscono funzionalità aggiuntive. I widget sono elementi che possono essere posizionati nelle sidebar o in altre aree del sito web per visualizzare informazioni specifiche. Wordpress ha anche un&#x27;area amministrativa (detta &quot;Dashboard&quot;) che consente agli utenti di gestire il contenuto del sito web, ad esempio la creazione di post e pagine, la modifica del design e la gestione dei commenti degli utenti.</li></ul><p id="8dc85f96-1f5e-4916-8121-99e338e0ec4f" class="">In sintesi, Wordpress è un CMS popolare e facile da usare che consente agli utenti di creare e gestire siti web con una vasta gamma di funzionalità e personalizzazioni disponibili tramite temi e plugin.</p><h2 id="2a307bbe-f00d-4f9c-bc11-62b0968e5c02" class=""><strong><mark class="highlight-red">Sviluppo di un sito Wordpress</mark></strong></h2><p id="354d7092-e9eb-47b3-a5f3-dac33d7dae8f" class="">Lo sviluppo individuale di un sito su WordPress può essere suddiviso in diverse fasi:</p><ol type="1" id="38511771-2710-42f0-a7bb-45da00fb6cc8" class="numbered-list" start="1"><li><mark class="highlight-orange_background">Scelta del tema</mark>: il tema è il layout grafico del sito e può essere scelto tra quelli disponibili sul repository ufficiale di WordPress o acquistati da fornitori terzi. In base alle esigenze del progetto, è possibile personalizzare il tema tramite il codice o attraverso l&#x27;utilizzo di plugin.</li></ol><ol type="1" id="55e072b7-2617-486b-bb91-cebd4b807b08" class="numbered-list" start="2"><li><mark class="highlight-orange_background">Configurazione del sito</mark>: una volta scelto il tema, è possibile configurare il sito definendo le pagine statiche, il menu di navigazione, i widget e le impostazioni generali (lingua, permessi degli utenti, SEO, ecc.).</li></ol><ol type="1" id="a14d4964-34da-46f0-a8c7-9b0992e54fd1" class="numbered-list" start="3"><li><mark class="highlight-orange_background">Creazione dei contenuti</mark>: con il sito configurato, è possibile creare i contenuti delle pagine e degli articoli. Ogni contenuto può essere personalizzato attraverso l&#x27;utilizzo di tag, categorie, immagini e video.</li></ol><ol type="1" id="6989c9d9-3f01-4bed-865c-379a1e9c4edd" class="numbered-list" start="4"><li><mark class="highlight-orange_background">Utilizzo dei plugin</mark>: i plugin sono componenti aggiuntivi che permettono di estendere le funzionalità di WordPress. È possibile scegliere tra i plugin disponibili sul repository ufficiale o acquistare quelli di fornitori terzi. Alcuni esempi di plugin utili possono essere quelli per la gestione delle email, per la sicurezza del sito o per la creazione di form.</li></ol><ol type="1" id="d0b9d052-1f43-4311-877c-f68f2d1c6efc" class="numbered-list" start="5"><li><mark class="highlight-orange_background">Testing e messa in produzione</mark>: una volta terminata la fase di sviluppo del sito, è importante testarlo per verificare che tutto funzioni correttamente. Successivamente, è possibile mettere il sito in produzione su un server web.</li></ol><h1 id="9011a391-2643-4316-abfb-50e62d755e9f" class="block-color-red"><strong>Algebra Razionale</strong></h1><p id="c0a41921-a1f6-4aa1-aef8-1f50852767dc" class="">L&#x27;algebra relazionale è un <mark class="highlight-orange_background">linguaggio formale per descrivere le operazioni</mark> che possono essere eseguite <mark class="highlight-orange_background">sui database relazionali</mark>. Le operazioni fondamentali dell&#x27;algebra relazionale includono la selezione, la proiezione, il prodotto cartesiano, il join naturale, l&#x27;unione, la differenza e l&#x27;intersezione.</p><ul id="ad4ea7d9-cd42-4283-8195-06a661f4a8ff" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Selezione</mark>: l&#x27;operazione di selezione consente di estrarre una parte delle righe di una tabella, in base a una condizione specificata. La sintassi dell&#x27;operatore di selezione è:<p id="3dae35cb-ebd6-4015-8ee2-d440cfc648e6" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi><mi>i</mi><mi>z</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>e</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mi>o</mi><mi>m</mi><mi>e</mi><mo>−</mo><mi>t</mi><mi>a</mi><mi>b</mi><mi>e</mi><mi>l</mi><mi>l</mi><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">σ_{condizione}(nome-tabella)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">co</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">ab</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">ll</span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="d276d791-bef4-4621-b0b4-ad1e2439cfed" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Proiezione</mark>: l&#x27;operazione di proiezione consente di estrarre solo alcune delle colonne di una tabella, in base a una specifica selezione. La sintassi dell&#x27;operatore di proiezione è:<p id="1fe6cb55-a716-4b45-a38c-e2609ce4b43e" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>e</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>o</mi><mo>−</mo><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>n</mi><mi>n</mi><mi>e</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mi>o</mi><mi>m</mi><mi>e</mi><mo>−</mo><mi>t</mi><mi>a</mi><mi>b</mi><mi>e</mi><mi>l</mi><mi>l</mi><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">π_{elenco-colonne}(nome-tabella)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">co</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">co</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">nn</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">ab</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">ll</span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="61fef4f2-aa8e-4800-a820-08adb15e9497" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Prodotto cartesiano</mark>: l&#x27;operazione di prodotto cartesiano consente di combinare tutte le righe di due tabelle in un&#x27;unica tabella, con ogni riga della prima tabella abbinata a tutte le righe della seconda tabella. La sintassi dell&#x27;operatore di prodotto cartesiano è:<p id="bc5803fb-8b58-4a87-b90d-0cfa020807a6" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>×</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R × S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="38f5aa33-9c29-485c-adb8-349b6c5633a9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Join naturale</mark>: l&#x27;operazione di join naturale consente di combinare le righe di due tabelle in base alle colonne che hanno lo stesso nome e lo stesso tipo di dati. La sintassi dell&#x27;operatore di join naturale è:<p id="ab39a503-f6e6-4c40-9467-ebe52caf7527" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>⋈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R ⋈ S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68833em;vertical-align:-0.005em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⋈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="9feae4dc-4525-4682-8a6f-6c6989b0c401" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Unione</mark>: l&#x27;operazione di unione consente di combinare due tabelle in un&#x27;unica tabella, mantenendo solo le righe univoche. La sintassi dell&#x27;operatore di unione è:<p id="6415ce32-ced4-47e7-89f2-5dbd5a32fa3b" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>∪</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R ∪ S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="8dc0c9e9-2389-467e-9af3-2786db95a1bb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Differenza</mark>: l&#x27;operazione di differenza consente di estrarre le righe di una tabella che non compaiono in un&#x27;altra tabella. La sintassi dell&#x27;operatore di differenza è:<p id="f9bb4d35-7083-4835-9f94-083e47918aa2" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R - S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="e1335844-2acb-4a11-a4d1-8f8db37cd997" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Intersezione</mark>: l&#x27;operazione di intersezione consente di estrarre solo le righe che compaiono sia nella prima che nella seconda tabella. La sintassi dell&#x27;operatore di intersezione è:<p id="a91d543a-024e-4b53-9f86-4a2b733b2126" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>∩</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R ∩ S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></p></li></ul><h1 id="061f71cf-01a3-4ca1-8ae6-fb0908f4ef86" class=""><strong><mark class="highlight-red">Accesso ai database (MySQL e SQL Server) tramite C#</mark></strong></h1><p id="81b08ef2-426d-4f07-aa59-4509edc6b2b9" class="">In C#, è possibile accedere ai database MySQL e SQL Server tramite ADO.NET.</p><p id="fb82ac86-c5df-4150-abf6-5a21c1f24175" class=""><mark class="highlight-orange_background">ADO.NET</mark> è una <mark class="highlight-orange_background">libreria di accesso ai dati</mark> che fornisce un&#x27;interfaccia unificata per accedere ai diversi tipi di database. Esistono due modalità principali di accesso ai dati tramite ADO.NET: modalità connessa e modalità disconnessa.</p><ul id="1240346a-adfc-4ba5-ad30-5c2b8a3d0574" class="bulleted-list"><li style="list-style-type:disc">Nella <mark class="highlight-orange_background">modalità connessa</mark>, l&#x27;applicazione mantiene una connessione aperta con il database durante l&#x27;interazione con i dati. La modalità connessa è particolarmente utile quando si lavora con un numero limitato di record o quando si effettuano aggiornamenti frequenti. In ADO.NET, la modalità connessa viene utilizzata principalmente tramite l&#x27;oggetto <code><strong>SqlConnection</strong></code>, che rappresenta una connessione a un database SQL Server o MySQL, e l&#x27;oggetto <code><strong>SqlCommand</strong></code>, che rappresenta un&#x27;istruzione SQL da eseguire sul database.</li></ul><ul id="f0a0d90c-d3fb-4035-917a-33aa484bb116" class="bulleted-list"><li style="list-style-type:disc">Nella <mark class="highlight-orange_background">modalità disconnessa</mark>, i dati vengono recuperati dal database e memorizzati in un oggetto <code><strong>DataSet</strong></code>. L&#x27;applicazione può quindi lavorare con i dati memorizzati in memoria senza mantenere una connessione aperta con il database. La modalità disconnessa è particolarmente utile quando si lavora con un grande numero di record o quando si eseguono operazioni di sola lettura sui dati. In ADO.NET, la modalità disconnessa viene utilizzata principalmente tramite gli oggetti <code><strong>SqlDataAdapter</strong></code> e <code><strong>MySqlDataAdapter</strong></code>, che recuperano i dati dal database e li inseriscono in un oggetto <code><strong>DataSet</strong></code>.</li></ul><p id="60275d3e-6eb7-447a-b44e-b6561d81f22c" class="">
+</p><ul id="00a74cb2-17cb-4410-9b5d-5ddb41beebbf" class="bulleted-list"><li style="list-style-type:disc">Esempio 1: Accesso ai dati in modalità connessa utilizzando ADO.NET in C#</li></ul><pre id="c7d547fe-81a5-4d26-9f72-3bcd0fa831dc" class="code code-wrap"><code>using System.Data.SqlClient;
+
+string connectionString = &quot;Data Source=myServerAddress;Initial Catalog=myDataBase;User Id=myUsername;Password=myPassword;&quot;;
+
+using (SqlConnection connection = new SqlConnection(connectionString))
+{
+    connection.Open();
+
+    string query = &quot;SELECT * FROM Customers&quot;;
+    SqlCommand command = new SqlCommand(query, connection);
+
+    SqlDataReader reader = command.ExecuteReader();
+
+    while (reader.Read())
+    {
+        string name = reader[&quot;Name&quot;].ToString();
+        int age = (int)reader[&quot;Age&quot;];
+        Console.WriteLine($&quot;Name: {name}, Age: {age}&quot;);
+    }
+
+    reader.Close();
+    connection.Close();
+}</code></pre><ul id="d6011273-8e46-4f7d-a562-269b846742da" class="bulleted-list"><li style="list-style-type:disc">Esempio 2: Accesso ai dati in modalità disconnessa utilizzando ADO.NET in C#</li></ul><pre id="64720212-2587-4136-b8fa-3938f94ef347" class="code code-wrap"><code>using System.Data.SqlClient;
+
+string connectionString = &quot;Data Source=myServerAddress;Initial Catalog=myDataBase;User Id=myUsername;Password=myPassword;&quot;;
+
+string query = &quot;SELECT * FROM Customers&quot;;
+SqlDataAdapter adapter = new SqlDataAdapter(query, connectionString);
+
+DataSet dataset = new DataSet();
+adapter.Fill(dataset, &quot;Customers&quot;);
+
+DataTable customersTable = dataset.Tables[&quot;Customers&quot;];
+
+foreach (DataRow row in customersTable.Rows)
+{
+    string name = row[&quot;Name&quot;].ToString();
+    int age = (int)row[&quot;Age&quot;];
+    Console.WriteLine($&quot;Name: {name}, Age: {age}&quot;);
+}</code></pre><h1 id="4ce58e23-3d62-4e5c-86da-94dcb2e23a62" class=""><strong><mark class="highlight-red">NOSQL Database</mark></strong></h1><p id="00e1abd7-e905-4e39-b1b8-1e94caf61f9c" class="">I database NoSQL sono <mark class="highlight-orange_background">database non relazionali</mark>, utilizzati principalmente per <mark class="highlight-orange_background">gestire grandi volumi di dati</mark> in modo scalabile e distribuito. Tra i vari tipi di database NoSQL, uno dei più popolari è <mark class="highlight-orange_background">MongoDB</mark>, un database orientato ai documenti che utilizza BSON (Binary JSON) come formato di dati.</p><p id="e07bf5d7-87f8-46b4-885a-8f753f84d06d" class="">Ecco alcuni punti chiave per la conoscenza e l&#x27;utilizzo di MongoDB con C#:</p><ol type="1" id="9e28ccd6-2944-4bad-87e5-2ba3b717795b" class="numbered-list" start="1"><li><mark class="highlight-orange_background">Installazione e configurazione di MongoDB</mark>: prima di utilizzare MongoDB con C#, è necessario installarlo e configurarlo correttamente. MongoDB fornisce una documentazione dettagliata sul suo sito ufficiale, che può aiutare a installarlo e configurarlo in base alle proprie esigenze.</li></ol><ol type="1" id="763aa1ac-190b-41d3-9928-3b74b3bceaeb" class="numbered-list" start="2"><li><mark class="highlight-orange_background">Utilizzo di MongoDB con C#</mark>: per utilizzare MongoDB con C#, è possibile utilizzare il driver ufficiale di MongoDB per .NET, chiamato &quot;MongoDB.Driver&quot;. Questo driver può essere scaricato tramite NuGet, il gestore di pacchetti per Visual Studio.</li></ol><ol type="1" id="23043c67-a366-4d2b-a67a-48a1756c68db" class="numbered-list" start="3"><li><mark class="highlight-orange_background">Programmazione C#</mark> effettuando operazioni CRUD su MongoDB: una volta che il driver è stato installato, è possibile utilizzarlo per effettuare le operazioni CRUD (Create, Read, Update, Delete) su MongoDB. Ad esempio, per creare un nuovo documento, si può utilizzare il seguente codice:</li></ol><pre id="895267a9-b8d9-4084-b604-c83b0284b78e" class="code code-wrap"><code>var collection = database.GetCollection&lt;BsonDocument&gt;(&quot;collection_name&quot;);
+var document = new BsonDocument
+{
+    { &quot;key1&quot;, &quot;value1&quot; },
+    { &quot;key2&quot;, &quot;value2&quot; }
+};
+collection.InsertOne(document);</code></pre><p id="0fdda61e-bb21-4bab-a95c-a14ac1b86813" class="">In questo esempio, &quot;collection_name&quot; è il nome della collezione in cui si vuole inserire il documento, mentre &quot;key1&quot; e &quot;key2&quot; sono le chiavi del documento e &quot;value1&quot; e &quot;value2&quot; sono i relativi valori.</p><p id="f38c2ade-a427-452e-9c5f-af93a05541e0" class="">Per la lettura dei documenti, si può utilizzare il metodo &quot;Find&quot;:</p><pre id="0e2266ad-a360-4407-bca8-fe7f6378a983" class="code code-wrap"><code>var collection = database.GetCollection&lt;BsonDocument&gt;(&quot;collection_name&quot;);
+var filter = Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;key1&quot;, &quot;value1&quot;);
+var result = collection.Find(filter).ToList();</code></pre><p id="b16c7cfa-9b4a-49fd-bcde-7b2785d82121" class="">In questo esempio, &quot;key1&quot; e &quot;value1&quot; sono i criteri di ricerca per i documenti.</p><p id="16bf52ca-c494-486f-b4ee-2d8bc35cd311" class="">Per l&#x27;aggiornamento dei documenti, si può utilizzare il metodo &quot;UpdateOne&quot;:</p><pre id="89f11808-b79c-42e9-bf69-8269f54cbc7b" class="code code-wrap"><code>var collection = database.GetCollection&lt;BsonDocument&gt;(&quot;collection_name&quot;);
+var filter = Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;key1&quot;, &quot;value1&quot;);
+var update = Builders&lt;BsonDocument&gt;.Update.Set(&quot;key2&quot;, &quot;new_value&quot;);
+collection.UpdateOne(filter, update);
+</code></pre><p id="83bb5f5c-4457-4b86-b34b-a4e005ef873e" class="">In questo esempio, si sta aggiornando il valore della chiave &quot;key2&quot; nel documento in cui la chiave &quot;key1&quot; ha il valore &quot;value1&quot;.</p><p id="c9a09ebd-4ea8-4d7d-b18d-a740e56df1a1" class="">Per l&#x27;eliminazione dei documenti, si può utilizzare il metodo &quot;DeleteOne&quot;:</p><pre id="187d6e44-8a17-4fb0-8fda-fd2d44adf138" class="code code-wrap"><code>var collection = database.GetCollection&lt;BsonDocument&gt;(&quot;collection_name&quot;);
+var filter = Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;key1&quot;, &quot;value1&quot;);
+collection.DeleteOne(filter);</code></pre><p id="138c5c6f-00a4-44b6-99b5-7699948fdb72" class="">In questo esempio, si sta eliminando il documento in cui la chiave &quot;key1&quot; ha il valore &quot;value1&quot;.</p><h1 id="2d4592e5-296e-4370-83c7-58080a996f61" class=""><strong><mark class="highlight-red">Progettazione software</mark></strong></h1><ul id="56b543b5-98b9-4a96-a410-bcf061324502" class="bulleted-list"><li style="list-style-type:disc">Esempio con spiegazione teorica di un semplice applicativo lato client che effettua chiamate ad un server che ha un web services REST. Spiegazione dettagliata dei compiti del client (controllo input con espressioni regolari), come passa i parametri al server, come si comporta il server, database e interazione, cosa restituisce, in che formato (JSON o XML) e come si comporta il client in base alla risposta ricevuta • Metodi GET, POST, PUT, DELETE loro comparazione.</li></ul><p id="6e25f01a-e8bd-41f2-838f-0bfdd48f2433" class="">La progettazione software è il <mark class="highlight-red_background">processo di sviluppo di un&#x27;applicazione o di un sistema software</mark>, che prevede la <mark class="highlight-orange_background">definizione dei requisiti</mark>, l&#x27;<mark class="highlight-orange_background">analisi</mark>, la <mark class="highlight-orange_background">progettazione</mark>, l&#x27;<mark class="highlight-orange_background">implementazione</mark>, il <mark class="highlight-orange_background">testing</mark> e la <mark class="highlight-orange_background">manutenzione</mark> del software. </p><p id="793cf990-3627-4468-8a23-9eda6ea9fd3f" class="">Ecco un <mark class="highlight-orange_background">esempio</mark> di un semplice applicativo lato client che effettua chiamate ad un server che ha un web services REST:<div class="indented"><p id="c62ff2e8-2d9f-41cd-be2c-accc02edf141" class="">Immaginiamo di voler sviluppare un&#x27;applicazione per la gestione di un elenco contatti. Il nostro sistema dovrebbe consentire all&#x27;utente di aggiungere, eliminare e modificare i contatti. Inoltre, dovrebbe essere possibile visualizzare l&#x27;elenco completo dei contatti o cercare un contatto specifico.</p><p id="eda16ab6-0a35-4d0d-9df4-afbbaeb9da10" class="">Il nostro applicativo sarà composto da due parti: un <mark class="highlight-orange_background">client</mark>, ovvero l&#x27;interfaccia utente, e un <mark class="highlight-orange_background">server</mark>, che conterrà i dati e gestirà le richieste del client.</p><p id="b1751937-38ca-48d0-b8e0-0fee7114b8bf" class="">Il client sarà scritto in un linguaggio di programmazione lato client, come JavaScript, e utilizzando HTML e CSS per la presentazione grafica. Il client dovrà essere in grado di gestire l&#x27;input dell&#x27;utente, controllando che siano rispettati i criteri di validità tramite espressioni regolari, e di <mark class="highlight-orange_background">trasmettere i dati</mark> al server <mark class="highlight-orange_background">tramite chiamate API REST</mark>.</p><p id="ad10333c-ea37-41cb-b2bc-04010cd7a489" class="">Le chiamate API REST sono richieste HTTP che permettono al client di interagire con il server e di scambiare informazioni con esso. Nel nostro esempio, il client dovrà utilizzare i metodi HTTP GET, POST, PUT e DELETE per gestire le richieste al server.</p><ul id="72f21808-11cc-4b71-9f90-87eb9d9e1cd9" class="bulleted-list"><li style="list-style-type:disc">Il metodo <mark class="highlight-orange_background">GET</mark> viene utilizzato per recuperare dati dal server, ad esempio l&#x27;elenco completo dei contatti o i dettagli di un singolo contatto.</li></ul><ul id="807299e3-daeb-469a-a6c1-2aa988fe9e71" class="bulleted-list"><li style="list-style-type:disc">Il metodo <mark class="highlight-orange_background">POST</mark> viene utilizzato per inviare dati al server, ad esempio quando l&#x27;utente aggiunge un nuovo contatto.</li></ul><ul id="5159e2d9-a401-4a02-96a6-d24d70d3dbd4" class="bulleted-list"><li style="list-style-type:disc">Il metodo <mark class="highlight-orange_background">PUT</mark> viene utilizzato per aggiornare i dati sul server, ad esempio quando l&#x27;utente modifica i dettagli di un contatto esistente.</li></ul><ul id="81032968-867e-4504-86ec-0ea378ece3ad" class="bulleted-list"><li style="list-style-type:disc">Il metodo <mark class="highlight-orange_background">DELETE</mark> viene utilizzato per eliminare i dati dal server, ad esempio quando l&#x27;utente cancella un contatto.</li></ul><p id="2ca92489-262d-46d7-b4e8-fa4083905694" class="">Il server sarà scritto in un linguaggio di programmazione lato server, come PHP o Python, e utilizzerà un database per gestire i dati dei contatti. Il server dovrà essere in grado di ricevere le richieste del client, elaborarle e rispondere con i dati richiesti. Inoltre, dovrà gestire eventuali errori e rispondere con un codice di stato HTTP appropriato.</p><p id="ad43f01d-cce8-4e20-9200-c5decac6f983" class="">Il server dovrà inoltre implementare un&#x27;<mark class="highlight-orange_background">API REST</mark>, ovvero un insieme di endpoint che il client potrà utilizzare per interagire con il sistema. Ad esempio, il server potrà fornire un endpoint per l&#x27;elenco completo dei contatti, un endpoint per recuperare i dettagli di un singolo contatto, un endpoint per aggiungere un nuovo contatto, un endpoint per modificare i dettagli di un contatto esistente e un endpoint per eliminare un contatto.</p><p id="60f0feed-71bf-4174-8083-1de208bb181d" class="">Il server dovrà anche <mark class="highlight-orange_background">decidere il formato in cui restituire i dati al client</mark>. Un formato comune è <mark class="highlight-orange_background">JSON</mark> (JavaScript Object Notation), un formato di dati leggero e facile da leggere che può essere facilmente interpretato da qualsiasi linguaggio di programmazione. Tuttavia, in alcuni casi, può essere necessario utilizzare anche altri formati, come <mark class="highlight-orange_background">XML</mark>.</p><p id="1671f938-c1cd-41de-8626-7689ae881b61" class="">Infine, il client dovrà essere in grado di <mark class="highlight-orange_background">elaborare la risposta ricevuta dal server</mark> e di presentare i dati all&#x27;utente in modo chiaro e intuitivo. In caso di errori, il client dovrà essere in grado di gestirli e di informare l&#x27;utente in modo appropriato.</p></div></p><p id="9b2f3626-0537-4873-b8ef-dd40d6434c16" class="">In sintesi, la progettazione di un applicativo lato client che utilizza un web services REST prevede la definizione dei requisiti, l&#x27;analisi, la progettazione, l&#x27;implementazione e il testing sia del client che del server. È importante definire correttamente le chiamate API REST e i metodi HTTP da utilizzare, scegliere il formato dei dati e gestire eventuali errori.</p><p id="077fa0b9-a607-466b-a449-2f17d7876c9f" class="">Ecco un esempio di codice di un semplice applicativo lato client che effettua chiamate ad un server che ha un web service REST:</p><pre id="c30ea393-9847-4bf0-b9d5-ceb6f08314f6" class="code code-wrap"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Applicativo Client REST&lt;/title&gt;
+  &lt;script&gt;
+    function effettuaChiamata() {
+      // Ottenere i valori dei parametri dall&#x27;utente
+      var nome = document.getElementById(&quot;nome&quot;).value;
+      var email = document.getElementById(&quot;email&quot;).value;
+
+      // Validare i parametri con espressioni regolari
+      var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regexEmail.test(email)) {
+        alert(&quot;Inserire un indirizzo email valido&quot;);
+        return;
+      }
+
+      // Effettuare la chiamata REST al server utilizzando il metodo POST
+      var url = &quot;https://mioserver.com/api/utenti&quot;;
+      var params = {
+        nome: nome,
+        email: email
+      };
+      fetch(url, {
+        method: &quot;POST&quot;,
+        body: JSON.stringify(params),
+        headers: {
+          &quot;Content-Type&quot;: &quot;application/json&quot;
+        }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(&quot;Errore nella chiamata al server&quot;);
+        }
+      })
+      .then(function(data) {
+        // Elaborare la risposta del server
+        var idUtente = data.id;
+        var messaggio = &quot;L&#x27;utente &quot; + nome + &quot; è stato creato con successo con l&#x27;ID &quot; + idUtente;
+        alert(messaggio);
+      })
+      .catch(function(error) {
+        // Gestire eventuali errori
+        alert(error.message);
+      });
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Creazione di un nuovo utente&lt;/h1&gt;
+  &lt;label&gt;Nome:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;nome&quot;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;email&quot;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;button onclick=&quot;effettuaChiamata()&quot;&gt;Crea utente&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="1b5aa023-ca2b-41c8-b784-8019d795b86f" class="">In questo esempio, <mark class="highlight-red_background">l&#x27;applicativo client HTML consente all&#x27;utente di inserire il nome e l&#x27;indirizzo email di un nuovo utente e di inviarli al server utilizzando una chiamata REST con il metodo POST</mark>. Prima di effettuare la chiamata, l&#x27;applicativo controlla che l&#x27;indirizzo email inserito sia valido utilizzando un&#x27;espressione regolare.</p><p id="42b77da1-a5a1-4f59-860d-392fb281d149" class="">Il <mark class="highlight-red_background">parametro JSON contenente il nome e l&#x27;indirizzo email dell&#x27;utente viene inviato al server nel corpo della richiesta POST</mark> con l&#x27;header Content-Type impostato su application/json.</p><p id="37a56ff1-5062-4e57-9e34-fa666b038692" class="">Il <mark class="highlight-red_background">server REST riceve la richiesta POST dal client e crea un nuovo record nella tabella Utenti del database</mark>, utilizzando i parametri ricevuti dal client. Il server restituisce poi una risposta al client, contenente l&#x27;ID del nuovo utente creato. <mark class="highlight-red_background">La risposta viene inviata in formato JSON</mark>.</p><p id="c0bbf04e-3959-4e83-ad46-5d7d092ecefa" class="">Il <mark class="highlight-red_background">client riceve la risposta dal server e la elabora</mark>, estraendo l&#x27;ID dell&#x27;utente creato e mostrando un messaggio di conferma all&#x27;utente. Se si verifica un errore durante la chiamata REST, il client gestisce l&#x27;errore mostrando un messaggio</p><pre id="b2fb25a2-faf8-45fd-9392-673861f4b1df" class="code code-wrap"><code>using System;
+using System.Net;
+using System.Web.Script.Serialization;
+
+public class Utente {
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public string Email { get; set; }
+}
+
+public class Server {
+    private static int idUtente = 1; // variabile per tenere traccia dell&#x27;ID dell&#x27;utente
+
+    public static void Main(string[] args) {
+        // Configurare il server REST per ascoltare le richieste POST sulla URL /api/utenti
+        HttpListener listener = new HttpListener();
+        listener.Prefixes.Add(&quot;http://mioserver.com:8080/api/utenti/&quot;);
+        listener.Start();
+        Console.WriteLine(&quot;Server in ascolto su http://mioserver.com:8080/api/utenti/&quot;);
+
+        // Gestire le richieste POST
+        while (true) {
+            HttpListenerContext context = listener.GetContext();
+            if (context.Request.HttpMethod == &quot;POST&quot;) {
+                // Leggere i parametri JSON dalla richiesta POST
+                var serializer = new JavaScriptSerializer();
+                var body = context.Request.InputStream;
+                var encoding = context.Request.ContentEncoding;
+                var reader = new System.IO.StreamReader(body, encoding);
+                var requestBody = reader.ReadToEnd();
+                var parametri = serializer.Deserialize&lt;Utente&gt;(requestBody);
+
+                // Creare un nuovo utente con i parametri ricevuti dal client
+                Utente nuovoUtente = new Utente {
+                    Id = idUtente,
+                    Nome = parametri.Nome,
+                    Email = parametri.Email
+                };
+                idUtente++;
+
+                // Inserire il nuovo utente nel database
+                InserisciUtenteNelDatabase(nuovoUtente);
+
+                // Restituire l&#x27;ID del nuovo utente creato al client
+                var response = context.Response;
+                response.ContentType = &quot;application/json&quot;;
+                response.StatusCode = (int) HttpStatusCode.OK;
+                var responseBody = new JavaScriptSerializer().Serialize(new { id = nuovoUtente.Id });
+                var buffer = System.Text.Encoding.UTF8.GetBytes(responseBody);
+                response.ContentLength64 = buffer.Length;
+                var output = response.OutputStream;
+                output.Write(buffer, 0, buffer.Length);
+                output.Close();
+            }
+        }
+    }
+
+    private static void InserisciUtenteNelDatabase(Utente utente) {
+        // Connessione al database
+        string connectionString = &quot;server=miodatabase.com;database=miodatabase;uid=user;pwd=password;&quot;;
+        using (MySqlConnection conn = new MySqlConnection(connectionString)) {
+            conn.Open();
+
+            // Inserimento del nuovo utente nella tabella Utenti
+            MySqlCommand command = new MySqlCommand(&quot;INSERT INTO Utenti (Id, Nome, Email) VALUES (@Id, @Nome, @Email)&quot;, conn);
+            command.Parameters.AddWithValue(&quot;@Id&quot;, utente.Id);
+            command.Parameters.AddWithValue(&quot;@Nome&quot;, utente.Nome);
+            command.Parameters.AddWithValue(&quot;@Email&quot;, utente.Email);
+            command.ExecuteNonQuery();
+        }
+    }
+}</code></pre><p id="ad9ac7b0-994c-445e-a931-8ec586589648" class="">In questo esempio, il server REST è configurato per ascoltare le richieste POST sulla URL <a href="http://mioserver.com:8080/api/utenti/"><strong>http://mioserver.com:8080/api/utenti/</strong></a>.</p><p id="23539c3a-f0b2-40c3-be4b-b4f71fef895b" class="">Quindi, <mark class="highlight-red_background">il server restituisce l&#x27;ID del nuovo utente creato al client in formato JSON</mark>. Il client può quindi utilizzare questo ID per effettuare altre richieste al server per recuperare o aggiornare le informazioni sull&#x27;utente.</p><p id="c908c30a-39a0-4f9b-9fe4-dd32bb679f83" class=""><mark class="highlight-red_background">Nel codice del server, la gestione della richiesta POST avviene nel ciclo while, che ascolta continuamente le richieste HTTP in arrivo tramite la classe HttpListener</mark>. <mark class="highlight-red_background">Quando viene rilevata una richiesta POST, il server legge i parametri JSON dal corpo della richiesta</mark>, li deserializza in un oggetto Utente e lo inserisce nel database chiamando il metodo InserisciUtenteNelDatabase. Infine, <mark class="highlight-red_background">il server restituisce un oggetto JSON contenente l&#x27;ID del nuovo utente creato al client</mark>.</p><p id="433f0b31-6450-4524-ba33-247ee0959152" class="">Il codice utilizza il driver MySQL Connector/NET per effettuare la connessione al database MySQL e interagire con esso. Per la gestione delle richieste HTTP, viene utilizzata la classe HttpListener di .NET.</p><h1 id="e8021b1d-1360-4813-9155-f60e16bada70" class=""><strong><mark class="highlight-red">Big Data</mark></strong></h1><p id="015c0d9b-f621-4f09-9618-039186fe9866" class="">Il termine &quot;Big Data&quot; si riferisce a un <mark class="highlight-orange_background">insieme di dati estremamente voluminoso</mark>, complesso e diversificato che richiede tecnologie e metodi specifici per essere raccolto, gestito e analizzato. Questi dati possono provenire da fonti diverse, come social network, sensori, transazioni finanziarie, dati di navigazione web, dati meteorologici, dati medici e molti altri.</p><p id="768e6693-12bb-4a4f-a422-faa52039f415" class="">I Big Data sono caratterizzati da tre V: <mark class="highlight-orange_background">Volume</mark>, <mark class="highlight-orange_background">Velocity</mark> e <mark class="highlight-orange_background">Variety</mark>. Il Volume si riferisce alla quantità enorme di dati che devono essere gestiti, spesso in petabyte o exabyte. La Velocity si riferisce alla velocità a cui i dati vengono generati, raccolti e analizzati, che richiede una capacità di elaborazione in tempo reale. La Variety si riferisce alla diversità dei dati, che possono essere strutturati, non strutturati o semi-strutturati.</p><p id="163d4e33-ad8e-48a6-bd2e-9333b810978b" class="">Per gestire i Big Data, sono necessarie tecnologie avanzate come Hadoop, Spark, NoSQL, Apache Cassandra e altre. Queste tecnologie consentono di distribuire i dati su cluster di server, elaborarli in parallelo e ottenere risultati rapidi e precisi.</p><p id="a5cf608e-6fa5-472a-8fb6-929be3c0e36e" class="">L&#x27;analisi dei Big Data ha una grande importanza in diversi campi, come il marketing, la finanza, la medicina, la sicurezza e molti altri, e consente di identificare trend, anomalie, pattern e relazioni tra i dati, che possono essere utilizzati per prendere decisioni strategiche e per migliorare i processi aziendali.</p><h2 id="d92367f0-e6fc-45a4-8bfc-c081dc7bca23" class=""><mark class="highlight-red"><strong>Analisi dei dati con MS Excel pivot table e MS Power BI</strong></mark></h2><p id="ed4f98a4-eee3-412e-801c-afdce087e2ba" class="">Sia MS Excel pivot table che MS Power BI sono strumenti software utilizzati per analizzare grandi quantità di dati in modo efficiente e intuitivo.</p><ul id="6ea10411-d5de-4f54-abca-a8be50b4355f" class="bulleted-list"><li style="list-style-type:disc">Le <mark class="highlight-orange_background">pivot table di Excel</mark> sono <mark class="highlight-orange_background">tabelle dinamiche</mark> che permettono di riepilogare e aggregare grandi quantità di dati in modo rapido e semplice. Con una pivot table, è possibile visualizzare i dati in diversi modi, come ad esempio totali, media, conteggi, percentuali e altro ancora, a seconda delle esigenze dell&#x27;analisi.<p id="d3145020-c3ce-4516-84a0-44e37b41bac0" class="">Per creare una pivot table in Excel, è necessario selezionare il set di dati di origine e definire le righe, le colonne e i valori della tabella pivot. Una volta creata la tabella pivot, è possibile filtrare e raggruppare i dati in modo da ottenere informazioni utili.</p></li></ul><ul id="8fffdc7e-3ab9-45bd-a4e6-a69dd43f8696" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">MS Power BI</mark>, d&#x27;altra parte, è una piattaforma di business intelligence che permette di analizzare e visualizzare grandi quantità di dati da diverse fonti. Power BI consente di creare <mark class="highlight-orange_background">dashboard e report interattivi</mark> e personalizzati, utilizzando un&#x27;interfaccia intuitiva e facile da usare.<p id="6b04d40c-969f-480d-86ca-5a399263e0f5" class="">Per creare un report in Power BI, è necessario connettersi alle diverse fonti di dati, come ad esempio file Excel, database, servizi cloud e altro ancora. Una volta connesse le fonti dati, è possibile creare diverse visualizzazioni, come grafici, tabelle, mappe e altro ancora. Infine, è possibile creare un dashboard che aggrega e visualizza le diverse visualizzazioni in modo intuitivo e interattivo.</p></li></ul><p id="5ec1c2af-9f83-4a70-b94a-630014b4343c" class="">In entrambi i casi, sia Excel pivot table che Power BI permettono di analizzare grandi quantità di dati in modo efficace, fornendo una panoramica completa dei dati e delle informazioni utili per prendere decisioni informate.</p><div id="79206c42-6103-4027-b82e-868c72266cf8" class="column-list"><div id="d8ee28b2-30e9-4bf7-8ef7-695f542f60df" style="width:43.75%" class="column"><figure id="85802ca2-a644-4e4e-a5f4-88e28cb9c2a4" class="image"><a href="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%203.png"><img style="width:720px" src="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%203.png"/></a></figure></div><div id="9c0d0131-f124-49ec-9417-5d0a76b49a36" style="width:56.25%" class="column"><figure id="ccee1cf6-60a7-4d21-bdd1-f9f945d29e7c" class="image"><a href="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%204.png"><img style="width:768px" src="APPUNTI%20INFORMATICA%20(PIETRO%20VACCARI)%20526c7fd6511c44e192b605189255ea8c/Untitled%204.png"/></a></figure></div></div><p id="65fb409f-672e-49fb-af36-b9bb1bd2f40b" class="">
+</p></div></article></body></html>

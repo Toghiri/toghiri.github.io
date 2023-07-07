@@ -1,0 +1,992 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C#</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cd303f11-db0c-434e-812e-63cceb5358e2" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💻</span></div><h1 class="page-title">C#</h1><p class="page-description"></p></header><div class="page-body"><p id="be7d93d7-5fdd-4ce5-83c4-e1af250c27ac" class="">
+</p><nav id="c856ee60-f116-440c-b1ff-363ea5a714a5" class="block-color-red table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2e05dd16-0b3a-4bfc-8e2a-f0b640ea753b"><strong>TEORIA DI BASE</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ed6a0d24-993f-4827-819f-011013cc80be"><strong>ARRAY</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e00937a7-c5e9-4190-9091-207a9a045fed"><strong>LISTE</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cf372290-7b7d-4142-8e31-e3eda993df3b"><strong>CLASSI E OGGETTI</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6017d5c5-6cb8-4d21-8fe7-efec3545318a"><strong>ACCESSIBILITA’ DELLE CLASSI</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fc7d1fee-371e-4bd7-b629-8c414a4e295b"><strong>METODI</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6ca93d16-67e3-4f62-84b8-265ba747a11a"><strong>COSTRUTTORI</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e614b74c-0832-49c5-af41-18115ee1c2b2"><strong>ESEMPIO CALCOLATORE</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e3d5595b-b0c8-4355-aed4-df8e5bb463ac"><strong>ALGORITMI COMUNEMENTE USATI NELLA PROGRAMMAZIONE:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d759712a-627a-4777-bce9-b64c198197fd"><mark class="highlight-red"><strong>Algoritmo di ordinamento a bolle (Bubble Sort)</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d0e72a41-4521-47e4-8319-a7c68cf16c55"><mark class="highlight-red"><strong>Algoritmo di ordinamento per inserimento (Insertion Sort)</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#595048c9-b644-4ff0-a894-60fcf005e51d"><mark class="highlight-red"><strong>Algoritmo di ordinamento per selezione (Selection Sort)</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ac8784af-bcd7-420b-a84f-b868d15a376a"><mark class="highlight-red"><strong>Algoritmo di ricerca binaria (Binary Search)</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4eaee83e-92b9-4339-bd04-ad91687ff18c"><mark class="highlight-red"><strong>Algoritmo di visita in ampiezza (Breadth-First Search)</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#267aaf7c-4e4e-41bd-b925-79aed9a883b9"><strong><mark class="highlight-red">Algoritmo di Monte Carlo</mark></strong></a></div></nav><h1 id="2e05dd16-0b3a-4bfc-8e2a-f0b640ea753b" class="block-color-red"><strong>TEORIA DI BASE</strong></h1><p id="6337e7d8-b766-41fe-af0e-a5df5ac13e60" class=""><strong><mark class="highlight-red">C#</mark></strong> (pronunciato &quot;C Sharp&quot;) è un <mark class="highlight-red_background">linguaggio di programmazione orientato agli oggetti</mark> sviluppato da Microsoft. È uno dei linguaggi di programmazione più utilizzati al mondo e viene spesso utilizzato per lo <mark class="highlight-red_background">sviluppo di applicazioni desktop, applicazioni Web e giochi</mark>.</p><p id="25443250-0c51-40b0-a20d-8a8559752415" class="">Ecco una breve panoramica su come programmare in C#:</p><ol type="1" id="d665a130-634f-452e-bd4d-9f4c6fcddf67" class="numbered-list" start="1"><li>Installare un <mark class="highlight-red_background">ambiente di sviluppo integrato (IDE)</mark> come <mark class="highlight-red_background">Visual Studio</mark>. Questo IDE fornisce un&#x27;interfaccia grafica utile per scrivere, compilare, eseguire e debuggare codice C#.</li></ol><ol type="1" id="6d668f93-7302-4cd4-bfe8-b999fee6acb1" class="numbered-list" start="2"><li>Creare un <mark class="highlight-red_background">nuovo progetto</mark> e scegliere il tipo di applicazione da sviluppare, ad esempio un&#x27;applicazione desktop o una Web application.</li></ol><ol type="1" id="3b82904c-eb83-40ec-832d-15ca26b5151b" class="numbered-list" start="3"><li>Scrivere il codice C# nel file del progetto, usando un editor di codice integrato nell&#x27;IDE. C# è un linguaggio di programmazione orientato agli oggetti, quindi <mark class="highlight-red_background">il codice sarà organizzato in </mark><span style="border-bottom:0.05em solid"><mark class="highlight-red_background">classi</mark></span><mark class="highlight-red_background">, metodi e proprietà</mark>.</li></ol><ol type="1" id="73a66845-caa9-47de-a988-1398b9d8db52" class="numbered-list" start="4"><li><mark class="highlight-red_background">Compilare il codice</mark>. L&#x27;IDE compila il codice sorgente in un file eseguibile o in una libreria di classi.</li></ol><ol type="1" id="b2cb80a6-3152-4313-8207-4435fdbb0999" class="numbered-list" start="5"><li><mark class="highlight-red_background">Eseguire il programma</mark>. L&#x27;IDE può eseguire il programma in modalità di debug o in modalità release.</li></ol><ol type="1" id="71aad1a9-b42d-44cd-8a59-42fa647f9a44" class="numbered-list" start="6"><li><mark class="highlight-red_background">Debuggare il programma</mark>. Se si verificano errori durante l&#x27;esecuzione del programma, l&#x27;IDE fornisce strumenti di debug per individuare e risolvere i problemi.</li></ol><p id="d756482d-e626-4911-b1a6-7c50ac34d04e" class="">Ecco un esempio di codice C# che mostra come stampare un messaggio sulla console:</p><pre id="81aeadc5-8da6-4a27-bbd0-f339dd28dbe1" class="code code-wrap"><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine(&quot;Ciao, mondo!&quot;);
+    }
+}</code></pre><p id="e2542a7d-3d5d-4576-86b8-c78358cf01fa" class="">In questo esempio, il codice utilizza il <mark class="highlight-red_background">namespace</mark> <code><strong>System</strong></code> per <mark class="highlight-red_background">accedere alla classe</mark> <code><strong>Console</strong></code>. La classe <code><strong>Console</strong></code> ha un metodo <code><strong>WriteLine</strong></code> che consente di scrivere un messaggio sulla console.</p><p id="67192889-3b2c-416c-9f99-78a02dbcb8e0" class="">
+</p><p id="17c9eed3-1380-4ba9-a70b-a0b0c71e0037" class="">Ecco un esempio di codice C# che <mark class="highlight-red_background">utilizza variabili</mark> per eseguire un <mark class="highlight-red_background">calcolo e visualizzare il risultato sulla console</mark>:</p><pre id="04a93aa3-b11d-449a-8171-cc24e9bbe816" class="code code-wrap"><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        // dichiarazione delle variabili
+        int numero1, numero2, risultato;
+
+        // richiesta dell&#x27;input all&#x27;utente
+        Console.WriteLine(&quot;Inserisci il primo numero:&quot;);
+        numero1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(&quot;Inserisci il secondo numero:&quot;);
+        numero2 = Convert.ToInt32(Console.ReadLine());
+
+        // calcolo del risultato
+        risultato = numero1 + numero2;
+
+        // visualizzazione del risultato sulla console
+        Console.WriteLine(&quot;Il risultato della somma di {0} e {1} è {2}&quot;, numero1, numero2, risultato);
+
+        // attesa dell&#x27;input da parte dell&#x27;utente per chiudere la console
+        Console.WriteLine(&quot;Premi un tasto per uscire...&quot;);
+        Console.ReadKey();
+    }
+}</code></pre><p id="7a445c37-101c-4269-b669-c944e7876050" class="">In questo esempio, abbiamo <mark class="highlight-red_background">dichiarato tre variabili</mark>: <code><strong>numero1</strong></code>, <code><strong>numero2</strong></code> e <code><strong>risultato</strong></code>. Abbiamo poi richiesto all&#x27;utente di <mark class="highlight-red_background">inserire</mark> due numeri utilizzando la <mark class="highlight-red_background">classe</mark> <code><strong>Console</strong></code> e il <mark class="highlight-red_background">metodo</mark> <code><strong>ReadLine()</strong></code>, che restituisce una stringa. Abbiamo quindi utilizzato il metodo <code><strong>Convert.ToInt32()</strong></code> per convertire le stringhe inserite dall&#x27;utente in numeri interi e assegnarli alle variabili <code><strong>numero1</strong></code> e <code><strong>numero2</strong></code>.</p><p id="9e74d1bc-0056-4f5c-9a19-55f35f24c137" class="">Successivamente, abbiamo eseguito il calcolo della somma dei due numeri inseriti dall&#x27;utente e <mark class="highlight-red_background">assegnato il risultato alla variabile</mark> <code><strong>risultato</strong></code>. Infine, abbiamo utilizzato il metodo <code><strong>Console.WriteLine()</strong></code> per <mark class="highlight-red_background">visualizzare il risultato sulla console</mark>.</p><p id="9f2f2fda-35e1-43c1-837f-bd62b6c7e34f" class="">Infine, abbiamo utilizzato il metodo <code><strong>Console.ReadKey()</strong></code> per <mark class="highlight-red_background">attendere l&#x27;input da parte dell&#x27;utente prima di chiudere la console</mark>.</p><h1 id="ed6a0d24-993f-4827-819f-011013cc80be" class="block-color-red"><strong>ARRAY</strong></h1><p id="05f141a5-bfc6-4b96-ac49-7d3c77f2be74" class="">In C#, gli <mark class="highlight-red">array </mark>sono un <mark class="highlight-red_background">tipo di dato che consente di memorizzare una serie di elementi dello stesso tipo, raggruppati in un unico blocco di memoria</mark>. Gli <mark class="highlight-red_background">elementi</mark> all&#x27;interno dell&#x27;array sono <mark class="highlight-red_background">numerati e accessibili tramite un indice</mark>, che può essere utilizzato per leggere o scrivere il valore dell&#x27;elemento corrispondente.</p><p id="717fb723-4305-45c5-a207-2b8db61274f1" class="">Per dichiarare un array in C#, si utilizza la seguente sintassi:</p><pre id="85f5270a-fc30-41a8-97ca-995c68d806d1" class="code code-wrap"><code>tipo[] nomeArray = new tipo[dimensione];</code></pre><p id="1e36e2fd-eeef-4574-9cf1-6f0de89874dc" class="">dove <code><strong>tipo</strong></code> rappresenta il <mark class="highlight-red_background">tipo di dato degli elementi</mark> dell&#x27;array, <code><strong>nomeArray</strong></code> è il <mark class="highlight-red_background">nome scelto per l&#x27;array</mark> e <code><strong>dimensione</strong></code> è il <mark class="highlight-red_background">numero di elementi</mark> che l&#x27;array deve contenere.</p><p id="cd1ef943-b4da-4513-9146-361a0a0b8162" class="">Ad esempio, per dichiarare un array di interi <mark class="highlight-red_background">di dimensione 5</mark>, si può utilizzare il seguente codice:</p><pre id="30fa1b88-4849-492d-b75c-793d2f721dcf" class="code code-wrap"><code>int[] numeri = new int[5];</code></pre><p id="7e95f83c-d808-4c41-b5f8-2dd72e0c461c" class="">Per <mark class="highlight-red_background">accedere ad un elemento dell&#x27;array</mark>, si utilizza la sintassi <code><strong>nomeArray[indice]</strong></code>, dove <code><strong>indice</strong></code> rappresenta <mark class="highlight-red_background">la posizione dell&#x27;elemento all&#x27;interno dell&#x27;array</mark>. Ad esempio, per assegnare il valore 10 al primo elemento dell&#x27;array <code><strong>numeri</strong></code>, si può utilizzare il seguente codice:</p><pre id="b1a147a7-5482-427b-9c1f-cdd92c04efa3" class="code code-wrap"><code>numeri[0] = 10;</code></pre><p id="f20ed95b-daff-432e-b972-5dc4b1bc267a" class="">È anche possibile <mark class="highlight-red_background">inizializzare un array durante la sua dichiarazione</mark>, <mark class="highlight-red_background">specificando i valori degli elementi tra parentesi graffe, separati da virgola</mark>. Ad esempio, per creare un array di interi con i valori 1, 2, 3, 4 e 5, si può utilizzare il seguente codice:</p><pre id="a4f7a914-f443-4cc6-804c-100bac8838f8" class="code code-wrap"><code>int[] numeri = new int[] {1, 2, 3, 4, 5};</code></pre><p id="c45161bd-d24f-443b-a163-2b0222993504" class="">Gli array possono anche essere <mark class="highlight-red_background">multidimensionali, ossia composti da più di una dimensione</mark>. Ad esempio, un array bidimensionale può essere dichiarato nel seguente modo:</p><pre id="0b5a4b70-2281-4eb0-89ff-4ddcce6dfebc" class="code code-wrap"><code>tipo[,] nomeArray = new tipo[dimensione1, dimensione2];</code></pre><p id="5ef001c8-02a6-4564-8df0-b5f05d634cb9" class="">dove <code><strong>dimensione1</strong></code> e <code><strong>dimensione2</strong></code> rappresentano le dimensioni dell&#x27;array.</p><p id="a1203271-0fbe-46e3-8987-942bb2a8b1aa" class="">Per accedere ad un elemento di un array multidimensionale, si utilizza la sintassi <code><strong>nomeArray[indice1, indice2]</strong></code>.</p><p id="f47989b9-706a-41bf-95b2-330500caa6bf" class="">In C# esiste anche un tipo di dato chiamato <code><strong>List</strong></code>, che <mark class="highlight-red_background">è simile ad un array ma consente di aggiungere e rimuovere elementi in modo dinamico</mark>, senza dover specificare la dimensione dell&#x27;array in anticipo. Le <code><strong>List</strong></code> sono implementate come array ridimensionabili internamente, quindi possono essere utilizzate in modo molto simile agli array.</p><h1 id="e00937a7-c5e9-4190-9091-207a9a045fed" class="block-color-red"><strong>LISTE</strong></h1><p id="735a5f60-8c41-4863-8196-2d9b1cf8d2f7" class="">In C#, le <code><strong>List</strong></code> sono una <mark class="highlight-red_background">struttura dati che rappresenta una sequenza di elementi ordinati</mark>. Sono molto utili per gestire <mark class="highlight-red_background">insiemi di dati dinamici che possono espandersi o contrarsi durante l&#x27;esecuzione del programma</mark>.</p><p id="6263b261-eec4-4730-8459-1429bd946170" class="">Ecco un esempio di come utilizzare le <code><strong>List</strong></code> in C#:</p><pre id="c050444b-074b-4364-9b38-0b119e62f16d" class="code code-wrap"><code>using System;
+using System.Collections.Generic;
+
+namespace ListExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creazione di una lista di stringhe
+            List&lt;string&gt; shoppingList = new List&lt;string&gt;();
+
+            // Aggiunta di elementi alla lista
+            shoppingList.Add(&quot;Milk&quot;);
+            shoppingList.Add(&quot;Bread&quot;);
+            shoppingList.Add(&quot;Eggs&quot;);
+            shoppingList.Add(&quot;Cheese&quot;);
+
+            // Stampa del numero di elementi nella lista
+            Console.WriteLine(&quot;Number of items in shopping list: &quot; + shoppingList.Count);
+
+            // Stampa di tutti gli elementi della lista
+            Console.WriteLine(&quot;Shopping list items:&quot;);
+            foreach (string item in shoppingList)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Rimozione di un elemento dalla lista
+            shoppingList.Remove(&quot;Bread&quot;);
+
+            // Stampa del numero di elementi nella lista dopo la rimozione
+            Console.WriteLine(&quot;Number of items in shopping list after removal: &quot; + shoppingList.Count);
+        }
+    }
+}</code></pre><p id="8f636579-516e-4661-a833-24d78d094ceb" class="">In questo esempio, viene <mark class="highlight-red_background">creata una lista di stringhe</mark> <code><strong>shoppingList</strong></code> e vengono <mark class="highlight-red_background">aggiunti alcuni elementi</mark> alla lista. Viene poi <mark class="highlight-red_background">stampato il numero di elementi nella lista</mark> utilizzando la proprietà <code><strong>Count</strong></code>, <mark class="highlight-red_background">seguito dall&#x27;elenco di tutti gli elementi</mark> utilizzando un ciclo <code><strong>foreach</strong></code>. Infine, viene <mark class="highlight-red_background">rimosso un elemento dalla lista</mark> utilizzando il metodo <code><strong>Remove</strong></code> e viene <mark class="highlight-red_background">nuovamente stampato il numero di elementi nella lista</mark>.</p><p id="25870fe1-1bb0-4d56-ab26-74ba1a242686" class="">Le <code><strong>List</strong></code> sono disponibili anche per <mark class="highlight-red_background">altri tipi di dati, come</mark> <code><strong>int</strong></code>, <code><strong>double</strong></code>, <code><strong>bool</strong></code>, ecc. Ecco un esempio di come creare una lista di interi:</p><pre id="7184fa0d-39eb-4aff-98bf-9094a3e3b538" class="code code-wrap"><code>List&lt;int&gt; numbers = new List&lt;int&gt;();
+numbers.Add(1);
+numbers.Add(2);
+numbers.Add(3);</code></pre><p id="6dc7bbb8-4995-46e2-9c05-a90275bba708" class="">In questo esempio, viene creata una lista di interi <code><strong>numbers</strong></code> e vengono aggiunti alcuni elementi alla lista utilizzando il metodo <code><strong>Add</strong></code>.</p><h1 id="cf372290-7b7d-4142-8e31-e3eda993df3b" class="block-color-red"><strong>CLASSI E OGGETTI</strong></h1><p id="b5e0ddac-7bdd-4cb4-b649-92c4d2d41005" class="">In C#, una <strong><mark class="highlight-red">classe</mark></strong><strong> </strong>rappresenta un <mark class="highlight-red_background">modello o un prototipo per la creazione di oggetti</mark>. In altre parole, una classe <mark class="highlight-red_background">è un insieme di dati e metodi che descrivono un tipo di oggetto</mark>.</p><p id="5d5a2161-8f38-4af2-b438-b20b21510a36" class="">Ad esempio, se si vuole creare un&#x27;applicazione che gestisce i dati degli utenti, si può definire una classe &quot;Utente&quot; che contiene i dati degli utenti come nome, cognome, indirizzo email, password, ecc. e i metodi associati come la registrazione, il login, la modifica dei dati dell&#x27;account, ecc.</p><p id="846d586d-3592-43b2-9400-595f23e33b77" class=""><mark class="highlight-red_background">Quando una classe viene istanziata</mark>, si <mark class="highlight-red_background">crea</mark> un <strong><mark class="highlight-red">oggetto</mark></strong><strong> </strong>che <mark class="highlight-red_background">corrisponde alla classe</mark> e che contiene le sue proprietà e i suoi metodi. Ad esempio,<mark class="highlight-red_background"> se si istanzia la classe &quot;Utente&quot;, si crea un oggetto &quot;Utente&quot; con i dati e i metodi associati</mark>.</p><p id="c0b2f77c-79ed-4d17-b879-21330bc93cb7" class="">Ecco un esempio di una classe &quot;Utente&quot; in C#:</p><pre id="c9e6300b-a6c5-4cdb-b663-319e41598317" class="code code-wrap"><code>public class Utente {
+   // proprietà
+   public string Nome { get; set; }
+   public string Cognome { get; set; }
+   public string Email { get; set; }
+   public string Password { get; set; }
+
+   // metodi
+   public void Registra() {
+      // codice per la registrazione dell&#x27;utente
+   }
+
+   public void Accedi() {
+      // codice per il login dell&#x27;utente
+   }
+
+   public void ModificaDati() {
+      // codice per la modifica dei dati dell&#x27;utente
+   }
+}</code></pre><p id="b5c1dad6-b72c-4155-870b-8dbb17dcbad9" class="">Per <mark class="highlight-red_background">creare</mark> un <strong><mark class="highlight-red">oggetto</mark></strong><strong> </strong>&quot;Utente&quot; <mark class="highlight-red_background">a partire dalla classe sopra definita</mark>, si può utilizzare il seguente codice:</p><pre id="2e2a0772-70ac-4a4d-85eb-58764bd0b4d6" class="code code-wrap"><code>Utente utente1 = new Utente();
+utente1.Nome = &quot;Mario&quot;;
+utente1.Cognome = &quot;Rossi&quot;;
+utente1.Email = &quot;mario.rossi@example.com&quot;;
+utente1.Password = &quot;password123&quot;;
+utente1.Registra();</code></pre><p id="2122da30-3cc7-4548-8563-68aa0a9bba38" class="">In questo esempio,<mark class="highlight-red_background"> si crea un oggetto &quot;Utente&quot;</mark> chiamato &quot;utente1&quot; e si impostano i suoi dati con i valori specificati. Successivamente, si chiama il metodo &quot;Registra()&quot; dell&#x27;oggetto &quot;utente1&quot; per registrare l&#x27;utente nel sistema.</p><h1 id="6017d5c5-6cb8-4d21-8fe7-efec3545318a" class="block-color-red"><strong>ACCESSIBILITA’ DELLE CLASSI</strong></h1><p id="d8214b2f-6a3d-45c4-92c1-3a0278028f01" class="">In C#, <mark class="highlight-red_background">le classi possono avere diversi livelli di accessibilità</mark>. Questi livelli di accessibilità indicano <mark class="highlight-red_background">quali parti del codice possono accedere alla classe e ai suoi membri</mark>.</p><p id="753937da-32c7-4877-b6fb-6df7c28caad5" class="">Ecco le diverse tipologie di classe in C#:</p><ol type="1" id="bf899549-2722-4ce6-9fb3-5e001152a132" class="numbered-list" start="1"><li><strong><mark class="highlight-red">Public</mark></strong>: le classi pubbliche sono <mark class="highlight-red_background">accessibili da qualsiasi parte del codice</mark>, sia all&#x27;interno che all&#x27;esterno dell&#x27;assembly. <mark class="highlight-red_background">La maggior parte delle classi dovrebbe essere pubblica</mark>, in modo che possa essere utilizzata da altre parti del codice.<p id="e554dcea-13f5-4db4-96f3-c15a2beabedf" class="">Esempio di classe pubblica:</p><pre id="4afa47f1-d49f-4f95-8f59-8b9550b816b7" class="code code-wrap"><code>public class MiaClasse
+{
+    // Membri della classe
+}</code></pre></li></ol><ol type="1" id="963d1256-315f-46ac-ab7e-d7793ee423a5" class="numbered-list" start="2"><li><mark class="highlight-red"><strong>Private</strong></mark>: le classi private sono <mark class="highlight-red_background">accessibili solo all&#x27;interno dell&#x27;assembly in cui sono definite</mark>. Queste classi vengono <mark class="highlight-red_background">utilizzate per incapsulare la logica interna e nascondere i dettagli di implementazione alle parti esterne del codice</mark>.<p id="d5c3a025-452f-47b7-a9ca-5e040f5894db" class="">Esempio di classe privata:</p><pre id="dcc8acc0-5e58-4a65-a0b4-6e1f1b67fa53" class="code code-wrap"><code>private class MiaClasse
+{
+    // Membri della classe
+}</code></pre></li></ol><ol type="1" id="7896618a-817f-44ad-a8c2-4ac92db63742" class="numbered-list" start="3"><li><strong><mark class="highlight-red">Protected</mark></strong>: le classi protette sono <mark class="highlight-red_background">accessibili solo dalla classe stessa e dalle sue classi derivate</mark>. Questo livello di accessibilità <mark class="highlight-red_background">viene utilizzato soprattutto in contesti di ereditarietà</mark>, per creare <mark class="highlight-red_background">gerarchie di classi</mark> e permettere alle classi derivate di accedere ai membri protetti della classe base.<p id="cfcbebb1-8144-4c80-a2ca-01f61c5bbb8c" class="">Esempio di classe protetta:</p><pre id="5a0038e2-619e-4c74-b8d8-83d1f76976f5" class="code code-wrap"><code>protected class MiaClasse
+{
+    // Membri della classe
+}</code></pre></li></ol><ol type="1" id="53f1995c-20a1-4fd1-bba3-c8dae1acee9f" class="numbered-list" start="4"><li><strong><mark class="highlight-red">Internal</mark></strong>: le classi interne sono <mark class="highlight-red_background">accessibili solo all&#x27;interno dell&#x27;assembly in cui sono definite</mark>. Questo livello di accessibilità viene <mark class="highlight-red_background">utilizzato per incapsulare la logica interna e nascondere i dettagli di implementazione alle parti esterne del codice, ma consentendo l&#x27;accesso alle parti del codice all&#x27;interno dello stesso assembly</mark>.<p id="ee7f550d-d18a-4936-b906-ca2f3742a107" class="">Esempio di classe interna:</p><pre id="bf69d282-2c0d-4f38-bf7c-cf41114af499" class="code code-wrap"><code>internal class MiaClasse
+{
+    // Membri della classe
+}</code></pre></li></ol><ol type="1" id="dd86d8a8-3428-44b0-9e37-f96ea0526e91" class="numbered-list" start="5"><li><strong><mark class="highlight-red">Protected Internal</mark></strong>: le classi protette interne sono <mark class="highlight-red_background">accessibili all&#x27;interno dell&#x27;assembly in cui sono definite e dalle sue classi derivate</mark>. Questo livello di accessibilità viene <mark class="highlight-red_background">utilizzato soprattutto in contesti di ereditarietà e di incapsulamento di logiche interne</mark>.<p id="52926fdc-7bd0-4cda-a097-3f152f1ef551" class="">Esempio di classe protetta interna:</p><pre id="7d179c6c-5edf-4d19-adb7-5d2f17c64eb3" class="code code-wrap"><code>protected internal class MiaClasse
+{
+    // Membri della classe
+}</code></pre></li></ol><p id="e68ef654-8011-4b48-9bbc-cc5469702409" class="">In generale, <mark class="highlight-red_background">si consiglia di utilizzare il livello di accessibilità più restrittivo possibile per incapsulare la logica interna e garantire la sicurezza e la stabilità del codice</mark>.</p><h1 id="fc7d1fee-371e-4bd7-b629-8c414a4e295b" class="block-color-red"><strong>METODI</strong></h1><p id="19a95df5-e8c0-4c4a-ade0-6487f275f4f5" class="">In C#, un <strong><mark class="highlight-red">metodo</mark></strong><strong> </strong>è una <mark class="highlight-red_background">funzione definita all&#x27;interno di una classe che esegue un&#x27;operazione specifica</mark> e <mark class="highlight-red_background">può restituire un valore o essere di tipo &quot;void&quot;</mark>. Per creare un metodo in C#, si possono seguire i seguenti passaggi:</p><ol type="1" id="46f03dcd-7c12-425e-af98-9efa22c59d34" class="numbered-list" start="1"><li><mark class="highlight-red_background">Definire il nome del metodo e i suoi parametri</mark>: il nome del metodo dovrebbe descrivere l&#x27;operazione che il metodo esegue. I parametri sono opzionali e servono per passare dei valori al metodo.</li></ol><ol type="1" id="1928cac7-b459-4b31-b77c-06a8d23a1680" class="numbered-list" start="2"><li><mark class="highlight-red_background">Definire il tipo di valore restituito dal metodo</mark>: se il metodo restituisce un valore, è necessario specificare il tipo di valore restituito dal metodo. Se il metodo non restituisce nulla, si può usare la parola chiave &quot;void&quot;.</li></ol><ol type="1" id="82a8f908-8e6a-4d3c-bd0d-660821ddd5f7" class="numbered-list" start="3"><li><mark class="highlight-red_background">Implementare il codice del metodo</mark>: questo è il cuore del metodo, dove si scrive il codice che esegue l&#x27;operazione desiderata.</li></ol><p id="32758fd6-7e89-4f89-9331-c1a7d53ea2a3" class="">Ecco un esempio di come creare un metodo in C#:</p><pre id="18d4b95d-e6ce-48d3-9f99-08e6f2a59b58" class="code code-wrap"><code>public class Calcolatrice
+{
+    // Metodo che somma due numeri
+    public int Somma(int a, int b)
+    {
+        int risultato = a + b;
+        return risultato;
+    }
+}</code></pre><p id="449b9f2e-7ea3-4173-a4fc-fc08e3e35acd" class="">In questo esempio, abbiamo creato un <mark class="highlight-red_background">metodo chiamato &quot;Somma&quot;</mark> che prende due parametri di tipo &quot;<strong><code>int</code></strong>&quot; e <mark class="highlight-red_background">restituisce la somma dei due numeri passati come parametri</mark>. Il tipo di valore restituito dal metodo è &quot;<strong><code>int</code></strong>&quot;.</p><p id="a19bfce2-8b8c-409f-9f42-ec32c78e3081" class="">Per <mark class="highlight-red_background">utilizzare il metodo</mark>, dobbiamo <mark class="highlight-red_background">creare un&#x27;istanza della classe &quot;Calcolatrice&quot;</mark> e chiamare il metodo su quest&#x27;istanza:</p><pre id="062b80c9-9959-4af8-a4a6-7ce31c53124f" class="code code-wrap"><code>Calcolatrice calcolatrice = new Calcolatrice();
+int risultato = calcolatrice.Somma(3, 4); // risultato = 7</code></pre><p id="608b79a5-d039-4a08-8c4f-5f8da37e52a1" class="">In questo esempio, abbiamo <mark class="highlight-red_background">creato un&#x27;istanza della classe &quot;Calcolatrice&quot;</mark> con la riga di codice <code><strong>Calcolatrice calcolatrice = new Calcolatrice();</strong></code>. Poi abbiamo <mark class="highlight-red_background">chiamato il metodo &quot;Somma&quot;</mark> su quest&#x27;istanza con la riga di codice <code><strong>int risultato = calcolatrice.Somma(3, 4);</strong></code>, <mark class="highlight-red_background">passando due numeri come parametri</mark>. Il metodo &quot;Somma&quot; esegue l&#x27;operazione desiderata e <mark class="highlight-red_background">restituisce il risultato</mark>, che viene salvato nella variabile &quot;risultato&quot;.</p><h1 id="6ca93d16-67e3-4f62-84b8-265ba747a11a" class="block-color-red"><strong>COSTRUTTORI</strong></h1><p id="1b6198e7-abb9-439b-b555-38cfeef19f77" class="">In programmazione, un <strong><mark class="highlight-red">costruttore </mark></strong>è un <mark class="highlight-red_background">metodo speciale di una classe</mark> che viene <mark class="highlight-red_background">invocato automaticamente al momento della creazione di un&#x27;istanza della classe stessa</mark>. Il costruttore ha il compito di <mark class="highlight-red_background">inizializzare i campi dati dell&#x27;oggetto appena creato</mark>, in modo che siano pronti per l&#x27;utilizzo.</p><p id="93b40c62-c55f-4760-8303-a7856d2793de" class="">In C#, un costruttore ha lo <mark class="highlight-red_background">stesso nome della classe</mark> e può avere uno o più parametri. Un costruttore può essere creato in diverse forme a seconda delle esigenze della classe.</p><p id="15df753a-d248-4fc4-94e4-02cb5b908dbc" class="">Ecco un esempio di costruttore in C#:</p><pre id="e9cfb666-22b3-4230-ba64-3258565c4cfa" class="code code-wrap"><code>public class Persona
+{
+    public string Nome { get; set; }
+    public string Cognome { get; set; }
+    public int AnnoDiNascita { get; set; }
+
+    // Costruttore della classe Persona
+    public Persona(string nome, string cognome, int annoDiNascita)
+    {
+        Nome = nome;
+        Cognome = cognome;
+        AnnoDiNascita = annoDiNascita;
+    }
+
+    public int CalcolaEta()
+    {
+        return DateTime.Now.Year - AnnoDiNascita;
+    }
+}
+
+// Creazione di un&#x27;istanza della classe Persona
+Persona persona1 = new Persona(&quot;Mario&quot;, &quot;Rossi&quot;, 1980);</code></pre><p id="a2af15ec-ee5d-403a-acd2-82ab0ec99b39" class="">In questo esempio, abbiamo una <mark class="highlight-red_background">classe &quot;Persona&quot;</mark> con tre proprietà: <mark class="highlight-red_background">&quot;Nome&quot;, &quot;Cognome&quot; e &quot;AnnoDiNascita&quot;</mark>. Abbiamo definito anche un metodo &quot;CalcolaEta()&quot; che restituisce l&#x27;età della persona.</p><p id="46f3ad6c-c106-4625-b6c2-23cbe460b15e" class="">Nel costruttore della classe, abbiamo creato tre parametri: <mark class="highlight-red_background">&quot;nome&quot;, &quot;cognome&quot; e &quot;annoDiNascita&quot;</mark>. Quando creiamo un&#x27;istanza della classe Persona con la riga di codice <code><strong>Persona persona1 = new Persona(&quot;Mario&quot;, &quot;Rossi&quot;, 1980);</strong></code>, <mark class="highlight-red_background">il costruttore viene invocato automaticamente e inizializza le proprietà della classe con i valori passati come argomenti</mark>.</p><p id="37ec765e-6915-4f10-9cee-8520a65d2d52" class="">In questo modo, abbiamo <mark class="highlight-red_background">un&#x27;istanza della classe Persona con i campi dati già inizializzati</mark> e possiamo utilizzare i metodi definiti nella classe su quest&#x27;istanza.</p><h1 id="e614b74c-0832-49c5-af41-18115ee1c2b2" class="block-color-red"><strong>ESEMPIO CALCOLATORE</strong></h1><p id="2a1bfdb9-087f-444b-bad0-fa44927a3c0f" class="">Ecco un esempio di codice in C# per un semplice <mark class="highlight-red_background">calcolatore che utilizza classi e metodi per eseguire le operazioni matematiche</mark>:</p><pre id="0847de53-e83c-4dd4-ba4a-4e53d05533fc" class="code code-wrap"><code>using System;
+
+namespace CalculatorApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;Welcome to the calculator app!&quot;);
+            Console.WriteLine(&quot;Please enter the first number:&quot;);
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine(&quot;Please enter the second number:&quot;);
+            double num2 = double.Parse(Console.ReadLine());
+
+            Calculator calculator = new Calculator();
+            Console.WriteLine(&quot;Addition result: &quot; + calculator.Add(num1, num2));
+            Console.WriteLine(&quot;Subtraction result: &quot; + calculator.Subtract(num1, num2));
+            Console.WriteLine(&quot;Multiplication result: &quot; + calculator.Multiply(num1, num2));
+            Console.WriteLine(&quot;Division result: &quot; + calculator.Divide(num1, num2));
+        }
+    }
+
+    class Calculator
+    {
+        public double Add(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
+        public double Subtract(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+
+        public double Multiply(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+
+        public double Divide(double num1, double num2)
+        {
+            if (num2 == 0)
+            {
+                throw new DivideByZeroException(&quot;Cannot divide by zero&quot;);
+            }
+            return num1 / num2;
+        }
+    }
+}</code></pre><p id="f1d3d292-e4eb-4d6f-8a82-010bb1ed941a" class="">In questo esempio, il programma <mark class="highlight-red_background">chiede all&#x27;utente di inserire due numeri</mark>, quindi <mark class="highlight-red_background">crea un&#x27;istanza della classe </mark><mark class="highlight-red_background"><code><strong>Calculator</strong></code></mark> e <mark class="highlight-red_background">utilizza i suoi metodi per eseguire le operazioni matematiche</mark> richieste. La classe <code><strong>Calculator</strong></code> contiene i metodi per l&#x27;addizione, la sottrazione, la moltiplicazione e la divisione dei numeri. Se viene inserito uno zero come secondo numero durante la divisione, il metodo <code><strong>Divide</strong></code> lancia un&#x27;eccezione di tipo <code><strong>DivideByZeroException</strong></code>.</p><h1 id="e3d5595b-b0c8-4355-aed4-df8e5bb463ac" class="block-color-red"><strong>ALGORITMI COMUNEMENTE USATI NELLA PROGRAMMAZIONE:</strong></h1><p id="d1225122-633c-43d5-ac98-48768ac7e414" class="">In generale, un <strong><mark class="highlight-red">algoritmo</mark></strong><mark class="highlight-red"> </mark>in C# è una <mark class="highlight-red_background">serie di istruzioni o passaggi logici e matematici che vengono eseguiti per risolvere un determinato problema</mark> o <mark class="highlight-red_background">eseguire una determinata operazione</mark>. Essi possono essere utilizzati in diversi contesti, come ad esempio nell&#x27;<mark class="highlight-red_background">elaborazione di dati, nella matematica computazionale, nella grafica, nell&#x27;intelligenza artificiale</mark> e in molti altri campi.</p><ol type="1" id="02d11a24-4ef9-4f65-93df-9ee9652cc9c3" class="numbered-list" start="1"><li><strong><mark class="highlight-red">Algoritmo di ordinamento</mark></strong>: Gli algoritmi di ordinamento sono utilizzati per <mark class="highlight-red_background">organizzare un insieme di dati in un certo ordine</mark>. Ci sono molti algoritmi di ordinamento comuni come il <strong><em><mark class="highlight-red">Bubble Sort</mark></em></strong>, Insertion Sort, Merge Sort e Quick Sort.</li></ol><ol type="1" id="93213bb7-baa2-409b-9c3a-2108824680fd" class="numbered-list" start="2"><li><strong><mark class="highlight-red">Algoritmo di ricerca</mark></strong>: Gli algoritmi di ricerca sono utilizzati per <mark class="highlight-red_background">trovare un determinato valore all&#x27;interno di un insieme di dati</mark>. Ci sono molti algoritmi di ricerca comuni come la ricerca lineare e la ricerca binaria.</li></ol><ol type="1" id="13e568c4-ebe5-4f28-8fc1-8f713776a575" class="numbered-list" start="3"><li><strong><mark class="highlight-red">Algoritmo di compressione</mark></strong>: Gli algoritmi di compressione sono utilizzati per <mark class="highlight-red_background">ridurre la quantità di spazio necessario per archiviare un insieme di dati</mark>. Alcuni esempi di algoritmi di compressione includono GZip, LZ77 e Huffman.</li></ol><ol type="1" id="ce5a6298-5087-441e-a1bb-3254e2e1b55a" class="numbered-list" start="4"><li><strong><mark class="highlight-red">Algoritmo di apprendimento automatico</mark></strong>: L&#x27;apprendimento automatico è un&#x27;area della programmazione che utilizza algoritmi per <mark class="highlight-red_background">far imparare a un computer a risolvere determinati problemi o compiti</mark>. Alcuni esempi di algoritmi di apprendimento automatico includono <mark class="highlight-red_background">reti neurali</mark>, alberi decisionali e regressione logistica.</li></ol><ol type="1" id="3d21f872-0ec2-4b70-9c10-79ae514c3124" class="numbered-list" start="5"><li><strong><mark class="highlight-red">Algoritmo di crittografia</mark></strong>: Gli algoritmi di crittografia sono utilizzati per <mark class="highlight-red_background">proteggere i dati sensibili da accessi non autorizzati</mark>. Alcuni esempi di algoritmi di crittografia includono <em><strong><mark class="highlight-red">AES</mark></strong></em>, <strong><em><mark class="highlight-red">RSA</mark></em></strong> e Blowfish.</li></ol><ol type="1" id="6c940dd5-245d-492e-9312-49daa4f9827c" class="numbered-list" start="6"><li><strong><mark class="highlight-red">Algoritmo di ricerca del percorso</mark></strong>: Gli algoritmi di ricerca del percorso sono utilizzati per <mark class="highlight-red_background">trovare il percorso più breve tra due punti in un grafo</mark>. Alcuni esempi di algoritmi di ricerca del percorso includono Dijkstra e l&#x27;algoritmo di Bellman-Ford.</li></ol><ol type="1" id="83536157-f82d-4609-806f-105feac15fc3" class="numbered-list" start="7"><li><strong><mark class="highlight-red">Algoritmo di clustering</mark></strong>: Gli algoritmi di clustering sono utilizzati per <mark class="highlight-red_background">raggruppare insieme oggetti simili</mark>. Alcuni esempi di algoritmi di clustering includono il k-means clustering e il clustering gerarchico.</li></ol><p id="ea669722-19c3-41da-880e-4adced5b22bc" class="">
+</p><h3 id="d759712a-627a-4777-bce9-b64c198197fd" class=""><mark class="highlight-red"><strong>Algoritmo di ordinamento a bolle (Bubble Sort)</strong></mark></h3><pre id="319ca44e-178c-431e-b17c-87dfc4df11e3" class="code code-wrap"><code>static void BubbleSort(int[] arr)
+{
+    int n = arr.Length;
+    bool swapped;
+    do
+    {
+        swapped = false;
+        for (int i = 1; i &lt; n; i++)
+        {
+            if (arr[i - 1] &gt; arr[i])
+            {
+                int temp = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = temp;
+                swapped = true;
+            }
+        }
+        n--;
+    } while (swapped);
+}</code></pre><h3 id="d0e72a41-4521-47e4-8319-a7c68cf16c55" class=""><mark class="highlight-red"><strong>Algoritmo di ordinamento per inserimento (Insertion Sort)</strong></mark></h3><pre id="02b6d5de-7400-4630-ad34-95fe8b2b3c58" class="code code-wrap"><code>static void InsertionSort(int[] arr)
+{
+    for (int i = 1; i &lt; arr.Length; i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}</code></pre><h3 id="595048c9-b644-4ff0-a894-60fcf005e51d" class=""><mark class="highlight-red"><strong>Algoritmo di ordinamento per selezione (Selection Sort)</strong></mark></h3><pre id="672f6c8c-af3e-4a74-9756-ed318ff377e3" class="code code-wrap"><code>static void SelectionSort(int[] arr)
+{
+    for (int i = 0; i &lt; arr.Length - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j &lt; arr.Length; j++)
+        {
+            if (arr[j] &lt; arr[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i)
+        {
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+}</code></pre><h3 id="ac8784af-bcd7-420b-a84f-b868d15a376a" class=""><mark class="highlight-red"><strong>Algoritmo di ricerca binaria (Binary Search)</strong></mark></h3><pre id="f5b253a8-76f0-4f6e-9471-49692e8e09b5" class="code code-wrap"><code>static int BinarySearch(int[] arr, int value)
+{
+    int left = 0;
+    int right = arr.Length - 1;
+    while (left &lt;= right)
+    {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == value)
+        {
+            return mid;
+        }
+        else if (arr[mid] &lt; value)
+        {
+            left = mid + 1;
+        }
+        else
+        {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}</code></pre><h3 id="4eaee83e-92b9-4339-bd04-ad91687ff18c" class=""><mark class="highlight-red"><strong>Algoritmo di visita in ampiezza (Breadth-First Search)</strong></mark></h3><pre id="c3e70b10-7241-4d82-a935-f21ebb2bcf84" class="code code-wrap"><code>public class Node
+{
+    public int Value;
+    public List&lt;Node&gt; Neighbors = new List&lt;Node&gt;();
+}
+
+public static void BreadthFirstSearch(Node start)
+{
+    Queue&lt;Node&gt; queue = new Queue&lt;Node&gt;();
+    HashSet&lt;Node&gt; visited = new HashSet&lt;Node&gt;();
+    queue.Enqueue(start);
+    visited.Add(start);
+    while (queue.Count &gt; 0)
+    {
+        Node node = queue.Dequeue();
+        Console.WriteLine(node.Value);
+        foreach (Node neighbor in node.Neighbors)
+        {
+            if (!visited.Contains(neighbor))
+            {
+                queue.Enqueue(neighbor);
+                visited.Add(neighbor);
+            }
+        }
+    }
+}</code></pre><h3 id="267aaf7c-4e4e-41bd-b925-79aed9a883b9" class=""><strong><mark class="highlight-red">Algoritmo di Monte Carlo</mark></strong></h3><pre id="a54f5376-fe22-470c-8a6b-b6b84c18d42f" class="code code-wrap"><code>using System;
+
+class MonteCarloSimulation
+{
+    static void Main()
+    {
+        int n = 1000000; // Numero di simulazioni da eseguire
+        int m = 0; // Contatore per il numero di simulazioni che rientrano nel cerchio
+        Random rand = new Random();
+
+        for (int i = 0; i &lt; n; i++)
+        {
+            double x = rand.NextDouble(); // Genera un numero casuale tra 0 e 1 per la coordinata x
+            double y = rand.NextDouble(); // Genera un numero casuale tra 0 e 1 per la coordinata y
+
+            if ((x * x + y * y) &lt;= 1) // Controlla se il punto è all&#x27;interno del cerchio
+            {
+                m++; // Incrementa il contatore se il punto è all&#x27;interno del cerchio
+            }
+        }
+
+        double pi = 4.0 * m / n; // Calcola il valore di pi
+
+        Console.WriteLine(&quot;Valore stimato di pi: &quot; + pi);
+        Console.ReadKey();
+    }
+}</code></pre></div></article></body></html>

@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>APPUNTI INGLESE (PIETRO VACCARI)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0af9b1c5-51c3-4d5e-b536-e5a816e72992" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✈️</span></div><h1 class="page-title">APPUNTI INGLESE (PIETRO VACCARI)</h1><p class="page-description"></p></header><div class="page-body"><h1 id="ffad4cd7-e7d5-40bc-9e19-0f3e106af4d1" class="block-color-red"><strong>TEMPI VERBALI</strong></h1><ol type="1" id="c6fe31d7-d719-40bd-ae7a-8a3ec721dee9" class="numbered-list" start="1"><li><strong><mark class="highlight-red">Present simple</mark></strong> - il tempo <mark class="highlight-red_background">presente semplice</mark> si usa per <mark class="highlight-red_background">esprimere azioni che sono abituali</mark>, regolari, generalmente valide, e per esprimere <mark class="highlight-red_background">verità universalmente accettate</mark>. Si forma con il <mark class="highlight-yellow_background">verbo base</mark>, ad eccezione della <mark class="highlight-yellow_background">terza persona singolare, che richiede la terminazione &quot;-s/es&quot;</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I eat breakfast</mark></span><mark class="highlight-yellow_background"> every morning. He works in a bank</mark>.</li></ol><ol type="1" id="105942f0-d742-40c7-a616-38937f3439e4" class="numbered-list" start="2"><li><strong><mark class="highlight-red">Present continuous</mark></strong> - il tempo <mark class="highlight-red_background">presente progressivo</mark> si usa per <mark class="highlight-red_background">esprimere azioni in corso di svolgimento al momento del parlare</mark>. Si forma con il <mark class="highlight-yellow_background">verbo &quot;to be&quot; al presente seguito dal verbo in forma &quot;-ing&quot;</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I am working</mark></span><mark class="highlight-yellow_background"> on a project right now</mark>.</li></ol><ol type="1" id="7db51127-fa6c-464e-ad72-35a53f1dcf3a" class="numbered-list" start="3"><li><strong><mark class="highlight-red">Present perfect</mark></strong> - il tempo <mark class="highlight-red_background">presente perfetto</mark> si usa per <mark class="highlight-red_background">esprimere azioni avvenute in un periodo di tempo che include il presente</mark>, con l&#x27;enfasi sul risultato dell&#x27;azione. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;have/has&quot; e il participio passato del verbo</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I have finished</mark></span><mark class="highlight-yellow_background"> my work for the day</mark>.</li></ol><ol type="1" id="086108d7-b26d-4353-84a3-7000cd905ca9" class="numbered-list" start="4"><li><strong><mark class="highlight-red">Present perfect continuous</mark></strong> - il tempo <mark class="highlight-red_background">presente perfetto progressivo</mark> si usa per <mark class="highlight-red_background">esprimere azioni iniziare in un periodo di tempo che include il presente</mark>, con l&#x27;enfasi sulla durata dell&#x27;azione. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;have/has&quot; e il verbo in forma &quot;-ing&quot;</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I have been studying</mark></span><mark class="highlight-yellow_background"> for three hours</mark>.</li></ol><ol type="1" id="bbde81aa-d725-4014-a1d1-bd182cba95f4" class="numbered-list" start="5"><li><strong><mark class="highlight-red">Past simple</mark></strong> - il tempo <mark class="highlight-red_background">passato semplice</mark> si usa per <mark class="highlight-red_background">esprimere azioni concluse in un momento specifico nel passato</mark>. Si forma con il <mark class="highlight-yellow_background">verbo base + &quot;-ed&quot; per i verbi regolari, e con forme irregolari per i verbi irregolari</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I studied</mark></span><mark class="highlight-yellow_background"> English in high school</mark>.</li></ol><ol type="1" id="e00eed86-fa38-4d93-a4d8-51829f5c8b7e" class="numbered-list" start="6"><li><strong><mark class="highlight-red">Past continuous</mark></strong> - il tempo <mark class="highlight-red_background">passato progressivo</mark> si usa per <mark class="highlight-red_background">esprimere azioni in corso di svolgimento in un momento specifico nel passato</mark>. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;was/were&quot; e il verbo in forma &quot;-ing&quot;</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I was studying when the phone rang</mark></span>.</li></ol><ol type="1" id="efa687fa-873d-4815-a16f-339ca109747c" class="numbered-list" start="7"><li><strong><mark class="highlight-red">Past perfect</mark></strong> - il tempo <mark class="highlight-red_background">passato perfetto</mark> si usa per <mark class="highlight-red_background">esprimere un&#x27;azione passata completata prima di un&#x27;altra azione passata</mark>. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;had&quot; e il participio passato del verbo</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I had already finished</mark></span><mark class="highlight-yellow_background"> my work </mark><span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">when</mark></span><mark class="highlight-yellow_background"> my boss called</mark>.</li></ol><ol type="1" id="974b638e-9254-4156-84ed-8dff1b0151fa" class="numbered-list" start="8"><li><strong><mark class="highlight-red">Past perfect continuous</mark></strong> - il tempo <mark class="highlight-red_background">passato perfetto progressivo</mark> si usa per <mark class="highlight-red_background">esprimere un&#x27;azione iniziata e ancora in corso in un momento specifico nel passato, prima di un&#x27;altra azione passata</mark>. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;had been&quot; e il verbo in forma &quot;-ing&quot;</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I had been studying for</mark></span><mark class="highlight-yellow_background"> two hours </mark><span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">when</mark></span><mark class="highlight-yellow_background"> my friends arrived</mark>.</li></ol><ol type="1" id="740f7fde-9592-43c6-b512-70cbe2f5a8c7" class="numbered-list" start="9"><li><strong><mark class="highlight-red">Future simple</mark></strong> - il tempo <mark class="highlight-red_background">futuro semplice</mark> si usa per <mark class="highlight-red_background">esprimere azioni future</mark>. Si forma con <mark class="highlight-yellow_background">l&#x27;ausiliare &quot;will&quot; + verbo base</mark>. Esempio: <span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I will go</mark></span><mark class="highlight-yellow_background"> to the party tonight</mark>.</li></ol><ol type="1" id="72f4f33c-7e04-4a75-86e5-7877c0bee7f7" class="numbered-list" start="10"><li><strong><mark class="highlight-red">Future Continuous</mark></strong> (<mark class="highlight-red_background">Futuro progressivo</mark>): si usa per <mark class="highlight-red_background">descrivere un&#x27;azione in corso di svolgimento in un determinato momento nel futuro</mark>. Si forma con &quot;<mark class="highlight-yellow_background">will + be + verbo con -ing</mark>&quot; (esempio: &quot;<span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I will be studying</mark></span><mark class="highlight-yellow_background"> at 8 pm tonight</mark>&quot;).</li></ol><ol type="1" id="92bffde6-6e2d-4db5-8765-ab2bc939b8aa" class="numbered-list" start="11"><li><strong><mark class="highlight-red">Future Perfect</mark></strong> (<mark class="highlight-red_background">Futuro perfetto</mark>): si usa per <mark class="highlight-red_background">esprimere un&#x27;azione che sarà già completa in un momento futuro specifico</mark>. Si forma con &quot;<mark class="highlight-yellow_background">will + have + participio passato del verbo</mark>&quot; (esempio: &quot;<span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I will have finished</mark></span><mark class="highlight-yellow_background"> my work </mark><span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">by</mark></span><mark class="highlight-yellow_background"> 5 pm today</mark>&quot;).</li></ol><ol type="1" id="8df8297b-217e-4cde-b735-da7ca248b040" class="numbered-list" start="12"><li><strong><mark class="highlight-red">Future Perfect Continuous</mark></strong> (<mark class="highlight-red_background">Futuro perfetto progressivo</mark>): 1. si usa per <mark class="highlight-red_background">esprimere un&#x27;azione che sarà iniziata in un momento nel futuro e che sarà ancora in corso di svolgimento in un altro momento futuro specifico</mark>. Si forma con &quot;<mark class="highlight-yellow_background">will + have + been + verbo con -ing</mark>&quot; (esempio: &quot;<span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">By next year</mark></span><mark class="highlight-yellow_background">, </mark><span style="border-bottom:0.05em solid"><mark class="highlight-yellow_background">I will have been studying</mark></span><mark class="highlight-yellow_background"> English for 5 years</mark>&quot;).</li></ol><h1 id="f12f54a2-f57e-4a19-9a6b-a0fea90b902a" class="block-color-red"><strong>VERBI IRREGOLARI</strong></h1><figure id="9adb681c-7010-4b4d-b655-9ea5f2dfb57b" class="image"><a href="APPUNTI%20INGLESE%20(PIETRO%20VACCARI)%200af9b1c551c34d5eb536e5a816e72992/Untitled.png"><img style="width:712px" src="APPUNTI%20INGLESE%20(PIETRO%20VACCARI)%200af9b1c551c34d5eb536e5a816e72992/Untitled.png"/></a></figure><h1 id="376a2030-7bf5-47b3-8163-cec16f16a37e" class=""><mark class="highlight-red"><strong>PHRASAL VERBS</strong></mark></h1><p id="37aa7080-77d1-4451-a128-b63064d377c6" class="">I <mark class="highlight-red_background">verbi frasali</mark>  sono verbi che, <mark class="highlight-red_background">se seguiti da una preposizione</mark>, <mark class="highlight-red_background">cambiano il proprio significato.</mark></p><p id="b7cec222-e347-4e3b-879f-c54f02a0d6b9" class="">Ecco una lista dei più comuni:</p><table id="0b705240-2c66-49c1-b584-21bb61b23ed7" class="simple-table"><tbody><tr id="39d6de9b-8eca-4008-932a-90c3af19f5c2"><td id="cZi[" class="" style="width:349px"><strong>Phrasal verb </strong><strong><mark class="highlight-red">Get</mark></strong><strong>+ Preposizione</strong></td><td id="{yYL" class="" style="width:349px">Traduzione italiana</td></tr><tr id="abf42f45-b503-4495-86c4-596d7e781804"><td id="cZi[" class="" style="width:349px">Get on</td><td id="{yYL" class="" style="width:349px">Salire</td></tr><tr id="11e1764c-7d92-488e-abec-e6ed74e720c9"><td id="cZi[" class="" style="width:349px">Get about</td><td id="{yYL" class="" style="width:349px">Capire</td></tr><tr id="cf283748-67b4-4d97-b3c3-59cac48000bf"><td id="cZi[" class="" style="width:349px">Get across</td><td id="{yYL" class="" style="width:349px">Attraversare</td></tr><tr id="08ffbacd-4002-43fb-be26-010d4e500d61"><td id="cZi[" class="" style="width:349px">Get ahead</td><td id="{yYL" class="" style="width:349px">Andare avanti</td></tr><tr id="8089350f-9bab-45fe-b5d9-2626fc25cc37"><td id="cZi[" class="" style="width:349px">Get along</td><td id="{yYL" class="" style="width:349px">Andare d’accordo</td></tr><tr id="35c5c0ea-6cf5-40da-9cdf-22d9b2a418cf"><td id="cZi[" class="" style="width:349px">Get around</td><td id="{yYL" class="" style="width:349px">Andare in giro</td></tr><tr id="4c570973-b04e-42c1-b541-e442ffb97241"><td id="cZi[" class="" style="width:349px">Get down</td><td id="{yYL" class="" style="width:349px">Scendere</td></tr><tr id="3d7b679f-13d5-4479-9849-2c120996844d"><td id="cZi[" class="" style="width:349px">Get off</td><td id="{yYL" class="" style="width:349px">Scendere</td></tr><tr id="2fe75bdb-2d40-455e-8afe-46f4c4736f57"><td id="cZi[" class="" style="width:349px">Get through</td><td id="{yYL" class="" style="width:349px">Superare</td></tr><tr id="2de1bff7-3554-4f98-bd48-cee4afc76880"><td id="cZi[" class="" style="width:349px">Get up</td><td id="{yYL" class="" style="width:349px">Alzarsi</td></tr></tbody></table><table id="13653c23-4d2e-4a47-8ddd-39d8bb54f16d" class="simple-table"><tbody><tr id="bec707ca-1c79-464e-b92a-e91a95e726f6"><td id="s}F&gt;" class="" style="width:349px"><strong>Phrasal verb </strong><mark class="highlight-red"><strong>Put</strong></mark><strong>+ Preposizione</strong></td><td id="FLQl" class="" style="width:349px">Traduzione italiana</td></tr><tr id="05a85d88-3e69-49b5-a876-82aeaa59b04c"><td id="s}F&gt;" class="" style="width:349px">Put across</td><td id="FLQl" class="" style="width:349px">Comunicare</td></tr><tr id="37d416e3-3f0c-40ba-8fff-64e23fd7d9bc"><td id="s}F&gt;" class="" style="width:349px">Put away</td><td id="FLQl" class="" style="width:349px">Mettere via</td></tr><tr id="b27d1562-b251-43f8-97ac-b3f4bc8dd11d"><td id="s}F&gt;" class="" style="width:349px">Put down</td><td id="FLQl" class="" style="width:349px">Chiudere</td></tr><tr id="c90d4d11-6883-439d-a8c9-90ea409de4fd"><td id="s}F&gt;" class="" style="width:349px">Put forth</td><td id="FLQl" class="" style="width:349px">Portare avanti</td></tr><tr id="d1af19e1-4918-43fb-8ad7-40aac8a5e671"><td id="s}F&gt;" class="" style="width:349px">Put in</td><td id="FLQl" class="" style="width:349px">Montare</td></tr><tr id="12fedb41-74ce-4618-8563-19fc4dabd47d"><td id="s}F&gt;" class="" style="width:349px">Put off</td><td id="FLQl" class="" style="width:349px">Rimandare</td></tr><tr id="7a8ec073-4e24-4b9b-b8f7-2b76b3b2a14c"><td id="s}F&gt;" class="" style="width:349px">Put on</td><td id="FLQl" class="" style="width:349px">Indossare</td></tr><tr id="c9fed034-f26b-42b0-9f9c-9eb704fb9a8a"><td id="s}F&gt;" class="" style="width:349px">Put out</td><td id="FLQl" class="" style="width:349px">Spegnere</td></tr><tr id="138db006-77c6-47fa-837e-fa5e53ebe8a2"><td id="s}F&gt;" class="" style="width:349px">Put somebody up</td><td id="FLQl" class="" style="width:349px">Ingaggiare</td></tr></tbody></table><table id="e36f4a76-069a-45b0-baf3-802a8b08ecfb" class="simple-table"><tbody><tr id="88a3102b-41ba-44c5-be2c-eacc3dc07628"><td id="rVFG" class="" style="width:349px"><strong>Phrasal verb </strong><mark class="highlight-red"><strong>Make</strong></mark><strong>+ Preposizione</strong></td><td id=";`~s" class="" style="width:349px"><strong>Traduzione italiana</strong></td></tr><tr id="0cfddfd9-c7fc-4e44-a23e-816703a29489"><td id="rVFG" class="" style="width:349px">Make over</td><td id=";`~s" class="" style="width:349px">Affrontare, realizzare, cambiare</td></tr><tr id="178d4ca4-6a38-4d51-947d-bdd1b35f02cc"><td id="rVFG" class="" style="width:349px">Make away with</td><td id=";`~s" class="" style="width:349px">Andarsene, disfarsi di</td></tr><tr id="0e36f850-99c9-4b13-95d3-e9a8811d2692"><td id="rVFG" class="" style="width:349px">Make into</td><td id=";`~s" class="" style="width:349px">Trasformare</td></tr><tr id="f4b425c7-9b92-4bb1-9dae-7de8387dc965"><td id="rVFG" class="" style="width:349px">Make of</td><td id=";`~s" class="" style="width:349px">Pensare</td></tr><tr id="2921439c-d1cd-4df6-93ce-6a58754a15b4"><td id="rVFG" class="" style="width:349px">Make out</td><td id=";`~s" class="" style="width:349px">Comprendere</td></tr><tr id="681ff632-2cfe-41e0-b052-6fba654cb067"><td id="rVFG" class="" style="width:349px">Make towards</td><td id=";`~s" class="" style="width:349px">Dirigersi</td></tr><tr id="36550a19-d9cd-4dcd-bfb5-def4350e4bb3"><td id="rVFG" class="" style="width:349px">Make up</td><td id=";`~s" class="" style="width:349px">Inventare</td></tr><tr id="c58c89a6-2d3d-4eb0-b039-878906dc82e7"><td id="rVFG" class="" style="width:349px">Make up for</td><td id=";`~s" class="" style="width:349px">Compensare, rimediare</td></tr></tbody></table><h1 id="d576a22b-c082-43b3-8dc5-04286ebaf0db" class=""><mark class="highlight-red"><strong>MODAL VERBS</strong></mark></h1><p id="7cea5c43-cba4-4231-b04d-a5e24b7237c7" class="">I modal verbs detti anche i <mark class="highlight-red_background">verbi modali</mark> ausiliari sono verbi che <mark class="highlight-red_background">si comportano in modo irregolare</mark> rispetto ai verbi tradizionali.</p><p id="9cbfe0f4-ffa1-4973-bd5b-65c2d98bc4de" class="">Tra questi, vanno ricordati i verbi <strong>can, must, may, might, will, would, should.</strong></p><p id="02b55d99-a862-496d-80e7-22a8b800d005" class="">
+</p><p id="aca2fc8a-6df7-4d60-9420-8dba3e428ff9" class=""><strong><mark class="highlight-red">CAN</mark></strong></p><p id="e8b1c9ba-1c14-4303-b4e4-cfac54f9c635" class="">per <mark class="highlight-red_background">esprimere abilità</mark> o <mark class="highlight-red_background">chiedere permesso</mark>.</p><p id="2c2c046a-2baa-455f-beda-b4c66603b674" class=""><strong><mark class="highlight-red">MAY</mark></strong></p><p id="dccaced4-f770-4155-bf7b-433ed83e4d44" class="">per <mark class="highlight-red_background">esprimere possibilità</mark> o <mark class="highlight-red_background">chiedere il permesso</mark>.</p><p id="4e340612-5232-401a-8c4d-836c25e6f633" class=""><strong><mark class="highlight-red">MUST HAVE TO</mark></strong></p><p id="14f56db3-4e5e-45b7-84b6-ff43805a6a5f" class="">per <mark class="highlight-red_background">esprimere obbligo</mark> o forte <mark class="highlight-red_background">convinzione</mark>.</p><p id="6ef7a8ec-31be-4058-b13a-faba84e47e1e" class=""><strong><mark class="highlight-red">WOULD</mark></strong></p><p id="982cd50a-2714-4983-a457-8d3cebced3ec" class=""><mark class="highlight-red_background">chiedere</mark> od <mark class="highlight-red_background">offrire</mark> qualcosa e per <mark class="highlight-red_background">formare il condizionale</mark>.</p><p id="20d11938-2e7d-4d23-be32-6cc5e672fb1e" class=""><strong><mark class="highlight-red">SHALL</mark></strong></p><p id="9aadaf91-a5e2-4456-8346-1f2ad0f0a24f" class=""><mark class="highlight-red_background">offerte</mark>, <mark class="highlight-red_background">consigli</mark>, chiedere cosa fare.</p><p id="1f89d5e6-3f77-41c3-aad2-5d5559c6828d" class=""><strong><mark class="highlight-red">WILL</mark></strong></p><p id="e7f43fa0-1015-4134-9fb1-9ff3122b5bc7" class=""><mark class="highlight-red_background">decisioni improvvise</mark>, <mark class="highlight-red_background">offerte</mark> promesse, <mark class="highlight-red_background">previsioni</mark>.</p><p id="b5d11ca4-9efa-4396-91b8-5d7b4dd47215" class=""><strong><mark class="highlight-red">SHOULD</mark></strong></p><p id="944c1ade-2e97-4c0c-8f02-e082b0f9279f" class="">per dare <mark class="highlight-red_background">consigli</mark>.</p><h1 id="69543e28-0485-4b73-86e0-367fbc27537c" class=""><mark class="highlight-red"><strong>AVVERBI DI FREQUENZA</strong></mark></h1><p id="ba8c750e-b335-4bd1-ac8b-3a168a881bb1" class="">Gli avverbi di frequenza vengono utilizzati per <mark class="highlight-red_background">esprimere la frequenza con cui un&#x27;azione si verifica</mark>. Indicano <mark class="highlight-red_background">quanto spesso o raramente un&#x27;azione avviene</mark> nel contesto di una frase o di una situazione. Gli avverbi di frequenza vengono posizionati prima del verbo principale.</p><ul id="bd3b754c-d76e-4bb0-ad58-2ede415b5e77" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Always</strong></mark> (sempre)</li></ul><ul id="c770a671-4170-46c7-ba8d-f5f82d43c6e1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Ever</strong></mark> (mai)</li></ul><ul id="9df11792-6710-4acc-acaa-daee90a119ea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Generally</strong></mark> (generalmente)</li></ul><ul id="cadba80c-77ef-48c6-9d0f-b6c519f6622e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Hardly ever</strong></mark> (quasi mai)</li></ul><ul id="0f6263c0-309e-4da3-a75b-1a02220c8809" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Never</strong></mark> (non mai)</li></ul><ul id="a2f8dcd5-7505-40c3-ab3b-20630804b678" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Often</strong></mark> (spesso)</li></ul><ul id="2465f059-b0d1-46b3-b43b-1f8ea525be68" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Rarely</strong></mark><mark class="highlight-red"> </mark>(raramente)</li></ul><ul id="68bef5b5-6e1a-4306-b891-c0c36044c3e3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Seldom</strong></mark><mark class="highlight-red"> </mark>(raramente)</li></ul><ul id="984d0671-6a80-4cf8-97f9-b826eb8a07c2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Sometimes</strong></mark><mark class="highlight-red"> </mark>(qualche volta)</li></ul><ul id="59633ca3-1047-4479-811f-4fc84bd4bad9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>Usually</strong></mark><mark class="highlight-red"> </mark>(di solito)</li></ul><p id="aee107d1-5dbf-4572-8be1-c78fe027ab06" class="">Ad esempio:</p><ul id="a0385db7-f0a0-4f2f-baa8-d4ee3e7cb70b" class="bulleted-list"><li style="list-style-type:disc">I <mark class="highlight-red_background">always</mark> go to the gym in the morning. (Vado sempre in palestra al mattino.)</li></ul><ul id="44c1f383-8e05-4940-abfa-cde9d3b0eaa9" class="bulleted-list"><li style="list-style-type:disc">She <mark class="highlight-red_background">usually</mark> drinks coffee for breakfast. (Di solito beve caffè a colazione.)</li></ul><ul id="09ad4847-7e13-45f3-9df8-bbe15769c485" class="bulleted-list"><li style="list-style-type:disc">They <mark class="highlight-red_background">often</mark> visit their grandparents on weekends. (Spesso visitano i loro nonni durante il fine settimana.)</li></ul><ul id="d0bf29d5-89ba-42b9-b643-5f987a9c2e9b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Sometimes</mark> I like to go for a walk in the park. (A volte mi piace fare una passeggiata al parco.)</li></ul><ul id="a24a8ef0-01cc-450b-8d13-af001af55f58" class="bulleted-list"><li style="list-style-type:disc">He <mark class="highlight-red_background">rarely</mark> watches television. (Raramente guarda la televisione.)</li></ul><ul id="5fbb643f-822c-48db-8f5b-b5ef3dd6d84d" class="bulleted-list"><li style="list-style-type:disc">We <mark class="highlight-red_background">never</mark> eat fast food. (Non mangiamo mai cibo spazzatura.)</li></ul><h1 id="0d5be640-8f2a-4ff6-91fc-bd0b1ac00766" class=""><mark class="highlight-red"><strong>PASSIVE FORM</strong></mark></h1><p id="e6617619-ddb9-458d-b3ab-5458998c44cb" class="">La forma passiva in inglese viene utilizzata per <mark class="highlight-red_background">indicare che l&#x27;oggetto di un&#x27;azione subisce l&#x27;azione stessa</mark>, invece di svolgerla attivamente. Nella forma passiva, l&#x27;accento viene posto sull&#x27;oggetto e non sull&#x27;agente o sulla persona che compie l&#x27;azione.</p><h2 id="5ddb5c9e-c5c9-4fb7-9891-520847626a6e" class=""><strong><mark class="highlight-red">La struttura</mark></strong></h2><p id="1e9c840a-c65a-4b3a-9beb-c8606d681053" class=""><strong><mark class="highlight-red">Soggetto</mark></strong> + <strong><mark class="highlight-red">verbo ausiliare</mark></strong> &quot;to be&quot; (concordante con il soggetto) + <strong><mark class="highlight-red">participio passato</mark></strong> del verbo principale + <strong><mark class="highlight-red">complemento</mark></strong> (se necessario)</p><p id="a233a184-9eb1-47cd-b541-402af4910071" class="">Ecco un esempio per chiarire la struttura:</p><p id="5fb795ff-ff2b-4feb-ab08-bcda206f24f1" class=""><mark class="highlight-red_background">Frase attiva</mark>: The teacher (soggetto) teaches (verbo principale) the students (oggetto).
+<mark class="highlight-red_background">Frase passiva</mark>: The students (soggetto) are taught (verbo ausiliare + participio passato) by the teacher (complemento).</p><p id="8a4ad394-f4c3-4df2-bc4f-eb605a45e509" class="">Nella forma passiva, &quot;teaches&quot; diventa &quot;are taught&quot;, e l&#x27;oggetto &quot;the students&quot; diventa il soggetto della frase passiva, mentre l&#x27;agente &quot;the teacher&quot; viene introdotto con la preposizione &quot;by&quot; e può essere incluso o omesso.</p><h1 id="a069e2be-a737-49d0-96eb-a911f575d890" class="block-color-red"><strong>ARGOMENTO A SCELTA</strong></h1><h2 id="962c0b10-6e4b-455e-a713-165e5fefa6cc" class=""><strong><mark class="highlight-blue">Storage devices</mark></strong></h2><p id="b928828b-4be2-48e4-8436-9b0752225b0d" class="">A storage device, also known as a storage medium, is any <mark class="highlight-red_background">computing hardware</mark> that is <mark class="highlight-red_background">used</mark> for <mark class="highlight-red_background">storing</mark>, <mark class="highlight-red_background">porting</mark> and <mark class="highlight-red_background">extracting data files and objects</mark>. These devices can <mark class="highlight-red_background">hold</mark> and <mark class="highlight-red_background">store information</mark> both <mark class="highlight-red_background">temporarily</mark> and <mark class="highlight-red_background">permanently</mark>, and can be either <mark class="highlight-red_background">internal or external</mark> to a computer, a server or any similar computing device. They store virtually all the data and applications on a computer, except hardware firmware. They are available in different forms depending on the type of underlying device and can be divided into two categories: primary and secondary devices.</p><ul id="0b5d98ee-1c76-4054-88b1-0aa7ae7f46e8" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">Primary storage devices</mark></strong> are generally smaller, internal to the computer and designed to <mark class="highlight-red_background">hold data temporarily</mark>. They have the <mark class="highlight-red_background">fastest data access speed</mark>, and include <mark class="highlight-red_background">RAM and cache</mark> memory.</li></ul><ul id="ef7ab199-1d52-4012-9e98-acc748fa229d" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">Secondary storage devices</mark></strong> can be either <mark class="highlight-red_background">internal or external</mark>, have large storage capacity and store data permanently. These include the <mark class="highlight-red_background">hard disk</mark>, <mark class="highlight-red_background">optical disk</mark> drive and <mark class="highlight-red_background">USB</mark> storage device</li></ul><h3 id="0f8f88ce-bafb-481f-b4d2-c780c1791253" class=""><strong><mark class="highlight-blue">Hard disk drive</mark></strong></h3><p id="0df30dc6-e83a-468f-98ca-c7ede74d1c62" class="">A hard disk drive (<strong><mark class="highlight-blue">HDD</mark></strong>), also known as <mark class="highlight-red_background">hard drive</mark>, is a secondary storage device used to <mark class="highlight-red_background">store data permanently</mark>. It retains non-volatile data when the computer is off. <mark class="highlight-red_background">It contains magnetic disks or </mark><mark class="highlight-red_background"><span style="border-bottom:0.05em solid"><strong>platters</strong></span></mark><mark class="highlight-red_background"><strong> </strong></mark><mark class="highlight-red_background">rotating at high speeds</mark>. A hard drive fits inside a computer case and is firmly attached with the use of braces and screws to prevent it from being <span style="border-bottom:0.05em solid"><strong>jarred</strong></span><strong> </strong>as it spins, usually at <mark class="highlight-red_background">5,400 to 15,000 RPM</mark>. The disk moves at an accelerated rate, allowing data to be accessed immediately. <mark class="highlight-red_background">When the platters rotate, an arm with a read/write head extends across the platters</mark>. The arm writes new data to the platters and reads new data from them. Most hard drives use <span style="border-bottom:0.05em solid"><strong>enhanced</strong></span><strong> </strong>integrated drive electronics (EIDE) including cables and connectors to the motherboard. <mark class="highlight-red_background">All data is stored magnetically, allowing information to be saved when power is shut off</mark>.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="666905e1-e5c4-410a-bc6f-0417076fad20"><div style="font-size:1.5em"><span class="icon">🎓</span></div><div style="width:100%"><strong><mark class="highlight-red">Platters</mark></strong><strong> </strong>(Piatti)<mark class="highlight-red"> </mark>- platters are the <mark class="highlight-red_background">circular disks</mark> that are used in hard disk drives to store and retrieve data. These disks are typically <mark class="highlight-red_background">made of glass or aluminum and coated with a magnetic material where the data is stored</mark>.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a84954dd-81f2-4746-aa9a-f7e5a973d5b8"><div style="font-size:1.5em"><span class="icon">🎓</span></div><div style="width:100%"><strong><mark class="highlight-red">Enhanced </mark></strong>(Migliorato)<mark class="highlight-red"> </mark>- it can refer to <mark class="highlight-red_background">the improvement of a particular feature or capability of a device or system</mark>, such as enhanced sound quality or enhanced processing speed.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b1c741fc-c482-4362-95be-555c9b336017"><div style="font-size:1.5em"><span class="icon">🎓</span></div><div style="width:100%"><strong><mark class="highlight-red">Jarred</mark></strong><strong> </strong>(Scosso)<mark class="highlight-red"> </mark>- to be jolted or shaken. It is used to describe <mark class="highlight-red_background">what could happen to a hard drive if it is not securely fastened inside a computer case</mark>. When a hard drive spins at high speeds, any sudden movement or vibration can cause the read/write head to collide with the platters, potentially causing damage or data loss</div></figure><h3 id="9864b56e-6f65-4c52-852f-3e44f02f2ec9" class=""><strong><mark class="highlight-blue">USB drive</mark></strong></h3><p id="dcf405b9-6337-40ca-82f3-ae455667453a" class="">Flash drives or <mark class="highlight-red_background">USB drives are small</mark>, ultra-portable storage devices which, unlike an optical drive or a traditional hard drive, <mark class="highlight-red_background">have no moving parts</mark>. They <mark class="highlight-red_background">connect to computers and other devices via a built-in USB type-A plug</mark>, making a flash drive a kind of <mark class="highlight-red_background">combination USB device and cable</mark>.</p><p id="930b3a0a-6608-4a10-974c-63634e3d82a2" class="">They are often referred to as pen drives, thumb drives, or jump drives. The term <strong><mark class="highlight-blue">solid-state drive</mark></strong> (<strong><mark class="highlight-blue">SSD</mark></strong>) is also sometimes used but most of the time this refers to larger and <mark class="highlight-blue_background">not-so-mobile USB-based storage devices</mark>. To use a flash drive, <mark class="highlight-red_background">the drive must be inserted into a free USB port on the computer</mark>. Most computers <mark class="highlight-red_background">alert the user that the flash drive is ready once it is inserted</mark> and the contents of the drive will appear on the screen, in a similar way to how other drives on the computer appear when browsing for files. What happens when we use our flash drive depends on our version of Windows or other operating system, and how the computer is figured. <mark class="highlight-red_background">Flash drives are available in different sizes: most have a storage capacity of 8 GB to 64 GB</mark>.</p></div></article></body></html>
