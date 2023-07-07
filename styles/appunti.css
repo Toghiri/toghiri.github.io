@@ -13,31 +13,6 @@ table{
     text-align: center;
 }
 
-li {
-    display: inline;
-    float: left;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
 h3{
     display: inline;
 }
@@ -52,33 +27,6 @@ h3{
 .icona {
     height: 65px;
     width: 65px;
-}
-
-li a table tr td img{
-    height: 23px;
-    width: 23px;
-    filter: invert(100%);
-}
-
-#scrittalogo{
-    filter: none;
-    height: 23px;
-    width: 100%;
-}
-
-#nav{
-    position: sticky;
-    top: 0;
-    width: 100%;
-}
-
-@media all and (max-width:1000px){
-    #nav{
-        position: sticky;
-        top: 0;
-        width: 100%;
-        left: 0;
-    }
 }
 
 #footer {

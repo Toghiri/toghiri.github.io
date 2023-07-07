@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">                                       <!--Specifica al browser quale versione del motore di rendering utilizzare -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                      <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
     <link rel="stylesheet" href="styles/home.css">                                              <!--Imposta lo stile CSS della pagina-->
+    <link rel="stylesheet" href="styles/navbar.css">                                            <!--Imposta lo stile CSS della navbar-->
     <link rel="icon" type="image/x-icon" href="media/icons/homenew2.ico">                       <!--Imposta l'icona della pagina-->
     <title>Home - toghiri.github.io</title>                                                     <!--Imposta il titolo della pagina-->
+    <script src="./javascript/navbar.js" defer></script>                                        <!--Importa gli script da 'navbar.js'-->
     <script defer type="text/javascript" src="./javascript/views_home.js"></script>             <!--Importa gli script da 'views_home.js'-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73RNFH0DZ"></script>      <!-- Google tag (gtag.js) -->
     <script>
@@ -24,58 +26,60 @@
     </script>                                                                                   <!-- Google Tag Manager -->
 </head>
 <body>
-    <div id="nav">                                                                              <!--Barra di navigazione-->
+    <header>                                                                                    <!--Barra di navigazione responsiva-->
         <nav class="navbar">
-            <div class="navbar-links">
+            <div class="logo">
+                <a href="#home">
+                    <table border="0">
+                        <tr>
+                            <td><img class="navimg" src="./media/images/home.png">&nbsp;</td>
+                            <td><img id="scrittalogo" src="./media/images/scrittalogo.png"></td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+            <button id="responsiveMenuToggleButton">
+                <img class="openIcon" src="./media/images/menu.png">
+                <img class="closeIcon" src="./media/images/x.png">
+            </button>
+            <div class="nav-links">
                 <ul>
                     <li>
-                        <a href="#home">
-                            <table border="0">
-                                <tr>
-                                    <td><img src="./media/images/home.png">&nbsp;</td>
-                                    <td><img id="scrittalogo" src="./media/images/scrittalogo.png"></td>
-                                </tr>
-                            </table>
-                        </a>
-                    </li>
-                    <li style="float:right" class="active">
-                        <a href="https://discord.gg/qAkb5rj" target="_blank">
-                            <table border="0">
-                                <tr>
-                                    <td><img src="./media/images/discord.png"></td>
-                                    <td>Contatti</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </li>
-                    <li style="float:right">
-                        <a href="https://github.com/Toghiri" target="_blank">
-                            <table border="0">
-                                <tr>
-                                    <td><img src="./media/images/github.png"></td>
-                                    <td>GitHub</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </li>
-                    <!-- Sezione progetti
-                        <listyle="float:right" class="active">
                         <a href="https://github.com/Toghiri?tab=repositories" target="_blank">
                             <table border="0">
                                 <tr>
-                                    <td><img src="./media/images/progetti1.png"></td>
+                                    <td><img class="navimg" src="./media/images/progetti1.png"></td>
                                     <td>Progetti</td>
                                 </tr>
                             </table>
                         </a>
                     </li>
-                    -->
-                    <li style="float:right">
+                    <li>
                         <a href="pages/appunti.html">
                             <table border="0">
                                 <tr>
-                                    <td><img src="./media/images/appuntiic.png"></td>
+                                    <td><img class="navimg" src="./media/images/appuntiic.png"></td>
                                     <td>Appunti</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Toghiri" target="_blank">
+                            <table border="0">
+                                <tr>
+                                    <td><img class="navimg" src="./media/images/github.png"></td>
+                                    <td>GitHub</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/qAkb5rj" target="_blank">
+                            <table border="0">
+                                <tr>
+                                    <td><img class="navimg" src="./media/images/discord.png"></td>
+                                    <td>Contatti</td>
                                 </tr>
                             </table>
                         </a>
@@ -83,8 +87,8 @@
                 </ul>
             </div>
         </nav>
-        <br><br>
-    </div>
+    </header>
+    <br>
     <div align="center" id="home">                                                              <!--Paragrafo Home-->
         <table border="0" bordercolor="black" class="text" cellpadding="10">
             <tr>
@@ -93,7 +97,7 @@
                 </td>
                 <td>
                     <b class="rif">
-                        Benvenuto nella home del mio sito, qui puoi trovare i miei <a href="pages/appunti.html">appunti</a> per la 5a ITIS indirizzo informatica.
+                        Benvenuto nella home del mio sito, qui puoi trovare i miei <a href="pages/appunti.html">appunti</a> per la 5a ITIS indirizzo informatico.
                     </b>
                 </td>
             </tr>

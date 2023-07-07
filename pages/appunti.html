@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">                                       <!--Specifica al browser quale versione del motore di rendering utilizzare -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                      <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
     <link rel="stylesheet" href="../styles/appunti.css">                                        <!--Imposta lo stile CSS della pagina-->
+    <link rel="stylesheet" href="../styles/navbar.css">                                         <!--Imposta lo stile CSS della navbar-->
     <link rel="icon" type="image/x-icon" href="../media/icons/homenew2.ico">                    <!--Imposta l'icona della pagina-->
     <title>Appunti - toghiri.github.io</title>                                                  <!--Imposta il titolo della pagina-->
+    <script src="../javascript/navbar.js" defer></script>                                       <!--Importa gli script da 'navbar.js'-->
     <script defer type="text/javascript" src="../javascript/views_info5.js"></script>           <!--Importa gli script da 'views_info5.js'-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73RNFH0DZ"></script>      <!-- Google tag (gtag.js) -->
     <script>
@@ -17,46 +19,50 @@
     </script>
 </head>
 <body>
-    <div id="nav">                                                                                          <!--Navbar-->
+    <header>                                                                                                <!--Barra di navigazione responsiva-->
         <nav class="navbar">
-            <div class="navbar-links">
+            <div class="logo">
+                <a href="#home">
+                    <table border="0">
+                        <tr>
+                            <td><img class="navimg" src="../media/images/home.png">&nbsp;</td>
+                            <td><img id="scrittalogo" src="../media/images/scrittalogo.png"></td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+            <button id="responsiveMenuToggleButton">
+                <img class="openIcon" src="../media/images/menu.png">
+                <img class="closeIcon" src="../media/images/x.png">
+            </button>
+            <div class="nav-links">
                 <ul>
                     <li>
-                        <a href="https://toghiri.github.io/">
+                        <a href="#generali">
                             <table border="0">
                                 <tr>
-                                    <td><img src="../media/images/home.png">&nbsp;</td>
-                                    <td><img id="scrittalogo" src="../media/images/scrittalogo.png"></td>
+                                    <td><img class="navimg"src="../media/images/appuntiic.png"></td>
+                                    <td>Generali</td>
                                 </tr>
                             </table>
                         </a>
                     </li>
-                    <li style="float:right">
-                        <a href="#2_prova">
-                            <table border="0">
-                                <tr>
-                                    <td><img src="../media/images/esaminav.png"></td>
-                                    <td>Esami</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </li>
-                    <li style="float:right">
+                    <li>
                         <a href="#info5">
                             <table border="0">
                                 <tr>
-                                    <td><img src="../media/images/scuola.png"></td>
+                                    <td><img class="navimg" src="../media/images/scuola.png"></td>
                                     <td>5ª Info</td>
                                 </tr>
                             </table>
                         </a>
                     </li>
-                    <li style="float:right">
-                        <a href="#generali">
+                    <li>
+                        <a href="#2_prova">
                             <table border="0">
                                 <tr>
-                                    <td><img src="../media/images/appuntiic.png"></td>
-                                    <td>Generali</td>
+                                    <td><img class="navimg" src="../media/images/esaminav.png"></td>
+                                    <td>Esami</td>
                                 </tr>
                             </table>
                         </a>
@@ -64,7 +70,7 @@
                 </ul>
             </div>
         </nav>
-    </div>
+    </header>
     <div align="center" id="generali">                                                                      <!--Generali-->
         <div>
             <br><br><br><br>

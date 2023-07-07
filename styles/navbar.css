@@ -1,0 +1,109 @@
+#scrittalogo {
+    height: 23px;
+    width: 210px;
+}
+
+.navbar {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+}
+
+.navimg {
+    height: 23px;
+    width: 23px;
+    filter: invert(100%);
+}
+
+.nav-links ul {
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links ul li table {
+    height: 60px;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: #111;
+}
+
+.logo table {
+    height: 60px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.logo:hover {
+    background-color: #111;
+}
+
+#responsiveMenuToggleButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#responsiveMenuToggleButton img{
+    filter: invert(100%);
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
+}
+
+#responsiveMenuToggleButton .openIcon {
+    display: block;
+}
+
+#responsiveMenuToggleButton .closeIcon {
+    display: none;
+}
+
+#responsiveMenuToggleButton.open .openIcon{
+    display: none;
+}
+
+#responsiveMenuToggleButton.open .closeIcon{
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    #responsiveMenuToggleButton {
+        display: block;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links{
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.open {
+        display: block;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #5a5a5a;
+    }
+}

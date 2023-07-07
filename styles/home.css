@@ -1,43 +1,11 @@
-body
-{
+body {
     background-color: rgb(155, 155, 155);
     font-family: sans-serif;
     overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
-}
-
-li {
-    display: inline;
-    float: left;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-li a table tr td img{
-    height: 23px;
-    width: 23px;
-    filter: invert(100%);
 }
 
 .website-counter {
@@ -48,47 +16,31 @@ li a table tr td img{
     font-size: 20px;
   }
 
-.rif a:link{
+.rif a:link {
     color: #e60000;
     text-decoration: none;
 }
 
-.rif a:visited{
+.rif a:visited {
     color: #e60000;
     text-decoration: none;
 }
 
-.rimmagine{
+.rimmagine {
     border-radius: 50%;
     width: 100px ;
     height: 100px;
 }
 
-.logosito{
-    height: 20px;
-}
-
-hr{
+hr {
     border: 1px solid #333;
     width: 70%;
-}
-
-#scrittalogo{
-    filter: none;
-    height: 23px;
-    width: 100%;
 }
 
 /*#countdown{
     display: inline;
     border-bottom: 1px solid black;
 }*/
-
-#nav{
-    position: sticky;
-    top: 0;
-    width: 100%;
-}
 
 #footer {
     text-align: center;
