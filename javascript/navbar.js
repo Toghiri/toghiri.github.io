@@ -12,6 +12,13 @@ const allNavLinks = document.querySelectorAll('.nav-links li');
 allNavLinks.forEach(link => {
     link.addEventListener('click', () =>{
         navBarLinks.classList.remove('open');
-        resposiveMenuButton.classList.remove('open')
+        resposiveMenuButton.classList.remove('open');
     })
-} )
+})
+
+const linkLogo = document.querySelector('.logo a');
+
+linkLogo.addEventListener('click', () => {
+    navBarLinks.classList.remove('open');
+    resposiveMenuButton.classList.remove('open');
+})

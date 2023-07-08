@@ -44,6 +44,10 @@ li:hover {
     background-color: #111;
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 .logo table {
     height: 60px;
     margin-left: 1rem;
@@ -65,10 +69,12 @@ li:hover {
 }
 
 #responsiveMenuToggleButton img{
+    height: 45px;
+    width: 45px;
     filter: invert(100%);
     position: absolute;
-    right: 0.3rem;
-    top: 0.3rem;
+    right: 0.5rem;
+    top: 0.5rem;
 }
 
 #responsiveMenuToggleButton .openIcon {
