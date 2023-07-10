@@ -1,7 +1,7 @@
 body {
     background-color: rgb(155, 155, 155);
     font-family: sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 ::-webkit-scrollbar {
@@ -13,7 +13,7 @@ body {
     color: #e60000;
     border-bottom: 1px solid #333;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 30px;
   }
 
 .rif a:link {
@@ -42,7 +42,7 @@ hr {
     border-bottom: 1px solid black;
 }*/
 
-#footer {
+/* #footer-vecchio {
     text-align: center;
     font-family: sans-serif;
     position: fixed;
@@ -52,10 +52,10 @@ hr {
     border-top:1px solid black;
     padding-top:10px;
     background-color: rgb(155, 155, 155);
-}
+} */
 
-@media all and (max-width:1200px){
-    #footer{
+@media all and (max-width:1200px) {
+    #footer {
         position: fixed;
         width: 100%;
         left: 0;

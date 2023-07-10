@@ -1,6 +1,6 @@
 header {
-position: sticky;
-top: 0;
+    position: sticky;
+    top: 0;
 }
 
 #scrittalogo {
@@ -68,7 +68,7 @@ li:hover {
     right: 0;
 }
 
-#responsiveMenuToggleButton img{
+#responsiveMenuToggleButton img {
     height: 45px;
     width: 45px;
     filter: invert(100%);
@@ -85,11 +85,11 @@ li:hover {
     display: none;
 }
 
-#responsiveMenuToggleButton.open .openIcon{
+#responsiveMenuToggleButton.open .openIcon {
     display: none;
 }
 
-#responsiveMenuToggleButton.open .closeIcon{
+#responsiveMenuToggleButton.open .closeIcon {
     display: block;
 }
 
@@ -98,12 +98,12 @@ li:hover {
         display: block;
     }
 
-    .navbar{
+    .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .nav-links{
+    .nav-links {
         width: 100%;
         display: none;
     }

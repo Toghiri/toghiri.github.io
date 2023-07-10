@@ -1,19 +1,18 @@
-body
-{
+body {
     background-color: rgb(155, 155, 155);
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
-table{
+table {
     text-align: center;
 }
 
-h3{
+h3 {
     display: inline;
 }
 
@@ -40,8 +39,8 @@ h3{
     background-color: rgb(155, 155, 155);
 }
 
-@media all and (max-width:1200px){
-    #footer{
+@media all and (max-width:1200px) {
+    #footer {
         width: 100%;
         left: 0;
     }

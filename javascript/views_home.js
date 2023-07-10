@@ -12,8 +12,8 @@ else {
 }
 
 if(visitCount == 1){
-  counterContainer.innerHTML = visitCount + "&nbsp;volta";
+  counterContainer.innerHTML = visitCount + "&nbsp;VOLTA";
 }
 else{
-  counterContainer.innerHTML = visitCount + "&nbsp;volte";
+  counterContainer.innerHTML = visitCount + "&nbsp;VOLTE";
 }
