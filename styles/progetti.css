@@ -57,9 +57,12 @@ body {
 
 @media all and (max-width:1200px) {
 
-    html, body{
-        width: 99%;
-        overflow-x: hidden;
+    .widjet{
+        display: none;
+    }
+
+    .tp td{
+        padding-right: 0;
     }
 
     #footer {
