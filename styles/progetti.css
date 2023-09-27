@@ -56,6 +56,12 @@ body {
 }
 
 @media all and (max-width:1200px) {
+
+    html, body{
+        width: 99%;
+        overflow-x: hidden;
+    }
+
     #footer {
         position: fixed;
         width: 100%;
