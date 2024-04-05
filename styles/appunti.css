@@ -25,7 +25,7 @@ h3 {
 }
 
 .tabella2 b{
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 10px;
 }
 
@@ -121,6 +121,15 @@ h3 {
 
     .esame-bottone {
         font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .gruppo3 h3{
+        font-size: 16px;
+    }
+
+    .text {
+        font-size: 14px;
     }
 }
 
