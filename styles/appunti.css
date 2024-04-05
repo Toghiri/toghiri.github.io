@@ -2,6 +2,7 @@ body {
     background-color: rgb(155, 155, 155);
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    z-index: 0;
 }
 
 ::-webkit-scrollbar {
@@ -16,6 +17,61 @@ h3 {
     display: inline;
 }
 
+.tabella{
+    background-color: #b3b3b3;
+    box-shadow: 5px 5px 10px black;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.tabella2 b{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.gruppo {
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
+    border-radius: 20px;
+}
+
+.pdf {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 2px 2px 4px white;
+}
+
+.appunti-bottone {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 2px 2px 4px white;
+    margin-left: 15px;
+}
+
+.esame-bottone {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 2px 2px 4px white;
+}
+
 .website-counter {
     display: inline;
     color: #135eff;
@@ -26,6 +82,7 @@ h3 {
 .icona {
     height: 65px;
     width: 65px;
+    filter: drop-shadow(4px 4px 1px#707070);
 }
 
 #footer {
@@ -45,3 +102,26 @@ h3 {
         left: 0;
     }
 }
+
+@media all and (max-width:440px) {
+
+    .pdf {
+        padding: 6px 13px;
+        font-size: 13px;
+    }
+    
+    .appunti-bottone {
+        padding: 6px 13px;
+        font-size: 13px;
+    }
+
+    .tabella1 b {
+        font-size: 14px;
+    }
+
+    .esame-bottone {
+        font-size: 12px;
+    }
+}
+
+
