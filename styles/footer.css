@@ -109,9 +109,20 @@
 
 }
 
-@media screen and (max-width: 500px) {
-    .colonna1, .colonna2 {
-        transform: scale(0.6); /* Ridimensiona la colonna al 80% della sua dimensione originale */
+@media screen and (max-width: 530px) {
+    .colonna1 {
+        transform: scale(0.65); /* Ridimensiona la colonna al 80% della sua dimensione originale */
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+
+    .colonna2 img {
+        height: 55px;
+    }
+
+    .colonna2 {
+        margin-top: 0;
+        font-size: 11px;
     }
 
     .vspacingmobile{
