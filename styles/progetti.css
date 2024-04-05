@@ -27,10 +27,6 @@ body {
     box-shadow: 6px 6px 12px white;
 }
 
-.tp td{
-    padding-right: 40vh;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -80,6 +76,10 @@ body {
     border: solid black 1px;
 }
 
+.progetto-testo{
+    width: 60%;
+}
+
 
 @media all and (max-width:1500px) {
 
@@ -95,13 +95,20 @@ body {
         max-width: 95%;
     }
 
-    .tp td{
-        padding-right: 0;
-    }
-
     #footer {
         position: fixed;
         width: 100%;
         left: 0;
+    }
+}
+
+@media all and (max-width:440px) {
+
+    .progetto span {
+        font-size: 85%;
+     }
+
+     .tp {
+        margin-left: 20px;
     }
 }
