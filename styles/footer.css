@@ -11,6 +11,7 @@
     margin-top: 150px;
     display: flex;
     position: absolute;
+    justify-content: center;
     bottom: 0px;
     background-color: #333;
     color: #efefef;
@@ -23,7 +24,6 @@
 .colonna1{
     width: 50%;
     margin-top: 50px;
-    margin-left: 110px;
     margin-bottom: 20px;
 }
 
@@ -73,15 +73,57 @@
     text-decoration: none;
 }
 
-@media screen and (max-width:1050px) {
-
-    #footer-container{
-        display: none;
-    }
+.logofooter{
+    width: 500px;
+    margin-left: 110px;
 }
-@media screen and (max-width:1220px) {
 
-    .colonna1{
-        margin-left: 50px;
+.vspacingmobile{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+@media screen and (max-width:1150px) {
+
+    .footer{
+        flex-direction: column;
+    }
+
+    .colonna1 {
+        display: flex;
+        justify-content: center; /* Centra orizzontalmente il contenuto */
+        align-items: center; /* Centra verticalmente il contenuto */
+        flex-direction: column; /* Mantiene la direzione della colonna a verticale */
+        height: 100%; /* Assicura che la colonna occupi l'intera altezza disponibile */
+    }
+
+    .logofooter {
+        margin-left: 0px;
+    }
+
+    .colonna1, .colonna2 {
+        width: 100%; /* Le colonne occupano l'intera larghezza */
+        text-align: center; /* Allinea il testo al centro */
+        align-items: center; /* Centra orizzontalmente i blocchi interni */
+        justify-content: center; /* Centra verticalmente i blocchi interni */
+    }
+
+    .contatti_footer{
+        margin-right: 0px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .colonna1, .colanna2 {
+        transform: scale(0.7); /* Ridimensiona la colonna al 80% della sua dimensione originale */
+    }
+
+    .vspacingmobile{
+        height: 300px;
+        display: block;
     }
 }

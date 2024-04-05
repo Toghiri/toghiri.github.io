@@ -4,9 +4,6 @@ body {
     overflow-x: hidden;
 }
 
-#games{
-    border-bottom: 1px solid black;
-}
 
 #games a:link {
     color: black;
@@ -41,7 +38,7 @@ body {
 .progetto{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-top: 1px solid black;
     font-weight: 550;
 }
 
