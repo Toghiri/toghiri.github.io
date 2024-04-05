@@ -1,6 +1,6 @@
 body {
     background-color: rgb(155, 155, 155);
-    font-family: sans-serif;
+    /*font-family: sans-serif;*/
     overflow-x: clip;
 }
 
@@ -14,8 +14,8 @@ body {
     border-bottom: 1px solid #333;
     font-weight: 600;
     font-size: 20px;
-  }
-
+}
+  
 .rif a:link {
     color: #e60000;
     text-decoration: none;
@@ -30,29 +30,13 @@ body {
     border-radius: 50%;
     width: 100px ;
     height: 100px;
+    filter: drop-shadow(4px 4px 3px#707070);
 }
 
 hr {
     border: 1px solid #333;
     width: 70%;
 }
-
-#countdown{
-    display: inline;
-    border-bottom: 1px solid black;
-}
-
-/*#footer-vecchio-1 {
-    text-align: center;
-    font-family: sans-serif;
-    position: fixed;
-    bottom: 0;
-    height: 25px;
-    width: 99%;
-    border-top:1px solid black;
-    padding-top:10px;
-    background-color: rgb(155, 155, 155);
-}*/
 
 #footer-vecchio{
     text-align: center;
@@ -63,6 +47,11 @@ hr {
     border-top:1px solid black;
     padding-top:10px;
     background-color: rgb(155, 155, 155);
+}
+
+#countdown1{
+    display: inline;
+    border-bottom: 1px solid black;
 }
 
 @media all and (max-width:1200px) {

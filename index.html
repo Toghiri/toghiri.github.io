@@ -4,9 +4,10 @@
     <meta charset="UTF-8">                                                                      <!--Specifica l'encoding dei caratteri utilizzato all'interno del documento.-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">                                       <!--Specifica al browser quale versione del motore di rendering utilizzare -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                      <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
-    <link rel="stylesheet" href="styles/home.css">                                              <!--Imposta lo stile CSS della pagina-->
+    <link rel="stylesheet" href="styles/oldhome.css">                                           <!--Imposta lo stile CSS della pagina-->
+    <link rel="stylesheet" href="styles/newhome.css">                                           <!--Imposta lo stile CSS nuovo della pagina-->
     <link rel="stylesheet" href="styles/navbar.css">                                            <!--Imposta lo stile CSS della navbar-->
-                                                                                                <!-- <link rel="stylesheet" href="styles/footer.css"> -->
+    <link rel="stylesheet" href="styles/footer.css">                                            <!-- <link rel="stylesheet" href="styles/footer.css"> -->
     <link rel="icon" type="image/x-icon" href="media/icons/homenew2.ico">                       <!--Imposta l'icona della pagina-->
     <title>Home - toghiri.github.io</title>                                                     <!--Imposta il titolo della pagina-->
     <script src="./javascript/navbar.js" defer></script>                                        <!--Importa gli script da 'navbar.js'-->
@@ -29,7 +30,7 @@
 </head>
 <body>
     <header>                                                                                    <!--Barra di navigazione responsiva-->
-        <nav class="navbar">
+        <nav class="navbar" style="font-size: 17px;">
             <div class="logo">
                 <a href="#home">
                     <table border="0">
@@ -51,7 +52,7 @@
                             <table border="0">
                                 <tr>
                                     <td><img class="navimg" src="./media/images/progetti1.png"></td>
-                                    <td>Progetti</td>
+                                    <td><span>Progetti</span></td>
                                 </tr>
                             </table>
                         </a>
@@ -61,7 +62,7 @@
                             <table border="0">
                                 <tr>
                                     <td><img class="navimg" src="./media/images/appuntiic.png"></td>
-                                    <td>Appunti</td>
+                                    <td><span>Appunti</span></td>
                                 </tr>
                             </table>
                         </a>
@@ -71,17 +72,17 @@
                             <table border="0">
                                 <tr>
                                     <td><img class="navimg" src="./media/images/github.png"></td>
-                                    <td>GitHub</td>
+                                    <td><span>GitHub</span></td>
                                 </tr>
                             </table>
                         </a>
                     </li>
                     <li>
-                        <a href="https://discord.gg/qAkb5rj" target="_blank">
+                        <a href="mailto:pietrovaccariinfo@gmail.com" target="_blank">
                             <table border="0">
                                 <tr>
-                                    <td><img class="navimg" src="./media/images/discord.png"></td>
-                                    <td>Contatti</td>
+                                    <td><img class="navimg" src="./media/images/mailli.png"></td>
+                                    <td><span>Contatti</span></td>
                                 </tr>
                             </table>
                         </a>
@@ -90,92 +91,709 @@
             </div>
         </nav>
     </header>
-    <br>
-    <div align="center" id="home">                                                              <!--Paragrafo Home-->
-        <table border="0" bordercolor="black" class="text" cellpadding="10">
-            <tr>
-                <td>
-                    <img class="rimmagine" src="./media/images/toghiri_logo.png" alt="logo">
-                </td>
-                <td>
-                    <b class="rif">
-                        Benvenuto nella home del mio sito, qui puoi trovare i miei <a href="pages/appunti.html">appunti</a> per la 5a ITIS indirizzo informatico.
-                    </b>
-                </td>
-            </tr>
-        </table>
+    <div class="newpage">                                                                       <!--New home page > 1410px-->
         <br>
-        <hr>
-        <br>
-    </div>
-    <div align="center">                                                                        <!--Paragrafo GitHub-->
-        <table border="0" bordercolor="black" class="text" cellpadding="10">
-            <tr>
-                <td>
-                    <img class="rimmagine" src="./media/images/sergio.jpg" alt="sergio">
-                </td>
-                <td>
-                    <b class="rif">
-                        Ho anche una pagina su <a href="https://github.com/Toghiri" target="_blank">GitHub</a> con l'immagine di un mio bassotto.
-                    </b>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <hr>
-        <br>
-    </div>
-    <div align="center">                                                                        <!--Paragrafo Maturità-->
-        <table border="0" bordercolor="black" class="text" cellpadding="10">
-            <tr>
-                <td>
-                    <img class="rimmagine" src="./media/images/maturita.png" alt="maturita">
-                </td>
-                <td>
-                    <b class="rif">
-                        Alla prima prova dell'esame di <a href="https://www.studenti.it/calendario-scolastico-2023-2024.html" target="_blank">maturità</a> mancano &nbsp;<h3 id="countdown"></h3>
-                    </b>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <hr>
-        <br>
-    </div>
-    <div align="center">                                                                        <!--Paragrafo Struttura_sito-->
-        <table border="0" bordercolor="black" class="text" cellpadding="10">
-            <tr>
-                <td>
-                    <img class="rimmagine" src="./media/images/code.jpg" alt="codice">
-                </td>
-                <td>
-                    <b class="rif">
-                        Se ti interessa, <a href="https://github.com/Toghiri/toghiri.github.io?search=1" target="_blank">cliccando qui</a>, puoi vedere come è scritto e strutturato questo sito.
-                    </b>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <hr>
-        <br>
-    </div>
-    <div align="center">                                                                        <!--Paragrafo Views_sito-->
-        <table border="0" bordercolor="black" class="text" cellpadding="10">
-            <tr>
-                <td>
-                    <img class="rimmagine" src="./media/images/views.jpg" alt="views">
-                </td>
-                <td>
-                    <b class="rif">
-                        Hai visualizzato questa pagina <div class="website-counter" noIcon="true"></div>
-                    </b>
-                </td>
-            </tr>
-        </table>
+        <div>                                                                                   <!--Old Home Page Grid-->
+            <table class="oldhomepage" border="0" bordercolor="black" cellspacing="0" cellpadding="10">  
+                <tr>
+                    <td class="oldhomepagecell">
+                        <a href="pages/appunti.html">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/books.jpg">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Appunti</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>Cliccando qui, puoi trovare i miei appunti per la 5a ITIS indirizzo informatico.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                    <td class="oldhomepagecell">
+                        <a href="https://github.com/Toghiri" target="_blank">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/sergio.jpg">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Pagina GitHub</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>Ho anche una pagina su GitHub con l'immagine di uno dei miei bassotti, clicca qui per vederla.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="oldhomepagecell">
+                        <a href="https://www.studenti.it/calendario-scolastico-2023-2024.html" target="_blank">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/maturita.png">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Maturità 2023/24</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>Alla prima prova dell'esame di maturità mancano <h3 id="countdown"></h3>.</span> 
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                    <td class="oldhomepagecell">
+                        <a href="https://github.com/Toghiri/toghiri.github.io?search=1" target="_blank">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/code.jpg">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Struttura Sito</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>Cliccando qui, puoi vedere come è scritto e strutturato questo sito.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="oldhomepagecell">
+                        <a href="./pages/progetti.html">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/prog.png">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Progetti</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>Qui puoi trovare tutti i progetti che ho creato e rilasciato fino ad ora.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                    <td class="oldhomepagecell">
+                        <a href="#">
+                            <table class="oldhomepagecellcolor">
+                                <tr>
+                                    <td class="oldhomepagetitle">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img class="oldhomepagegridimg" src="./media/images/novita.jpg">
+                                                </td>
+                                                <td class="oldhomepagetitlesub"><span>Novità [WIP]</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="oldhomepagedescription">
+                                        <span>In questa pagina puoi approfondire tutte le novità e gli aggiornamenti di questo sito.</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <br><br>
+        <div class="paragrafi">                                                                 <!--Paragrafi-->
+            <div>                                                                               <!--Paragrafo "Chi Sono"-->
+                <table class="chisono" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
+                    <tr>
+                        <td class="chisonoparagrafo">
+                            <table border="0">
+                                <tr>
+                                    <td class="chisonoicon">
+                                        <img src="./media/images/impronta.png" alt="">
+                                    </td>
+                                    <td class="chisonotitle">
+                                        <h1>Chi Sono? <br> Il mio nome è Pietro Vaccari, ho 22 anni e sono un tecnico informatico</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="chisonopatentielingue">
+                                        <table border="0" bordercolor="black" cellspacing="0" >
+                                            <tr>
+                                                <td>
+                                                    <span class="bold">Lingue conosciute:</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table border="0" bordercolor="black" cellspacing="0" style="margin-left: 1vh;">
+                                                        <tr>
+                                                            <td>
+                                                               <span>Italiano</span>
+                                                            </td>
+                                                            <td>
+                                                                <span>Lingua Madre</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span>Inglese</span>
+                                                            </td>
+                                                            <td>
+                                                                <span>Conoscenza professionale</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="textleft bordertop">
+                                                    <table>
+                                                        <tr>
+                                                            <td><span class="bold">Patenti:</span></td>
+                                                            <td><span>A1 &nbsp; B</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="chisonopresentazione">
+                                        <div class="chisonopresentazionetext"><span>Ho una passione profonda per il mondo della tecnologia e un forte desiderio di imparare e crescere professionalmente. Durante il mio percorso di studi, ho acquisito una solida base di conoscenze, che spaziano da concetti fondamentali di programmazione e sviluppo software, all'analisi dei sistemi e alla gestione dei database, e sono sempre alla ricerca di nuovi modi per migliorare le mie abilità ed acquisirne di nuove.</span><br><br>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="chisonofoto">
+                            <img src="./media/images/foto-placeholde.jpg" alt="FOTO">
+                        </td>
+                    </tr>
+                </table>    
+            </div>
+            <br><br>
+            <div>                                                                               <!--Paragrafo Certificazioni-->
+                <table class="certificazioni" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
+                    <tr>
+                        <td class="certificazionialtro">
+                            <table border="0">
+                                <tr>
+                                    <td><h1 class="ombratitolo">Valutazioni Invalsi</h1></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="0" class="certificazioniinvalsi">
+                                            <tr>
+                                                <td><img class="ombraoggetto" src="./media/images/Certificazione_invalsi_matematica.png" alt=""></td>
+                                                <td><img class="ombraoggetto" src="./media/images/Certificazione_invalsi_italiano.png" alt=""></td>
+                                                <td><img class="ombraoggetto" src="./media/images/Certificazione_invalsi_inglese_ascolto.png" alt=""></td>
+                                                <td><img class="ombraoggetto" src="./media/images/Certificazione_invalsi_inglese_lettura.png" alt=""></td>
+                                            <tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="certificazionidiploma">
+                            <table border="0">
+                                <tr>
+                                    <td class="certificaziomidiplomaspacing"></td>
+                                    <td><h2 class="ombratitolo nobuttommagin">Diploma di Maturità</h2></td>
+                                </tr>
+                                <tr>
+                                    <td class="certificaziomidiplomaspacing"></td>
+                                    <td>
+                                        <h3 class="ombratitolo notopmmagin nobuttommagin">Diploma Istituto Tecnico in Informatica e Telecomunicazioni &nbsp;&nbsp; Giugno 2023</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="certificaziomidiplomaspacing"></td>
+                                    <td>
+                                        <span>Istituto Superiore di Istruzione Industriale G. Marconi</span><br>
+                                        <span>Via IV Novembre 122 - 29122 Piacenza (PC)</span><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="certificazionifoto">
+                            <img src="./media/images/D-PV-2023.jpg" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br><br>
+            <div>                                                                               <!--Paragrafo Esperienze-->
+                <table class="esperienze" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
+                    <tr>
+                        <td>
+                            <table border="0">
+                                <tr>
+                                    <td class="esperienzeicon">
+                                        <img src="./media/images/esperienze.png" alt="ICONA ESPERIENZE LAVORATIVE">
+                                    </td>
+                                    <td>
+                                        <h1 class="ombratitolo fontxxxl">Esperienze Lavorative</h1>
+                                    </td>   
+                                    <td class="tenpercw"></td>
+                                </tr>
+                            </table> 
+                        </td>
+                    </tr>                 
+                    <tr>
+                        <td>
+                            <div class="esperienza ombrabox">                                            <!--AEE-->
+                                <table border="0">
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table>
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/indirizzo.png" alt="ICONA INDIRIZZO AZIENDA">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>Via Isamu Amada 1/3<br>29010 Pontenure (PC)</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="titoloesottolavoro">
+                                            <table border="0" cellspacing="10" cellpadding="0" >
+                                                <tr><td></td></tr>
+                                                <tr><td><h1 class="ombratitoloB littlemargin inline bgesperienzatitolo">&nbsp;Tecnico del supporto Software&nbsp;</h1></td></tr>
+                                                <tr><td></td></tr>
+                                                <tr><td><a href="https://www.amada.eu/it-it/" target="_blank"><h2 class="littlemargin inline"><br>AMADA ENGINEERING EUROPE</h2><span></span></a></td></tr>
+                                                <tr><td></td></tr>
+                                            </table>
+                                        </td>
+                                        <td class="esperienzefoto">
+                                            <a href="https://www.amada.eu/it-it/" target="_blank"><img class="ombrabox" src="./media/images/amada.png" alt="IMMAGINE AZIENDA"></a>
+                                        </td>
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table border="0">
+                                                <tr>
+                                                    <td class="seventyperch">
+                                                        <img src="./media/images/durata.png" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>ott 2023 - mar 2024</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+                                                <tr>
+                                                    <td class="esperienzadescspacing"></td>
+                                                    <td class="textleft fontxl">
+                                                        <span>In questa azienda ho imparato come svolgere al meglio le attività da tecnico del supporto software, comunicando per lo più con tecnici all'estero. Dovendo risolvere problemi complessi ho potuto sviluppare le mie capacità nel problem solving e nell'utilizzo della lingua inglese.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="sevenvhh">
+                                                    <td></td>
+                                                    <td class="textleft"><br><br><span class="bold">COMPETENZE ACQUISITE:</span><span> SQL - Automazione test - Programmazione CNC - Problem solving - Grammatica inglese - Lavoro di squadra - VMware - Lingua inglese - CAD/CAM - Rapporto clienti - Fogli di calcolo - Taglio laser - Supporto tecnico</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="esperienza ombrabox">                                            <!--GALASSIA-->
+                                <table border="0">
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table>
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/indirizzo.png" alt="ICONA INDIRIZZO AZIENDA">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>Via Friuli 1 <br> 29017 Fiorenzuola D'arda (PC)</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="titoloesottolavoro">
+                                            <table border="0" cellspacing="10" cellpadding="0" >
+                                                <tr><td></td></tr>
+                                                <tr><td><h1 class="ombratitoloB littlemargin inline bgesperienzatitolo">&nbsp;Addetto reparto gastronomia e scatolame&nbsp;</h1></td></tr>
+                                                <tr><td></td></tr>
+                                                <tr><td><a href="https://www.ipergalassia.it/punti-vendita/emilia-romagna/galassia-fiorenzuola-d-arda" target="_blank"><h2 class="littlemargin inline"><br>GALASSIA SUPERMERCATI</h2><span></span></a></td></tr>
+                                                <tr><td></td></tr>
+                                            </table>
+                                        </td>
+                                        <td class="esperienzefoto">
+                                            <a href="https://www.ipergalassia.it/punti-vendita/emilia-romagna/galassia-fiorenzuola-d-arda" target="_blank"><img class="ombrabox" src="./media/images/galassia.png" alt="IMMAGINE AZIENDA"></a>
+                                        </td>
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table border="0">
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/durata.png" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>mag 2021 - set 2021</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+                                                <tr>
+                                                    <td class="esperienzadescspacing"></td>
+                                                    <td class="textleft fontxl">
+                                                        <span>Lavorando nel reparto gastronomia, ho affinato le mie competenze nell'assistenza al cliente e nel lavoro di squadra. Quest'esperienza mi ha dato una solida preparazione per gestire incarichi che richiedono un contatto diretto con la clientela e ha contribuito al mio sviluppo professionale, sia individualmente che in ambito di team.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="sevenvhh">
+                                                    <td></td>
+                                                    <td class="textleft"><br><br><span class="bold">COMPETENZE ACQUISITE:</span><span> Organizzazione magazzino · Vendita al dettaglio · Lavoro di squadra · Sicurezza alimentare · Rapporto clienti</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="esperienza ombrabox">                                            <!--CONSERVE ITALIA-->
+                                <table border="0">
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table>
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/indirizzo.png" alt="ICONA INDIRIZZO AZIENDA">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>Castellana Lusurasco 8<br>29010 Alseno (PC)</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="titoloesottolavoro">
+                                            <table border="0" cellspacing="10" cellpadding="0" >
+                                                <tr><td></td></tr>
+                                                <tr><td><h1 class="ombratitoloB littlemargin inline bgesperienzatitolo">&nbsp;Addetto al controllo della qualità&nbsp;</h1></td></tr>
+                                                <tr><td></td></tr>
+                                                <tr><td><a href="https://www.conserveitalia.it/it/" target="_blank"><h2 class="littlemargin inline"><br>CONSERVE ITALIA</h2><span></span></a></td></tr>
+                                                <tr><td></td></tr>
+                                            </table>
+                                        </td>
+                                        <td class="esperienzefoto">
+                                            <a href="https://www.conserveitalia.it/it/" target="_blank"><img class="ombrabox" src="./media/images/conserve-italia.png" alt="IMMAGINE AZIENDA"></a>
+                                        </td>
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table border="0">
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/durata.png" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>giu 2020 - set 2020</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+                                                <tr>
+                                                    <td class="esperienzadescspacing"></td>
+                                                    <td class="textleft fontxl">
+                                                        <span>Ricoprendo il ruolo di addetto al controllo qualità, ho potuto migliorare le mie capacità nell'esecuzione di analisi tramite strumenti di laboratorio per verificare i valori del prodotto in arrivo, ho coordinato le operazioni di scarico dei camion e ho collaborato con altri membri del controllo qualità per garantire la conformità e la sicurezza del prodotto.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="sevenvhh">
+                                                    <td></td>
+                                                    <td class="textleft"><br><br><span class="bold">COMPETENZE ACQUISITE:</span><span> Attrezzature di laboratorio - Lavoro di squadra - Fogli di calcolo</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="esperienza ombrabox">                                            <!--TOLLARA VINI-->
+                                <table border="0">
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table>
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/indirizzo.png" alt="ICONA INDIRIZZO AZIENDA">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>Strada Gasperini, 613<br>29010 Alseno (PC)</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="titoloesottolavoro">
+                                            <table border="0" cellspacing="10" cellpadding="0" >
+                                                <tr><td></td></tr>
+                                                <tr><td><h1 class="ombratitoloB littlemargin inline bgesperienzatitolo">&nbsp;Addetto vigna, cantina e vendita&nbsp;</h1></td></tr>
+                                                <tr><td></td></tr>
+                                                <tr><td><a href="https://www.tollaravini.it/" target="_blank"><h2 class="littlemargin inline"><br>TOLLARA VINI</h2><span></span></a></td></tr>
+                                                <tr><td></td></tr>
+                                            </table>
+                                        </td>
+                                        <td class="esperienzefoto">
+                                            <a href="https://www.tollaravini.it/" target="_blank"><img class="ombrabox" src="./media/images/tollara.png" alt="IMMAGINE AZIENDA"></a>
+                                        </td>
+                                    <tr>
+                                        <td class="tenpercw bgesperienzainfo ombraboxm">
+                                            <table border="0">
+                                                <tr class="seventyperch">
+                                                    <td>
+                                                        <img src="./media/images/durata.png" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>2017 - 2022</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+                                                <tr>
+                                                    <td class="esperienzadescspacing"></td>
+                                                    <td class="textleft fontxl">
+                                                        <span>
+                                                            Lavorando nell'azienda vitivinicola di famiglia, ho acquisito competenze trasversali in tutti gli aspetti della gestione della vigna e della cantina. Attraverso la vendita diretta dei nostri vini nelle fiere, ho perfezionato le mie abilità nell'assistenza al cliente e nell'ambito commerciale. </span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="sevenvhh">
+                                                    <td></td>
+                                                    <td class="textleft"><br><br><span class="bold">COMPETENZE ACQUISITE:</span><span> Organizzazione magazzino - Vendita al dettaglio - Sollevamento corretto di carichi pesanti - Lingua inglese - Rapporto clienti - Strumenti manuali</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <br><br><br><br>
+            <div class="beta">                                                                  <!--Beta-->
+                <table border="0" bordercolor="black" cellspacing="0" cellpadding="10">
+                    <tr></tr>
+                    <tr>
+                        <td>
+                           <h3>LA NUOVA HOME PAGE È ATTUALMENTE IN FASE BETA. IL CODICE SARÀ COMPLETAMENTE RIELABORATO.</h3> 
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </div>
+        </div>
+        <div id="footer-container">                                                             <!--Footer Nuovo-->
+            <footer class="footer">
+                <div class="colonna1">
+                    <a href="https://toghiri.github.io/">
+                        <img align="left" src="media/images/scrittalogo.png" alt="site logo">
+                    </a><br><br>
+                    <h3>2022 - 2024</h3>
+                    <hr align="left"><br>
+                    <h2 align=" left">HAI VISUALIZZATO QUESTA PAGINA<br><div class="website-counter" noIcon="true"></div></h2>       
+                </div>
+                <div class="colonna2">
+                    <div class="contatti_footer">
+                        <h1>CONTATTI</h1><br>
+                        <a href="https://discord.gg/qAkb5rj" id="discord_link" target="_blank">
+                            <img src="media/images/discord.png" alt="discord server">
+                        </a>
+                        <a href="https://www.linkedin.com/in/pietro-vaccari-2361001bb/" id="linkedin_link" target="_blank">
+                            <img src="media/images/l3.png" alt="linkedin_profile">
+                        </a>
+                        <a href="https://github.com/Toghiri" id="github_link" target="_blank">
+                            <img src="media/images/github.png" alt="github_profile">
+                        </a>
+                        <a href="mailto:pietrovaccariinfo@gmail.com" id="email" target="_blank">
+                            <img src="media/images/mail.png" alt="mail">
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
-    <div id="footer-vecchio">
-        <b>By Pietro Vaccari</b>
+    <div class="oldpage">                                                                       <!--Old home page < 1410px-->
+        <br>
+        <div align="center" id="home">                                                              <!--Paragrafo Newhome-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/newhp.jpg" alt="logo">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Sfortunatamente, in questo momento, la nuova home page è disponibile solo su PC.<br>Prossimamente verrà implementata anche la sua visualizzazione su dispositivi mobile.
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div align="center" id="home">                                                              <!--Paragrafo Home-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/toghiri_logo.png" alt="logo">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Benvenuto nella home del mio sito, qui puoi trovare i miei <a href="pages/appunti.html">appunti</a> per la 5a ITIS indirizzo informatico.
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div align="center">                                                                        <!--Paragrafo GitHub-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/sergio.jpg" alt="sergio">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Ho anche una pagina su <a href="https://github.com/Toghiri" target="_blank">GitHub</a> con l'immagine di un mio bassotto.
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div align="center">                                                                        <!--Paragrafo Maturità-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/maturita.png" alt="maturita">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Alla prima prova dell'esame di <a href="https://www.istruzione.it/esami-di-stato/tutto-sulla-maturita-2024.html" target="_blank">maturità</a> mancano &nbsp;<h3 id="countdown1"></h3>
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div align="center">                                                                        <!--Paragrafo Struttura_sito-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/code.jpg" alt="codice">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Se ti interessa, <a href="https://github.com/Toghiri/toghiri.github.io?search=1" target="_blank">cliccando qui</a>, puoi vedere come è scritto e strutturato questo sito.
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div align="center">                                                                        <!--Paragrafo Views_sito-->
+            <table border="0" bordercolor="black" class="text" cellpadding="10">
+                <tr>
+                    <td>
+                        <img class="rimmagine" src="./media/images/views.jpg" alt="views">
+                    </td>
+                    <td>
+                        <b class="rif">
+                            Hai visualizzato questa pagina <div class="website-counter" noIcon="true"></div>
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+        </div>
+        <div id="footer-vecchio">
+            <b>By Pietro Vaccari</b>
+        </div>
     </div>
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN35JKC"

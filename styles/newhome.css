@@ -1,0 +1,405 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*body{
+    background-color: rgb(155, 155, 155);
+    overflow-x: clip;
+}*/
+
+.oldhomepage {
+    height: 40vh;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.oldhomepagecell {
+    width: 50%;
+}
+
+.oldhomepage table {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.oldhomepagecellcolor{
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
+}
+
+.oldhomepagetitle {
+    width: 30%;
+    font-weight: 1000;
+    font-size: larger;
+    text-shadow: 2px 2px 1px #707070;
+}
+
+.oldhomepagetitlesub {
+    width: 70%;
+    text-align: left;
+}
+
+.oldhomepagetitlesub span{
+    margin-left: 9px;
+}
+
+.oldhomepagedescription {
+    width: 70%;
+    text-align: left;
+}
+
+.oldhomepage img {
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    filter: drop-shadow(3px 3px 2px#707070);
+}
+
+.oldhomepage a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.oldhomepage table:hover {
+    background-color: #6d6d6d;
+}
+
+.chisono{
+    height: 40vh;
+    width: 100%;
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
+}
+
+.chisono table {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.chisonofoto{
+    width: 15%;
+}
+.chisonofoto img{
+    margin-right: 15px;
+    width: 95%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 6px black;
+}
+.chisonoparagrafo{
+    width: 85%;
+    height: 50%;
+}
+
+.chisonopatentielingue{
+    width: 12%;
+    height: 60%;
+    background-color: #858585;
+    border: solid black 1px;
+}
+
+.chisonopatentielingue table {
+    text-align: center;
+}
+
+.chisonopresentazione{
+    width: 88%;
+    height: 60%;
+    text-align: left;
+}
+
+.chisonopresentazionetext {
+    font-size: x-large;
+    margin-left: 3vh;
+}
+
+.chisonotitle{
+    text-align: left;
+    text-shadow: 3px 3px 1px white;
+}
+
+.chisonoicon img{
+    height: 10vh;
+    margin: auto
+}
+
+.textleft{
+    text-align: left;
+}
+
+.bordertop{
+    border-top: solid black 1px;
+}
+
+.borderar{
+    border: solid black 1px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.certificazioni{
+    height: 20vh;
+    width: 100%;
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
+}
+
+.certificazioni table {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.certificazionifoto img{
+    height: 30vh;
+    border: 1px solid black;
+    box-shadow: 3px 3px 6px black;
+}
+
+.certificazionifoto{
+    width: 10%;
+}
+
+.certificazionidiploma{
+    font-size: x-large;
+    width: 50%;
+}
+.certificazionidiploma table{
+    text-align: left;
+}
+.certificazionialtro{
+    width: 30%;
+}
+
+.certificazioniinvalsi img {
+    width: 100%;
+}
+
+.certificaziomidiplomaspacing{
+    width: 10%;
+}
+
+.esperienze{
+    width: 100%;
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
+} 
+
+.esperienza a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.esperienze table {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.esperienzeicon {
+    width: 10%;
+    height: 20vh;
+    
+}
+
+.esperienzeicon img{
+    width: 100%;
+    height: 100%;
+}
+
+.esperienzefoto {
+    width: 10%;
+}
+
+.esperienzefoto img{
+    width: 92%;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.tenpercw{
+    width: 10%;
+}
+
+.fivepercw{
+    width: 5%;
+}
+
+.paragrafi{
+    width: 97%;
+    text-align: center;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.esperienza{
+    width: 97%;
+    text-align: center;    
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #7e7d7d;
+}
+
+.ombratitolo{
+    text-shadow: 3px 3px 1px white;
+}
+
+.ombratitoloB{
+    text-shadow: 3px 3px 1px white;
+}
+
+.ombrabox{
+    box-shadow: 6px 6px 12px black;
+    border-radius: 5px;
+}
+
+.ombraboxfull{
+    box-shadow: 6px 6px 12px black, -1px -1px 2px black;
+}
+
+.ombraboxm{
+    box-shadow: 2px 2px 4px black;
+}
+
+.ombraoggetto{
+    filter: drop-shadow(6px 6px 12px black);
+}
+
+.ombratextwh{
+    text-shadow: 1px 1px 2px white;
+}
+
+#countdown{
+    display: inline;
+}
+
+.bgesperienza {
+    background-color: #7e7d7d;
+}
+
+.tenpercw img {
+    width: 50%;
+    filter: invert();
+    margin: 5px;
+    filter: drop-shadow(3px 3px rgb(255, 255, 255));
+}
+
+.esperienzadescspacing{
+    width: 5%;
+}
+
+.fontxl{
+    font-size: x-large;
+}
+
+.sevenvhh{
+    height: 7vh;
+}
+
+.seventyperch{
+    height: 70%;
+}
+
+.titoloesottolavoro{
+    font-size: x-large;
+}
+
+.littlemargin{
+    margin: 0.2em;
+}
+
+.inline{
+    display: inline;
+}
+
+.fontxxxl{
+    font-size: 3em;
+}
+
+.borderright{
+    border-right: solid 2px white;
+}
+
+.borderwhtop{
+    border-top: solid 2px white;
+}
+
+.borderwhbottom{
+    border-bottom: solid 2px white;
+}
+
+.bgesperienzainfo {
+    background-color: rgb(182, 182, 182);
+    border-radius: 5px;
+}
+
+.bgesperienzatitolo {
+    background-color: rgb(182, 182, 182);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px black;
+    padding: 10px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nobuttommagin{
+    margin-bottom: 0;
+}
+
+.notopmmagin{
+    margin-top: 0;
+}
+
+.twentypxmargintop{
+    margin-top: 20px;
+}
+
+.oldpage b{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.beta{
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(209, 0, 0);
+    box-shadow: 6px 6px 12px black;
+}
+
+.beta table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.beta table tr{
+    height: 33%;
+}
+
+.beta h3{
+    color: white;
+    text-shadow: 3px 2px 3px black;
+}
+
+@media screen and (max-width:1410px) {
+    .newpage{
+        display: none;
+    }
+    .oldpage{
+        display: block;
+    }
+}
+
+@media screen and (min-width:1411px) {
+    .newpage{
+        display: block;
+    }
+    .oldpage{
+        display: none;
+    }
+}
