@@ -4,6 +4,9 @@ body {
     overflow-x: hidden;
 }
 
+#games {
+    text-align: center;
+}
 
 #games a:link {
     color: black;
@@ -13,6 +16,15 @@ body {
 #games a:visited {
     color: black;
     text-decoration: underline;
+}
+
+.tp {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.widjet iframe {
+    box-shadow: 6px 6px 12px white;
 }
 
 .tp td{
@@ -35,11 +47,17 @@ body {
     background-color: rgb(155, 155, 155);
 }
 
-.progetto{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.progetti-container {
     width: 100%;
-    border-top: 1px solid black;
+}
+
+.progetto{
+    font-family: sans-serif;
+    max-width: 90%; /* Imposta la larghezza massima desiderata */
+    margin: 0 auto; /* Centra il div horizontalmente */
     font-weight: 550;
+    background-color: #bbbbbb;
+    box-shadow: 6px 6px 12px black;
 }
 
 .progetto a:link {
@@ -63,7 +81,7 @@ body {
 }
 
 
-@media all and (max-width:1200px) {
+@media all and (max-width:1500px) {
 
     .widjet {
         display: none;
@@ -71,6 +89,10 @@ body {
 
     .mobile {
         display: block;
+    }
+
+    .progetto{
+        max-width: 100%;
     }
 
     .tp td{
