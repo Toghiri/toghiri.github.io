@@ -52,10 +52,25 @@ body {
     text-decoration: none;
 }
 
+.mobile {
+    display: none;
+    text-align: center;
+}
+
+.mobile img{
+    box-shadow: 6px 6px 12px black;
+    border: solid black 1px;
+}
+
+
 @media all and (max-width:1200px) {
 
-    .widjet{
+    .widjet {
         display: none;
+    }
+
+    .mobile {
+        display: block;
     }
 
     .tp td{
