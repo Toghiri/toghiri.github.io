@@ -119,7 +119,7 @@
 
 @media screen and (max-width: 500px) {
     .colonna1, .colanna2 {
-        transform: scale(0.7); /* Ridimensiona la colonna al 80% della sua dimensione originale */
+        transform: scale(0.6); /* Ridimensiona la colonna al 80% della sua dimensione originale */
     }
 
     .vspacingmobile{
