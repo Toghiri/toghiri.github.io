@@ -65,10 +65,6 @@
     background-color: #999;
 }
 
-.contatti_footer{
-    margin-right: 6rem;
-}
-
 .contatti_footer a{
     text-decoration: none;
 }
@@ -111,14 +107,10 @@
         justify-content: center; /* Centra verticalmente i blocchi interni */
     }
 
-    .contatti_footer{
-        margin-right: 0px;
-    }
-
 }
 
 @media screen and (max-width: 500px) {
-    .colonna1, .colanna2 {
+    .colonna1, .colonna2 {
         transform: scale(0.6); /* Ridimensiona la colonna al 80% della sua dimensione originale */
     }
 
