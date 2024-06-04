@@ -7,8 +7,10 @@ var x = setInterval(function() {
     var minuti = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var secondi = Math.floor((distance % (1000 * 60)) / 1000);
     document.getElementById("countdown").innerHTML = giorni + "g " + ore + "h " + minuti + "m " + secondi + "s ";  //Sostituisce il contenuto di <p id="countdown"></p>
+    document.getElementById("countdown1").innerHTML = giorni + "g " + ore + "h " + minuti + "m " + secondi + "s ";  //Sostituisce il contenuto di <p id="countdown1"></p>
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("countdown").innerHTML = "0 giorni, buona fortuna!";
+        document.getElementById("countdown1").innerHTML = "0 giorni, buona fortuna!";
     }
 }, 1000);
