@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth">
+
 <head>
-    <meta charset="UTF-8">                                                                      <!--Specifica l'encoding dei caratteri utilizzato all'interno del documento.-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">                                       <!--Specifica al browser quale versione del motore di rendering utilizzare -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">                      <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
-    <link rel="stylesheet" href="../styles/appunti.css">                                        <!--Imposta lo stile CSS della pagina-->
-    <link rel="stylesheet" href="../styles/navbar.css">                                         <!--Imposta lo stile CSS della navbar-->
+    <meta charset="UTF-8"> <!--Specifica l'encoding dei caratteri utilizzato all'interno del documento.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Specifica al browser quale versione del motore di rendering utilizzare -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Imposta l'ingrandimento in base alle dimensioni dello schermo-->
+    <link rel="stylesheet" href="../styles/appunti.css"> <!--Imposta lo stile CSS della pagina-->
+    <link rel="stylesheet" href="../styles/navbar.css"> <!--Imposta lo stile CSS della navbar-->
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="icon" type="image/x-icon" href="../media/icons/homenew2.ico">                    <!--Imposta l'icona della pagina-->
-    <title>Appunti - toghiri.github.io</title>                                                  <!--Imposta il titolo della pagina-->
-    <script src="../javascript/navbar.js" defer></script>                                       <!--Importa gli script da 'navbar.js'-->
-    <script defer type="text/javascript" src="../javascript/views_info5.js"></script>           <!--Importa gli script da 'views_info5.js'-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73RNFH0DZ"></script>      <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="../styles/nuovosito.css">
+    <link rel="icon" type="image/x-icon" href="../media/icons/homenew2.ico"> <!--Imposta l'icona della pagina-->
+    <title>Appunti - toghiri.github.io</title> <!--Imposta il titolo della pagina-->
+    <script src="../javascript/navbar.js" defer></script> <!--Importa gli script da 'navbar.js'-->
+    <script defer type="text/javascript" src="../javascript/views_info5.js"></script>
+    <!--Importa gli script da 'views_info5.js'-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73RNFH0DZ"></script> <!-- Google tag (gtag.js) -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-Q73RNFH0DZ');
     </script>
 </head>
+
 <body>
-    <header>                                                                                                <!--Barra di navigazione responsiva-->
+    <header> <!--Barra di navigazione responsiva-->
         <nav class="navbar">
             <div class="logo">
                 <a href="https://toghiri.github.io/">
@@ -42,7 +48,7 @@
                         <a href="#generali">
                             <table border="0">
                                 <tr>
-                                    <td><img class="navimg"src="../media/images/appuntiic.png"></td>
+                                    <td><img class="navimg" src="../media/images/appuntiic.png"></td>
                                     <td>Generali</td>
                                 </tr>
                             </table>
@@ -72,16 +78,25 @@
             </div>
         </nav>
     </header>
-    <div align="center" id="generali">                                                                      <!--Generali-->
+    <div class="avviso-importante">
+        <h2>❗ Attenzione: Nuovo sito disponibile</h2>
+        <p>Questo sito verrà presto dismesso. Tutti i contenuti aggiornati sono già stati trasferiti sul mio nuovo
+            portale.</p>
+        <p>Ti invito a visitarlo per accedere alle informazioni più recenti.</p>
+        <a href="https://www.pietrovaccari.it/">Vai al nuovo sito</a>
+    </div>
+    <div align="center" id="generali"> <!--Generali-->
         <div>
-            <br><br><br><br>
+            <br>
             <table class="gruppo" align="center" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
                 <tr>
                     <td>
                         <img class="icona" src="../media/images/appuntin.png" alt="icona_generali">
                     </td>
                     <td>
-                        <b><h3>APPUNTI GENERALI</h3></b>
+                        <b>
+                            <h3>APPUNTI GENERALI</h3>
+                        </b>
                     </td>
                 </tr>
             </table>
@@ -93,10 +108,12 @@
                         <b>CONCETTI BASE DELLA<br>PROGRAMMAZIONE</b>
                     </td>
                     <td>
-                        <a href="../pages/appunti/concetti-base-programmazione.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/appunti/concetti-base-programmazione.html" target="_blank"><button
+                                class="appunti-bottone" type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/appunti/concetti-base-programmazione.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/appunti/concetti-base-programmazione.pdf" target="_blank"><button
+                                class="pdf" type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -104,10 +121,12 @@
                         <b>C# CON ESEMPI</b>
                     </td>
                     <td>
-                        <a href="../pages/appunti/csharp.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/appunti/csharp.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/appunti/csharp.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/appunti/csharp.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -115,17 +134,19 @@
                         <b>TAG IN HTML, METODI E<br>FUNZIONI IN JAVASCRIPT</b>
                     </td>
                     <td>
-                        <a href="../pages/appunti/tag-metodi-funzioni.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/appunti/tag-metodi-funzioni.html" target="_blank"><button
+                                class="appunti-bottone" type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/appunti/tag-metodi-funzioni.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/appunti/tag-metodi-funzioni.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <br><br>
             </table>
         </div>
     </div>
-    <div align="center" id="info5" >                                                                         <!--Scuola-->
+    <div align="center" id="info5"> <!--Scuola-->
         <div>
             <br><br><br>
             <table class="gruppo" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
@@ -134,7 +155,9 @@
                         <img class="icona" src="../media/images/scuolan.png" alt="icona_appunti_5a_informatica">
                     </td>
                     <td>
-                        <b><h3>APPUNTI 5ª INFORMATICA</h3></b>
+                        <b>
+                            <h3>APPUNTI 5ª INFORMATICA</h3>
+                        </b>
                     </td>
                 </tr>
             </table>
@@ -147,10 +170,12 @@
                         <b>INFORMATICA</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/informatica5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/informatica5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/info5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/info5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -158,10 +183,12 @@
                         <b>TPSIT</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/tpsit5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/tpsit5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/tpsit5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/tpsit5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -169,10 +196,12 @@
                         <b>SISTEMI E RETI</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/sistemi&reti5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/sistemi&reti5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/sistemi&reti5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/sistemi&reti5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -180,10 +209,12 @@
                         <b>GPOI</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/gpoi5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/gpoi5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/gpoi5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/gpoi5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -191,10 +222,12 @@
                         <b>ITALIANO</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/italiano5.html" target="_blank" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/italiano5.html" target="_blank" target="_blank"><button
+                                class="appunti-bottone" type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/italiano5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/italiano5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -202,10 +235,12 @@
                         <b>STORIA</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/storia5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/storia5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/storia5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/storia5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -213,10 +248,12 @@
                         <b>MATEMATICA</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/matematica5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/matematica5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/matematica5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/matematica5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -224,10 +261,12 @@
                         <b>INGLESE</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/inglese5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/inglese5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/inglese5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/inglese5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -235,10 +274,12 @@
                         <b>SCIENZE MOTORIE</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/scienze-motorie5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/scienze-motorie5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/scienze-motorie5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/scienze-motorie5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -246,10 +287,12 @@
                         <b>EDUCAZIONE CIVICA</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/ed-civica5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/ed-civica5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/ed-civica5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/ed-civica5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
             </table>
@@ -260,25 +303,30 @@
                         <b>TESTI DI LETTERATURA</b>
                     </td>
                     <td>
-                        <a href="../pages/info5/testi-letteratura5.html" target="_blank"><button class="appunti-bottone" type="button">Appunti</button></a>
+                        <a href="../pages/info5/testi-letteratura5.html" target="_blank"><button class="appunti-bottone"
+                                type="button">Appunti</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/testi-letteratura5.pdf" target="_blank"><button class="pdf" type="button">PDF</button></a>
+                        <a href="../media/pdf/scuola/testi-letteratura5.pdf" target="_blank"><button class="pdf"
+                                type="button">PDF</button></a>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-    <div align="center" id="2_prova">                                                                       <!--2 prova info-->
+    <div align="center" id="2_prova"> <!--2 prova info-->
         <div>
             <br><br><br>
-            <table class="gruppo gruppo3" align="center" border="0" bordercolor="black" cellspacing="0" cellpadding="10">
+            <table class="gruppo gruppo3" align="center" border="0" bordercolor="black" cellspacing="0"
+                cellpadding="10">
                 <tr>
                     <td>
                         <img class="icona" src="../media/images/esamin.png" alt="icona_esami">
                     </td>
                     <td>
-                        <b><h3>ESAMI D'INFORMATICA CON SOLUZIONI</h3></b>
+                        <b>
+                            <h3>ESAMI D'INFORMATICA CON SOLUZIONI</h3>
+                        </b>
                     </td>
                 </tr>
             </table>
@@ -291,13 +339,16 @@
                         <b class="text">ESAME 2017</b>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2017/testo_prova_di_stato_2017.pdf" target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2017/testo_prova_di_stato_2017.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2017/soluzione_1_2017.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2017/soluzione_1_2017.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2017/soluzione_2_2017.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2017/soluzione_2_2017.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -305,13 +356,16 @@
                         <b class="text">ESAME 2018</b>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2018/testo_prova_di_stato_2018.pdf" target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2018/testo_prova_di_stato_2018.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2018/soluzione_1_2018.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2018/soluzione_1_2018.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2018/soluzione_2_2018.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2018/soluzione_2_2018.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -319,13 +373,16 @@
                         <b class="text">ESAME 2019</b>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2019/testo_prova_di_stato_2019.pdf" target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2019/testo_prova_di_stato_2019.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2019/soluzione_1_2019.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2019/soluzione_1_2019.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2019/soluzione_2_2019.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2019/soluzione_2_2019.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -333,29 +390,34 @@
                         <b class="text">ESAME 2023</b>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2023/testo_prova_di_stato_2023.pdf" target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2023/testo_prova_di_stato_2023.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Testo</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2023/soluzione_1_2023.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2023/soluzione_1_2023.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 1</button></a>
                     </td>
                     <td>
-                        <a href="../media/pdf/scuola/simulazioni_esame/2023/soluzione_2_2023.pdf" target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
+                        <a href="../media/pdf/scuola/simulazioni_esame/2023/soluzione_2_2023.pdf"
+                            target="_blank"><button class="esame-bottone" type="button">Soluzione 2</button></a>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <br><br><br><br>
-    <div id="footer-container">                                                             <!--Footer Nuovo-->
+    <div id="footer-container"> <!--Footer Nuovo-->
         <footer class="footer">
             <div class="colonna1">
                 <div class="logofooter">
                     <a href="https://toghiri.github.io/">
                         <img align="left" src="../media/images/scrittalogo.png" alt="site logo">
                     </a><br><br>
-                    <h3 class="block" >2022 - 2024</h3>
+                    <h3 class="block">2022 - 2024</h3>
                     <hr align="left"><br>
-                    <h2 align=" left">HAI VISUALIZZATO QUESTA PAGINA<br><div class="website-counter" noIcon="true"></div></h2>       
+                    <h2 align=" left">HAI VISUALIZZATO QUESTA PAGINA<br>
+                        <div class="website-counter" noIcon="true"></div>
+                    </h2>
                 </div>
             </div>
             <div class="colonna2">
@@ -377,6 +439,7 @@
             </div>
         </footer>
     </div>
-    <!--<h3>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></h3>-->                        <!--Icon credits-->
+    <!--<h3>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></h3>--> <!--Icon credits-->
 </body>
+
 </html>
